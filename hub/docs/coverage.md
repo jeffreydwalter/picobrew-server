@@ -9,11 +9,12 @@ This table records implemented behavior. It is deliberately not a claim of featu
 | Z / Zymatic / Pico C | Recipe planning profiles, quantity adaptation and export; simulated operation for demos | Stock cloud protocols and real control adapters are not implemented |
 | Recipe library | CRUD, revision conflict protection, archived revisions, tags, notes, ingredients and program editor | No bundled proprietary recipe database or comprehensive ingredient/style catalog |
 | Brewing details | Water chemistry, fermentation/carbonation metadata, mash and boil attributes | Metadata does not imply a connected fermenter or automatic addition hardware |
-| Adaptation | Volume/efficiency scaling, measured profile overrides, native compilation and review warnings | Hop utilization is not fully modeled; plumbing must be explicitly supplied |
+| Adaptation | Volume/efficiency scaling, saved profile overrides, sourced C/S/Pro starting defaults, native compilation and review warnings | Efficiency defaults are estimates; S/Pro grain capacity is unknown. Hop utilization is not fully modeled; plumbing must be explicitly supplied |
 | Recipe deployment | Per-machine idle checks, source-revision check, native write/readback, previous-program record | Does not start automatically; no automatic rollback after an uncertain write |
 | Installed recipes | Read, deploy/overwrite, choose for brewing, remove while idle | Limited by the appliance's own slots and protocol |
 | History | Retained-session imports, durable samples, temperature/state graphs, notes/rating, CSV/JSON | Cannot recover overwritten source samples; old start times may be unknown |
 | AI recipe creation | OpenAI/Anthropic API integration, validated structured drafts, explicit save | Provider key/model and external API access required |
+| AI model discovery | Account model catalogue, automatic lookup with a saved key, pre-save connection, refresh and manual entry | Model-list permission and chat compatibility are distinct; discovery does not invoke inference |
 | AI monitoring | On-demand live advice and optional five-minute active-brew checks with saved results | Advisory; no low-level control or live recipe/temperature overrides |
 | AI analysis | Analysis of selected history, downsampled bounded context | No invented measurements; raw archive/export remains available |
 | Shopping list | Aggregate selected recipes by ingredient and unit | Inventory purchasing, supplier integrations and stock deduction are absent |

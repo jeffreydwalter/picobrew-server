@@ -66,6 +66,8 @@ func TestOpenAPIResponseStatusesAndQueries(t *testing.T) {
 		{"delete", "/devices/{id}/recipes/{recipe_id}", []string{"204"}},
 		{"put", "/profiles/{id}", []string{"200", "422"}},
 		{"post", "/ai/assist", []string{"409", "429", "502"}},
+		{"get", "/ai/models", []string{"200", "400", "401", "403", "409", "502"}},
+		{"post", "/ai/models", []string{"200", "400", "401", "403", "409", "413", "415", "502"}},
 	} {
 		op := paths[test.path].(map[string]any)[test.method].(map[string]any)
 		responses := op["responses"].(schemaMap)
@@ -80,7 +82,7 @@ func TestOpenAPIResponseStatusesAndQueries(t *testing.T) {
 			}
 		}
 	}
-	for path, name := range map[string]string{"/ai/advice": "device_id", "/shopping-list": "recipes", "/recipes/{id}/export": "format", "/brews/{id}/export": "format"} {
+	for path, name := range map[string]string{"/ai/advice": "device_id", "/ai/models": "provider", "/shopping-list": "recipes", "/recipes/{id}/export": "format", "/brews/{id}/export": "format"} {
 		params := paths[path].(map[string]any)["get"].(map[string]any)["parameters"].([]any)
 		found := false
 		for _, value := range params {
@@ -130,7 +132,7 @@ func TestOpenAPIReferencesResolveAndExamplesStayUsable(t *testing.T) {
 		}
 	}
 	walk(decoded)
-	for _, name := range []string{"DeviceView", "Recipe", "Ingredient", "MachineRecipe", "Profile", "Adapted", "Sample", "BrewDetail", "Error", "adviceRecord"} {
+	for _, name := range []string{"DeviceView", "Recipe", "Ingredient", "MachineRecipe", "Profile", "Adapted", "Sample", "BrewDetail", "Error", "adviceRecord", "aiModelList", "Model", "AIModelsInput"} {
 		if schemas[name] == nil {
 			t.Errorf("missing domain schema %s", name)
 		}
@@ -155,6 +157,76 @@ func TestOpenAPIReferencesResolveAndExamplesStayUsable(t *testing.T) {
 	example := request["content"].(map[string]any)["application/json"].(map[string]any)["example"].(map[string]any)
 	if _, err := recipe.Import([]byte(example["data"].(string)), example["format"].(string)); err != nil {
 		t.Fatalf("import example is unusable: %v", err)
+	}
+}
+
+func TestOpenAPIModelDiscoveryDescribesSavedAndUnsavedCredentials(t *testing.T) {
+	p, err := json.Marshal(openAPIDocument())
+	if err != nil {
+		t.Fatal(err)
+	}
+	var document map[string]any
+	if err := json.Unmarshal(p, &document); err != nil {
+		t.Fatal(err)
+	}
+	paths := document["paths"].(map[string]any)
+	schemas := document["components"].(map[string]any)["schemas"].(map[string]any)
+	item := paths["/ai/models"].(map[string]any)
+	for _, method := range []string{"get", "post"} {
+		op := item[method].(map[string]any)
+		security := op["security"].([]any)[0].(map[string]any)
+		if _, ok := security["session"]; !ok {
+			t.Errorf("%s model discovery does not require owner authentication", method)
+		}
+		_, csrf := security["csrf"]
+		if csrf != (method == "post") {
+			t.Errorf("%s model discovery has incorrect CSRF requirements", method)
+		}
+		responses := op["responses"].(map[string]any)
+		success := responses["200"].(map[string]any)["content"].(map[string]any)["application/json"].(map[string]any)["schema"].(map[string]any)
+		if success["$ref"] != "#/components/schemas/aiModelList" {
+			t.Errorf("%s advertises wrong model response: %v", method, success)
+		}
+	}
+	get := item["get"].(map[string]any)
+	if _, hasBody := get["requestBody"]; hasBody {
+		t.Fatal("GET model discovery asks for a request body")
+	}
+	params := get["parameters"].([]any)
+	if len(params) != 1 {
+		t.Fatalf("GET discovery query parameters: %v", params)
+	}
+	provider := params[0].(map[string]any)
+	if provider["name"] != "provider" || provider["in"] != "query" || provider["required"] != false || !reflect.DeepEqual(provider["schema"].(map[string]any)["enum"], []any{"openai", "anthropic"}) {
+		t.Fatalf("provider query does not match routing: %v", provider)
+	}
+	post := item["post"].(map[string]any)
+	if params, ok := post["parameters"].([]any); ok && len(params) != 0 {
+		t.Fatalf("POST discovery advertises unused query parameters: %v", params)
+	}
+	request := post["requestBody"].(map[string]any)
+	if request["required"] != true || request["content"].(map[string]any)["application/json"].(map[string]any)["schema"].(map[string]any)["$ref"] != "#/components/schemas/AIModelsInput" {
+		t.Fatalf("POST model discovery does not describe its JSON input: %v", request)
+	}
+	input := schemas["AIModelsInput"].(map[string]any)
+	if !reflect.DeepEqual(input["required"], []any{"provider"}) || input["additionalProperties"] != false {
+		t.Fatalf("discovery input should require provider but allow an omitted key: %v", input)
+	}
+	key := input["properties"].(map[string]any)["api_key"].(map[string]any)
+	if key["writeOnly"] != true || key["maxLength"] != float64(1024) {
+		t.Fatalf("credential bounds or secrecy missing: %v", key)
+	}
+	models := schemas["aiModelList"].(map[string]any)["properties"].(map[string]any)["models"].(map[string]any)
+	if models["type"] != "array" || models["items"].(map[string]any)["$ref"] != "#/components/schemas/Model" {
+		t.Fatalf("discovered model array mismatch: %v", models)
+	}
+	modelProps := schemas["Model"].(map[string]any)["properties"].(map[string]any)
+	if len(modelProps) != 2 || modelProps["id"] == nil || modelProps["name"] == nil {
+		t.Fatalf("unexpected model fields: %v", modelProps)
+	}
+	modelID := schemas["AISettingsInput"].(map[string]any)["properties"].(map[string]any)["model"].(map[string]any)
+	if modelID["maxLength"] != float64(512) {
+		t.Fatalf("model setting length does not cover discovered IDs: %v", modelID)
 	}
 }
 

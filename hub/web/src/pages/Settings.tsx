@@ -1,20 +1,9 @@
 import { useEffect, useState, type FormEvent } from 'react'
-import {
-  Plus,
-  Trash2,
-  Pencil,
-  RefreshCw,
-  Download,
-  KeyRound,
-  Wifi,
-  Check,
-  Globe,
-  ArrowUpRight,
-  Loader2,
-} from 'lucide-react'
-import { useHub, useResource } from '../context'
+import { Plus, Trash2, Pencil, RefreshCw, Download, KeyRound, Loader2 } from 'lucide-react'
+import { useHub } from '../context'
 import { api, download, errorMessage } from '../lib/api'
-import type { Device, AISettings, Profile } from '../types'
+import type { Device, Profile } from '../types'
+import { AISettingsForm } from '../components/AISettingsForm'
 import {
   Badge,
   Button,
@@ -23,10 +12,8 @@ import {
   ErrorBanner,
   Field,
   IconButton,
-  Loading,
   Modal,
   PageTitle,
-  SectionHeading,
 } from '../components/ui'
 import { deviceState } from '../lib/utils'
 export default function Settings() {
@@ -200,29 +187,6 @@ export default function Settings() {
               Account passwords and API credentials are excluded. Complete disaster recovery uses a
               private backup of the server's data directory, including its encryption key.
             </p>
-          </div>
-        </section>
-        <section className="settings-row">
-          <div className="settings-description">
-            <span className="section-index">06</span>
-            <h2>Connection & API</h2>
-            <p>Build other clients on the same hub.</p>
-          </div>
-          <div className="settings-fields">
-            <div className="connection-summary">
-              <Badge tone={hub.connected ? 'green' : 'amber'}>
-                {hub.connected ? 'Live stream connected' : 'Reconnecting'}
-              </Badge>
-              <code>/api/v1</code>
-            </div>
-            <p>
-              Session authentication and a CSRF token protect changes. Commands carry unique
-              identifiers to avoid accidental repeated delivery.
-            </p>
-            <Button variant="secondary" onClick={() => hub.navigate('/api')}>
-              Explore the API
-              <ArrowUpRight size={16} />
-            </Button>
           </div>
         </section>
       </div>
@@ -415,118 +379,15 @@ function DeviceDialog({ device, onClose }: { device?: Device; onClose: () => voi
     </Modal>
   )
 }
-export function AISettingsForm() {
-  const hub = useHub()
-  const resource = useResource<AISettings>('/ai/settings')
-  const [form, setForm] = useState<AISettings>({
-    provider: 'openai',
-    model: '',
-    enabled: false,
-    key_configured: false,
-    monitor_enabled: false,
-  })
-  const [key, setKey] = useState('')
-  const [busy, setBusy] = useState(false)
-  const [error, setError] = useState('')
-  useEffect(() => {
-    if (resource.data) setForm(resource.data)
-  }, [resource.data])
-  async function save(event: FormEvent) {
-    event.preventDefault()
-    setBusy(true)
-    setError('')
-    try {
-      await api('/ai/settings', {
-        method: 'PUT',
-        body: {
-          provider: form.provider,
-          model: form.model,
-          enabled: form.enabled,
-          monitor_enabled: form.monitor_enabled,
-          ...(key ? { api_key: key } : {}),
-        },
-      })
-      setKey('')
-      resource.reload()
-      hub.notify('Brew assistant settings saved.')
-    } catch (error) {
-      setError(errorMessage(error))
-    } finally {
-      setBusy(false)
-    }
-  }
-  if (resource.loading) return <Loading label="Loading assistant settings…" />
-  return (
-    <form onSubmit={save}>
-      <label className="check-field">
-        <input
-          type="checkbox"
-          checked={form.enabled}
-          onChange={(event) => setForm({ ...form, enabled: event.target.checked })}
-        />
-        Enable the brew assistant
-      </label>
-      <div className="form-grid">
-        <Field label="Provider">
-          <select
-            value={form.provider}
-            onChange={(event) => setForm({ ...form, provider: event.target.value, model: '' })}
-          >
-            <option value="openai">OpenAI</option>
-            <option value="anthropic">Anthropic / Claude</option>
-          </select>
-        </Field>
-        <Field label="Model" hint="Use a model available to your provider account.">
-          <input
-            value={form.model}
-            onChange={(event) => setForm({ ...form, model: event.target.value })}
-            placeholder={
-              form.provider === 'anthropic' ? 'Your Claude model ID' : 'Your OpenAI model ID'
-            }
-          />
-        </Field>
-      </div>
-      <Field
-        label="Provider API key"
-        hint={
-          form.key_configured
-            ? 'A key is configured. Leave this blank to keep it.'
-            : 'Use a provider API key; a ChatGPT or Claude subscription login is not an API key.'
-        }
-      >
-        <input
-          type="password"
-          autoComplete="new-password"
-          value={key}
-          onChange={(event) => setKey(event.target.value)}
-          placeholder={form.key_configured ? '•••••••• · key configured' : ''}
-        />
-      </Field>
-      <label className="check-field">
-        <input
-          type="checkbox"
-          checked={form.monitor_enabled || false}
-          onChange={(event) => setForm({ ...form, monitor_enabled: event.target.checked })}
-        />
-        Check active brews every 5 minutes
-      </label>
-      <p className="help-text">
-        Selected recipes and readings are sent to your chosen provider. Suggestions are advisory;
-        the assistant cannot start a machine or change its outputs. You review recipe drafts and
-        send changes yourself.
-      </p>
-      <ErrorBanner message={error || resource.error} />
-      <Button type="submit" disabled={busy}>
-        {busy ? 'Saving…' : 'Save assistant settings'}
-      </Button>
-    </form>
-  )
-}
 
 function CalibrationForm() {
   const hub = useHub()
   const [id, setID] = useState('')
-  const [form, setForm] = useState({ batch_liters: 5, efficiency: 70, max_grain_kg: 0 })
+  const [form, setForm] = useState({
+    batch_liters: hub.profiles[0]?.batch_liters ?? 0,
+    efficiency: hub.profiles[0]?.efficiency ?? 0,
+    max_grain_kg: hub.profiles[0]?.max_grain_kg ?? 0,
+  })
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
   const selected = hub.profiles.find((profile) => profile.id === id)
@@ -586,7 +447,10 @@ function CalibrationForm() {
             onChange={(event) => setForm({ ...form, batch_liters: Number(event.target.value) })}
           />
         </Field>
-        <Field label="Measured efficiency (%)">
+        <Field
+          label="Planning efficiency (%)"
+          hint="Use your measured efficiency when available; the default is an estimate."
+        >
           <input
             type="number"
             min="1"
@@ -607,13 +471,31 @@ function CalibrationForm() {
         </Field>
       </div>
       <p className="help-text">
-        Shared model defaults apply to every machine of this model. Starting values are planning
-        assumptions; use measured values before relying on scaled recipes.
+        {selected?.user_configured
+          ? 'Using your saved calibration values.'
+          : 'Using starting defaults; efficiency is an estimate.'}{' '}
+        These values apply to every machine of this model. Use measured values before relying on
+        scaled recipes.
       </p>
-      {selected?.notes && (
+      {selected && (selected.notes || (selected.sources?.length ?? 0) > 0) && (
         <details className="profile-notes">
           <summary>Profile notes</summary>
-          <p>{selected.notes}</p>
+          {selected.notes && <p>{selected.notes}</p>}
+          {Boolean(selected.sources?.length) && (
+            <>
+              <h4>Published starting points</h4>
+              <ul>
+                {selected.sources!.map((source) => (
+                  <li key={source.url}>
+                    <a href={source.url} target="_blank" rel="noreferrer">
+                      {source.label}
+                    </a>
+                    <p>{source.description}</p>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </details>
       )}
       <ErrorBanner message={error} />

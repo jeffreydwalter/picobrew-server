@@ -9,6 +9,7 @@ import (
 	"sort"
 	"strings"
 	"time"
+	"unicode"
 
 	"github.com/jeffreydwalter/picobrew-hub/internal/ai"
 	"github.com/jeffreydwalter/picobrew-hub/internal/domain"
@@ -27,6 +28,12 @@ type adviceRecord struct {
 	Recipe      json.RawMessage `json:"recipe,omitempty"`
 	Limitations []string        `json:"limitations,omitempty"`
 	Error       string          `json:"error,omitempty"`
+}
+
+func invalidProviderKey(key string) bool {
+	return len(key) > 1024 || strings.IndexFunc(key, func(r rune) bool {
+		return unicode.IsControl(r) || unicode.IsSpace(r)
+	}) >= 0
 }
 
 func (s *Server) aiSettings(w http.ResponseWriter, r *http.Request) {
@@ -50,7 +57,7 @@ func (s *Server) aiSettings(w http.ResponseWriter, r *http.Request) {
 			s.fail(w, 400, "provider", "Choose OpenAI or Anthropic")
 			return
 		}
-		if len(in.Model) > 100 || len(in.APIKey) > 1024 || strings.ContainsAny(in.APIKey, "\r\n") {
+		if len(in.Model) > 512 || invalidProviderKey(in.APIKey) {
 			s.fail(w, 400, "config", "Invalid model or API key")
 			return
 		}

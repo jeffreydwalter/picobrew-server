@@ -25,7 +25,11 @@ func (s *Server) calibratedProfiles() ([]domain.Profile, error) {
 			profiles[i].BatchLiters = calibration.BatchLiters
 			profiles[i].Efficiency = calibration.Efficiency
 			profiles[i].MaxGrainKG = calibration.MaxGrainKG
-			profiles[i].Notes = "Batch size, efficiency and grain capacity use your saved planning calibration. Verify the physical compartment mapping before deployment."
+			profiles[i].UserConfigured = true
+			profiles[i].Notes = "Batch size, efficiency and grain capacity use your saved planning calibration. Source links describe published starting points, not your saved values. Verify the physical compartment mapping before deployment."
+			if calibration.MaxGrainKG == 0 {
+				profiles[i].Notes += " Grain capacity remains unverified."
+			}
 			if !profiles[i].ControlSupported {
 				profiles[i].Notes += " Planning and export only: no live control adapter is implemented for this model."
 			}

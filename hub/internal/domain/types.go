@@ -140,16 +140,23 @@ type Recipe struct {
 	Carbonation  Carbonation        `json:"carbonation,omitempty"`
 }
 type Profile struct {
-	ID               string  `json:"id"`
-	Name             string  `json:"name"`
-	BatchLiters      float64 `json:"batch_liters"`
-	Efficiency       float64 `json:"efficiency"`
-	MaxSteps         int     `json:"max_steps"`
-	MaxTargetC       float64 `json:"max_target_c"`
-	MaxGrainKG       float64 `json:"max_grain_kg"`
-	HopSlots         int     `json:"hop_slots"`
-	ControlSupported bool    `json:"control_supported"`
-	Notes            string  `json:"notes"`
+	ID               string          `json:"id"`
+	Name             string          `json:"name"`
+	BatchLiters      float64         `json:"batch_liters"`
+	Efficiency       float64         `json:"efficiency"`
+	MaxSteps         int             `json:"max_steps"`
+	MaxTargetC       float64         `json:"max_target_c"`
+	MaxGrainKG       float64         `json:"max_grain_kg"`
+	HopSlots         int             `json:"hop_slots"`
+	ControlSupported bool            `json:"control_supported"`
+	Notes            string          `json:"notes"`
+	Sources          []ProfileSource `json:"sources,omitempty"`
+	UserConfigured   bool            `json:"user_configured"`
+}
+type ProfileSource struct {
+	Label       string `json:"label"`
+	URL         string `json:"url"`
+	Description string `json:"description"`
 }
 type Adapted struct {
 	Recipe         Recipe         `json:"recipe"`

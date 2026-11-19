@@ -142,7 +142,7 @@ describe('UI interactions against the real isolated Go simulator', () => {
     await waitFor(() =>
       expect((screen.getByLabelText('Equipment model') as HTMLSelectElement).value).not.toBe('')
     )
-    const efficiency = screen.getByLabelText('Measured efficiency (%)')
+    const efficiency = screen.getByLabelText('Planning efficiency (%)')
     await user.clear(efficiency)
     await user.type(efficiency, '68')
     await user.click(screen.getByRole('button', { name: 'Save calibration' }))
@@ -150,7 +150,7 @@ describe('UI interactions against the real isolated Go simulator', () => {
     const profile = (screen.getByLabelText('Equipment model') as HTMLSelectElement).value
     const profiles = await (await originalFetch(origin + '/api/v1/profiles')).json()
     expect(profiles.find((item: any) => item.id === profile).efficiency).toBe(68)
-    await user.click(screen.getByRole('button', { name: 'Explore the API' }))
+    await user.click(screen.getByRole('link', { name: 'API explorer' }))
     await screen.findByRole('heading', { name: 'Explore the hub API.' })
     await user.click(await screen.findByRole('button', { name: 'Send request' }))
     await waitFor(() =>

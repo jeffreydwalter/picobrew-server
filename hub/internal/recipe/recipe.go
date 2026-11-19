@@ -26,10 +26,36 @@ var stepKinds = map[string]bool{"mash": true, "mash-out": true, "boil": true, "h
 // entry describes one brewing module, not a combined Z2/Z4 program.
 func Profiles() []domain.Profile {
 	const assumptions = "70% efficiency is a planning assumption; replace it with measured efficiency. Locations must be supplied and checked against the actual machine."
+	const picoAssumptions = "5 L is a nominal batch size. 50% efficiency is Small Brew Companion's community planning estimate, not a measurement of your machine. Replace it with your measured efficiency. Grain capacity is unverified; check your actual grain container. Locations must be supplied and checked against the actual machine."
+	picoSource := domain.ProfileSource{
+		Label:       "Small Brew Companion: Pico C/S/Pro recipe scaling",
+		URL:         "https://www.smallbrewcompanion.com/docs/scale-recipe-to-pico-c-s-pro-manual-steps/",
+		Description: "Community starting points: 5 L batches and approximately 50% efficiency. Does not establish a maximum grain capacity.",
+	}
 	return []domain.Profile{
-		{ID: "pico-pro", Name: "Pico Pro (standalone)", BatchLiters: 5, Efficiency: 70, MaxSteps: 15, MaxTargetC: 100, ControlSupported: true, Notes: assumptions + " Grain capacity is unverified and is not inferred from a PicoPak."},
-		{ID: "pico-s", Name: "Pico S (standalone)", BatchLiters: 5, Efficiency: 70, MaxSteps: 15, MaxTargetC: 100, ControlSupported: true, Notes: assumptions + " Grain capacity is unverified and is not inferred from a PicoPak."},
-		{ID: "pico-c", Name: "Pico C (planning only)", BatchLiters: 5, Efficiency: 70, MaxTargetC: 100, Notes: assumptions + " No hub control adapter is implemented for C firmware."},
+		{
+			ID: "pico-pro", Name: "Pico Pro (standalone)", BatchLiters: 5, Efficiency: 50,
+			MaxSteps: 15, MaxTargetC: 100, ControlSupported: true, Notes: picoAssumptions,
+			Sources: []domain.ProfileSource{picoSource, {
+				Label:       "PicoBrew: Pico Pro specifications",
+				URL:         "https://picobrew.com/store/products/pico",
+				Description: "Manufacturer nominal batch size: 5 L. The separately listed 6.6 L keg volume is not the batch size.",
+			}},
+		},
+		{
+			ID: "pico-s", Name: "Pico S (standalone)", BatchLiters: 5, Efficiency: 50,
+			MaxSteps: 15, MaxTargetC: 100, ControlSupported: true, Notes: picoAssumptions,
+			Sources: []domain.ProfileSource{picoSource},
+		},
+		{
+			ID: "pico-c", Name: "Pico C (planning only)", BatchLiters: 5, Efficiency: 50,
+			MaxTargetC: 100, Notes: picoAssumptions + " No hub control adapter is implemented for C firmware.",
+			Sources: []domain.ProfileSource{picoSource, {
+				Label:       "PicoBrew: Pico C specifications",
+				URL:         "https://picobrew.com/store/products/picoc",
+				Description: "Manufacturer nominal batch size: 5 L. This specification does not establish grain capacity or efficiency.",
+			}},
+		},
 		{ID: "z", Name: "PicoBrew Z, one module (planning only)", BatchLiters: 9.46352946, Efficiency: 70, MaxTargetC: 100, MaxGrainKG: 4.08233133, HopSlots: 4, Notes: assumptions + " Nominal batch is 2.5 US gallons; grain capacity is 9 lb. No control adapter is implemented."},
 		{ID: "zymatic", Name: "Zymatic (planning only)", BatchLiters: 9.46352946, Efficiency: 70, MaxTargetC: 100, MaxGrainKG: 4.08233133, HopSlots: 4, Notes: assumptions + " Nominal batch is 2.5 US gallons; grain capacity is 9 lb. No control adapter is implemented."},
 	}

@@ -130,6 +130,8 @@ export interface Profile {
   hop_slots: number
   control_supported: boolean
   notes: string
+  sources?: { label: string; url: string; description: string }[]
+  user_configured?: boolean
 }
 export interface Adapted {
   recipe: Recipe
@@ -197,6 +199,14 @@ export interface AISettings {
   key_configured: boolean
   enabled: boolean
   monitor_enabled?: boolean
+}
+export interface AIModel {
+  id: string
+  name: string
+}
+export interface AIModels {
+  provider: string
+  models: AIModel[]
 }
 export interface AIResult {
   text: string

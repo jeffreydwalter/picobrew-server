@@ -26,6 +26,8 @@ var endpoints = []endpoint{
 	{"GET", "/brews", "List aggregated brew history", nil}, {"GET", "/brews/{id}", "Read all recorded sensors and phases for a brew", nil}, {"PATCH", "/brews/{id}", "Save tasting notes and rating", map[string]any{"notes": "", "rating": 4}}, {"GET", "/brews/{id}/export", "Export full telemetry (?format=csv|json)", nil}, {"GET", "/events", "Stream fleet updates using server-sent events", nil},
 	{"POST", "/telemetry", "Receive unsigned observation-only Pico forwarding", map[string]any{"schema_version": 1, "firmware_version": "1.0.0", "status": map[string]any{"device_uid": "known-uid"}}}, {"GET", "/ai/settings", "Read redacted AI provider configuration", nil}, {"PUT", "/ai/settings", "Configure optional provider API credentials", map[string]any{"provider": "openai", "model": "your-model", "api_key": "your-api-key", "enabled": true, "monitor_enabled": false}}, {"POST", "/ai/assist", "Generate a draft, assess live telemetry, or analyze a completed brew", map[string]any{"mode": "recipe", "prompt": "Draft a five-liter porter"}}, {"GET", "/backup", "Export records and telemetry without credentials", nil}, {"GET", "/shopping-list", "Aggregate ingredients (?recipes=id1,id2)", nil}, {"GET", "/openapi.json", "Read this API catalog", nil},
 	{"GET", "/ai/advice", "Read retained AI advice, optionally filtered by machine", nil},
+	{"GET", "/ai/models", "List provider models using its saved API key", nil},
+	{"POST", "/ai/models", "Connect and list models without saving credentials or enabling AI", map[string]any{"provider": "openai", "api_key": "your-api-key"}},
 	{"PUT", "/profiles/{id}", "Save measured batch, efficiency and grain limits", map[string]any{"batch_liters": 5, "efficiency": 70, "max_grain_kg": 0}},
 	{"DELETE", "/profiles/{id}", "Restore the model's default planning profile", nil},
 	{"DELETE", "/devices/{id}/recipes/{recipe_id}", "Delete a recipe stored on an idle appliance", nil},
@@ -157,7 +159,7 @@ func (r *schemaRegistry) properties(name string) schemaMap {
 
 func buildSchemas() schemaMap {
 	r := &schemaRegistry{values: schemaMap{}}
-	for _, value := range []any{domain.Device{}, domain.DeviceView{}, domain.Capabilities{}, domain.Status{}, domain.Display{}, domain.Recipe{}, domain.MachineRecipe{}, domain.Profile{}, domain.Adapted{}, domain.Brew{}, domain.BrewDetail{}, domain.Sample{}, domain.History{}, domain.Command{}, commandReceipt{}, ai.Config{}, ai.Request{}, ai.Result{}, adviceRecord{}} {
+	for _, value := range []any{domain.Device{}, domain.DeviceView{}, domain.Capabilities{}, domain.Status{}, domain.Display{}, domain.Recipe{}, domain.MachineRecipe{}, domain.Profile{}, domain.Adapted{}, domain.Brew{}, domain.BrewDetail{}, domain.Sample{}, domain.History{}, domain.Command{}, commandReceipt{}, ai.Config{}, ai.Request{}, ai.Result{}, adviceRecord{}, aiModelList{}} {
 		r.describe(reflect.TypeOf(value))
 	}
 	r.values["Error"] = schemaObject(schemaMap{"error": schemaObject(schemaMap{"code": stringSchema(), "message": stringSchema()}, "code", "message")}, "error")
@@ -223,7 +225,13 @@ func buildSchemas() schemaMap {
 		aiConfig[k] = v
 	}
 	aiConfig["api_key"] = schemaMap{"type": "string", "maxLength": 1024, "writeOnly": true, "description": "Provider API key, not a ChatGPT/Claude consumer account password. Blank preserves the stored key."}
+	aiConfig["model"] = schemaMap{"type": "string", "maxLength": 512, "description": "Provider model ID. Model discovery is available before choosing a model or enabling AI."}
 	r.values["AISettingsInput"] = schemaObject(aiConfig, "provider")
+	r.values["AIModelsInput"] = schemaObject(schemaMap{
+		"provider": schemaMap{"type": "string", "enum": []string{"openai", "anthropic"}},
+		"api_key":  schemaMap{"type": "string", "maxLength": 1024, "writeOnly": true, "description": "Optional unsaved key, used only for model discovery. Omit to use this provider's saved key. This operation does not change settings or credentials."},
+	}, "provider")
+	r.properties("aiModelList")["models"] = schemaMap{"type": "array", "items": schemaRef("Model"), "description": "Account-visible model IDs and display names. Availability does not establish compatibility with the provider's chat API."}
 	r.properties("Request")["mode"] = schemaMap{"type": "string", "enum": []string{"recipe", "live", "analysis"}}
 	r.properties("Request")["prompt"] = schemaMap{"type": "string", "maxLength": 16000}
 	r.properties("Result")["recipe"] = schemaRef("Recipe")
@@ -253,6 +261,10 @@ func operationParameters(e endpoint) []any {
 		query("recipes", "Comma-separated canonical recipe IDs, for example id1,id2. Empty yields an empty list.", stringSchema())
 	case "/ai/advice":
 		query("device_id", "Limit advice to one registered machine.", stringSchema())
+	case "/ai/models":
+		if e.method == "GET" {
+			query("provider", "Provider whose saved key should be used. Defaults to the selected provider.", schemaMap{"type": "string", "enum": []string{"openai", "anthropic"}})
+		}
 	}
 	return params
 }
@@ -288,6 +300,8 @@ func requestSchema(e endpoint) (schemaMap, bool) {
 		name = "ForwardingEnvelope"
 	case "/ai/settings":
 		name = "AISettingsInput"
+	case "/ai/models":
+		name = "AIModelsInput"
 	case "/ai/assist":
 		name = "Request"
 	}
@@ -380,6 +394,8 @@ func successResponses(e endpoint) schemaMap {
 		description = "Unsigned observation stored; it cannot command a device or override authoritative live state."
 	case "/ai/settings":
 		schema = schemaRef("Config")
+	case "/ai/models":
+		schema = schemaRef("aiModelList")
 	case "/ai/assist":
 		schema = schemaRef("Result")
 	case "/ai/advice":
@@ -453,6 +469,11 @@ func operationResponses(e endpoint, public, requiresJSON bool) schemaMap {
 		statuses[409] = "AI provider/key/model is not enabled."
 		statuses[429] = "Another AI request is in progress."
 		statuses[502] = "Provider failed or returned an invalid recipe."
+	}
+	if e.path == "/ai/models" {
+		statuses[400] = "Unsupported provider or invalid provider API key."
+		statuses[409] = "No API key is saved or supplied for this provider."
+		statuses[502] = "Provider model discovery failed; saved credentials and model selection remain unchanged."
 	}
 	if e.path == "/telemetry" {
 		statuses[403] = "Device UID has not been registered and discovered."

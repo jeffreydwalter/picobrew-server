@@ -220,6 +220,8 @@ func (s *Server) routes() http.Handler {
 			r.Get("/events", s.events)
 			r.Get("/ai/settings", s.aiSettings)
 			r.Put("/ai/settings", s.aiSettings)
+			r.Get("/ai/models", s.aiModels)
+			r.Post("/ai/models", s.aiModels)
 			r.Post("/ai/assist", s.aiAssist)
 			r.Get("/ai/advice", s.aiAdvice)
 			r.Get("/openapi.json", s.openapi)

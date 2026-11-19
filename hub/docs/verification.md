@@ -1,5 +1,19 @@
 # Verification record
 
+## Model discovery and Settings update — local checks
+
+- All Go package tests with the race detector, `go vet ./...` and a production Go build: passed.
+- Frontend typecheck and production build: passed.
+- Frontend unit tests: 22 passed, including automatic model loading, connecting an unsaved key, provider changes, stale-response cancellation, manual entry and refresh.
+- DOM interaction tests against an isolated real Go server: 4 passed.
+- Provider model-list protocol fixtures cover OpenAI credentials, Anthropic pagination, bounded responses, cancellation, redirects and redacted errors. Server tests cover authentication, CSRF, provider-key isolation and discovery without changing saved credentials or configuration.
+- Profile regression tests preserve older saved calibration values and existing recipes while applying sourced defaults only to unconfigured profiles or an explicit reset.
+- The duplicate Settings API section is removed; browser tests navigate to the explorer from the sidebar.
+
+These local results do not claim a new GitHub Actions or Chromium run. The prior
+[Hub baseline CI run at a6ac410](https://github.com/jeffreydwalter/picobrew-server/actions/runs/44433937021)
+passed all four jobs and all five browser tests before this update.
+
 ## Local checks — 18 November 2026
 
 - Go package tests with the race detector: passed.

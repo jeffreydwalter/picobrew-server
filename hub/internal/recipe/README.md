@@ -30,12 +30,15 @@ requires the standalone REST firmware. C, Z and Zymatic profiles provide
 planning/export only. Changing a profile flag cannot create a missing protocol
 adapter. The Z profile represents a single brewing module.
 
-The 5-liter Pico and 2.5-US-gallon Z/Zymatic batch defaults come from vendor
-materials. Z/Zymatic's grain limit is 9 lb (4.08233133 kg). The Pico family's grain
-limit is unverified (`MaxGrainKG=0`); a warning explicitly says that fit has not
-been proven. The 70% efficiency default is a planning assumption, not a measured
-property of any model. Override it with the user's measured efficiency. The
-configured `BatchLiters` also bounds the requested batch in the preview.
+C/S/Pro defaults use 5 L and approximately 50% efficiency from Small Brew
+Companion's recipe-scaling guide. PicoBrew's C/Pro specifications also establish
+the nominal 5 L batch. The Pico family's grain limit is unverified
+(`MaxGrainKG=0`); a warning explicitly says that fit has not been proven.
+Z/Zymatic retains its 2.5-US-gallon batch, 9 lb (4.08233133 kg) grain limit and
+70% planning assumption. Efficiency defaults are not measurements of a machine.
+Saved calibrations override the defaults. See the [profile sources and migration
+notes](../../docs/equipment-profiles.md). The configured `BatchLiters` also bounds
+the requested batch in the preview.
 
 Grain and unspecified fermentable amounts scale by:
 

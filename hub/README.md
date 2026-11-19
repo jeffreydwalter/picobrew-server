@@ -42,6 +42,16 @@ This seeds three simulated brewers, two example recipes and three historical bre
 - **Use optional AI.** Supply an OpenAI or Anthropic API key and a model available to your account. Generate a structured recipe draft, ask about an active brew, or analyze recorded history. An opt-in monitor reviews online active brews at most once every five minutes per machine, with advice saved in the console. Drafts require review and saving. The AI has no machine command tools.
 - **Build other clients.** Browse the authenticated API explorer or download `/api/v1/openapi.json`. The same API serves the UI, with session authentication, CSRF protection and idempotent command receipts.
 
+### Connect the brew assistant
+
+In **Settings → Brew assistant**, choose OpenAI or Anthropic, enter a provider API key and click **Connect and load models**. Select a model from the returned account catalogue, enable the assistant and save. Connection discovery works before a model is selected and does not save the supplied key until you save settings. Returning to Settings with a saved key loads its models automatically; **Refresh models** reloads the catalogue.
+
+The model list comes from the provider's API, including all Anthropic result pages. Choose a model that supports the provider's chat API; a listing alone does not establish that compatibility or inference permission. Manual model entry remains available for private models or restricted keys that cannot list models. Changing providers clears the previous catalogue and uses only the selected provider's key.
+
+### Equipment starting points
+
+The C/S/Pro profiles use **5 L and approximately 50% efficiency** from Small Brew Companion's documented recipe-scaling guidance, with source links visible in Settings. The Pro's nominal 5 L batch is also supported by PicoBrew's published specifications. Efficiency is a planning estimate, and S/Pro grain capacity remains unknown until supplied for the actual grain container. Saved calibration values override these starting points. See [equipment profiles and sources](docs/equipment-profiles.md).
+
 ## Brewing workflow
 
 1. Create or import a recipe in the shared library.

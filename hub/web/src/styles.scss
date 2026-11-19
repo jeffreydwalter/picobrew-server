@@ -3319,3 +3319,17 @@ hr,
 .profile-notes p {
   margin: 12px 0 0;
 }
+.profile-notes h4 {
+  font-size: inherit;
+  margin: 15px 0 6px;
+}
+.profile-notes ul {
+  padding-left: 18px;
+  margin: 0;
+}
+.profile-notes li + li {
+  margin-top: 10px;
+}
+.profile-notes li p {
+  margin-top: 3px;
+}

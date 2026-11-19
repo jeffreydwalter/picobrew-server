@@ -42,6 +42,8 @@ The data directory has a persistent 32-byte master key. AES-GCM uses each creden
 
 Provider integrations have bounded context and response sizes, request timeouts, refused redirects and no retry loop. API keys stay server-side. Selected recipe and telemetry context is sent only when a configured provider is enabled. A ChatGPT/Claude website subscription is not an API credential.
 
+Authenticated `GET /ai/models` discovers models with a saved provider key. CSRF-protected `POST /ai/models` can test a supplied key without saving it, so initial setup does not require selecting a model before discovery. Both use a separate bounded provider request and return only IDs/display names. Anthropic cursor pages are collected before returning a complete catalogue. The browser cancels obsolete lookups on provider/key changes; an older response cannot replace the new provider's list. Provider authentication failures return a provider error, not a Hub session-expiration response.
+
 Manual requests and the optional monitor share a concurrency gate. The monitor checks online active machines at most every five minutes, records failures as well as successful advice, and retains the latest 500 advisory records. Advice cannot call machine operations. Generated recipes pass canonical validation and still require an explicit save, adaptation review and deployment. Live recipe/temperature changes are absent from the current firmware contract; an AI setting cannot add them.
 
 ## Deployment boundary
