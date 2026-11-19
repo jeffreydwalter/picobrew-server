@@ -1,0 +1,24 @@
+[
+  {
+    "path": "app/firmware/pico_c/pico_c_0_1_34.bin",
+    "source": "https://raw.githubusercontent.com/chiefwigms/picobrew_pico/36acae3003845b72568ef5f7d6cf168acb6f9b69/app/firmware/pico_c/pico_c_0_1_34.bin",
+    "bytes": 156536,
+    "header_digest": "09a9cb94924d9023df6af18e4bed680f",
+    "calculated_digest": "09a9cb94924d9023df6af18e4bed680f",
+    "checksum": 1547405,
+    "matches": true,
+    "envelope_sha256": "10d508bd1f45aece1b016907478d9dd222809835af533c9577aeb337232d36e8",
+    "payload_sha256": "ee732d03a1869985f9353e4208073ebfd1182df11d6d9f0dbf834ee76fcdd45b"
+  },
+  {
+    "path": "app/firmware/pico_c/pico_c_0_1_34_alt.bin",
+    "source": "https://raw.githubusercontent.com/chiefwigms/picobrew_pico/36acae3003845b72568ef5f7d6cf168acb6f9b69/app/firmware/pico_c/pico_c_0_1_34_alt.bin",
+    "bytes": 155864,
+    "header_digest": "72168d866990f8a46228df7113cb82ce",
+    "calculated_digest": "72168d866990f8a46228df7113cb82ce",
+    "checksum": 1542462,
+    "matches": true,
+    "envelope_sha256": "004bd841e2b8919acbad45d9837c3547d218a3dcbd0767d24df3c6827f323225",
+    "payload_sha256": "6f2dedfcd7ab10b5a421b05dc4ee792cd44753d7e302fd8ee645ca4f6556c226"
+  }
+]

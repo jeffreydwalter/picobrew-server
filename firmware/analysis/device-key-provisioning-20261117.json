@@ -1,0 +1,49 @@
+{
+  "evidence_source": "Owner-supplied terminal output plus the verified tool's success conditions; not the private JSON report or a USB capture",
+  "terminal_start_timestamp_as_reported": "2026-11-17 23:49:30.032",
+  "private_report_basename": "pico-pro-key-20261117-234926.json",
+  "tool": "tools/pico_flash_install.py",
+  "install_revision": 2,
+  "tool_sha256": "e8f5c6ebe91711b097b63b042356832ca2338c51194dc6cfb332a46ace5fd94e",
+  "operation": "provision-key",
+  "reference_backup_sha256": "837a728400da02b9da4a7d563e1b67fb24d6a5af03c054963c4b1de60c72343f",
+  "local_original_backup_verified": true,
+  "bootloader_version": "0.4.1.2",
+  "initial_and_apps_handshakes_passed": true,
+  "sram_helper_uploaded": true,
+  "flash_size_bytes": 1048576,
+  "block_size": 4096,
+  "block_count": 256,
+  "initial_verified_files": {
+    "/sys/mcuimg.bin": {
+      "size_bytes": 14956,
+      "sha256": "67e22913fd7805a84d965928198f7d8cb795af125b81f1e0c29479a84980b975"
+    },
+    "/sys/mcuimg1.bin": {
+      "size_bytes": 50504,
+      "sha256": "26829ef97df46e6d3667afe8352fa86492f3ddf667371f2d19eafa8468862c63"
+    },
+    "/sys/mcubootinfo.bin": {
+      "size_bytes": 8,
+      "sha256": "59112b9c5cd615ee3427b916c2a35a0a89a40a80250197169a545fb93b8e9435"
+    },
+    "/sys/mcuimg2.bin": {
+      "size_bytes": 162792,
+      "sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702"
+    }
+  },
+  "key_file": "/local/api.key",
+  "key_created": true,
+  "key_create_readback_verified_from_success_condition": true,
+  "key_existing_file_rewrite_verified": true,
+  "final_protected_hashes_match_initial": true,
+  "original_application_full_readback_verified_from_success_condition": true,
+  "success_marker": "SUCCESS: API key provisioning and existing-file write verification completed",
+  "persistent_files_written": ["/local/api.key"],
+  "application_rewritten": false,
+  "boot_record_written": false,
+  "application_started": false,
+  "physical_stock_restore_validated": false,
+  "earlier_handshake_failure_cause_established": false,
+  "next_physical_step": "Install the pinned standalone candidate into the existing image2 allocation and verify complete readback"
+}

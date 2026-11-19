@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "purpose": "Pinned source identities for the initial community repository consolidation. These describe the import, not every later component revision.",
+  "destination_repository": "https://github.com/jeffreydwalter/picobrew-server",
+  "hub_base": {
+    "commit": "b8e2542dfcee5866f7f7e9e7c51b69ccf7653fb2",
+    "tree": "7401ee384120f672a23438d8f7dc1575ff8908e1",
+    "component_path": "hub/"
+  },
+  "firmware_import": {
+    "repository": "https://github.com/jeffreydwalter/picobrew-pico-pro-firmware",
+    "branch": "feature/standalone-rest-api",
+    "commit": "63c49d01784fb502c56fa85b709472e02f923d78",
+    "source_tree": "33d86c6b3af76450cec616366bff0d0a847ef02c",
+    "component_path": "firmware/",
+    "method": "git read-tree --prefix=firmware/ -u <source commit>",
+    "scope": "Entire tracked source tree, including existing reference images, generated installation artifacts, tools, documentation, and original license notices. No untracked private data, device backups, dependency caches or build outputs."
+  },
+  "legacy_server": {
+    "upstream_repository": "https://github.com/hotzenklotz/picobrew-server",
+    "fork_repository": "https://github.com/jeffreydwalter/picobrew-server",
+    "source_commit": "aa7531965c32d124643797937177431cf9dd1c8d",
+    "component_path": "legacy/zymatic-server/",
+    "license": "MIT, Copyright (c) 2015 Tom Herold",
+    "workflow_status": "Preserved under component directory as historical files; not active GitHub workflows."
+  },
+  "removed_optional_wiki_submodule": {
+    "old_path": "docs",
+    "repository": "https://github.com/hotzenklotz/picobrew-server.wiki.git",
+    "commit": "b9c4d9435becca2a0ff480a8eb7d1599d6e75d9c",
+    "reason": "Optional historical documentation remains available upstream; a community checkout has no Git submodule dependency."
+  }
+}

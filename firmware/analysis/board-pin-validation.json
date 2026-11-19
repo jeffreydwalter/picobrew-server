@@ -1,0 +1,155 @@
+{
+  "passed": true,
+  "firmware_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "variants": [
+    {
+      "variant": "CC3200-LAUNCHXL",
+      "tables": {
+        "port_to_base": {
+          "bytes": 20,
+          "matches": [
+            "0x200293f0"
+          ]
+        },
+        "digital_pin_to_pin_num": {
+          "bytes": 82,
+          "matches": [
+            "0x20029404"
+          ]
+        },
+        "digital_pin_to_port": {
+          "bytes": 41,
+          "matches": [
+            "0x20029456"
+          ]
+        },
+        "digital_pin_to_bit_mask": {
+          "bytes": 41,
+          "matches": [
+            "0x200293c5"
+          ]
+        },
+        "digital_pin_to_timer": {
+          "bytes": 41,
+          "matches": []
+        }
+      }
+    },
+    {
+      "variant": "RedBearLab_CC3200",
+      "tables": {
+        "port_to_base": {
+          "bytes": 20,
+          "matches": [
+            "0x200293f0"
+          ]
+        },
+        "digital_pin_to_pin_num": {
+          "bytes": 50,
+          "matches": []
+        },
+        "digital_pin_to_port": {
+          "bytes": 25,
+          "matches": []
+        },
+        "digital_pin_to_bit_mask": {
+          "bytes": 25,
+          "matches": []
+        },
+        "digital_pin_to_timer": {
+          "bytes": 25,
+          "matches": []
+        }
+      }
+    },
+    {
+      "variant": "RedBearLab_WiFiMicro",
+      "tables": {
+        "port_to_base": {
+          "bytes": 20,
+          "matches": [
+            "0x200293f0"
+          ]
+        },
+        "digital_pin_to_pin_num": {
+          "bytes": 50,
+          "matches": []
+        },
+        "digital_pin_to_port": {
+          "bytes": 25,
+          "matches": []
+        },
+        "digital_pin_to_bit_mask": {
+          "bytes": 25,
+          "matches": []
+        },
+        "digital_pin_to_timer": {
+          "bytes": 25,
+          "matches": []
+        }
+      }
+    },
+    {
+      "variant": "RedBearLab_WiFiMini",
+      "tables": {
+        "port_to_base": {
+          "bytes": 20,
+          "matches": [
+            "0x200293f0"
+          ]
+        },
+        "digital_pin_to_pin_num": {
+          "bytes": 50,
+          "matches": []
+        },
+        "digital_pin_to_port": {
+          "bytes": 25,
+          "matches": []
+        },
+        "digital_pin_to_bit_mask": {
+          "bytes": 25,
+          "matches": []
+        },
+        "digital_pin_to_timer": {
+          "bytes": 25,
+          "matches": []
+        }
+      }
+    },
+    {
+      "variant": "launchpad",
+      "tables": {
+        "port_to_base": {
+          "bytes": 20,
+          "matches": [
+            "0x200293f0"
+          ]
+        },
+        "digital_pin_to_pin_num": {
+          "bytes": 82,
+          "matches": [
+            "0x20029404"
+          ]
+        },
+        "digital_pin_to_port": {
+          "bytes": 41,
+          "matches": [
+            "0x20029456"
+          ]
+        },
+        "digital_pin_to_bit_mask": {
+          "bytes": 41,
+          "matches": [
+            "0x200293c5"
+          ]
+        },
+        "digital_pin_to_timer": {
+          "bytes": 41,
+          "matches": []
+        }
+      }
+    }
+  ],
+  "scope": "Exact full pin-number/port/bit-mask/port-base array matches; both LaunchPad-named variants have these same arrays.",
+  "limitation": "Timer/PWM table is not found in this image; matching these tables does not prove the complete board configuration or all SDK behavior."
+}

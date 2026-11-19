@@ -1,0 +1,368 @@
+{
+  "passed": 37,
+  "failed": 0,
+  "firmware_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "source_sha256": "c40c90eb59710e4436e37cadc514bc38dad2b1326689c689bc80c48fede0ffad",
+  "scope": "Original/rebuilt startup and six-way main menu orchestration traces, required application service tables and real network-to-display context binding. Domain workflows are intercepted here and tested separately.",
+  "hardware_executed": false,
+  "cases": [
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 0,
+        "session_type": 0,
+        "continue": 0
+      },
+      "event_count": 32,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 0,
+        "session_type": 0,
+        "continue": 1
+      },
+      "event_count": 32,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 0,
+        "session_type": 1,
+        "continue": 0
+      },
+      "event_count": 32,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 0,
+        "session_type": 1,
+        "continue": 1
+      },
+      "event_count": 32,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 0,
+        "session_type": 2,
+        "continue": 0
+      },
+      "event_count": 32,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 0,
+        "session_type": 2,
+        "continue": 1
+      },
+      "event_count": 32,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 1,
+        "session_type": 0,
+        "continue": 0
+      },
+      "event_count": 33,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 1,
+        "session_type": 0,
+        "continue": 1
+      },
+      "event_count": 36,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 1,
+        "session_type": 1,
+        "continue": 0
+      },
+      "event_count": 33,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 1,
+        "session_type": 1,
+        "continue": 1
+      },
+      "event_count": 37,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 1,
+        "session_type": 2,
+        "continue": 0
+      },
+      "event_count": 33,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 0,
+        "restore": 1,
+        "session_type": 2,
+        "continue": 1
+      },
+      "event_count": 36,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 0,
+        "session_type": 0,
+        "continue": 0
+      },
+      "event_count": 29,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 0,
+        "session_type": 0,
+        "continue": 1
+      },
+      "event_count": 29,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 0,
+        "session_type": 1,
+        "continue": 0
+      },
+      "event_count": 29,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 0,
+        "session_type": 1,
+        "continue": 1
+      },
+      "event_count": 29,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 0,
+        "session_type": 2,
+        "continue": 0
+      },
+      "event_count": 29,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 0,
+        "session_type": 2,
+        "continue": 1
+      },
+      "event_count": 29,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 1,
+        "session_type": 0,
+        "continue": 0
+      },
+      "event_count": 30,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 1,
+        "session_type": 0,
+        "continue": 1
+      },
+      "event_count": 33,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 1,
+        "session_type": 1,
+        "continue": 0
+      },
+      "event_count": 30,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 1,
+        "session_type": 1,
+        "continue": 1
+      },
+      "event_count": 34,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 1,
+        "session_type": 2,
+        "continue": 0
+      },
+      "event_count": 30,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "offline": 1,
+        "restore": 1,
+        "session_type": 2,
+        "continue": 1
+      },
+      "event_count": 33,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "service": 1
+      },
+      "event_count": 31,
+      "terminal": "reset"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "wifi_status": 0
+      },
+      "event_count": 32,
+      "terminal": "returned"
+    },
+    {
+      "operation": "setup",
+      "case": {
+        "register_failures": 2
+      },
+      "event_count": 34,
+      "terminal": "returned"
+    },
+    {
+      "operation": "loop",
+      "case": {
+        "action": 12
+      },
+      "event_count": 5,
+      "terminal": "returned"
+    },
+    {
+      "operation": "loop",
+      "case": {
+        "action": 13
+      },
+      "event_count": 5,
+      "terminal": "returned"
+    },
+    {
+      "operation": "loop",
+      "case": {
+        "action": 14
+      },
+      "event_count": 5,
+      "terminal": "returned"
+    },
+    {
+      "operation": "loop",
+      "case": {
+        "action": 15
+      },
+      "event_count": 5,
+      "terminal": "returned"
+    },
+    {
+      "operation": "loop",
+      "case": {
+        "action": 16
+      },
+      "event_count": 5,
+      "terminal": "returned"
+    },
+    {
+      "operation": "loop",
+      "case": {
+        "action": 17
+      },
+      "event_count": 5,
+      "terminal": "returned"
+    },
+    {
+      "operation": "loop",
+      "case": {
+        "action": 0
+      },
+      "event_count": 5,
+      "terminal": "returned"
+    },
+    {
+      "operation": "loop",
+      "case": {
+        "action": 4294967295
+      },
+      "event_count": 5,
+      "terminal": "returned"
+    }
+  ],
+  "binding_tests": [
+    "All device/RFID/UI/phase/recipe/network UI service pointers nonzero",
+    "Network UI clear traverses actual context wrapper and native framebuffer implementation",
+    "Language Back action preserves current language"
+  ]
+}

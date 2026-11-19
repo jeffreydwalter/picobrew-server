@@ -1,0 +1,48 @@
+{
+  "payload_bytes": 162792,
+  "payload_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "matches_verified_pro_0_1_34": true,
+  "legacy_nibble_sum": 1622051,
+  "legacy_header_digest": "b0f6c3dc530b6f24b79576b5f47e6a1a",
+  "initial_stack_pointer": "0x200365b8",
+  "reset_vector_with_thumb_bit": "0x20018cd1",
+  "reset_code_address": "0x20018cd0",
+  "verified_load_base": "0x20004000",
+  "note": "The verified base/model apply to the known Pro image only.",
+  "analysis_date_local": "2026-11-14",
+  "upstream_commit": "36acae3003845b72568ef5f7d6cf168acb6f9b69",
+  "ota_sha256": "c35734f3097df1931866eb4676d7823d6264bd38a9e707234cc7f99cc403ddca",
+  "ota_bytes": 325628,
+  "matches_maintainer_direct_dump": true,
+  "unchanged_repack_byte_identical": true,
+  "embedded_build": {
+    "version": "v0.1.34",
+    "date": "Dec 16 2019",
+    "time": "12:59:40",
+    "git_hash": "d0da766714f2012e98f8e43ecd6519895caf565e",
+    "branch": "dev"
+  },
+  "processor": "TI CC3200 / ARM Cortex-M4",
+  "load_base": "0x20004000",
+  "image_end_exclusive": "0x2002bbe8",
+  "tested_on_hardware": false,
+  "modified_firmware_created": false,
+  "source_urls": {
+    "ota": "https://raw.githubusercontent.com/chiefwigms/picobrew_pico/36acae3003845b72568ef5f7d6cf168acb6f9b69/app/firmware/pico/pico_0_1_34.bin",
+    "direct_dump": "https://github.com/chiefwigms/picobrew_pico/files/8985914/mcuimg2.zip",
+    "hardware_evidence": "https://github.com/chiefwigms/picobrew_pico/issues/354#issuecomment-1165734746",
+    "ti_programmer_guide": "https://www.ti.com/lit/ug/swru369d/swru369d.pdf"
+  },
+  "verification": [
+    "Pro decode matches independently published direct raw dump",
+    "Pro unchanged repack byte-identical",
+    "pico_c_0_1_34.bin: checksum and unchanged repack verified",
+    "pico_c_0_1_34_alt.bin: checksum and unchanged repack verified",
+    "truncated: rejected",
+    "wrong length: rejected",
+    "wrong digest: rejected",
+    "invalid hex: rejected",
+    "changed payload: rejected",
+    "CLI unpack verified; existing output refused"
+  ]
+}

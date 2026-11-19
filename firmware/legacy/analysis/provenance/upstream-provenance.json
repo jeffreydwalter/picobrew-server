@@ -1,0 +1,36 @@
+{
+  "repository": "https://github.com/chiefwigms/picobrew_pico",
+  "commit": "36acae3003845b72568ef5f7d6cf168acb6f9b69",
+  "files": [
+    {
+      "path": "app/firmware/pico/pico_0_1_34.bin",
+      "source": "https://raw.githubusercontent.com/chiefwigms/picobrew_pico/36acae3003845b72568ef5f7d6cf168acb6f9b69/app/firmware/pico/pico_0_1_34.bin",
+      "bytes": 325628,
+      "sha256": "c35734f3097df1931866eb4676d7823d6264bd38a9e707234cc7f99cc403ddca"
+    },
+    {
+      "path": "app/main/routes_pico_api.py",
+      "source": "https://raw.githubusercontent.com/chiefwigms/picobrew_pico/36acae3003845b72568ef5f7d6cf168acb6f9b69/app/main/routes_pico_api.py",
+      "bytes": 12404,
+      "sha256": "5ef02c46eeb9a0fc99b69e2716fff45520d4ebd7dc8f6a25f4ed78557ff99731"
+    },
+    {
+      "path": "app/main/firmware.py",
+      "source": "https://raw.githubusercontent.com/chiefwigms/picobrew_pico/36acae3003845b72568ef5f7d6cf168acb6f9b69/app/main/firmware.py",
+      "bytes": 1381,
+      "sha256": "41c82054194b2d1c60c9b6e444184c5a7cc0552f863bbd593834b97a39dcd11d"
+    },
+    {
+      "path": "config.example.yaml",
+      "source": "https://raw.githubusercontent.com/chiefwigms/picobrew_pico/36acae3003845b72568ef5f7d6cf168acb6f9b69/config.example.yaml",
+      "bytes": 3147,
+      "sha256": "b828decc37fd1c1c2817e20a86dcb0dca50205399d0493298401b44f998e376e"
+    },
+    {
+      "path": "README.md",
+      "source": "https://raw.githubusercontent.com/chiefwigms/picobrew_pico/36acae3003845b72568ef5f7d6cf168acb6f9b69/README.md",
+      "bytes": 9164,
+      "sha256": "8eb87988570d667cbb262f3c178e4d92ea34551bd27f9a92314a260e7bc880e6"
+    }
+  ]
+}

@@ -1,0 +1,1270 @@
+[
+  {
+    "address": "2000483c",
+    "name": "pico_menu_populate_still_fan",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "uint32_t pico_menu_populate_still_fan(void);",
+    "evidence": "Builds Turn Fan Off, Turn Fan On, Back labels; returns3.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "200048f0",
+    "name": "pico_menu_initialize",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "void pico_menu_initialize(PicoMenu *menu);",
+    "evidence": "Zeroes 22 action slots and menu count.",
+    "warnings": [],
+    "source_form": "reviewed C reconstruction",
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20004da8",
+    "name": "pico_menu_action_at",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "pico_u32 pico_menu_action_at(PicoMenu *menu, int index);",
+    "evidence": "Bounds-checked indexed action lookup with getActionId log.",
+    "warnings": [],
+    "source_form": "reviewed C reconstruction",
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20004e10",
+    "name": "pico_menu_add_action",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "void pico_menu_add_action(PicoMenu *menu, pico_u32 action_id);",
+    "evidence": "Validates ActionId and appends to 22-entry menu; explicit Menu::add diagnostics.",
+    "warnings": [],
+    "source_form": "reviewed C reconstruction",
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20004e64",
+    "name": "pico_menu_set_actions",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "void pico_menu_set_actions(PicoMenu *menu, const pico_u32 *actions, pico_u32 count);",
+    "evidence": "Clears count then copies a bounded input list through menu_add_action.",
+    "warnings": [],
+    "source_form": "reviewed C reconstruction",
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20005324",
+    "name": "pico_screen_error_heading",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_error_heading(void);",
+    "evidence": "Draws ERROR in large text and an error instruction line.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20005358",
+    "name": "pico_screen_water_error_help",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_water_error_help(void);",
+    "evidence": "Localized error instructions to fill water and contact support.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20005cf0",
+    "name": "pico_menu_populate_action_labels",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "void pico_menu_populate_action_labels(uint32_t *actions,uint32_t count,uint32_t language,uint32_t status_selector);",
+    "evidence": "Loads action list and copies each localized label into22-byte display rows.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20005d14",
+    "name": "pico_menu_populate_from_menu",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "void pico_menu_populate_from_menu(uint32_t *source_menu,uint32_t language,uint32_t status_selector);",
+    "evidence": "Copies actions/count from existing menu and localizes display rows.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20005d38",
+    "name": "pico_screen_device_information",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_device_information(void);",
+    "evidence": "Displays logo/version, device UID and formatted MAC, then waits for click.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006494",
+    "name": "pico_screen_still_connecting",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_still_connecting(char *status_text);",
+    "evidence": "Clears screen, centers status message and enables progress animation.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "200065ec",
+    "name": "pico_screen_still_exiting",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_still_exiting(void);",
+    "evidence": "Displays Exiting Still and enables progress animation.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "200068d8",
+    "name": "pico_menu_populate_hardware_tests",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "uint32_t pico_menu_populate_hardware_tests(void);",
+    "evidence": "Populates16explicit service-test labels for pumps/heater/sensors/valve/RFID.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "200069c4",
+    "name": "pico_screen_wifi_searching",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_wifi_searching(void);",
+    "evidence": "Localized Searching for WiFi networks text.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006a54",
+    "name": "pico_menu_append_wifi_search_actions",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "void pico_menu_append_wifi_search_actions(int *option_count);",
+    "evidence": "Appends Enter WiFi Info and Search again labels, incrementing caller count.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20006ae4",
+    "name": "pico_screen_ending_process",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_ending_process(void);",
+    "evidence": "Localized Ending Process message and flush.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006b20",
+    "name": "pico_label_insert_step_filter",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_insert_step_filter(char *destination);",
+    "evidence": "Copies localized Insert Step Filter label.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20006b4c",
+    "name": "pico_screen_preheating_steam",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_preheating_steam(short row);",
+    "evidence": "Localized preheating text with210F/99C based on units.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006be0",
+    "name": "pico_label_adjust_recipe",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_adjust_recipe(char *destination);",
+    "evidence": "Copies localized Adjust Recipe label.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20006c0c",
+    "name": "pico_screen_loading",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "bool pico_screen_loading(int is_picopak);",
+    "evidence": "Localized Loading optionally PicoPak, with progress animation.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006c80",
+    "name": "pico_screen_updating_firmware",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_updating_firmware(void);",
+    "evidence": "Localized Updating firmware message.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006ccc",
+    "name": "pico_screen_downloading_firmware",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_downloading_firmware(void);",
+    "evidence": "Localized Loading new firmware message.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006d18",
+    "name": "pico_screen_firmware_update_failed",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_firmware_update_failed(void);",
+    "evidence": "Localized firmware update failure message.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006d70",
+    "name": "pico_screen_rinse_complete",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_rinse_complete(void);",
+    "evidence": "Localized Rinse complete/Happy Pico brewing message.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006dbc",
+    "name": "pico_screen_help_address",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_help_address(void);",
+    "evidence": "Localized Go to/Consultez prefix and picobrew.com/help.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006e08",
+    "name": "pico_screen_show_help_temporarily",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_show_help_temporarily(void);",
+    "evidence": "Clears, displays help address, flushes and waits5seconds.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006e24",
+    "name": "pico_screen_ending_first_rinse",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_ending_first_rinse(void);",
+    "evidence": "Localized Ending First-Rinse with logo and flush.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20006e64",
+    "name": "pico_screen_get_instruction_lines",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_get_instruction_lines(PicoTextScreen *screen,uint32_t argument_2,uint32_t argument_3);",
+    "evidence": "Explicit getScreenIdLines diagnostics and localized instruction selection by screen ID.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "200072ac",
+    "name": "pico_screen_still_setup_step",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_still_setup_step(uint8_t *setup_step);",
+    "evidence": "Four setup steps: water/filter/hose/reservoir instructions for PicoStill.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20007358",
+    "name": "pico_screen_draw_program_notice",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_draw_program_notice(void);",
+    "evidence": "Obtains localized program notice label index3 and draws title frame.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20007374",
+    "name": "pico_screen_show_program_notice",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_show_program_notice(void);",
+    "evidence": "Adds localized notice label index4 on row3 and flushes.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20007398",
+    "name": "pico_screen_reinsert_step_filter",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_reinsert_step_filter(void);",
+    "evidence": "Localized ERROR/Reinsert StepFilter screen.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20007410",
+    "name": "pico_screen_changing_step",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_changing_step(void);",
+    "evidence": "Localized Changing step message beneath current recipe title.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20007454",
+    "name": "pico_screen_setting_up_step",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_setting_up_step(char *title);",
+    "evidence": "Localized Setting up step and supplied title.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20007494",
+    "name": "pico_screen_ending_step",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_ending_step(char *title);",
+    "evidence": "Localized Ending step and supplied title.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20007698",
+    "name": "pico_screen_still_readings",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_still_readings(void);",
+    "evidence": "Displays PicoStill T1/T2/T3 temperatures, pressure, fan and target; converts units.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20007e98",
+    "name": "pico_label_done",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_done(char *destination);",
+    "evidence": "Copies localized Done text.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20007ec4",
+    "name": "pico_label_confirm",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_confirm(char *destination);",
+    "evidence": "Copies localized Confirm text.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20007ef0",
+    "name": "pico_label_continue",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_continue(char *destination);",
+    "evidence": "Copies firmware's localized Continue text, including its French Termin\u00e9 wording.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20007f1c",
+    "name": "pico_label_exit",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_exit(char *destination);",
+    "evidence": "Copies localized Exit text.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20007f48",
+    "name": "pico_menu_populate_service",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "uint32_t pico_menu_populate_service(void);",
+    "evidence": "Builds WiFi/drain/circulate/test/reset/exit service menu.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20008050",
+    "name": "pico_label_back",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_back(char *destination);",
+    "evidence": "Copies localized Back text.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "2000807c",
+    "name": "pico_menu_populate_network",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "uint32_t pico_menu_populate_network(void);",
+    "evidence": "Builds Connect to WiFi, Test WiFi, Status, Back menu.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20008108",
+    "name": "pico_label_ok",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_ok(char *destination);",
+    "evidence": "Copies OK or Spanish Esta bien.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20008124",
+    "name": "pico_label_yes",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_yes(char *destination);",
+    "evidence": "Copies localized Yes text.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20008150",
+    "name": "pico_label_no",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_no(char *destination);",
+    "evidence": "Copies localized No text.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "2000816c",
+    "name": "pico_label_compartment",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_compartment(char *destination,uint32_t compartment);",
+    "evidence": "Selects Mash/Heat Water/Adjunct1..4/Reservoir label by compartment ID.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "200082b0",
+    "name": "pico_menu_populate_settings",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "uint32_t pico_menu_populate_settings(void);",
+    "evidence": "Builds Language, Units, Network, About, Back menu.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20008378",
+    "name": "pico_label_service",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_service(char *destination);",
+    "evidence": "Copies localized SERVICE heading.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "200083a4",
+    "name": "pico_menu_populate_languages",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "uint32_t pico_menu_populate_languages(void);",
+    "evidence": "Builds English/Espa\u00f1ol/Francais/Back menu.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "200083e0",
+    "name": "pico_menu_populate_in_brew_options",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "uint32_t pico_menu_populate_in_brew_options(void);",
+    "evidence": "Explicit populateInBrewOptions log; localizes active program's action list.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20008440",
+    "name": "pico_label_heating",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_heating(char *destination);",
+    "evidence": "Copies localized HEATING status.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "2000846c",
+    "name": "pico_label_cooling",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_cooling(char *destination);",
+    "evidence": "Copies localized COOLING status.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20008498",
+    "name": "pico_label_holding",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_holding(char *destination);",
+    "evidence": "Copies localized HOLDING status.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "200084c4",
+    "name": "pico_label_draining",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_draining(char *destination);",
+    "evidence": "Copies localized DRAINING status.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20008510",
+    "name": "pico_screen_fill_reservoir_and_start",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "uint32_t pico_screen_fill_reservoir_and_start(char *title);",
+    "evidence": "Builds Start/Exit choices and distilled-water reservoir instruction.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "200085b0",
+    "name": "pico_screen_starting_program",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_starting_program(char *title);",
+    "evidence": "Localized Starting plus active program verb label and supplied title.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20008600",
+    "name": "pico_screen_ending_program",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_ending_program(char *title);",
+    "evidence": "Localized Ending plus active program verb label and supplied title.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "2000864c",
+    "name": "pico_screen_show_ending_program",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_show_ending_program(char *title);",
+    "evidence": "Clears, draws ending-program screen and flushes.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20008664",
+    "name": "pico_label_start_brewing",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_start_brewing(char *destination);",
+    "evidence": "Copies localized Start Brewing text.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20008690",
+    "name": "pico_label_cancel",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_cancel(char *destination);",
+    "evidence": "Copies localized Cancel text.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "200086bc",
+    "name": "pico_menu_set_load_more_label",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "void pico_menu_set_load_more_label(int row_index);",
+    "evidence": "Sets selected menu row to localized Load More label.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "200086f4",
+    "name": "pico_screen_loading_picopak",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "bool pico_screen_loading_picopak(void);",
+    "evidence": "Tail wrapper selects Loading PicoPak mode.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "200086fc",
+    "name": "pico_menu_populate_post_brew",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "uint32_t pico_menu_populate_post_brew(void);",
+    "evidence": "Builds Drain/Hold Temp/Exit menu.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20008764",
+    "name": "pico_label_next_uppercase",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_next_uppercase(char *destination);",
+    "evidence": "Copies uppercase localized NEXT label.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "20008790",
+    "name": "pico_label_exit_uppercase",
+    "module": "translations",
+    "confidence": "high",
+    "signature": "void pico_label_exit_uppercase(char *destination);",
+    "evidence": "Copies uppercase localized EXIT label.",
+    "warnings": [],
+    "file": "src/application/translations.c"
+  },
+  {
+    "address": "200087bc",
+    "name": "pico_menu_populate_still_actions",
+    "module": "menus",
+    "confidence": "high",
+    "signature": "uint32_t pico_menu_populate_still_actions(int menu_kind);",
+    "evidence": "Selects still fan menu, Next/Exit setup menu or Manual/Exit menu.",
+    "warnings": [],
+    "file": "src/application/menus.c"
+  },
+  {
+    "address": "20009588",
+    "name": "pico_screen_splash",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_splash(void);",
+    "evidence": "Draws128x30 bitmap and firmware version aligned at bottom right.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20009658",
+    "name": "pico_screen_service_status",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_service_status(void);",
+    "evidence": "Thumb uses savedr0-r3 as16-byte string scratch; pico_label_service/strcpy fully replace the visible NUL-terminated string before display.",
+    "warnings": [],
+    "file": "src/application/screens.c",
+    "source_form": "instruction-reviewed C reconstruction with differential tests",
+    "recovery_pass": 2
+  },
+  {
+    "address": "200096a0",
+    "name": "pico_screen_wifi_no_signal",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_wifi_no_signal(void);",
+    "evidence": "Prepares localized No WiFi signal found text after clearing status row.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "200096e4",
+    "name": "pico_screen_wifi_connected",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_wifi_connected(void);",
+    "evidence": "Localized Connected message on status row6.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20009720",
+    "name": "pico_screen_wifi_connection_failed",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_wifi_connection_failed(void);",
+    "evidence": "push r0..r6 reserves28bytes; Spanish path strcpy0x20009740 overwrites used text bytes; other paths use literal pointers. No incoming register value is read as input.",
+    "warnings": [],
+    "file": "src/application/screens.c",
+    "source_form": "reviewed C reconstruction",
+    "recovery_pass": 2
+  },
+  {
+    "address": "20009ac8",
+    "name": "pico_screen_brew_name_page",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_brew_name_page(void);",
+    "evidence": "Framed recipe name with NOW BREWING or detailed temperature summary.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20009be4",
+    "name": "pico_screen_recipe_metrics_page",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_recipe_metrics_page(void);",
+    "evidence": "Draws recipe decimal/integer metrics and optional temperature summary.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "20009c24",
+    "name": "pico_screen_step_progress_page",
+    "module": "screens",
+    "confidence": "high",
+    "signature": "void pico_screen_step_progress_page(void);",
+    "evidence": "Selects progress bitmap by component, draws current step name and optional temperatures.",
+    "warnings": [],
+    "file": "src/application/screens.c"
+  },
+  {
+    "address": "2000a1b8",
+    "name": "pico_ui_draw_footer_option",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_footer_option(char *text,int has_more_options);",
+    "evidence": "Draws selected row at y=56, footer text, and one of two arrow bitmaps.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a240",
+    "name": "pico_ui_draw_hold_status",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_hold_status(void);",
+    "evidence": "HOLDING TEMP and TOTAL TIME labels; converts Fahrenheit for metric preference.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a3a8",
+    "name": "pico_ui_draw_footer_single",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_footer_single(char *text);",
+    "evidence": "Footer wrapper selecting the single-option arrow mode.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a3b0",
+    "name": "pico_ui_draw_paused",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_paused(void);",
+    "evidence": "Localized PAUSED title with context-dependent continue text.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a454",
+    "name": "pico_ui_draw_stop_footer",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_stop_footer(void);",
+    "evidence": "Copies localized stop label through helper0x20007e98 then renders footer.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a468",
+    "name": "pico_ui_draw_circulation_status",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_circulation_status(uint32_t argument_1,uint32_t argument_2,uint32_t argument_3);",
+    "evidence": "Shows Wort Temp and Ellapsed using temperature and elapsed seconds.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a520",
+    "name": "pico_ui_draw_continue_footer",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_continue_footer(void);",
+    "evidence": "Copies localized continue label through0x20007ef0 then renders footer.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a758",
+    "name": "pico_ui_draw_separator",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_separator(short margin_columns,short row,int line_count);",
+    "evidence": "Draws horizontal lines below a text row with column margin.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a7a4",
+    "name": "pico_ui_draw_header",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_header(char *text);",
+    "evidence": "Renders title on row0, separator at row1, and flushes display.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a8b8",
+    "name": "pico_ui_draw_header_at_row",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_header_at_row(char *text,short row);",
+    "evidence": "Draws header text, separator on next row, flushes display.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a8d8",
+    "name": "pico_ui_draw_descale_preparation",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_descale_preparation(void);",
+    "evidence": "DESCALE header and first descale instruction text block.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a928",
+    "name": "pico_ui_draw_descale_rinse_preparation",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_descale_rinse_preparation(void);",
+    "evidence": "DESCALE header and second instruction text block.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a978",
+    "name": "pico_ui_draw_subheader",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_subheader(char *text);",
+    "evidence": "Header wrapper selecting text row1.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a980",
+    "name": "pico_ui_draw_heater_malfunction",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_heater_malfunction(void);",
+    "evidence": "HEATER MALFUNCTION heading and recovery instructions.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000a9d0",
+    "name": "pico_ui_draw_descale_heading",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_descale_heading(void);",
+    "evidence": "Renders DESCALE subheader.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000aa10",
+    "name": "pico_ui_draw_language_menu",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_language_menu(void);",
+    "evidence": "Localized SET LANGUAGE heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000aa4c",
+    "name": "pico_ui_draw_units_menu",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "uint32_t pico_ui_draw_units_menu(void);",
+    "evidence": "Localized SET UNITS title and Imperial/Metric choices; returns2.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000aad8",
+    "name": "pico_ui_draw_drain_filter",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_drain_filter(void);",
+    "evidence": "Localized DRAIN STEP FILTER screen and active drain-pump text.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000ab50",
+    "name": "pico_ui_draw_drain_reservoir",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_drain_reservoir(void);",
+    "evidence": "Localized DRAIN RESERVOIR screen and active shuttle-pump text.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000abd4",
+    "name": "pico_ui_draw_choice_question",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_choice_question(void);",
+    "evidence": "Localized Would you like to prompt under a context-generated title.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000ac3c",
+    "name": "pico_ui_draw_first_rinse_heading",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_first_rinse_heading(void);",
+    "evidence": "Localized FIRST RINSE heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000ac78",
+    "name": "pico_ui_draw_choose_network",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_choose_network(void);",
+    "evidence": "Localized CHOOSE NETWORK heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000acb4",
+    "name": "pico_ui_draw_wifi_test_heading",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_wifi_test_heading(void);",
+    "evidence": "Localized TEST WIFI heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000ace0",
+    "name": "pico_ui_draw_utilities_heading",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_utilities_heading(void);",
+    "evidence": "Localized UTILITIES heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000ad1c",
+    "name": "pico_ui_draw_settings_heading",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_settings_heading(void);",
+    "evidence": "Localized SETTINGS heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000ad58",
+    "name": "pico_ui_draw_current_program_heading",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_current_program_heading(void);",
+    "evidence": "Obtains program title from0x20008378 and renders subheader.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000ad6c",
+    "name": "pico_ui_draw_network_heading",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_network_heading(void);",
+    "evidence": "Localized NETWORK heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000ada8",
+    "name": "pico_ui_draw_factory_reset_heading",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_factory_reset_heading(void);",
+    "evidence": "Localized FACTORY RESET heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000add8",
+    "name": "pico_ui_draw_firmware_reset_question",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_firmware_reset_question(void);",
+    "evidence": "Asks whether to reset Pico to factory firmware.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000ae4c",
+    "name": "pico_ui_draw_clear_wifi_question",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_clear_wifi_question(void);",
+    "evidence": "Asks whether to remove stored WiFi credentials.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000aecc",
+    "name": "pico_ui_draw_startup_heading",
+    "module": "ui_screens",
+    "confidence": "medium",
+    "signature": "void pico_ui_draw_startup_heading(void);",
+    "evidence": "Fixed startup title rendered at row0.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000aedc",
+    "name": "pico_ui_draw_deep_clean_heading",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_deep_clean_heading(void);",
+    "evidence": "Localized DEEP CLEAN heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000aff8",
+    "name": "pico_ui_draw_instruction_screen",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_instruction_screen(uint32_t screen_id,uint32_t language,char *title,int use_context_title);",
+    "evidence": "drawScreen log, ScreenId bounds check, localized instruction lines and optional bitmap/status fields.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000b170",
+    "name": "pico_ui_draw_instruction_with_header",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_instruction_with_header(uint32_t screen_id,uint32_t language,char *title);",
+    "evidence": "Instruction renderer wrapper with normal title mode.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000b176",
+    "name": "pico_ui_draw_instruction_with_context",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_instruction_with_context(uint32_t screen_id,uint32_t language,char *title);",
+    "evidence": "Instruction renderer wrapper with program-context title mode.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000b1b0",
+    "name": "pico_ui_draw_password_heading",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_password_heading(void);",
+    "evidence": "Localized ENTER PASSWORD heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000b24c",
+    "name": "pico_ui_draw_rack_beer_heading",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_rack_beer_heading(void);",
+    "evidence": "Localized RACK BEER heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000b28c",
+    "name": "pico_ui_draw_stop_confirmation",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_stop_confirmation(void);",
+    "evidence": "Localized Are you sure you want to stop prompt.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000b328",
+    "name": "pico_ui_draw_skip_step_confirmation",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_skip_step_confirmation(void);",
+    "evidence": "Localized skip-current-step confirmation.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000b3b4",
+    "name": "pico_ui_draw_error",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_error(int argument_1);",
+    "evidence": "Switches error code into localized hardware/network/PicoPak error messages.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000b99c",
+    "name": "pico_ui_draw_insert_picopak",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_insert_picopak(void);",
+    "evidence": "Localized insert-associated-PicoPak prompt.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000b9f0",
+    "name": "pico_ui_draw_abv_adjustment",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_abv_adjustment(void);",
+    "evidence": "Localized ADJUST ABV with Min/Max scale.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000ba34",
+    "name": "pico_ui_draw_bitterness_adjustment",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_bitterness_adjustment(void);",
+    "evidence": "Localized ADJUST BITTERNESS with Min/Max scale.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000ba78",
+    "name": "pico_ui_draw_brew_complete",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_brew_complete(char *recipe_title);",
+    "evidence": "Localized BREWING COMPLETE and cooling/yeast instructions.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000bb3c",
+    "name": "pico_ui_draw_recipe_choices",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "int pico_ui_draw_recipe_choices(char *recipe_title,int allow_adjustments);",
+    "evidence": "Builds recipe start/optional adjustment/exit choices and returns count.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000bb80",
+    "name": "pico_ui_draw_picopak_selection",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_picopak_selection(void);",
+    "evidence": "Localized Select PicoPak heading.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000bbc0",
+    "name": "pico_ui_draw_registration_code",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_draw_registration_code(char *registration_code);",
+    "evidence": "Localized REGISTER PICO and supplied code at picobrew.com/newpico.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "2000e610",
+    "name": "pico_ui_show_wifi_test_result",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "void pico_ui_show_wifi_test_result(uint32_t diagnostic_stage);",
+    "evidence": "Switches diagnostic stage into WiFi/DHCP/DNS/ping/server result text; performs no network test itself.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "200133b4",
+    "name": "pico_title_label",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "char * pico_title_label(uint32_t title_id,uint32_t language);",
+    "evidence": "TitleId bounds and language-indexed label lookup.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "20013404",
+    "name": "pico_title_id_is_valid",
+    "module": "ui_screens",
+    "confidence": "medium",
+    "signature": "bool pico_title_id_is_valid(uint32_t title_id);",
+    "evidence": "Returns id<6, matching six-entry TitleId table; inferred helper role.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  },
+  {
+    "address": "20013410",
+    "name": "pico_brew_display_state_label",
+    "module": "ui_screens",
+    "confidence": "high",
+    "signature": "char * pico_brew_display_state_label(uint32_t phase,uint32_t language);",
+    "evidence": "Four-entry localized brew-state text table; distinct from nine controller brew phases.",
+    "warnings": [],
+    "file": "src/application/ui_screens.c"
+  }
+]

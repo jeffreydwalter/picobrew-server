@@ -1,0 +1,34 @@
+[
+  {
+    "file": "cores/cc3200/itoa.h",
+    "before": "utoa( unsigned long value",
+    "after": "utoa( unsigned int value",
+    "original_sha256": "cf87d323e4005320a517da09ac9fb42818bddb76ab5ee3b141bbb7ab1ebfb6ed",
+    "patched_sha256": "ce6499330eb0b9feedcf82935b0f47dfd444593efa491d1070c727f4fa350c28",
+    "input_already_patched": true
+  },
+  {
+    "file": "cores/cc3200/itoa.c",
+    "before": "utoa( unsigned long value",
+    "after": "utoa( unsigned int value",
+    "original_sha256": "4e70ea46d5631b943ee5017baa72ff4ef5570b5adb5c5071ee7301fb31c729fb",
+    "patched_sha256": "c40290cc1365ab31701bdb28f52326b8b051c13872815fe9229db9fdd2ecb38b",
+    "input_already_patched": true
+  },
+  {
+    "file": "cores/cc3200/WMath.cpp",
+    "before": "srandom(unsigned long __seed)",
+    "after": "srandom(unsigned int __seed)",
+    "original_sha256": "676603bcb9e68aa16509b9160dedd1b99f51f51fb1ad58cde517486942ee9df1",
+    "patched_sha256": "337918e19815ab3b2ed5fd5158c8a8d86fa00b144671416c2e8aa274e28600ae",
+    "input_already_patched": true
+  },
+  {
+    "file": "cores/cc3200/random.c",
+    "before": "srandom(unsigned long seed)",
+    "after": "srandom(unsigned int seed)",
+    "original_sha256": "fcaa4b691df9861a0e388b83836a7d9c948c580538207e221c8a8fd6c5d926bd",
+    "patched_sha256": "230c393881d9d73a72563cd874e1718e26707ffe89c3b5a29a2a4dabc09ab46b",
+    "input_already_patched": true
+  }
+]

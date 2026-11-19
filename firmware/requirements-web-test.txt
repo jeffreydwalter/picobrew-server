@@ -1,0 +1,2 @@
+# Optional browser integration suite; use the existing Python environment.
+playwright==1.62.0

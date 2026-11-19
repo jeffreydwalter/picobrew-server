@@ -232,7 +232,7 @@ func (s *simulator) Discover(ctx context.Context) (domain.Capabilities, error) {
 	if err := simulationContext(ctx); err != nil {
 		return domain.Capabilities{}, err
 	}
-	return domain.Capabilities{APIVersion: 1, FirmwareVersion: "simulator", Commands: append([]string(nil), commands...), RecipeCapacity: 16, StepCapacity: 15, FrontPanel: true, HistoryPersistent: false, TelemetryForwarding: false, DedicatedPauseResume: false}, nil
+	return domain.Capabilities{APIVersion: 1, FirmwareVersion: "simulator", Commands: append([]string(nil), commands...), RecipeCapacity: 16, StepCapacity: 15, FrontPanel: true, HistoryPersistent: false, TelemetryForwarding: false, DedicatedPauseResume: false, ZeroMinuteSteps: true}, nil
 }
 func (s *simulator) Status(ctx context.Context) (domain.Status, error) {
 	if err := simulationContext(ctx); err != nil {

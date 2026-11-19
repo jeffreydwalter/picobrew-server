@@ -1,0 +1,3123 @@
+{
+  "scope": "Networking, persistence, identity, firmware update and PicoStill protocol, including concrete UI mappings cross-referenced to analysis/recovery/ui.json. Paths are relative to the standalone project root.",
+  "entries": [
+    {
+      "original_address": "0x200047b0",
+      "original_name": "pico_hash_interrupt_handler",
+      "original_module": "checksum",
+      "replacement": "platform/energia_network.cpp:hash_interrupt",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/native production comparisons cover the recorded cases; separately listed SDK adaptations and repaired failure inputs are outside exact equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "platform/energia_network.cpp",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/native-network-direct-tests.json",
+          "case_collection": "results",
+          "original_address": "0x200047b0",
+          "case_kind": "original_vs_rebuilt_arm",
+          "passed_cases": 32,
+          "method": "original_vs_rebuilt_arm",
+          "replacement_symbol": "_ZL14hash_interruptv",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "Original entry and native production bridge execute; SDK calls are controlled explicitly and meaningful state, returns and request traces are compared."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000489a",
+      "original_name": "pico_still_clear_telemetry",
+      "original_module": "still",
+      "replacement": "src/state.c:pico_still_clear_telemetry",
+      "status": "implemented_compiles",
+      "validation": "initializer_caller_differential",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Telemetry clearing executes within the global/application initializer comparison. Twelve zero-BSS/patterned-reentry and clock scenarios compare named application state and ordered service-boundary snapshots; no standalone clear-function count is claimed.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/state.c",
+      "verification_manifest": "analysis/recovery/core.json",
+      "caller_differential_evidence": [
+        {
+          "report": "analysis/state-pid-tests.json",
+          "case_collection": "initializer_results",
+          "passed_cases": 12,
+          "method": "initializer_caller_differential",
+          "original_caller": "0x200090f8",
+          "replacement_caller": "pico_application_initialize",
+          "direct_standalone_invocation": false,
+          "scope": "Telemetry clearing executes within the global/application initializer comparison. Twelve zero-BSS/patterned-reentry and clock scenarios compare named application state and ordered service-boundary snapshots; no standalone clear-function count is claimed."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200048ca",
+      "original_name": "pico_still_check_pressure_limit",
+      "original_module": "still",
+      "replacement": "pico_still_pressure_ok",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "still_workflows"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "still_workflows",
+          "group_passed_cases": 152,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20004a94",
+      "original_name": "pico_log_serial",
+      "original_module": "logging",
+      "replacement": "pico_network_log",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20004a94",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 4,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_network_log",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20004b7c",
+      "original_name": "pico_assert_nonfatal",
+      "original_module": "logging",
+      "replacement": "pico_network_assert",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20004b7c",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 6,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_network_assert",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20004b88",
+      "original_name": "pico_session_supports_recovery",
+      "original_module": "persistence",
+      "replacement": "pico_storage_recovery_supported",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "storage"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "storage",
+          "group_passed_cases": 19,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000564c",
+      "original_name": "pico_mcu_image1_exists",
+      "original_module": "persistence",
+      "replacement": "pico_storage_recovery_image_exists",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000564c",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 2,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_storage_recovery_image_exists",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20005678",
+      "original_name": "pico_file_write_text",
+      "original_module": "persistence",
+      "replacement": "pico_storage_write_text",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "storage"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "storage",
+          "group_passed_cases": 19,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200056e0",
+      "original_name": "pico_recovery_save_state",
+      "original_module": "persistence",
+      "replacement": "pico_storage_save_recovery",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "storage_differential"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "storage_differential",
+          "group_passed_cases": 12,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000581c",
+      "original_name": "pico_settings_save_wifi",
+      "original_module": "persistence",
+      "replacement": "pico_storage_save_wifi",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "storage",
+        "storage_differential"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "storage",
+          "group_passed_cases": 19,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "storage_differential",
+          "group_passed_cases": 12,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20005888",
+      "original_name": "pico_settings_save_display",
+      "original_module": "persistence",
+      "replacement": "pico_storage_save_display",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "storage_differential"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "storage_differential",
+          "group_passed_cases": 12,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200058c8",
+      "original_name": "pico_file_delete",
+      "original_module": "persistence",
+      "replacement": "platform/energia_network.cpp:file_remove (PicoNetworkPlatform.file_remove)",
+      "status": "implemented_compiles",
+      "validation": "sdk_return_contract",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Original wrapper always returns 1; native callback preserves SDK 0-success/negative-error status. File operation and filename match.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "platform/energia_network.cpp",
+      "contract_evidence": [
+        {
+          "report": "analysis/native-network-direct-tests.json",
+          "case_collection": "results",
+          "original_address": "0x200058c8",
+          "case_kind": "sdk_return_contract",
+          "passed_cases": 9,
+          "method": "sdk_return_contract",
+          "replacement_symbol": "_ZL11file_removePvPKc",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "Original wrapper always returns 1; native callback preserves SDK 0-success/negative-error status. File operation and filename match."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200058dc",
+      "original_name": "pico_recovery_delete_state",
+      "original_module": "persistence",
+      "replacement": "pico_storage_delete_restart",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x200058dc",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 2,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_storage_delete_restart",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200058e8",
+      "original_name": "pico_settings_delete_wifi",
+      "original_module": "persistence",
+      "replacement": "pico_storage_delete_wifi",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x200058e8",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 2,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_storage_delete_wifi",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000590c",
+      "original_name": "pico_settings_delete_user_files",
+      "original_module": "persistence",
+      "replacement": "pico_storage_delete_user_files",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000590c",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 2,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_storage_delete_user_files",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200059f4",
+      "original_name": "pico_settings_save_shuttle_scale",
+      "original_module": "persistence",
+      "replacement": "pico_storage_save_shuttle_scale",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x200059f4",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 10,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_storage_save_shuttle_scale",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20005c00",
+      "original_name": "pico_device_compute_uid",
+      "original_module": "identity",
+      "replacement": "pico_storage_compute_uid",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "storage",
+        "repairs",
+        "native_filesystem_and_md5_boundaries"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "storage",
+          "group_passed_cases": 19,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "repairs",
+          "group_passed_cases": 6,
+          "method": "group_scoped_repaired_input_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/native-network-tests.json",
+          "test_group": "native_filesystem_and_md5_boundaries",
+          "group_passed_cases": 17,
+          "method": "group_scoped_native_sdk_contract",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20005de0",
+      "original_name": "pico_validate_ota_checksum",
+      "original_module": "checksum",
+      "replacement": "pico_update_checksum",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "update",
+        "update_differential",
+        "native_filesystem_and_md5_boundaries"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/update.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "update",
+          "group_passed_cases": 20,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "update_differential",
+          "group_passed_cases": 6,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/native-network-tests.json",
+          "test_group": "native_filesystem_and_md5_boundaries",
+          "group_passed_cases": 17,
+          "method": "group_scoped_native_sdk_contract",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20005ffc",
+      "original_name": "pico_recovery_save_current_session",
+      "original_module": "persistence",
+      "replacement": "pico_storage_save_recovery",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "storage",
+        "storage_differential"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "storage",
+          "group_passed_cases": 19,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "storage_differential",
+          "group_passed_cases": 12,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20006308",
+      "original_name": "pico_still_log_error",
+      "original_module": "still",
+      "replacement": "src/network/still_network.c:still_error",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20006308",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 4,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "still_error",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000632c",
+      "original_name": "pico_log_ipv4_address",
+      "original_module": "logging",
+      "replacement": "src/network/still_network.c:pico_still_call snprintf octets",
+      "status": "implemented_compiles",
+      "validation": "folded_caller_differential",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Original IPv4 logger executes directly; its octet text is compared with text emitted by the actual pico_still_call body before controlled connection failure.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "caller_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000632c",
+          "case_kind": "direct_original_vs_actual_folded_caller",
+          "passed_cases": 4,
+          "method": "direct_original_vs_actual_folded_caller",
+          "replacement_caller": "pico_still_call",
+          "original_entry_body_executed": true,
+          "standalone_replacement_body_exists": false,
+          "scope": "Original IPv4 logger executes directly; its octet text is compared with text emitted by the actual pico_still_call body before controlled connection failure."
+        }
+      ],
+      "implementation_form": "folded_into_caller"
+    },
+    {
+      "original_address": "0x20006380",
+      "original_name": "pico_still_initialize_connection",
+      "original_module": "still",
+      "replacement": "pico_still_connection_initialize",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20006380",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 4,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_connection_initialize",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200063b0",
+      "original_name": "pico_still_set_access_point_name",
+      "original_module": "still",
+      "replacement": "pico_still_set_identifier",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "still"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "still",
+          "group_passed_cases": 17,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20006434",
+      "original_name": "pico_still_has_home_ip",
+      "original_module": "still",
+      "replacement": "still_home (!pico_network_ipv4_is_zero(still.home_ip))",
+      "status": "implemented_compiles",
+      "validation": "folded_predicate_contract",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Original home-IP predicate and rebuilt pico_network_ipv4_is_zero execute. The harness negates the rebuilt result to check the folded contract; it does not invoke the application still_home wrapper.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/application.c",
+      "supporting_sources": [
+        "src/network/network.c",
+        "src/network/still_network.c"
+      ],
+      "contract_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20006434",
+          "case_kind": "direct_original_vs_folded_predicate",
+          "passed_cases": 4,
+          "method": "direct_original_vs_folded_predicate",
+          "replacement_function": "pico_network_ipv4_is_zero",
+          "original_entry_body_executed": true,
+          "standalone_replacement_body_exists": false,
+          "scope": "Original home-IP predicate and rebuilt pico_network_ipv4_is_zero execute. The harness negates the rebuilt result to check the folded contract; it does not invoke the application still_home wrapper."
+        }
+      ],
+      "implementation_form": "folded_predicate"
+    },
+    {
+      "original_address": "0x20006454",
+      "original_name": "pico_still_select_access_point",
+      "original_module": "still",
+      "replacement": "pico_still_select_network",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20006454",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 8,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_select_network",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200064d8",
+      "original_name": "pico_still_parse_telemetry",
+      "original_module": "still",
+      "replacement": "pico_still_parse_response",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "still"
+      ],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "still",
+          "group_passed_cases": 17,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ],
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x200064d8",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 12,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_parse_response",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000661c",
+      "original_name": "pico_parse_ipv4_address",
+      "original_module": "network",
+      "replacement": "pico_network_parse_ipv4",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "pure"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "pure",
+          "group_passed_cases": 2531,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008994",
+      "original_name": "pico_wifi_ensure_started_thunk",
+      "original_module": "network",
+      "replacement": "platform/energia_network.cpp:initialize (PicoNetworkPlatform.wifi_initialize via native WiFiClass::init)",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/native production comparisons cover the recorded cases; separately listed SDK adaptations and repaired failure inputs are outside exact equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "platform/energia_network.cpp",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/native-network-direct-tests.json",
+          "case_collection": "results",
+          "original_address": "0x20008994",
+          "case_kind": "original_vs_rebuilt_arm",
+          "passed_cases": 2,
+          "method": "original_vs_rebuilt_arm",
+          "replacement_symbol": "_ZL10initializePv",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "Original entry and native production bridge execute; SDK calls are controlled explicitly and meaningful state, returns and request traces are compared."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008998",
+      "original_name": "pico_wifi_connect_access_point",
+      "original_module": "network",
+      "replacement": "pico_network_connect_access_point + platform/energia_network.cpp:begin",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "supporting_sources": [
+        "platform/energia_network.cpp"
+      ],
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20008998",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 72,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_network_connect_access_point",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008a8c",
+      "original_name": "pico_wifi_connect_stored_network",
+      "original_module": "network",
+      "replacement": "pico_network_connect_stored",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20008a8c",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 5,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_network_connect_stored",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008b1c",
+      "original_name": "pico_wifi_connect_with_screen",
+      "original_module": "network",
+      "replacement": "pico_network_connect_with_screen",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20008b1c",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 2,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_network_connect_with_screen",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008b70",
+      "original_name": "pico_wifi_reconnect",
+      "original_module": "network",
+      "replacement": "pico_network_reconnect",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20008b70",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 8,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_network_reconnect",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008b98",
+      "original_name": "pico_wifi_resolve_server_address",
+      "original_module": "network",
+      "replacement": "pico_network_resolve_address",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "dns"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "dns",
+          "group_passed_cases": 82,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008c28",
+      "original_name": "pico_wifi_ping_public_dns",
+      "original_module": "network",
+      "replacement": "platform/energia_network.cpp:ping (PicoNetworkPlatform.ping_public_dns)",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/native production comparisons cover the recorded cases; separately listed SDK adaptations and repaired failure inputs are outside exact equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "platform/energia_network.cpp",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/native-network-direct-tests.json",
+          "case_collection": "results",
+          "original_address": "0x20008c28",
+          "case_kind": "original_vs_rebuilt_arm",
+          "passed_cases": 6,
+          "method": "original_vs_rebuilt_arm",
+          "replacement_symbol": "_ZL4pingPv",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "Original entry and native production bridge execute; SDK calls are controlled explicitly and meaningful state, returns and request traces are compared."
+        }
+      ],
+      "repair_evidence": [
+        {
+          "report": "analysis/native-network-direct-tests.json",
+          "case_collection": "results",
+          "original_address": "0x20008c28",
+          "case_kind": "documented_failure_repair",
+          "passed_cases": 3,
+          "method": "documented_failure_repair",
+          "replacement_symbol": "_ZL4pingPv",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "Native callback returns 0 for driver errors and initializes the report; original ignores status and may return an unwritten stack byte."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008c64",
+      "original_name": "pico_api_write_base_path",
+      "original_module": "network",
+      "replacement": "src/network/network_internal.h:net_prefix + bounded request formatters",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network_internal.h",
+      "supporting_sources": [
+        "src/network/api.c",
+        "src/network/update.c"
+      ],
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008c70",
+      "original_name": "pico_api_append_device_uid",
+      "original_module": "network",
+      "replacement": "src/network/network_internal.h:net_prefix + bounded request formatters",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network_internal.h",
+      "supporting_sources": [
+        "src/network/api.c",
+        "src/network/update.c"
+      ],
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008e68",
+      "original_name": "pico_http_write_request_headers",
+      "original_module": "network",
+      "replacement": "src/network/network.c:write_request",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "framing"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "framing",
+          "group_passed_cases": 11,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008ecc",
+      "original_name": "pico_open_firmware_destination",
+      "original_module": "firmware_update",
+      "replacement": "pico_update_open_destination",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "update"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/update.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "update",
+          "group_passed_cases": 20,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008f40",
+      "original_name": "pico_file_close",
+      "original_module": "persistence",
+      "replacement": "platform/energia_network.cpp:file_close (PicoNetworkPlatform.file_close)",
+      "status": "implemented_compiles",
+      "validation": "normalized_sdk_contract_with_repaired_failures",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "The legacy close method returns 1 on success, but its wrapper also treats negative failures as true. Native SLFS uses 0 success and the adapter returns false on errors.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "platform/energia_network.cpp",
+      "contract_evidence": [
+        {
+          "report": "analysis/native-network-direct-tests.json",
+          "case_collection": "results",
+          "original_address": "0x20008f40",
+          "case_kind": "normalized_sdk_contract",
+          "passed_cases": 2,
+          "method": "normalized_sdk_contract",
+          "replacement_symbol": "_ZL10file_closePv",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The legacy close method returns 1 on success, but its wrapper also treats negative failures as true. Native SLFS uses 0 success and the adapter returns false on errors."
+        }
+      ],
+      "repair_evidence": [
+        {
+          "report": "analysis/native-network-direct-tests.json",
+          "case_collection": "results",
+          "original_address": "0x20008f40",
+          "case_kind": "documented_failure_repair",
+          "passed_cases": 2,
+          "method": "documented_failure_repair",
+          "replacement_symbol": "_ZL10file_closePv",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The legacy close method returns 1 on success, but its wrapper also treats negative failures as true. Native SLFS uses 0 success and the adapter returns false on errors."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000a538",
+      "original_name": "pico_storage_read_text",
+      "original_module": "storage_settings",
+      "replacement": "pico_storage_read_text",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "storage",
+        "repairs"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "storage",
+          "group_passed_cases": 19,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "repairs",
+          "group_passed_cases": 6,
+          "method": "group_scoped_repaired_input_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000a584",
+      "original_name": "pico_storage_read_restart_record",
+      "original_module": "storage_settings",
+      "replacement": "pico_storage_read_restart",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000a584",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 3,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_storage_read_restart",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000a594",
+      "original_name": "pico_storage_load_device_uid",
+      "original_module": "storage_settings",
+      "replacement": "pico_storage_load_uid",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000a594",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 8,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_storage_load_uid",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000a5cc",
+      "original_name": "pico_storage_load_shuttle_scale",
+      "original_module": "storage_settings",
+      "replacement": "pico_storage_load_shuttle_scale",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000a5cc",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 5,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_storage_load_shuttle_scale",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000a5f8",
+      "original_name": "pico_storage_load_wifi_credentials",
+      "original_module": "storage_settings",
+      "replacement": "pico_storage_load_wifi",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "storage",
+        "still"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "storage",
+          "group_passed_cases": 19,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "still",
+          "group_passed_cases": 17,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000a664",
+      "original_name": "pico_still_write_request",
+      "original_module": "picostill",
+      "replacement": "pico_still_call",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "still"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "still",
+          "group_passed_cases": 17,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000a7c0",
+      "original_name": "pico_reset_shuttle_scale",
+      "original_module": "storage_settings",
+      "replacement": "pico_storage_reset_shuttle_scale",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000a7c0",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 2,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_storage_reset_shuttle_scale",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000bc50",
+      "original_name": "pico_wifi_check_status",
+      "original_module": "network_api",
+      "replacement": "pico_network_check_status",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "status"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "status",
+          "group_passed_cases": 512,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000bd10",
+      "original_name": "pico_api_close_connection",
+      "original_module": "network_api",
+      "replacement": "pico_network_close",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000bd30",
+      "original_name": "pico_read_api_response",
+      "original_module": "network_api",
+      "replacement": "pico_network_read_response",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "framing"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "framing",
+          "group_passed_cases": 11,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000be68",
+      "original_name": "pico_still_call",
+      "original_module": "picostill",
+      "replacement": "pico_still_call",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "still"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "still",
+          "group_passed_cases": 17,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000bf08",
+      "original_name": "pico_still_send_wifi_credentials",
+      "original_module": "picostill",
+      "replacement": "pico_still_send_wifi",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "still",
+        "still_workflows"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "still",
+          "group_passed_cases": 17,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "still_workflows",
+          "group_passed_cases": 152,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000bf28",
+      "original_name": "pico_still_get_ip_address",
+      "original_module": "picostill",
+      "replacement": "pico_still_get_ip",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000bf28",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 8,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_get_ip",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000bf64",
+      "original_name": "pico_still_connect_to_lan",
+      "original_module": "picostill",
+      "replacement": "pico_still_connect_lan",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000bf64",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 20,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_connect_lan",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "original_name": "pico_still_read_status",
+      "original_module": "picostill",
+      "replacement": "pico_still_read_status",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000bf9c",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 24,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_read_status",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ],
+      "repair_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "repaired_input_checks",
+          "original_address": "0x2000bf9c",
+          "passed_cases": 6,
+          "method": "original_vs_repaired_behavior",
+          "scope": "Original status reader accepts malformed telemetry that the rebuilt reader rejects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000c038",
+      "original_name": "pico_still_has_blocking_status",
+      "original_module": "picostill",
+      "replacement": "pico_still_blocked",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "still_workflows"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "still_workflows",
+          "group_passed_cases": 152,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000c390",
+      "original_name": "pico_storage_load_user_preferences",
+      "original_module": "storage_settings",
+      "replacement": "pico_storage_load_preferences",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000c390",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 10,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_storage_load_preferences",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000c468",
+      "original_name": "pico_still_select_access_point_2",
+      "original_module": "picostill",
+      "replacement": "pico_still_choose_access_point",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000c468",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 8,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_choose_access_point",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ],
+      "repair_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "repaired_input_checks",
+          "original_address": "0x2000c468",
+          "passed_cases": 5,
+          "method": "rebuilt_bounded_input_contract",
+          "scope": "Rebuilt code rejects oversized scan results, overlong SSIDs/identifiers, and invalid selection indices; original out-of-array writes are not executed."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000c7b8",
+      "original_name": "pico_ui_confirm_still_cleaned",
+      "original_module": "picostill",
+      "replacement": "pico_ui_confirm_still_cleaned",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "Concrete UI implementation and exact per-entry evidence are cross-referenced from analysis/recovery/ui.json. No physical hardware execution claimed.",
+      "verification_manifest": "analysis/recovery/ui.json",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/ui-direct-menus-tests.json",
+          "case_function": "pico_ui_confirm_still_cleaned",
+          "passed_cases": 3,
+          "method": "direct_original_vs_rebuilt_arm"
+        }
+      ],
+      "test_groups": [],
+      "original_evidence": "Asks user to confirm PicoStill has been cleaned before use.",
+      "equivalence_scope": "Three direct original/rebuilt UI cases are cross-referenced from the UI ledger. They compare execution at controlled display/input/service boundaries; the cases are counted by the UI suite.",
+      "source": "src/ui/still_ui.c"
+    },
+    {
+      "original_address": "0x2000dc64",
+      "original_name": "pico_wifi_wait_for_local_ip",
+      "original_module": "network_api",
+      "replacement": "pico_network_wait_local_ip",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "dns"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "dns",
+          "group_passed_cases": 82,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "original_name": "pico_still_connect_wifi_network",
+      "original_module": "picostill",
+      "replacement": "pico_still_connect_wifi",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000dcc8",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 16,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_connect_wifi",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000dd58",
+      "original_name": "pico_wifi_resolve_server",
+      "original_module": "network_api",
+      "replacement": "pico_network_resolve_server",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000dd58",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 8,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_network_resolve_server",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000dd9c",
+      "original_name": "pico_api_show_error",
+      "original_module": "network_api",
+      "replacement": "src/network/network_internal.h:net_error(code7,true,false)",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network_internal.h",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000ddc8",
+      "original_name": "pico_api_open_request",
+      "original_module": "network_api",
+      "replacement": "pico_network_open_request",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api",
+        "framing"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "framing",
+          "group_passed_cases": 11,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000de98",
+      "original_name": "pico_api_report_device_state",
+      "original_module": "network_api",
+      "replacement": "pico_api_report_state",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000dfec",
+      "original_name": "pico_api_report_error",
+      "original_module": "network_api",
+      "replacement": "pico_api_error",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2000e3d0",
+      "original_name": "pico_ui_show_still_communication_failure",
+      "original_module": "picostill",
+      "replacement": "pico_ui_show_still_communication_failure",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "Concrete UI implementation and exact per-entry evidence are cross-referenced from analysis/recovery/ui.json. No physical hardware execution claimed.",
+      "verification_manifest": "analysis/recovery/ui.json",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/ui-direct-menus-tests.json",
+          "case_function": "pico_ui_show_still_communication_failure",
+          "passed_cases": 3,
+          "method": "direct_original_vs_rebuilt_arm"
+        }
+      ],
+      "test_groups": [],
+      "original_evidence": "Still communication failure message and Continue acknowledgement.",
+      "equivalence_scope": "Three direct original/rebuilt UI cases are cross-referenced from the UI ledger. They compare execution at controlled display/input/service boundaries; the cases are counted by the UI suite.",
+      "source": "src/ui/still_ui.c"
+    },
+    {
+      "original_address": "0x2000e404",
+      "original_name": "pico_ui_show_still_completion",
+      "original_module": "picostill",
+      "replacement": "pico_ui_show_still_completion",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "Concrete UI implementation and exact per-entry evidence are cross-referenced from analysis/recovery/ui.json. No physical hardware execution claimed.",
+      "verification_manifest": "analysis/recovery/ui.json",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/ui-direct-menus-tests.json",
+          "case_function": "pico_ui_show_still_completion",
+          "passed_cases": 3,
+          "method": "direct_original_vs_rebuilt_arm"
+        }
+      ],
+      "test_groups": [],
+      "original_evidence": "Alarm and Still completion message with acknowledgement.",
+      "equivalence_scope": "Three direct original/rebuilt UI cases are cross-referenced from the UI ledger. They compare execution at controlled display/input/service boundaries; the cases are counted by the UI suite.",
+      "source": "src/ui/still_ui.c"
+    },
+    {
+      "original_address": "0x2000e430",
+      "original_name": "pico_ui_show_still_temperature_warning",
+      "original_module": "picostill",
+      "replacement": "pico_ui_show_still_temperature_warning",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "Concrete UI implementation and exact per-entry evidence are cross-referenced from analysis/recovery/ui.json. No physical hardware execution claimed.",
+      "verification_manifest": "analysis/recovery/ui.json",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/ui-direct-menus-tests.json",
+          "case_function": "pico_ui_show_still_temperature_warning",
+          "passed_cases": 3,
+          "method": "direct_original_vs_rebuilt_arm"
+        }
+      ],
+      "test_groups": [],
+      "original_evidence": "Alarm and Still temperature condition message.",
+      "equivalence_scope": "Three direct original/rebuilt UI cases are cross-referenced from the UI ledger. They compare execution at controlled display/input/service boundaries; the cases are counted by the UI suite.",
+      "source": "src/ui/still_ui.c"
+    },
+    {
+      "original_address": "0x2000fc4c",
+      "original_name": "pico_wifi_ensure_connection",
+      "original_module": "network_api",
+      "replacement": "pico_network_ensure_connection",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x2000fc4c",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 5,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_network_ensure_connection",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20010104",
+      "original_name": "pico_still_wait_for_response",
+      "original_module": "picostill",
+      "replacement": "pico_still_wait_response",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20010104",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 14,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_wait_response",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200101d8",
+      "original_name": "pico_still_configure",
+      "original_module": "picostill",
+      "replacement": "pico_still_configure",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "still_workflows"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "still_workflows",
+          "group_passed_cases": 152,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200102a4",
+      "original_name": "pico_still_start_session_request",
+      "original_module": "picostill",
+      "replacement": "pico_still_start",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x200102a4",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 10,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_start",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200102e8",
+      "original_name": "pico_still_start_session_once",
+      "original_module": "picostill",
+      "replacement": "pico_still_start_once",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x200102e8",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 6,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_start_once",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20010340",
+      "original_name": "pico_still_stop",
+      "original_module": "picostill",
+      "replacement": "pico_still_stop",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "contract_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20010340",
+          "case_kind": "inactive_noop_effects_original_serial_count_not_bool_return",
+          "passed_cases": 2,
+          "method": "inactive_noop_effects_original_serial_count_not_bool_return",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "return_compared": false,
+          "scope": "Both inactive stop bodies execute; state, serial output and absence of service requests match. Original incidental print-count return is not compared with the defined false boolean."
+        }
+      ],
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20010340",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 4,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_stop",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20010560",
+      "original_name": "pico_still_set_fan",
+      "original_module": "picostill",
+      "replacement": "pico_still_set_fan",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/still_network.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-still-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20010560",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 4,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_still_set_fan",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20010588",
+      "original_name": "pico_ui_still_fan_menu",
+      "original_module": "picostill",
+      "replacement": "pico_ui_still_fan_menu",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "Concrete UI implementation and exact per-entry evidence are cross-referenced from analysis/recovery/ui.json. No physical hardware execution claimed.",
+      "verification_manifest": "analysis/recovery/ui.json",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/ui-direct-menus-tests.json",
+          "case_function": "pico_ui_still_fan_menu",
+          "passed_cases": 3,
+          "method": "direct_original_vs_rebuilt_arm"
+        }
+      ],
+      "test_groups": [],
+      "original_evidence": "StillFan action menu invoked by step runner.",
+      "equivalence_scope": "Three direct original/rebuilt UI cases are cross-referenced from the UI ledger. They compare execution at controlled display/input/service boundaries; the cases are counted by the UI suite.",
+      "source": "src/ui/still_ui.c"
+    },
+    {
+      "original_address": "0x200105e4",
+      "original_name": "pico_api_read_hash_response",
+      "original_module": "network_api",
+      "replacement": "pico_network_read_response(...,true,#)",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200105f8",
+      "original_name": "pico_api_register_device",
+      "original_module": "network_api",
+      "replacement": "pico_api_register",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2001079c",
+      "original_name": "pico_api_can_use_still",
+      "original_module": "picostill",
+      "replacement": "pico_api_still_permission(canUsePicoStill)",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200107a8",
+      "original_name": "pico_api_has_cleaned_ack",
+      "original_module": "picostill",
+      "replacement": "pico_api_still_permission(hasCleanedAck)",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200107b4",
+      "original_name": "pico_api_set_cleaned_ack",
+      "original_module": "picostill",
+      "replacement": "pico_api_still_permission(setCleanedAck)",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200107c0",
+      "original_name": "pico_api_get_session_id",
+      "original_module": "network_api",
+      "replacement": "pico_api_get_session",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20010894",
+      "original_name": "pico_api_create_picopak",
+      "original_module": "network_api",
+      "replacement": "pico_api_create_picopak",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20010914",
+      "original_name": "pico_api_get_required_actions",
+      "original_module": "network_api",
+      "replacement": "pico_api_required_actions",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200109b4",
+      "original_name": "pico_api_read_hex_image",
+      "original_module": "network_api",
+      "replacement": "pico_network_read_hex_image",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20010a64",
+      "original_name": "pico_api_read_recipe_bitmap",
+      "original_module": "network_api",
+      "replacement": "pico_network_read_hex_image(...,|)",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20010a6c",
+      "original_name": "pico_api_fetch_recipe",
+      "original_module": "network_api",
+      "replacement": "pico_api_fetch_recipe",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20010f0c",
+      "original_name": "pico_api_fetch_default_recipe_failed",
+      "original_module": "network_api",
+      "replacement": "pico_api_fetch_recipe(...,-1,-1)!=0",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20010f20",
+      "original_name": "pico_api_wait_for_hash",
+      "original_module": "network_api",
+      "replacement": "pico_network_wait_hash",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20010f64",
+      "original_name": "pico_api_make_wifi_call",
+      "original_module": "network_api",
+      "replacement": "pico_network_call",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "framing",
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "framing",
+          "group_passed_cases": 11,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20011034",
+      "original_name": "pico_wifi_log_event",
+      "original_module": "network_api",
+      "replacement": "pico_api_log_event",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200112a8",
+      "original_name": "pico_wifi_log_step",
+      "original_module": "network_api",
+      "replacement": "pico_api_log_step",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2001132c",
+      "original_name": "pico_wifi_log_progress",
+      "original_module": "network_api",
+      "replacement": "pico_api_log_progress",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20012968",
+      "original_name": "pico_api_parse_recipe_list",
+      "original_module": "network_api",
+      "replacement": "pico_api_recipe_list",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20012b04",
+      "original_name": "pico_api_get_associated_picopaks",
+      "original_module": "network_api",
+      "replacement": "pico_api_recipe_list(...,true)",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20012b4c",
+      "original_name": "pico_api_get_recipe_list",
+      "original_module": "network_api",
+      "replacement": "pico_api_recipe_list(...,false)",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "api"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/api.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "api",
+          "group_passed_cases": 37,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20012ea0",
+      "original_name": "pico_check_firmware_update",
+      "original_module": "firmware_update",
+      "replacement": "pico_update_available",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/update.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20012ea0",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 9,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_update_available",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20012f74",
+      "original_name": "pico_write_firmware_chunk",
+      "original_module": "firmware_update",
+      "replacement": "platform/energia_network.cpp:file_write (PicoNetworkPlatform.file_write)",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "update",
+        "update_differential"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "platform/energia_network.cpp",
+      "supporting_sources": [
+        "src/network/update.c"
+      ],
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "update",
+          "group_passed_cases": 20,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "update_differential",
+          "group_passed_cases": 6,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20012f84",
+      "original_name": "pico_receive_firmware_image",
+      "original_module": "firmware_update",
+      "replacement": "pico_update_receive",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "update",
+        "update_differential"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/update.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "update",
+          "group_passed_cases": 20,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "update_differential",
+          "group_passed_cases": 6,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20013100",
+      "original_name": "pico_download_firmware",
+      "original_module": "firmware_update",
+      "replacement": "pico_update_download",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/update.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20013100",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 16,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_update_download",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20013150",
+      "original_name": "pico_update_firmware",
+      "original_module": "firmware_update",
+      "replacement": "pico_update_run",
+      "status": "implemented_compiles",
+      "validation": "direct_original_vs_rebuilt",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [],
+      "equivalence_scope": "Direct original/rebuilt comparisons cover the recorded cases and observed effects, with subordinate SDK/UI/application services controlled explicitly. Separately listed repairs are outside equivalence.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/update.c",
+      "direct_differential_evidence": [
+        {
+          "report": "analysis/network-direct-tests.json",
+          "case_collection": "cases",
+          "original_address": "0x20013150",
+          "case_kind": "direct_original_vs_rebuilt",
+          "passed_cases": 4,
+          "method": "direct_original_vs_rebuilt",
+          "replacement_function": "pico_update_run",
+          "original_entry_body_executed": true,
+          "replacement_entry_body_executed": true,
+          "scope": "The named original and rebuilt bodies execute at controlled subordinate service boundaries. Per-case flags identify compared returns, state, serial output and ordered effects."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20018308",
+      "original_name": "boot_info_write",
+      "original_module": "boot_image",
+      "replacement": "pico_boot_write + platform/energia_network.cpp:boot_write",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "native_filesystem_and_md5_boundaries"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/update.c",
+      "supporting_sources": [
+        "platform/energia_network.cpp"
+      ],
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/native-network-tests.json",
+          "test_group": "native_filesystem_and_md5_boundaries",
+          "group_passed_cases": 17,
+          "method": "group_scoped_native_sdk_contract",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20018354",
+      "original_name": "boot_info_read",
+      "original_module": "boot_image",
+      "replacement": "pico_boot_read + platform/energia_network.cpp:boot_read",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "native_filesystem_and_md5_boundaries"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/update.c",
+      "supporting_sources": [
+        "platform/energia_network.cpp"
+      ],
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/native-network-tests.json",
+          "test_group": "native_filesystem_and_md5_boundaries",
+          "group_passed_cases": 17,
+          "method": "group_scoped_native_sdk_contract",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x2001839c",
+      "original_name": "boot_info_toggle_application_slot",
+      "original_module": "boot_image",
+      "replacement": "pico_boot_toggle_application",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "update"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/update.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "update",
+          "group_passed_cases": 20,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200183d0",
+      "original_name": "boot_info_select_factory_slot",
+      "original_module": "boot_image",
+      "replacement": "pico_boot_select_factory",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "notes": "No original image/RAM calls in replacement. Native SDK remains platform boundary.",
+      "test_groups": [
+        "update"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/update.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "update",
+          "group_passed_cases": 20,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20005950",
+      "original_name": "pico_format_float_decimal",
+      "replacement": "pico_network_format_float",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "test_groups": [
+        "pure"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "pure",
+          "group_passed_cases": 2531,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20016ce8",
+      "original_name": "simplelink_create_file_mode",
+      "replacement": "pico_storage_create_mode",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "test_groups": [
+        "pure",
+        "repairs"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/storage.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "pure",
+          "group_passed_cases": 2531,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "repairs",
+          "group_passed_cases": 6,
+          "method": "group_scoped_repaired_input_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008f64",
+      "original_name": "pico_url_encode",
+      "replacement": "pico_network_url_encode",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "test_groups": [
+        "pure",
+        "repairs"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "pure",
+          "group_passed_cases": 2531,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "repairs",
+          "group_passed_cases": 6,
+          "method": "group_scoped_repaired_input_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20008f54",
+      "original_name": "pico_url_write_escape",
+      "replacement": "pico_network_url_encode inline percent emission",
+      "status": "folded_implemented",
+      "validation": "group_scoped_behavioral_evidence",
+      "test_groups": [
+        "pure",
+        "repairs"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/network.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "pure",
+          "group_passed_cases": 2531,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        },
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "repairs",
+          "group_passed_cases": 6,
+          "method": "group_scoped_repaired_input_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20004888",
+      "original_name": "pico_cstring_is_null_or_empty",
+      "replacement": "pico_text_is_empty",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "test_groups": [
+        "text"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/text.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "text",
+          "group_passed_cases": 48,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200064c4",
+      "original_name": "pico_cstring_is_null_or_empty_duplicate",
+      "replacement": "pico_text_is_empty",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "test_groups": [
+        "text"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/text.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "text",
+          "group_passed_cases": 48,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20004ad4",
+      "original_name": "pico_cstring_copy",
+      "replacement": "pico_text_copy",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "test_groups": [
+        "text"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "src/network/text.c",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/network-tests.json",
+          "test_group": "text",
+          "group_passed_cases": 48,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x200153ac",
+      "original_name": "WiFiClient_connect_ipv4_blocking",
+      "replacement": "PicoHttpClient::connectPico(background=false)",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "test_groups": [
+        "socket_original_differential"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "platform/pico_http_client.cpp",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/native-network-tests.json",
+          "test_group": "socket_original_differential",
+          "group_passed_cases": 15,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    },
+    {
+      "original_address": "0x20015470",
+      "original_name": "WiFiClient_connect_ipv4",
+      "replacement": "PicoHttpClient::connectPico(background=true)",
+      "status": "implemented_compiles",
+      "validation": "group_scoped_behavioral_evidence",
+      "test_groups": [
+        "socket_original_differential"
+      ],
+      "equivalence_scope": "Behavioral evidence is reported for the listed test groups. Groups may execute this behavior through callers or replacement contracts; their totals are not per-entry direct comparisons. See docs/network-recovery.md for repairs and bounds.",
+      "review": "Actual original source/instruction evidence and ordinary-source composition reviewed; external hardware not exercised.",
+      "source": "platform/pico_http_client.cpp",
+      "group_behavioral_evidence": [
+        {
+          "report": "analysis/native-network-tests.json",
+          "test_group": "socket_original_differential",
+          "group_passed_cases": 15,
+          "method": "group_scoped_differential_and_behavioral_checks",
+          "scope": "Count applies to the whole report group, not to this entry; no per-entry direct case count is inferred."
+        }
+      ]
+    }
+  ],
+  "missing_entries": [],
+  "reports": [
+    "analysis/network-tests.json",
+    "analysis/network-direct-tests.json",
+    "analysis/network-direct-still-tests.json",
+    "analysis/native-network-tests.json",
+    "analysis/native-network-direct-tests.json",
+    "analysis/state-pid-tests.json",
+    "analysis/ui-direct-menus-tests.json"
+  ],
+  "repair_ledger": "docs/network-recovery.md",
+  "entry_count": 114,
+  "source_sha256": {
+    "include/picobrew/energia_network.h": "4c07f22791a46806fad3a3d3478b1e4ac5a607c53390f7648ba4eec8b1088b57",
+    "include/picobrew/network.h": "ce032e5a2bda66918527268eecaa076637731b70b79c7737e7121fdf769038e9",
+    "include/picobrew/pico_http_client.h": "e5aa2468f134db47c47ffdcc9e50bac6b8aabdb722488e0e48fc3aa5caa16e17",
+    "include/picobrew/text.h": "0521837aae25b90de024edbc20d5029d92a2be40c2928810ac0f52d65cc15626",
+    "platform/energia_network.cpp": "03314d6b11d11b6f3ed7db80eb64c6eb80119cf803f009d71dde6c8607d9d757",
+    "platform/pico_http_client.cpp": "687b69337b839b72443f5dbade71b2fe20951612f620a6a1fa0a057675ba42fe",
+    "src/application.c": "c40c90eb59710e4436e37cadc514bc38dad2b1326689c689bc80c48fede0ffad",
+    "src/network/api.c": "464895b76775534342b8c84f1e9fd90f9a8c51c9873a5bb8aa69e7a0c225b576",
+    "src/network/network.c": "f177eadeedde3e5161f92adbc625dd6ec34b9a07ec93311e21c8fed0f1043b86",
+    "src/network/network_internal.h": "437e7ec3d9ac98a3e5853900726077a95e06d64ccb1243c0ce2d09562fbd568f",
+    "src/network/still_network.c": "d0014f21f436199b4c672f9d3e5ce9863e74ccc3245624ba2962c28f571486d3",
+    "src/network/storage.c": "1bfc83cbb0e8be78ec028ba0629a7619a95d8a95dad74f43d28f00b299cb0bf0",
+    "src/network/text.c": "8b83150ae17fd8ffe497eafe2647b2cd99a51268a626f1babdfe7407319728b2",
+    "src/network/update.c": "440fa2fc20ff99676b294094d6ff7a1459d5c371b0cc568046ff680a6eb7da36",
+    "src/state.c": "ed7d42961699c8c2a06681422f015b10c1607790ffa3ec24feaa911180183be0",
+    "src/ui/still_ui.c": "ea0834e1badecf625238318c2ec53a92769eda4e147723bbcf92339fc8fb820b"
+  },
+  "supplemental_reports": [
+    "analysis/native-serial-tests.json"
+  ],
+  "cross_domain_manifests": [
+    "analysis/recovery/core.json",
+    "analysis/recovery/ui.json"
+  ],
+  "verification_counts": {
+    "entries": 114,
+    "entries_with_per_entry_execution_or_contract_evidence": 48,
+    "entries_with_only_group_scoped_behavioral_evidence": 66,
+    "entries_with_direct_original_vs_rebuilt_function_evidence": 43,
+    "entries_source_reviewed_and_compiled_without_behavioral_evidence": 0,
+    "previously_review_only_entries_closed": 47,
+    "validation_status_counts": {
+      "direct_original_vs_rebuilt": 43,
+      "folded_caller_differential": 1,
+      "folded_predicate_contract": 1,
+      "group_scoped_behavioral_evidence": 66,
+      "initializer_caller_differential": 1,
+      "normalized_sdk_contract_with_repaired_failures": 1,
+      "sdk_return_contract": 1
+    }
+  },
+  "evidence_accounting": "Per-entry cases, folded/caller checks, SDK contracts and repairs are identified separately. Group totals describe an entire suite group and must not be multiplied by entry count. Cross-domain core/UI cases are already counted in those suites. Supplemental native serial checks add no original network entry."
+}

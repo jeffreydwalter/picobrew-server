@@ -1,0 +1,15 @@
+{
+  "source_install_and_idempotent_reuse": [
+    {
+      "exit_code": 0,
+      "output": "Installed /workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/energia\n{\n  \"sdk\": \"/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/energia\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "exit_code": 0,
+      "output": "Using verified dependency identity: /workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/energia\n{\n  \"sdk\": \"/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/energia\"\n}\n",
+      "stderr": ""
+    }
+  ],
+  "toolchain_already_extracted_and_executed_separately": true
+}

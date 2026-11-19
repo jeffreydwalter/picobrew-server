@@ -1,0 +1,2702 @@
+{
+  "elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "passed_cases": 643,
+  "failed_cases": 0,
+  "tested_functions": [
+    "GFX_draw_character",
+    "GFX_draw_line",
+    "GFX_draw_round_rectangle",
+    "GFX_fill_rectangle",
+    "GFX_fill_triangle",
+    "oled_draw_pixel",
+    "pico_display_large_temperature",
+    "pico_display_large_timer",
+    "pico_display_temperature_columns",
+    "pico_display_temperature_summary",
+    "pico_label_adjust_recipe",
+    "pico_label_back",
+    "pico_label_cancel",
+    "pico_label_compartment",
+    "pico_label_confirm",
+    "pico_label_continue",
+    "pico_label_cooling",
+    "pico_label_done",
+    "pico_label_draining",
+    "pico_label_exit",
+    "pico_label_exit_uppercase",
+    "pico_label_heating",
+    "pico_label_holding",
+    "pico_label_insert_step_filter",
+    "pico_label_next_uppercase",
+    "pico_label_no",
+    "pico_label_ok",
+    "pico_label_service",
+    "pico_label_start_brewing",
+    "pico_label_yes",
+    "pico_menu_populate_hardware_tests",
+    "pico_menu_populate_languages",
+    "pico_menu_populate_network",
+    "pico_menu_populate_post_brew",
+    "pico_menu_populate_service",
+    "pico_menu_populate_settings",
+    "pico_menu_populate_still_actions",
+    "pico_menu_populate_still_fan",
+    "pico_menu_set_load_more_label",
+    "pico_screen_brew_name_page",
+    "pico_screen_changing_step",
+    "pico_screen_downloading_firmware",
+    "pico_screen_draw_program_notice",
+    "pico_screen_ending_first_rinse",
+    "pico_screen_ending_process",
+    "pico_screen_ending_program",
+    "pico_screen_ending_step",
+    "pico_screen_error_heading",
+    "pico_screen_fill_reservoir_and_start",
+    "pico_screen_firmware_update_failed",
+    "pico_screen_help_address",
+    "pico_screen_loading",
+    "pico_screen_loading_picopak",
+    "pico_screen_preheating_steam",
+    "pico_screen_recipe_metrics_page",
+    "pico_screen_reinsert_step_filter",
+    "pico_screen_rinse_complete",
+    "pico_screen_service_status",
+    "pico_screen_setting_up_step",
+    "pico_screen_show_ending_program",
+    "pico_screen_show_help_temporarily",
+    "pico_screen_show_program_notice",
+    "pico_screen_splash",
+    "pico_screen_starting_program",
+    "pico_screen_step_progress_page",
+    "pico_screen_still_connecting",
+    "pico_screen_still_exiting",
+    "pico_screen_still_readings",
+    "pico_screen_updating_firmware",
+    "pico_screen_water_error_help",
+    "pico_screen_wifi_connected",
+    "pico_screen_wifi_connection_failed",
+    "pico_screen_wifi_no_signal",
+    "pico_screen_wifi_searching",
+    "pico_title_id_is_valid",
+    "pico_ui_draw_abv_adjustment",
+    "pico_ui_draw_bitterness_adjustment",
+    "pico_ui_draw_brew_complete",
+    "pico_ui_draw_choice_question",
+    "pico_ui_draw_choose_network",
+    "pico_ui_draw_clear_wifi_question",
+    "pico_ui_draw_continue_footer",
+    "pico_ui_draw_current_program_heading",
+    "pico_ui_draw_deep_clean_heading",
+    "pico_ui_draw_descale_heading",
+    "pico_ui_draw_descale_preparation",
+    "pico_ui_draw_descale_rinse_preparation",
+    "pico_ui_draw_drain_filter",
+    "pico_ui_draw_drain_reservoir",
+    "pico_ui_draw_error",
+    "pico_ui_draw_factory_reset_heading",
+    "pico_ui_draw_firmware_reset_question",
+    "pico_ui_draw_first_rinse_heading",
+    "pico_ui_draw_footer_option",
+    "pico_ui_draw_footer_single",
+    "pico_ui_draw_header",
+    "pico_ui_draw_header_at_row",
+    "pico_ui_draw_heater_malfunction",
+    "pico_ui_draw_hold_status",
+    "pico_ui_draw_insert_picopak",
+    "pico_ui_draw_instruction_screen",
+    "pico_ui_draw_language_menu",
+    "pico_ui_draw_network_heading",
+    "pico_ui_draw_password_heading",
+    "pico_ui_draw_paused",
+    "pico_ui_draw_picopak_selection",
+    "pico_ui_draw_rack_beer_heading",
+    "pico_ui_draw_recipe_choices",
+    "pico_ui_draw_registration_code",
+    "pico_ui_draw_separator",
+    "pico_ui_draw_settings_heading",
+    "pico_ui_draw_skip_step_confirmation",
+    "pico_ui_draw_startup_heading",
+    "pico_ui_draw_stop_confirmation",
+    "pico_ui_draw_stop_footer",
+    "pico_ui_draw_subheader",
+    "pico_ui_draw_units_menu",
+    "pico_ui_draw_utilities_heading",
+    "pico_ui_draw_wifi_test_heading",
+    "pico_ui_show_wifi_test_result"
+  ],
+  "failures": [],
+  "cases": [
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=60,y=126,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=125,y=116,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=11,y=90,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=119,y=116,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=26,y=103,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=4,y=30,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=90,y=61,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=60,y=32,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=-1,y=80,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=118,y=109,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=41,y=44,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=43,y=42,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=56,y=135,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=47,y=46,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=124,y=16,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=67,y=6,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=40,y=64,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=75,y=37,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=48,y=21,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=0,x=84,y=35,color=2"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=0,scale=1,textlen=12"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=0,scale=2,textlen=12"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=0,scale=1,textlen=5"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=0,scale=2,textlen=5"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=0,scale=1,textlen=22"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=0,scale=2,textlen=22"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=0,scale=1,textlen=255"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=0,scale=2,textlen=255"
+    },
+    {
+      "function": "GFX_draw_line",
+      "case": "rotation=0"
+    },
+    {
+      "function": "GFX_fill_rectangle",
+      "case": "rotation=0"
+    },
+    {
+      "function": "GFX_draw_round_rectangle",
+      "case": "rotation=0"
+    },
+    {
+      "function": "GFX_fill_triangle",
+      "case": "rotation=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=68,y=103,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=131,y=73,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=84,y=105,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=67,y=133,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=133,y=68,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=13,y=93,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=37,y=15,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=31,y=29,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=115,y=36,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=109,y=38,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=72,y=94,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=98,y=0,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=86,y=105,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=106,y=8,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=112,y=36,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=13,y=60,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=-1,y=113,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=73,y=134,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=91,y=1,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=1,x=62,y=-1,color=1"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=1,scale=1,textlen=12"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=1,scale=2,textlen=12"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=1,scale=1,textlen=5"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=1,scale=2,textlen=5"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=1,scale=1,textlen=22"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=1,scale=2,textlen=22"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=1,scale=1,textlen=255"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=1,scale=2,textlen=255"
+    },
+    {
+      "function": "GFX_draw_line",
+      "case": "rotation=1"
+    },
+    {
+      "function": "GFX_fill_rectangle",
+      "case": "rotation=1"
+    },
+    {
+      "function": "GFX_draw_round_rectangle",
+      "case": "rotation=1"
+    },
+    {
+      "function": "GFX_fill_triangle",
+      "case": "rotation=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=57,y=55,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=30,y=47,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=73,y=40,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=65,y=13,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=61,y=101,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=15,y=120,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=126,y=40,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=130,y=128,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=0,y=110,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=90,y=116,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=112,y=78,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=-1,y=84,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=86,y=64,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=84,y=84,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=84,y=53,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=116,y=68,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=-4,y=95,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=133,y=95,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=102,y=91,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=2,x=108,y=74,color=0"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=2,scale=1,textlen=12"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=2,scale=2,textlen=12"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=2,scale=1,textlen=5"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=2,scale=2,textlen=5"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=2,scale=1,textlen=22"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=2,scale=2,textlen=22"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=2,scale=1,textlen=255"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=2,scale=2,textlen=255"
+    },
+    {
+      "function": "GFX_draw_line",
+      "case": "rotation=2"
+    },
+    {
+      "function": "GFX_fill_rectangle",
+      "case": "rotation=2"
+    },
+    {
+      "function": "GFX_draw_round_rectangle",
+      "case": "rotation=2"
+    },
+    {
+      "function": "GFX_fill_triangle",
+      "case": "rotation=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=106,y=76,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=53,y=129,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=29,y=47,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=111,y=81,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=35,y=110,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=16,y=29,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=39,y=89,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=87,y=127,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=83,y=62,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=107,y=36,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=66,y=85,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=68,y=44,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=41,y=92,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=78,y=-5,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=100,y=48,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=119,y=126,color=1"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=18,y=96,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=65,y=21,color=0"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=113,y=110,color=2"
+    },
+    {
+      "function": "oled_draw_pixel",
+      "case": "rotation=3,x=48,y=56,color=0"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=3,scale=1,textlen=12"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=3,scale=2,textlen=12"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=3,scale=1,textlen=5"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=3,scale=2,textlen=5"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=3,scale=1,textlen=22"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=3,scale=2,textlen=22"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=3,scale=1,textlen=255"
+    },
+    {
+      "function": "GFX_draw_character",
+      "case": "rotation=3,scale=2,textlen=255"
+    },
+    {
+      "function": "GFX_draw_line",
+      "case": "rotation=3"
+    },
+    {
+      "function": "GFX_fill_rectangle",
+      "case": "rotation=3"
+    },
+    {
+      "function": "GFX_draw_round_rectangle",
+      "case": "rotation=3"
+    },
+    {
+      "function": "GFX_fill_triangle",
+      "case": "rotation=3"
+    },
+    {
+      "function": "pico_menu_populate_still_fan",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_menu_populate_still_fan",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_menu_populate_still_fan",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_error_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_error_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_error_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_water_error_help",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_water_error_help",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_water_error_help",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_still_connecting",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_still_connecting",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_still_connecting",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_still_exiting",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_still_exiting",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_still_exiting",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_menu_populate_hardware_tests",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_menu_populate_hardware_tests",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_menu_populate_hardware_tests",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_wifi_searching",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_wifi_searching",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_wifi_searching",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_ending_process",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_ending_process",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_ending_process",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_insert_step_filter",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_insert_step_filter",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_insert_step_filter",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_preheating_steam",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_preheating_steam",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_preheating_steam",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_adjust_recipe",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_adjust_recipe",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_adjust_recipe",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_loading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_loading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_loading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_updating_firmware",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_updating_firmware",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_updating_firmware",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_downloading_firmware",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_downloading_firmware",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_downloading_firmware",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_firmware_update_failed",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_firmware_update_failed",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_firmware_update_failed",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_rinse_complete",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_rinse_complete",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_rinse_complete",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_help_address",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_help_address",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_help_address",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_show_help_temporarily",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_show_help_temporarily",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_show_help_temporarily",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_ending_first_rinse",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_ending_first_rinse",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_ending_first_rinse",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_draw_program_notice",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_draw_program_notice",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_draw_program_notice",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_show_program_notice",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_show_program_notice",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_show_program_notice",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_reinsert_step_filter",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_reinsert_step_filter",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_reinsert_step_filter",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_changing_step",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_changing_step",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_changing_step",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_setting_up_step",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_setting_up_step",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_setting_up_step",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_ending_step",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_ending_step",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_ending_step",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_still_readings",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_still_readings",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_still_readings",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_done",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_done",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_done",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_confirm",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_confirm",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_confirm",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_continue",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_continue",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_continue",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_exit",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_exit",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_exit",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_menu_populate_service",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_menu_populate_service",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_menu_populate_service",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_back",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_back",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_back",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_menu_populate_network",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_menu_populate_network",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_menu_populate_network",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_ok",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_ok",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_ok",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_yes",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_yes",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_yes",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_no",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_no",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_no",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_compartment",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_compartment",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_compartment",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_menu_populate_settings",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_menu_populate_settings",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_menu_populate_settings",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_service",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_service",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_service",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_menu_populate_languages",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_menu_populate_languages",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_menu_populate_languages",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_heating",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_heating",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_heating",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_cooling",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_cooling",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_cooling",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_holding",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_holding",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_holding",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_draining",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_draining",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_draining",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_fill_reservoir_and_start",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_fill_reservoir_and_start",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_fill_reservoir_and_start",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_starting_program",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_starting_program",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_starting_program",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_ending_program",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_ending_program",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_ending_program",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_show_ending_program",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_show_ending_program",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_show_ending_program",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_start_brewing",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_start_brewing",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_start_brewing",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_cancel",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_cancel",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_cancel",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_menu_set_load_more_label",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_menu_set_load_more_label",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_menu_set_load_more_label",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_loading_picopak",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_loading_picopak",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_loading_picopak",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_menu_populate_post_brew",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_menu_populate_post_brew",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_menu_populate_post_brew",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_next_uppercase",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_next_uppercase",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_next_uppercase",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_label_exit_uppercase",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_label_exit_uppercase",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_label_exit_uppercase",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_menu_populate_still_actions",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_menu_populate_still_actions",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_menu_populate_still_actions",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_splash",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_splash",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_splash",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_service_status",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_service_status",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_service_status",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_wifi_no_signal",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_wifi_no_signal",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_wifi_no_signal",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_wifi_connected",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_wifi_connected",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_wifi_connected",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_wifi_connection_failed",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_wifi_connection_failed",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_wifi_connection_failed",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_brew_name_page",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_brew_name_page",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_brew_name_page",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_recipe_metrics_page",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_recipe_metrics_page",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_recipe_metrics_page",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_screen_step_progress_page",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_screen_step_progress_page",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_screen_step_progress_page",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_footer_option",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_footer_option",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_footer_option",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_hold_status",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_hold_status",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_hold_status",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_footer_single",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_footer_single",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_footer_single",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_paused",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_paused",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_paused",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_stop_footer",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_stop_footer",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_stop_footer",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_continue_footer",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_continue_footer",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_continue_footer",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_separator",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_separator",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_separator",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_header",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_header",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_header",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_header_at_row",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_header_at_row",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_header_at_row",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_descale_preparation",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_descale_preparation",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_descale_preparation",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_descale_rinse_preparation",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_descale_rinse_preparation",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_descale_rinse_preparation",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_subheader",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_subheader",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_subheader",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_heater_malfunction",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_heater_malfunction",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_heater_malfunction",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_descale_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_descale_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_descale_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_language_menu",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_language_menu",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_language_menu",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_units_menu",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_units_menu",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_units_menu",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_drain_filter",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_drain_filter",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_drain_filter",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_drain_reservoir",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_drain_reservoir",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_drain_reservoir",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_choice_question",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_choice_question",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_choice_question",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_first_rinse_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_first_rinse_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_first_rinse_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_choose_network",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_choose_network",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_choose_network",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_wifi_test_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_wifi_test_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_wifi_test_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_utilities_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_utilities_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_utilities_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_settings_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_settings_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_settings_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_current_program_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_current_program_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_current_program_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_network_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_network_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_network_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_factory_reset_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_factory_reset_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_factory_reset_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_firmware_reset_question",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_firmware_reset_question",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_firmware_reset_question",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_clear_wifi_question",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_clear_wifi_question",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_clear_wifi_question",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_startup_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_startup_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_startup_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_deep_clean_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_deep_clean_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_deep_clean_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_password_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_password_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_password_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_rack_beer_heading",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_rack_beer_heading",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_rack_beer_heading",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_stop_confirmation",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_stop_confirmation",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_stop_confirmation",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_skip_step_confirmation",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_skip_step_confirmation",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_skip_step_confirmation",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_insert_picopak",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_insert_picopak",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_insert_picopak",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_abv_adjustment",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_abv_adjustment",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_abv_adjustment",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_bitterness_adjustment",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_bitterness_adjustment",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_bitterness_adjustment",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_brew_complete",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_brew_complete",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_brew_complete",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_recipe_choices",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_recipe_choices",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_recipe_choices",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_picopak_selection",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_picopak_selection",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_picopak_selection",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_registration_code",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_draw_registration_code",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_draw_registration_code",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_show_wifi_test_result",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_ui_show_wifi_test_result",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_ui_show_wifi_test_result",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_title_id_is_valid",
+      "case": "language=0"
+    },
+    {
+      "function": "pico_title_id_is_valid",
+      "case": "language=1"
+    },
+    {
+      "function": "pico_title_id_is_valid",
+      "case": "language=2"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=0,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=0,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=0,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=0,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=0,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=0,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=1,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=1,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=1,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=1,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=1,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=1,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=2,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=2,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=2,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=2,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=2,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=2,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=3,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=3,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=3,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=3,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=3,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=3,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=4,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=4,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=4,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=4,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=4,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=4,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=5,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=5,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=5,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=5,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=5,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=5,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=6,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=6,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=6,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=6,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=6,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=6,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=7,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=7,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=7,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=7,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=7,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=7,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=8,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=8,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=8,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=8,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=8,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=8,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=9,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=9,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=9,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=9,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=9,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=9,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=10,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=10,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=10,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=10,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=10,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=10,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=11,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=11,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=11,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=11,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=11,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=11,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=12,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=12,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=12,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=12,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=12,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=12,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=13,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=13,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=13,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=13,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=13,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=13,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=14,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=14,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=14,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=14,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=14,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=14,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=15,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=15,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=15,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=15,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=15,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=15,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=16,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=16,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=16,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=16,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=16,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=16,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=17,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=17,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=17,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=17,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=17,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=17,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=18,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=18,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=18,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=18,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=18,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=18,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=19,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=19,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=19,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=19,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=19,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=19,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=20,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=20,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=20,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=20,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=20,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=20,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=21,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=21,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=21,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=21,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=21,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=21,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=22,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=22,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=22,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=22,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=22,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=22,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=23,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=23,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=23,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=23,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=23,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=23,language=2,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=24,language=0,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=24,language=0,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=24,language=1,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=24,language=1,context=1"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=24,language=2,context=0"
+    },
+    {
+      "function": "pico_ui_draw_instruction_screen",
+      "case": "id=24,language=2,context=1"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=0,value=0.0"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=0,value=9.9"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=0,value=32.0"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=0,value=99.9"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=0,value=153.7"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=0,value=212.0"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=0,value=999.0"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=1,value=0.0"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=1,value=9.9"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=1,value=32.0"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=1,value=99.9"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=1,value=153.7"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=1,value=212.0"
+    },
+    {
+      "function": "pico_display_large_temperature",
+      "case": "celsius=1,value=999.0"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=0,value=0"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=0,value=1"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=0,value=59"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=0,value=60"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=0,value=125"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=0,value=599"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=1,value=0"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=1,value=1"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=1,value=59"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=1,value=60"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=1,value=125"
+    },
+    {
+      "function": "pico_display_large_timer",
+      "case": "celsius=1,value=599"
+    },
+    {
+      "function": "pico_display_temperature_columns",
+      "case": "celsius=0,value=0.0"
+    },
+    {
+      "function": "pico_display_temperature_columns",
+      "case": "celsius=0,value=32.0"
+    },
+    {
+      "function": "pico_display_temperature_columns",
+      "case": "celsius=0,value=154.6"
+    },
+    {
+      "function": "pico_display_temperature_columns",
+      "case": "celsius=1,value=0.0"
+    },
+    {
+      "function": "pico_display_temperature_columns",
+      "case": "celsius=1,value=32.0"
+    },
+    {
+      "function": "pico_display_temperature_columns",
+      "case": "celsius=1,value=154.6"
+    },
+    {
+      "function": "pico_display_temperature_summary",
+      "case": "celsius=0,value=0.0"
+    },
+    {
+      "function": "pico_display_temperature_summary",
+      "case": "celsius=0,value=32.0"
+    },
+    {
+      "function": "pico_display_temperature_summary",
+      "case": "celsius=0,value=154.6"
+    },
+    {
+      "function": "pico_display_temperature_summary",
+      "case": "celsius=1,value=0.0"
+    },
+    {
+      "function": "pico_display_temperature_summary",
+      "case": "celsius=1,value=32.0"
+    },
+    {
+      "function": "pico_display_temperature_summary",
+      "case": "celsius=1,value=154.6"
+    }
+  ]
+}

@@ -1,0 +1,3483 @@
+{
+  "elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "original_image_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "passed_cases": 543,
+  "failed_cases": 0,
+  "tested_functions": [
+    "pico_menu_populate_from_menu",
+    "pico_prompt_insert_filter_with_alarm",
+    "pico_run_drain_instructions",
+    "pico_settings_menu",
+    "pico_ui_adjust_recipe",
+    "pico_ui_choose_language",
+    "pico_ui_choose_program",
+    "pico_ui_choose_units",
+    "pico_ui_confirm_continue_or_abort",
+    "pico_ui_confirm_screen",
+    "pico_ui_confirm_thermal_recovery",
+    "pico_ui_descale_step",
+    "pico_ui_draw_instruction_with_context",
+    "pico_ui_draw_instruction_with_header",
+    "pico_ui_enter_manual_network",
+    "pico_ui_enter_wifi_password",
+    "pico_ui_first_rinse_step",
+    "pico_ui_manual_network_step",
+    "pico_ui_network_menu",
+    "pico_ui_prompt_deep_clean_setup",
+    "pico_ui_prompt_picopak_association",
+    "pico_ui_prompt_vacuum",
+    "pico_ui_rack_beer_step",
+    "pico_ui_require_first_rinse",
+    "pico_ui_scan_and_connect_wifi",
+    "pico_ui_select_recipe",
+    "pico_ui_select_scanned_network",
+    "pico_ui_show_rinse_finished",
+    "pico_ui_start_descale",
+    "pico_ui_wait_for_continue",
+    "pico_ui_wait_for_filter_insertion",
+    "pico_ui_wait_for_footer_press",
+    "pico_ui_wait_for_resume",
+    "pico_ui_wait_for_stop",
+    "pico_ui_walk_program_steps"
+  ],
+  "missing_owned_entries": [],
+  "failures": [],
+  "cases": [
+    {
+      "function": "pico_ui_require_first_rinse",
+      "original_address": "0x2000c564",
+      "case": "language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_require_first_rinse",
+      "original_address": "0x2000c564",
+      "case": "language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_require_first_rinse",
+      "original_address": "0x2000c564",
+      "case": "language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_picopak_association",
+      "original_address": "0x2000e85c",
+      "case": "language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_picopak_association",
+      "original_address": "0x2000e85c",
+      "case": "language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_picopak_association",
+      "original_address": "0x2000e85c",
+      "case": "language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_show_rinse_finished",
+      "original_address": "0x2000e958",
+      "case": "language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_show_rinse_finished",
+      "original_address": "0x2000e958",
+      "case": "language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_show_rinse_finished",
+      "original_address": "0x2000e958",
+      "case": "language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_continue",
+      "original_address": "0x2000c7f8",
+      "case": "language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_continue",
+      "original_address": "0x2000c7f8",
+      "case": "language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_continue",
+      "original_address": "0x2000c7f8",
+      "case": "language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_stop",
+      "original_address": "0x2000ef10",
+      "case": "language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_stop",
+      "original_address": "0x2000ef10",
+      "case": "language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_stop",
+      "original_address": "0x2000ef10",
+      "case": "language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_program",
+      "original_address": "0x2000c418",
+      "case": "language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_program",
+      "original_address": "0x2000c418",
+      "case": "language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_program",
+      "original_address": "0x2000c418",
+      "case": "language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=3,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=3,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=3,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=4,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=4,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=4,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=5,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=5,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=5,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=6,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=6,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=6,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=7,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=7,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=7,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=8,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=8,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=8,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=9,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=9,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=9,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=10,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=10,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=10,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=11,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=11,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=11,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=12,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=12,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=12,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=13,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=13,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=13,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=14,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=14,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=14,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=15,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=15,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=15,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=16,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=16,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=16,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=17,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=17,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=17,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=18,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=18,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=18,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=19,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=19,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=19,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=20,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=20,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=20,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=21,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=21,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=21,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=22,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=22,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=22,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=23,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=23,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=23,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=24,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=24,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_header",
+      "original_address": "0x2000b170",
+      "case": "instruction=24,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=3,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=3,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=3,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=4,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=4,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=4,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=5,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=5,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=5,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=6,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=6,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=6,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=7,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=7,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=7,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=8,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=8,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=8,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=9,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=9,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=9,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=10,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=10,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=10,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=11,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=11,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=11,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=12,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=12,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=12,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=13,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=13,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=13,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=14,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=14,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=14,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=15,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=15,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=15,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=16,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=16,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=16,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=17,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=17,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=17,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=18,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=18,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=18,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=19,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=19,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=19,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=20,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=20,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=20,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=21,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=21,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=21,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=22,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=22,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=22,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=23,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=23,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=23,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=24,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=24,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_draw_instruction_with_context",
+      "original_address": "0x2000b176",
+      "case": "instruction=24,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=0,selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=0,selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=0,selection=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=0,selection=3",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=0,selection=9",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=1,selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=1,selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=1,selection=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=1,selection=3",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=1,selection=9",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=2,selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=2,selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=2,selection=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=2,selection=3",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_language",
+      "original_address": "0x2000c334",
+      "case": "initial=2,selection=9",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=0,selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=1,selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=2,selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=0,selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=1,selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=2,selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=0,selection=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=1,selection=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=2,selection=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=0,selection=4294967295",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=1,selection=4294967295",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_units",
+      "original_address": "0x2000c36c",
+      "case": "language=2,selection=4294967295",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=3,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=3,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_manual_network_step",
+      "original_address": "0x2000e524",
+      "case": "stage=3,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=3,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=3,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=3,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=4,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=4,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=4,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=5,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=5,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=5,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=6,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=6,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=6,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=7,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=7,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=7,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=8,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=8,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=8,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=9,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=9,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_first_rinse_step",
+      "original_address": "0x2000eadc",
+      "case": "stage=9,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=3,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=3,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=3,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=4,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=4,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=4,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=5,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=5,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=5,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=6,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=6,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=6,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=7,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=7,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=7,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=8,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=8,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=8,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=9,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=9,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_rack_beer_step",
+      "original_address": "0x2000f26c",
+      "case": "stage=9,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=3,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=3,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=3,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=4,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=4,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=4,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=5,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=5,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=5,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=6,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=6,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=6,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=7,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=7,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "stage=7,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=0,selection=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=0,selection=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=0,selection=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=1,selection=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=1,selection=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=1,selection=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=2,selection=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=2,selection=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=2,selection=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=0,selection=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=0,selection=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=0,selection=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=1,selection=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=1,selection=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=1,selection=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=2,selection=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=2,selection=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=2,selection=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=0,selection=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=0,selection=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=0,selection=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=1,selection=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=1,selection=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=1,selection=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=2,selection=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=2,selection=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_vacuum",
+      "original_address": "0x2000c60c",
+      "case": "stage=2,selection=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_continue_or_abort",
+      "original_address": "0x2000fab8",
+      "case": "selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_continue_or_abort",
+      "original_address": "0x2000fab8",
+      "case": "selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_continue_or_abort",
+      "original_address": "0x2000fab8",
+      "case": "selection=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_continue_or_abort",
+      "original_address": "0x2000fab8",
+      "case": "selection=4294967295",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_deep_clean_setup",
+      "original_address": "0x2000af18",
+      "case": "language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_deep_clean_setup",
+      "original_address": "0x2000af18",
+      "case": "language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_prompt_deep_clean_setup",
+      "original_address": "0x2000af18",
+      "case": "language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_footer_press",
+      "original_address": "0x2000a434",
+      "case": "[255]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_footer_press",
+      "original_address": "0x2000a434",
+      "case": "[0, 255]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_footer_press",
+      "original_address": "0x2000a434",
+      "case": "[0, 0, 255]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_resume",
+      "original_address": "0x2000a414",
+      "case": "clicks=[255],filters=[1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_resume",
+      "original_address": "0x2000a414",
+      "case": "clicks=[0, 255],filters=[1, 1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_resume",
+      "original_address": "0x2000a414",
+      "case": "clicks=[255, 255],filters=[0, 1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_resume",
+      "original_address": "0x2000a414",
+      "case": "clicks=[0, 255, 0, 255],filters=[0, 0, 1, 1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_filter_insertion",
+      "original_address": "0x2000b17c",
+      "case": "inserted=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_filter_insertion",
+      "original_address": "0x2000b17c",
+      "case": "inserted=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_filter_insertion",
+      "original_address": "0x2000b17c",
+      "case": "inserted=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_filter_insertion",
+      "original_address": "0x2000b17c",
+      "case": "inserted=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_filter_insertion",
+      "original_address": "0x2000b17c",
+      "case": "inserted=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_wait_for_filter_insertion",
+      "original_address": "0x2000b17c",
+      "case": "inserted=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_prompt_insert_filter_with_alarm",
+      "original_address": "0x2000cc30",
+      "case": "language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_prompt_insert_filter_with_alarm",
+      "original_address": "0x2000cc30",
+      "case": "language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_prompt_insert_filter_with_alarm",
+      "original_address": "0x2000cc30",
+      "case": "language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[],language=0,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[],language=0,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[],language=1,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[],language=1,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[],language=2,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[],language=2,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0],language=0,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0],language=0,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0],language=1,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0],language=1,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0],language=2,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0],language=2,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[23, 34],language=0,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[23, 34],language=0,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[23, 34],language=1,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[23, 34],language=1,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[23, 34],language=2,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[23, 34],language=2,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[12, 13, 14, 15, 16, 17],language=0,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[12, 13, 14, 15, 16, 17],language=0,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[12, 13, 14, 15, 16, 17],language=1,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[12, 13, 14, 15, 16, 17],language=1,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[12, 13, 14, 15, 16, 17],language=2,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[12, 13, 14, 15, 16, 17],language=2,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],language=0,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],language=0,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],language=1,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],language=1,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],language=2,status=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_menu_populate_from_menu",
+      "original_address": "0x20005d14",
+      "case": "actions=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],language=2,status=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_wifi_password",
+      "original_address": "0x2000b1e8",
+      "case": "language=0,length=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_wifi_password",
+      "original_address": "0x2000b1e8",
+      "case": "language=0,length=6",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_wifi_password",
+      "original_address": "0x2000b1e8",
+      "case": "language=0,length=63",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_wifi_password",
+      "original_address": "0x2000b1e8",
+      "case": "language=1,length=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_wifi_password",
+      "original_address": "0x2000b1e8",
+      "case": "language=1,length=6",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_wifi_password",
+      "original_address": "0x2000b1e8",
+      "case": "language=1,length=63",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_wifi_password",
+      "original_address": "0x2000b1e8",
+      "case": "language=2,length=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_wifi_password",
+      "original_address": "0x2000b1e8",
+      "case": "language=2,length=6",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_wifi_password",
+      "original_address": "0x2000b1e8",
+      "case": "language=2,length=63",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=0,security_selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=1,security_selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=2,security_selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=0,security_selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=1,security_selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=2,security_selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=0,security_selection=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=1,security_selection=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=2,security_selection=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=0,security_selection=7",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=1,security_selection=7",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_enter_manual_network",
+      "original_address": "0x2000fac8",
+      "case": "language=2,security_selection=7",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_scanned_network",
+      "original_address": "0x2000b208",
+      "case": "index=0,security=2,ssid_length=4",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_scanned_network",
+      "original_address": "0x2000b208",
+      "case": "index=3,security=2,ssid_length=32",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_scanned_network",
+      "original_address": "0x2000b208",
+      "case": "index=19,security=2,ssid_length=12",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_scanned_network",
+      "original_address": "0x2000b208",
+      "case": "index=0,security=5,ssid_length=4",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_scanned_network",
+      "original_address": "0x2000b208",
+      "case": "index=3,security=5,ssid_length=32",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_scanned_network",
+      "original_address": "0x2000b208",
+      "case": "index=19,security=5,ssid_length=12",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_scanned_network",
+      "original_address": "0x2000b208",
+      "case": "index=0,security=7,ssid_length=4",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_scanned_network",
+      "original_address": "0x2000b208",
+      "case": "index=3,security=7,ssid_length=32",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_scanned_network",
+      "original_address": "0x2000b208",
+      "case": "index=19,security=7,ssid_length=12",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=0,choices=[0, 0, 0, 0]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=0,choices=[1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=0,choices=[0, 1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=0,choices=[0, 0, 2]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=0,choices=[0, 0, 0, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=2,choices=[0, 0, 0, 0]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=2,choices=[1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=2,choices=[0, 1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=2,choices=[0, 0, 2]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=2,choices=[0, 0, 0, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=3,choices=[0, 0, 0, 0]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=3,choices=[1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=3,choices=[0, 1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=3,choices=[0, 0, 2]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=3,choices=[0, 0, 0, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=4,choices=[0, 0, 0, 0]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=4,choices=[1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=4,choices=[0, 1]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=4,choices=[0, 0, 2]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_walk_program_steps",
+      "original_address": "0x2000c43c",
+      "case": "program=4,choices=[0, 0, 0, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_screen",
+      "original_address": "0x2000fa40",
+      "case": "callback=pico_ui_draw_descale_preparation,selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_screen",
+      "original_address": "0x2000fa40",
+      "case": "callback=pico_ui_draw_deep_clean_heading,selection=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_screen",
+      "original_address": "0x2000fa40",
+      "case": "callback=pico_ui_draw_descale_preparation,selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_screen",
+      "original_address": "0x2000fa40",
+      "case": "callback=pico_ui_draw_deep_clean_heading,selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=0,selection=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=0,selection=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=0,selection=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=0,selection=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=0,selection=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=0,selection=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=0,selection=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=0,selection=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=0,selection=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=5,selection=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=5,selection=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=5,selection=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=5,selection=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=5,selection=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=5,selection=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=5,selection=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=5,selection=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=5,selection=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=6,selection=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=6,selection=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=6,selection=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=6,selection=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=6,selection=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=6,selection=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=6,selection=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=6,selection=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=6,selection=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=7,selection=0,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=7,selection=0,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=7,selection=0,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=7,selection=1,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=7,selection=1,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=7,selection=1,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=7,selection=2,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=7,selection=2,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_confirm_thermal_recovery",
+      "original_address": "0x2000fa80",
+      "case": "status=7,selection=2,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_start_descale",
+      "original_address": "0x20011564",
+      "case": "confirmed=False,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_start_descale",
+      "original_address": "0x20011564",
+      "case": "confirmed=False,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_start_descale",
+      "original_address": "0x20011564",
+      "case": "confirmed=False,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_start_descale",
+      "original_address": "0x20011564",
+      "case": "confirmed=True,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_start_descale",
+      "original_address": "0x20011564",
+      "case": "confirmed=True,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_start_descale",
+      "original_address": "0x20011564",
+      "case": "confirmed=True,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_run_drain_instructions",
+      "original_address": "0x2000d014",
+      "case": "setup=23,initial=False,actions=[30]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_run_drain_instructions",
+      "original_address": "0x2000d014",
+      "case": "setup=23,initial=True,actions=[30]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_run_drain_instructions",
+      "original_address": "0x2000d014",
+      "case": "setup=23,initial=False,actions=[31, 32, 30]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_run_drain_instructions",
+      "original_address": "0x2000d014",
+      "case": "setup=23,initial=True,actions=[32, 31, 34]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_run_drain_instructions",
+      "original_address": "0x2000d014",
+      "case": "setup=34,initial=False,actions=[30]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_run_drain_instructions",
+      "original_address": "0x2000d014",
+      "case": "setup=34,initial=True,actions=[30]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_run_drain_instructions",
+      "original_address": "0x2000d014",
+      "case": "setup=34,initial=False,actions=[31, 32, 30]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_run_drain_instructions",
+      "original_address": "0x2000d014",
+      "case": "setup=34,initial=True,actions=[32, 31, 34]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_settings_menu",
+      "original_address": "0x2000fff8",
+      "case": "[4]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_settings_menu",
+      "original_address": "0x2000fff8",
+      "case": "[0, 4]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_settings_menu",
+      "original_address": "0x2000fff8",
+      "case": "[1, 4]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_settings_menu",
+      "original_address": "0x2000fff8",
+      "case": "[2, 4]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_settings_menu",
+      "original_address": "0x2000fff8",
+      "case": "[3, 4]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_settings_menu",
+      "original_address": "0x2000fff8",
+      "case": "[0, 1, 2, 3, 4]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_network_menu",
+      "original_address": "0x2000ff98",
+      "case": "connected=False,choices=[3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_network_menu",
+      "original_address": "0x2000ff98",
+      "case": "connected=False,choices=[0, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_network_menu",
+      "original_address": "0x2000ff98",
+      "case": "connected=False,choices=[1, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_network_menu",
+      "original_address": "0x2000ff98",
+      "case": "connected=False,choices=[2, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_network_menu",
+      "original_address": "0x2000ff98",
+      "case": "connected=False,choices=[0, 1, 2, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_network_menu",
+      "original_address": "0x2000ff98",
+      "case": "connected=True,choices=[3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_network_menu",
+      "original_address": "0x2000ff98",
+      "case": "connected=True,choices=[0, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_network_menu",
+      "original_address": "0x2000ff98",
+      "case": "connected=True,choices=[1, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_network_menu",
+      "original_address": "0x2000ff98",
+      "case": "connected=True,choices=[2, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_network_menu",
+      "original_address": "0x2000ff98",
+      "case": "connected=True,choices=[0, 1, 2, 3]",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=False,init=False,count=0,choices=[],connected=False,resolved=False,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=False,init=False,count=0,choices=[],connected=False,resolved=False,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=False,init=False,count=0,choices=[],connected=False,resolved=False,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=False,init=True,count=0,choices=[],connected=False,resolved=False,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=False,init=True,count=0,choices=[],connected=False,resolved=False,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=False,init=True,count=0,choices=[],connected=False,resolved=False,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=0,choices=[],connected=False,resolved=False,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=0,choices=[],connected=False,resolved=False,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=0,choices=[],connected=False,resolved=False,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=1,choices=[0],connected=True,resolved=True,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=1,choices=[0],connected=True,resolved=True,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=1,choices=[0],connected=True,resolved=True,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[0],connected=True,resolved=False,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[0],connected=True,resolved=False,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[0],connected=True,resolved=False,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[1],connected=False,resolved=False,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[1],connected=False,resolved=False,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[1],connected=False,resolved=False,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[2],connected=True,resolved=True,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[2],connected=True,resolved=True,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[2],connected=True,resolved=True,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[3, 0],connected=True,resolved=True,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[3, 0],connected=True,resolved=True,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=2,choices=[3, 0],connected=True,resolved=True,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=20,choices=[19],connected=True,resolved=True,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=20,choices=[19],connected=True,resolved=True,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_scan_and_connect_wifi",
+      "original_address": "0x2000fb30",
+      "case": "initialized=True,init=True,count=20,choices=[19],connected=True,resolved=True,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_adjust_recipe",
+      "original_address": "0x20010e1c",
+      "case": "abv=-1,ibu=-1,choices=[0],changed=False,fetch=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_adjust_recipe",
+      "original_address": "0x20010e1c",
+      "case": "abv=-1,ibu=-1,choices=[1],changed=False,fetch=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_adjust_recipe",
+      "original_address": "0x20010e1c",
+      "case": "abv=-1,ibu=-1,choices=[2],changed=False,fetch=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_adjust_recipe",
+      "original_address": "0x20010e1c",
+      "case": "abv=2,ibu=4,choices=[0],changed=False,fetch=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_adjust_recipe",
+      "original_address": "0x20010e1c",
+      "case": "abv=2,ibu=4,choices=[2],changed=False,fetch=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_adjust_recipe",
+      "original_address": "0x20010e1c",
+      "case": "abv=2,ibu=-1,choices=[1, 0],changed=False,fetch=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_adjust_recipe",
+      "original_address": "0x20010e1c",
+      "case": "abv=-1,ibu=4,choices=[1, 0],changed=True,fetch=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_adjust_recipe",
+      "original_address": "0x20010e1c",
+      "case": "abv=2,ibu=4,choices=[1, 0],changed=True,fetch=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_adjust_recipe",
+      "original_address": "0x20010e1c",
+      "case": "abv=2,ibu=4,choices=[1],changed=True,fetch=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_recipe",
+      "original_address": "0x20012b94",
+      "case": "both_sources_fail",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_recipe",
+      "original_address": "0x20012b94",
+      "case": "catalog_create_fail",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_recipe",
+      "original_address": "0x20012b94",
+      "case": "catalog_success",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_recipe",
+      "original_address": "0x20012b94",
+      "case": "catalog_fetch_fail",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_recipe",
+      "original_address": "0x20012b94",
+      "case": "catalog_then_associated_exit",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_recipe",
+      "original_address": "0x20012b94",
+      "case": "catalog_next_page",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_recipe",
+      "original_address": "0x20012b94",
+      "case": "associated_unique",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_recipe",
+      "original_address": "0x20012b94",
+      "case": "associated_group_first",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_recipe",
+      "original_address": "0x20012b94",
+      "case": "associated_group_cancel",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_recipe",
+      "original_address": "0x20012b94",
+      "case": "associated_fetch_fail",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_select_recipe",
+      "original_address": "0x20012b94",
+      "case": "associated_exit",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_program",
+      "original_address": "0x2000c418",
+      "case": "forward_selection=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_choose_program",
+      "original_address": "0x2000c418",
+      "case": "forward_selection=2",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "confirmation_declined,language=0",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "confirmation_declined,language=1",
+      "kind": "original_vs_rebuilt_arm"
+    },
+    {
+      "function": "pico_ui_descale_step",
+      "original_address": "0x2000f928",
+      "case": "confirmation_declined,language=2",
+      "kind": "original_vs_rebuilt_arm"
+    }
+  ],
+  "entry_evidence": [
+    {
+      "original_address": "0x20005d14",
+      "function": "pico_menu_populate_from_menu",
+      "direct_cases": 30
+    },
+    {
+      "original_address": "0x2000cc30",
+      "function": "pico_prompt_insert_filter_with_alarm",
+      "direct_cases": 3
+    },
+    {
+      "original_address": "0x2000d014",
+      "function": "pico_run_drain_instructions",
+      "direct_cases": 8
+    },
+    {
+      "original_address": "0x2000fff8",
+      "function": "pico_settings_menu",
+      "direct_cases": 6
+    },
+    {
+      "original_address": "0x20010e1c",
+      "function": "pico_ui_adjust_recipe",
+      "direct_cases": 9
+    },
+    {
+      "original_address": "0x2000c334",
+      "function": "pico_ui_choose_language",
+      "direct_cases": 15
+    },
+    {
+      "original_address": "0x2000c418",
+      "function": "pico_ui_choose_program",
+      "direct_cases": 5
+    },
+    {
+      "original_address": "0x2000c36c",
+      "function": "pico_ui_choose_units",
+      "direct_cases": 12
+    },
+    {
+      "original_address": "0x2000fab8",
+      "function": "pico_ui_confirm_continue_or_abort",
+      "direct_cases": 4
+    },
+    {
+      "original_address": "0x2000fa40",
+      "function": "pico_ui_confirm_screen",
+      "direct_cases": 4
+    },
+    {
+      "original_address": "0x2000fa80",
+      "function": "pico_ui_confirm_thermal_recovery",
+      "direct_cases": 36
+    },
+    {
+      "original_address": "0x2000f928",
+      "function": "pico_ui_descale_step",
+      "direct_cases": 27
+    },
+    {
+      "original_address": "0x2000b176",
+      "function": "pico_ui_draw_instruction_with_context",
+      "direct_cases": 75
+    },
+    {
+      "original_address": "0x2000b170",
+      "function": "pico_ui_draw_instruction_with_header",
+      "direct_cases": 75
+    },
+    {
+      "original_address": "0x2000fac8",
+      "function": "pico_ui_enter_manual_network",
+      "direct_cases": 12
+    },
+    {
+      "original_address": "0x2000b1e8",
+      "function": "pico_ui_enter_wifi_password",
+      "direct_cases": 9
+    },
+    {
+      "original_address": "0x2000eadc",
+      "function": "pico_ui_first_rinse_step",
+      "direct_cases": 30
+    },
+    {
+      "original_address": "0x2000e524",
+      "function": "pico_ui_manual_network_step",
+      "direct_cases": 12
+    },
+    {
+      "original_address": "0x2000ff98",
+      "function": "pico_ui_network_menu",
+      "direct_cases": 10
+    },
+    {
+      "original_address": "0x2000af18",
+      "function": "pico_ui_prompt_deep_clean_setup",
+      "direct_cases": 3
+    },
+    {
+      "original_address": "0x2000e85c",
+      "function": "pico_ui_prompt_picopak_association",
+      "direct_cases": 3
+    },
+    {
+      "original_address": "0x2000c60c",
+      "function": "pico_ui_prompt_vacuum",
+      "direct_cases": 27
+    },
+    {
+      "original_address": "0x2000f26c",
+      "function": "pico_ui_rack_beer_step",
+      "direct_cases": 30
+    },
+    {
+      "original_address": "0x2000c564",
+      "function": "pico_ui_require_first_rinse",
+      "direct_cases": 3
+    },
+    {
+      "original_address": "0x2000fb30",
+      "function": "pico_ui_scan_and_connect_wifi",
+      "direct_cases": 27
+    },
+    {
+      "original_address": "0x20012b94",
+      "function": "pico_ui_select_recipe",
+      "direct_cases": 11
+    },
+    {
+      "original_address": "0x2000b208",
+      "function": "pico_ui_select_scanned_network",
+      "direct_cases": 9
+    },
+    {
+      "original_address": "0x2000e958",
+      "function": "pico_ui_show_rinse_finished",
+      "direct_cases": 3
+    },
+    {
+      "original_address": "0x20011564",
+      "function": "pico_ui_start_descale",
+      "direct_cases": 6
+    },
+    {
+      "original_address": "0x2000c7f8",
+      "function": "pico_ui_wait_for_continue",
+      "direct_cases": 3
+    },
+    {
+      "original_address": "0x2000b17c",
+      "function": "pico_ui_wait_for_filter_insertion",
+      "direct_cases": 6
+    },
+    {
+      "original_address": "0x2000a434",
+      "function": "pico_ui_wait_for_footer_press",
+      "direct_cases": 3
+    },
+    {
+      "original_address": "0x2000a414",
+      "function": "pico_ui_wait_for_resume",
+      "direct_cases": 4
+    },
+    {
+      "original_address": "0x2000ef10",
+      "function": "pico_ui_wait_for_stop",
+      "direct_cases": 3
+    },
+    {
+      "original_address": "0x2000c43c",
+      "function": "pico_ui_walk_program_steps",
+      "direct_cases": 20
+    }
+  ],
+  "scope": "Direct original/rebuilt ARM entry execution. Actual framebuffers, flushed frames, menu labels, settings, returns and ordered service requests are compared; hardware/network/recipe services and user input are explicitly controlled. Not physical or exhaustive path validation."
+}

@@ -1,0 +1,1604 @@
+{
+  "elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "passed_cases": 396,
+  "failed_cases": 0,
+  "tested_functions": [
+    "pico_alarm_until_press_or_timeout",
+    "pico_encoder_edit_text",
+    "pico_encoder_select_adjustment_level",
+    "pico_get_temperature_input",
+    "pico_get_time_input",
+    "pico_halt_heater_malfunction",
+    "pico_report_error",
+    "pico_ui_draw_error",
+    "pico_ui_run_instruction_screen",
+    "pico_ui_run_instruction_sequence"
+  ],
+  "failures": [],
+  "cases": [
+    {
+      "function": "pico_ui_draw_error",
+      "case": "0,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "0,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "0,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "1,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "1,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "1,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "2,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "2,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "2,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "3,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "3,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "3,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "4,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "4,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "4,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "5,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "5,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "5,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "6,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "6,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "6,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "7,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "7,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "7,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "8,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "8,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "8,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "9,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "9,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "9,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "10,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "10,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "10,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "11,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "11,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "11,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "12,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "12,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "12,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "13,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "13,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "13,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "14,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "14,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "14,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "15,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "15,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "15,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "16,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "16,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "16,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "17,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "17,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "17,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "18,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "18,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "18,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "19,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "19,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "19,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "20,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "20,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "20,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "21,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "21,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "21,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "22,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "22,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "22,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "23,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "23,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "23,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "24,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "24,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "24,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "25,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "25,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "25,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "99,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "99,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "99,2"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "-1,0"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "-1,1"
+    },
+    {
+      "function": "pico_ui_draw_error",
+      "case": "-1,2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=0,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=0,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=0,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=0,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=0,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=0,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=0,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=0,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=0,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=1,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=1,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=1,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=1,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=1,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=1,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=1,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=1,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=1,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=2,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=2,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=2,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=2,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=2,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=2,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=2,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=2,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=2,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=3,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=3,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=3,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=3,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=3,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=3,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=3,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=3,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=3,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=4,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=4,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=4,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=4,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=4,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=4,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=4,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=4,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=4,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=5,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=5,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=5,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=5,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=5,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=5,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=5,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=5,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=5,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=6,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=6,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=6,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=6,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=6,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=6,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=6,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=6,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=6,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=7,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=7,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=7,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=7,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=7,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=7,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=7,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=7,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=7,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=8,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=8,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=8,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=8,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=8,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=8,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=8,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=8,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=8,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=9,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=9,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=9,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=9,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=9,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=9,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=9,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=9,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=9,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=10,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=10,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=10,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=10,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=10,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=10,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=10,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=10,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=10,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=11,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=11,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=11,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=11,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=11,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=11,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=11,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=11,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=11,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=12,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=12,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=12,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=12,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=12,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=12,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=12,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=12,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=12,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=13,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=13,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=13,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=13,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=13,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=13,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=13,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=13,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=13,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=14,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=14,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=14,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=14,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=14,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=14,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=14,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=14,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=14,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=15,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=15,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=15,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=15,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=15,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=15,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=15,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=15,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=15,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=16,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=16,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=16,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=16,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=16,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=16,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=16,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=16,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=16,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=17,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=17,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=17,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=17,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=17,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=17,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=17,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=17,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=17,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=18,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=18,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=18,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=18,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=18,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=18,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=18,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=18,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=18,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=19,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=19,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=19,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=19,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=19,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=19,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=19,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=19,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=19,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=20,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=20,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=20,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=20,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=20,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=20,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=20,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=20,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=20,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=21,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=21,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=21,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=21,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=21,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=21,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=21,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=21,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=21,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=22,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=22,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=22,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=22,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=22,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=22,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=22,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=22,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=22,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=23,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=23,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=23,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=23,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=23,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=23,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=23,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=23,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=23,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=24,program=0,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=24,program=0,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=24,program=0,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=24,program=3,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=24,program=3,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=24,program=3,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=24,program=4,lang=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=24,program=4,lang=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_screen",
+      "case": "id=24,program=4,lang=2"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=0,actions=[],null=False,alarm=-1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=0,actions=[],null=False,alarm=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=0,actions=[],null=False,alarm=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=-1,actions=[],null=False,alarm=-1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=-1,actions=[],null=False,alarm=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=-1,actions=[],null=False,alarm=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=1,actions=[23],null=False,alarm=-1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=1,actions=[23],null=False,alarm=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=1,actions=[23],null=False,alarm=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[23, 23, 23],null=False,alarm=-1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[23, 23, 23],null=False,alarm=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[23, 23, 23],null=False,alarm=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[23, 34],null=False,alarm=-1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[23, 34],null=False,alarm=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[23, 34],null=False,alarm=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[34],null=False,alarm=-1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[34],null=False,alarm=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[34],null=False,alarm=1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[],null=True,alarm=-1"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[],null=True,alarm=0"
+    },
+    {
+      "function": "pico_ui_run_instruction_sequence",
+      "case": "count=3,actions=[],null=True,alarm=1"
+    },
+    {
+      "function": "pico_encoder_edit_text",
+      "case": "[4, 5, 3, 26, 98, 1],capacity=64"
+    },
+    {
+      "function": "pico_encoder_edit_text",
+      "case": "[98, 98, 1],capacity=8"
+    },
+    {
+      "function": "pico_encoder_edit_text",
+      "case": "[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 3, 5, 1],capacity=5"
+    },
+    {
+      "function": "pico_encoder_edit_text",
+      "case": "[1],capacity=64"
+    },
+    {
+      "function": "pico_encoder_edit_text",
+      "case": "[3, 1],capacity=8"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,-1,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,-1,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,-1,9"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,0,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,0,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,0,9"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,5,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,5,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,5,9"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,10,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,10,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "0,10,9"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,-1,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,-1,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,-1,9"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,0,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,0,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,0,9"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,5,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,5,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,5,9"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,10,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,10,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "3,10,9"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,-1,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,-1,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,-1,9"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,0,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,0,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,0,9"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,5,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,5,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,5,9"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,10,-1"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,10,4"
+    },
+    {
+      "function": "pico_encoder_select_adjustment_level",
+      "case": "10,10,9"
+    },
+    {
+      "function": "pico_get_temperature_input",
+      "case": "value=60,celsius=0"
+    },
+    {
+      "function": "pico_get_temperature_input",
+      "case": "value=100,celsius=0"
+    },
+    {
+      "function": "pico_get_temperature_input",
+      "case": "value=153,celsius=0"
+    },
+    {
+      "function": "pico_get_temperature_input",
+      "case": "value=203,celsius=0"
+    },
+    {
+      "function": "pico_get_temperature_input",
+      "case": "value=60,celsius=1"
+    },
+    {
+      "function": "pico_get_temperature_input",
+      "case": "value=100,celsius=1"
+    },
+    {
+      "function": "pico_get_temperature_input",
+      "case": "value=153,celsius=1"
+    },
+    {
+      "function": "pico_get_temperature_input",
+      "case": "value=203,celsius=1"
+    },
+    {
+      "function": "pico_get_time_input",
+      "case": "value=0,celsius=0"
+    },
+    {
+      "function": "pico_get_time_input",
+      "case": "value=59,celsius=0"
+    },
+    {
+      "function": "pico_get_time_input",
+      "case": "value=60,celsius=0"
+    },
+    {
+      "function": "pico_get_time_input",
+      "case": "value=90,celsius=0"
+    },
+    {
+      "function": "pico_get_time_input",
+      "case": "value=595,celsius=0"
+    },
+    {
+      "function": "pico_get_time_input",
+      "case": "value=0,celsius=1"
+    },
+    {
+      "function": "pico_get_time_input",
+      "case": "value=59,celsius=1"
+    },
+    {
+      "function": "pico_get_time_input",
+      "case": "value=60,celsius=1"
+    },
+    {
+      "function": "pico_get_time_input",
+      "case": "value=90,celsius=1"
+    },
+    {
+      "function": "pico_get_time_input",
+      "case": "value=595,celsius=1"
+    },
+    {
+      "function": "pico_alarm_until_press_or_timeout",
+      "case": "click=1,timeout=60000"
+    },
+    {
+      "function": "pico_alarm_until_press_or_timeout",
+      "case": "click=8,timeout=60000"
+    },
+    {
+      "function": "pico_alarm_until_press_or_timeout",
+      "case": "click=100,timeout=0"
+    },
+    {
+      "function": "pico_alarm_until_press_or_timeout",
+      "case": "click=100,timeout=5000"
+    },
+    {
+      "function": "pico_halt_heater_malfunction",
+      "case": "continue=0"
+    },
+    {
+      "function": "pico_report_error",
+      "case": "continue=0"
+    },
+    {
+      "function": "pico_report_error",
+      "case": "continue=1"
+    }
+  ]
+}

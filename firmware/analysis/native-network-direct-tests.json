@@ -1,0 +1,1483 @@
+{
+  "passed": true,
+  "cases": 56,
+  "passed_cases": 56,
+  "failed_cases": 0,
+  "elf_sha256": "38d4e0426c0928ad9b84c862979c539f788168a2f4e66c6f0ef7071d47e33cd6",
+  "production_elf_sha256": "38d4e0426c0928ad9b84c862979c539f788168a2f4e66c6f0ef7071d47e33cd6",
+  "original_image_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "test_sha256": "3f32fcf566201e2d7808b4eb195401bab7bbc4ce92f7a7198a14fd77955916be",
+  "checks": {
+    "documented_failure_repair": 5,
+    "normalized_sdk_contract": 2,
+    "original_vs_rebuilt_arm": 40,
+    "sdk_return_contract": 9
+  },
+  "entry_evidence": [
+    {
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "direct_cases": 32
+    },
+    {
+      "original_address": "0x20008994",
+      "replacement_symbol": "_ZL10initializePv",
+      "direct_cases": 2
+    },
+    {
+      "original_address": "0x200058c8",
+      "replacement_symbol": "_ZL11file_removePvPKc",
+      "direct_cases": 9
+    },
+    {
+      "original_address": "0x20008f40",
+      "replacement_symbol": "_ZL10file_closePv",
+      "direct_cases": 4
+    },
+    {
+      "original_address": "0x20008c28",
+      "replacement_symbol": "_ZL4pingPv",
+      "direct_cases": 9
+    }
+  ],
+  "results": [
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 0,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 0
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 0,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 1,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 0
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 1,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 2,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ]
+      ],
+      "ready": 0
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 2,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 3,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 0
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 3,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 4,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ]
+      ],
+      "ready": 0
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 4,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 5,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 0
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 5,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 6,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ]
+      ],
+      "ready": 0
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 6,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 7,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 0
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 7,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 8,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 8,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 9,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 9,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 10,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 10,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 11,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 11,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 12,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 12,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 13,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 13,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 14,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 14,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 15,
+        "initial_ready": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "hash_interrupt",
+      "original_address": "0x200047b0",
+      "replacement_symbol": "_ZL14hash_interruptv",
+      "scenario": {
+        "status_mask": 15,
+        "initial_ready": 1
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "interrupt_operations": [
+        [
+          "status",
+          1141067776,
+          1
+        ],
+        [
+          "disable",
+          1141067776,
+          8
+        ],
+        [
+          "disable",
+          1141067776,
+          4
+        ],
+        [
+          "disable",
+          1141067776,
+          2
+        ],
+        [
+          "disable",
+          1141067776,
+          1
+        ]
+      ],
+      "ready": 1
+    },
+    {
+      "entry": "initialize",
+      "original_address": "0x20008994",
+      "replacement_symbol": "_ZL10initializePv",
+      "scenario": {
+        "sdk_result": false
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "return_value": 0,
+      "calls": [
+        "WiFi.init"
+      ]
+    },
+    {
+      "entry": "initialize",
+      "original_address": "0x20008994",
+      "replacement_symbol": "_ZL10initializePv",
+      "scenario": {
+        "sdk_result": true
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "return_value": 1,
+      "calls": [
+        "WiFi.init"
+      ]
+    },
+    {
+      "entry": "file_remove",
+      "original_address": "0x200058c8",
+      "replacement_symbol": "_ZL11file_removePvPKc",
+      "scenario": {
+        "filename": "/sys/ssid.txt",
+        "open_handle": 0,
+        "simplelink_result": 0
+      },
+      "kind": "sdk_return_contract",
+      "calls": [
+        [
+          "delete",
+          "/sys/ssid.txt",
+          0
+        ]
+      ],
+      "original_return": 1,
+      "native_return": 0,
+      "distinction": "Original wrapper always returns 1; native callback preserves SDK 0-success/negative-error status. File operation and filename match."
+    },
+    {
+      "entry": "file_remove",
+      "original_address": "0x200058c8",
+      "replacement_symbol": "_ZL11file_removePvPKc",
+      "scenario": {
+        "filename": "/sys/ssid.txt",
+        "open_handle": 0,
+        "simplelink_result": -5
+      },
+      "kind": "sdk_return_contract",
+      "calls": [
+        [
+          "delete",
+          "/sys/ssid.txt",
+          0
+        ]
+      ],
+      "original_return": 1,
+      "native_return": -5,
+      "distinction": "Original wrapper always returns 1; native callback preserves SDK 0-success/negative-error status. File operation and filename match."
+    },
+    {
+      "entry": "file_remove",
+      "original_address": "0x200058c8",
+      "replacement_symbol": "_ZL11file_removePvPKc",
+      "scenario": {
+        "filename": "/sys/ssid.txt",
+        "open_handle": 47,
+        "simplelink_result": 0
+      },
+      "kind": "sdk_return_contract",
+      "calls": [],
+      "original_return": 1,
+      "native_return": -10004,
+      "distinction": "Original wrapper always returns 1; native callback preserves SDK 0-success/negative-error status. File operation and filename match."
+    },
+    {
+      "entry": "file_remove",
+      "original_address": "0x200058c8",
+      "replacement_symbol": "_ZL11file_removePvPKc",
+      "scenario": {
+        "filename": "/sys/restart.txt",
+        "open_handle": 0,
+        "simplelink_result": 0
+      },
+      "kind": "sdk_return_contract",
+      "calls": [
+        [
+          "delete",
+          "/sys/restart.txt",
+          0
+        ]
+      ],
+      "original_return": 1,
+      "native_return": 0,
+      "distinction": "Original wrapper always returns 1; native callback preserves SDK 0-success/negative-error status. File operation and filename match."
+    },
+    {
+      "entry": "file_remove",
+      "original_address": "0x200058c8",
+      "replacement_symbol": "_ZL11file_removePvPKc",
+      "scenario": {
+        "filename": "/sys/restart.txt",
+        "open_handle": 0,
+        "simplelink_result": -5
+      },
+      "kind": "sdk_return_contract",
+      "calls": [
+        [
+          "delete",
+          "/sys/restart.txt",
+          0
+        ]
+      ],
+      "original_return": 1,
+      "native_return": -5,
+      "distinction": "Original wrapper always returns 1; native callback preserves SDK 0-success/negative-error status. File operation and filename match."
+    },
+    {
+      "entry": "file_remove",
+      "original_address": "0x200058c8",
+      "replacement_symbol": "_ZL11file_removePvPKc",
+      "scenario": {
+        "filename": "/sys/restart.txt",
+        "open_handle": 47,
+        "simplelink_result": 0
+      },
+      "kind": "sdk_return_contract",
+      "calls": [],
+      "original_return": 1,
+      "native_return": -10004,
+      "distinction": "Original wrapper always returns 1; native callback preserves SDK 0-success/negative-error status. File operation and filename match."
+    },
+    {
+      "entry": "file_remove",
+      "original_address": "0x200058c8",
+      "replacement_symbol": "_ZL11file_removePvPKc",
+      "scenario": {
+        "filename": "user-file.txt",
+        "open_handle": 0,
+        "simplelink_result": 0
+      },
+      "kind": "sdk_return_contract",
+      "calls": [
+        [
+          "delete",
+          "user-file.txt",
+          0
+        ]
+      ],
+      "original_return": 1,
+      "native_return": 0,
+      "distinction": "Original wrapper always returns 1; native callback preserves SDK 0-success/negative-error status. File operation and filename match."
+    },
+    {
+      "entry": "file_remove",
+      "original_address": "0x200058c8",
+      "replacement_symbol": "_ZL11file_removePvPKc",
+      "scenario": {
+        "filename": "user-file.txt",
+        "open_handle": 0,
+        "simplelink_result": -5
+      },
+      "kind": "sdk_return_contract",
+      "calls": [
+        [
+          "delete",
+          "user-file.txt",
+          0
+        ]
+      ],
+      "original_return": 1,
+      "native_return": -5,
+      "distinction": "Original wrapper always returns 1; native callback preserves SDK 0-success/negative-error status. File operation and filename match."
+    },
+    {
+      "entry": "file_remove",
+      "original_address": "0x200058c8",
+      "replacement_symbol": "_ZL11file_removePvPKc",
+      "scenario": {
+        "filename": "user-file.txt",
+        "open_handle": 47,
+        "simplelink_result": 0
+      },
+      "kind": "sdk_return_contract",
+      "calls": [],
+      "original_return": 1,
+      "native_return": -10004,
+      "distinction": "Original wrapper always returns 1; native callback preserves SDK 0-success/negative-error status. File operation and filename match."
+    },
+    {
+      "entry": "file_close",
+      "original_address": "0x20008f40",
+      "replacement_symbol": "_ZL10file_closePv",
+      "scenario": {
+        "open_handle": 0,
+        "simplelink_result": 0
+      },
+      "kind": "normalized_sdk_contract",
+      "calls": [],
+      "state": {
+        "filehandle": 0,
+        "filesize": 123,
+        "offset": 17,
+        "is_write": 1
+      },
+      "original_return": 0,
+      "native_return": 0,
+      "distinction": "The legacy close method returns 1 on success, but its wrapper also treats negative failures as true. Native SLFS uses 0 success and the adapter returns false on errors."
+    },
+    {
+      "entry": "file_close",
+      "original_address": "0x20008f40",
+      "replacement_symbol": "_ZL10file_closePv",
+      "scenario": {
+        "open_handle": 47,
+        "simplelink_result": 0
+      },
+      "kind": "normalized_sdk_contract",
+      "calls": [
+        [
+          "close",
+          47,
+          0,
+          0,
+          0
+        ]
+      ],
+      "state": {
+        "filehandle": 0,
+        "filesize": 0,
+        "offset": 0,
+        "is_write": 0
+      },
+      "original_return": 1,
+      "native_return": 1,
+      "distinction": "The legacy close method returns 1 on success, but its wrapper also treats negative failures as true. Native SLFS uses 0 success and the adapter returns false on errors."
+    },
+    {
+      "entry": "file_close",
+      "original_address": "0x20008f40",
+      "replacement_symbol": "_ZL10file_closePv",
+      "scenario": {
+        "open_handle": 47,
+        "simplelink_result": -5
+      },
+      "kind": "documented_failure_repair",
+      "calls": [
+        [
+          "close",
+          47,
+          0,
+          0,
+          0
+        ]
+      ],
+      "state": {
+        "filehandle": 0,
+        "filesize": 0,
+        "offset": 0,
+        "is_write": 0
+      },
+      "original_return": 1,
+      "native_return": 0,
+      "distinction": "The legacy close method returns 1 on success, but its wrapper also treats negative failures as true. Native SLFS uses 0 success and the adapter returns false on errors."
+    },
+    {
+      "entry": "file_close",
+      "original_address": "0x20008f40",
+      "replacement_symbol": "_ZL10file_closePv",
+      "scenario": {
+        "open_handle": 47,
+        "simplelink_result": -42
+      },
+      "kind": "documented_failure_repair",
+      "calls": [
+        [
+          "close",
+          47,
+          0,
+          0,
+          0
+        ]
+      ],
+      "state": {
+        "filehandle": 0,
+        "filesize": 0,
+        "offset": 0,
+        "is_write": 0
+      },
+      "original_return": 1,
+      "native_return": 0,
+      "distinction": "The legacy close method returns 1 on success, but its wrapper also treats negative failures as true. Native SLFS uses 0 success and the adapter returns false on errors."
+    },
+    {
+      "entry": "ping",
+      "original_address": "0x20008c28",
+      "replacement_symbol": "_ZL4pingPv",
+      "scenario": {
+        "packets_received": 0,
+        "status": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "return_value": 0,
+      "calls": [
+        [
+          "ping",
+          [
+            25,
+            56,
+            1000,
+            5,
+            0,
+            134743044
+          ],
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "entry": "ping",
+      "original_address": "0x20008c28",
+      "replacement_symbol": "_ZL4pingPv",
+      "scenario": {
+        "packets_received": 1,
+        "status": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "return_value": 1,
+      "calls": [
+        [
+          "ping",
+          [
+            25,
+            56,
+            1000,
+            5,
+            0,
+            134743044
+          ],
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "entry": "ping",
+      "original_address": "0x20008c28",
+      "replacement_symbol": "_ZL4pingPv",
+      "scenario": {
+        "packets_received": 5,
+        "status": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "return_value": 5,
+      "calls": [
+        [
+          "ping",
+          [
+            25,
+            56,
+            1000,
+            5,
+            0,
+            134743044
+          ],
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "entry": "ping",
+      "original_address": "0x20008c28",
+      "replacement_symbol": "_ZL4pingPv",
+      "scenario": {
+        "packets_received": 255,
+        "status": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "return_value": 255,
+      "calls": [
+        [
+          "ping",
+          [
+            25,
+            56,
+            1000,
+            5,
+            0,
+            134743044
+          ],
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "entry": "ping",
+      "original_address": "0x20008c28",
+      "replacement_symbol": "_ZL4pingPv",
+      "scenario": {
+        "packets_received": 256,
+        "status": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "return_value": 0,
+      "calls": [
+        [
+          "ping",
+          [
+            25,
+            56,
+            1000,
+            5,
+            0,
+            134743044
+          ],
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "entry": "ping",
+      "original_address": "0x20008c28",
+      "replacement_symbol": "_ZL4pingPv",
+      "scenario": {
+        "packets_received": 305419896,
+        "status": 0
+      },
+      "kind": "original_vs_rebuilt_arm",
+      "return_value": 120,
+      "calls": [
+        [
+          "ping",
+          [
+            25,
+            56,
+            1000,
+            5,
+            0,
+            134743044
+          ],
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "entry": "ping",
+      "original_address": "0x20008c28",
+      "replacement_symbol": "_ZL4pingPv",
+      "scenario": {
+        "packets_received": null,
+        "status": -1
+      },
+      "kind": "documented_failure_repair",
+      "original_return": 165,
+      "native_return": 0,
+      "calls": [
+        [
+          "ping",
+          [
+            25,
+            56,
+            1000,
+            5,
+            0,
+            134743044
+          ],
+          2,
+          0
+        ]
+      ],
+      "distinction": "Native callback returns 0 for driver errors and initializes the report; original ignores status and may return an unwritten stack byte."
+    },
+    {
+      "entry": "ping",
+      "original_address": "0x20008c28",
+      "replacement_symbol": "_ZL4pingPv",
+      "scenario": {
+        "packets_received": null,
+        "status": -42
+      },
+      "kind": "documented_failure_repair",
+      "original_return": 165,
+      "native_return": 0,
+      "calls": [
+        [
+          "ping",
+          [
+            25,
+            56,
+            1000,
+            5,
+            0,
+            134743044
+          ],
+          2,
+          0
+        ]
+      ],
+      "distinction": "Native callback returns 0 for driver errors and initializes the report; original ignores status and may return an unwritten stack byte."
+    },
+    {
+      "entry": "ping",
+      "original_address": "0x20008c28",
+      "replacement_symbol": "_ZL4pingPv",
+      "scenario": {
+        "packets_received": 7,
+        "status": -1
+      },
+      "kind": "documented_failure_repair",
+      "original_return": 7,
+      "native_return": 0,
+      "calls": [
+        [
+          "ping",
+          [
+            25,
+            56,
+            1000,
+            5,
+            0,
+            134743044
+          ],
+          2,
+          0
+        ]
+      ],
+      "distinction": "Native callback returns 0 for driver errors and initializes the report; original ignores status and may return an unwritten stack byte."
+    }
+  ],
+  "scope": "Actual original entry and native production bridge execution. File scenarios execute both legacy and native SLFS methods with controlled SimpleLink requests. Hash-register operations, WiFi init and ping driver calls are explicit boundaries. SDK return adaptation and repaired failures are not claimed as identical original behavior. No device activity."
+}

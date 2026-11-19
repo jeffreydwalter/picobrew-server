@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "cases": 32,
+  "checks": {
+    "socket_original_differential": 15,
+    "native_filesystem_and_md5_boundaries": 17
+  },
+  "elf": "build/firmware/pico-pro-recovered.elf",
+  "elf_sha256": "38d4e0426c0928ad9b84c862979c539f788168a2f4e66c6f0ef7071d47e33cd6",
+  "scope": "Real production native SDK object methods and bridge; original TCP differential plus controlled SimpleLink filesystem/hardware-MD5 scenarios; no device activity."
+}

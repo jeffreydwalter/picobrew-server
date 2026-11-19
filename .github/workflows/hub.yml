@@ -27,9 +27,13 @@ jobs:
           go-version-file: hub/go.mod
           cache-dependency-path: hub/go.sum
           cache: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Test and build backend
         run: |
           go test -race ./...
+          CATALOG_REQUIRE_FIRMWARE=1 python3 -m unittest discover -s tools -p 'test_*.py'
           go vet ./...
           mkdir -p bin
           go build -trimpath -o bin/picobrew-hub ./cmd/picobrew-hub

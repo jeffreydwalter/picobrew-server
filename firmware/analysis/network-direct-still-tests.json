@@ -1,0 +1,2315 @@
+{
+  "passed": true,
+  "total_cases": 152,
+  "repair_scenarios": 11,
+  "cases": [
+    {
+      "original_address": "0x20006308",
+      "replacement": "still_error",
+      "case": {
+        "message": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "serial_compared": true
+    },
+    {
+      "original_address": "0x20006308",
+      "replacement": "still_error",
+      "case": {
+        "message": "StillAction::GetStillIp"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "serial_compared": true
+    },
+    {
+      "original_address": "0x20006308",
+      "replacement": "still_error",
+      "case": {
+        "message": "not a float"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "serial_compared": true
+    },
+    {
+      "original_address": "0x20006308",
+      "replacement": "still_error",
+      "case": {
+        "message": "network failure 123"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "serial_compared": true
+    },
+    {
+      "original_address": "0x2000632c",
+      "replacement": "pico_still_call (folded IPv4 log)",
+      "case": {
+        "octets": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_actual_folded_caller",
+      "serial_compared": true,
+      "caller": "pico_still_call",
+      "boundary": "connect failure after formatted address"
+    },
+    {
+      "original_address": "0x2000632c",
+      "replacement": "pico_still_call (folded IPv4 log)",
+      "case": {
+        "octets": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_actual_folded_caller",
+      "serial_compared": true,
+      "caller": "pico_still_call",
+      "boundary": "connect failure after formatted address"
+    },
+    {
+      "original_address": "0x2000632c",
+      "replacement": "pico_still_call (folded IPv4 log)",
+      "case": {
+        "octets": [
+          192,
+          168,
+          0,
+          1
+        ]
+      },
+      "kind": "direct_original_vs_actual_folded_caller",
+      "serial_compared": true,
+      "caller": "pico_still_call",
+      "boundary": "connect failure after formatted address"
+    },
+    {
+      "original_address": "0x2000632c",
+      "replacement": "pico_still_call (folded IPv4 log)",
+      "case": {
+        "octets": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      "kind": "direct_original_vs_actual_folded_caller",
+      "serial_compared": true,
+      "caller": "pico_still_call",
+      "boundary": "connect failure after formatted address"
+    },
+    {
+      "original_address": "0x20006380",
+      "replacement": "pico_still_connection_initialize",
+      "case": {
+        "preserved_failures": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "state_compared": true
+    },
+    {
+      "original_address": "0x20006380",
+      "replacement": "pico_still_connection_initialize",
+      "case": {
+        "preserved_failures": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "state_compared": true
+    },
+    {
+      "original_address": "0x20006380",
+      "replacement": "pico_still_connection_initialize",
+      "case": {
+        "preserved_failures": 254
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "state_compared": true
+    },
+    {
+      "original_address": "0x20006380",
+      "replacement": "pico_still_connection_initialize",
+      "case": {
+        "preserved_failures": 255
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "state_compared": true
+    },
+    {
+      "original_address": "0x20006434",
+      "replacement": "!pico_network_ipv4_is_zero(home_ip)",
+      "case": {
+        "octets": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_folded_predicate",
+      "return_compared": true
+    },
+    {
+      "original_address": "0x20006454",
+      "replacement": "pico_still_select_network",
+      "case": {
+        "home": false,
+        "octets": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20006454",
+      "replacement": "pico_still_select_network",
+      "case": {
+        "home": true,
+        "octets": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20006434",
+      "replacement": "!pico_network_ipv4_is_zero(home_ip)",
+      "case": {
+        "octets": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "kind": "direct_original_vs_folded_predicate",
+      "return_compared": true
+    },
+    {
+      "original_address": "0x20006454",
+      "replacement": "pico_still_select_network",
+      "case": {
+        "home": false,
+        "octets": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20006454",
+      "replacement": "pico_still_select_network",
+      "case": {
+        "home": true,
+        "octets": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20006434",
+      "replacement": "!pico_network_ipv4_is_zero(home_ip)",
+      "case": {
+        "octets": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_folded_predicate",
+      "return_compared": true
+    },
+    {
+      "original_address": "0x20006454",
+      "replacement": "pico_still_select_network",
+      "case": {
+        "home": false,
+        "octets": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20006454",
+      "replacement": "pico_still_select_network",
+      "case": {
+        "home": true,
+        "octets": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20006434",
+      "replacement": "!pico_network_ipv4_is_zero(home_ip)",
+      "case": {
+        "octets": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      "kind": "direct_original_vs_folded_predicate",
+      "return_compared": true
+    },
+    {
+      "original_address": "0x20006454",
+      "replacement": "pico_still_select_network",
+      "case": {
+        "home": false,
+        "octets": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20006454",
+      "replacement": "pico_still_select_network",
+      "case": {
+        "home": true,
+        "octets": [
+          255,
+          255,
+          255,
+          255
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf28",
+      "replacement": "pico_still_get_ip",
+      "case": {
+        "success": 0,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf28",
+      "replacement": "pico_still_get_ip",
+      "case": {
+        "success": 1,
+        "response": "0.0.0.0"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf28",
+      "replacement": "pico_still_get_ip",
+      "case": {
+        "success": 1,
+        "response": "192.168.1.22"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf28",
+      "replacement": "pico_still_get_ip",
+      "case": {
+        "success": 1,
+        "response": "255.255.255.255"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf28",
+      "replacement": "pico_still_get_ip",
+      "case": {
+        "success": 1,
+        "response": "256.1.2.3"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf28",
+      "replacement": "pico_still_get_ip",
+      "case": {
+        "success": 1,
+        "response": "not an ip"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf28",
+      "replacement": "pico_still_get_ip",
+      "case": {
+        "success": 1,
+        "response": "1.2.3"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf28",
+      "replacement": "pico_still_get_ip",
+      "case": {
+        "success": 1,
+        "response": "1.2.3.4.5"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 0,
+        "success": 0,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 0,
+        "success": 0,
+        "response": "T"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 0,
+        "success": 0,
+        "response": "F"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 0,
+        "success": 0,
+        "response": "True"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 0,
+        "success": 0,
+        "response": "true"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 0,
+        "success": 1,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 0,
+        "success": 1,
+        "response": "T"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 0,
+        "success": 1,
+        "response": "F"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 0,
+        "success": 1,
+        "response": "True"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 0,
+        "success": 1,
+        "response": "true"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 1,
+        "success": 0,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 1,
+        "success": 0,
+        "response": "T"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 1,
+        "success": 0,
+        "response": "F"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 1,
+        "success": 0,
+        "response": "True"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 1,
+        "success": 0,
+        "response": "true"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 1,
+        "success": 1,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 1,
+        "success": 1,
+        "response": "T"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 1,
+        "success": 1,
+        "response": "F"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 1,
+        "success": 1,
+        "response": "True"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf64",
+      "replacement": "pico_still_connect_lan",
+      "case": {
+        "initial_lan": 1,
+        "success": 1,
+        "response": "true"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102a4",
+      "replacement": "pico_still_start",
+      "case": {
+        "success": 0,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102a4",
+      "replacement": "pico_still_start",
+      "case": {
+        "success": 0,
+        "response": "T"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102a4",
+      "replacement": "pico_still_start",
+      "case": {
+        "success": 0,
+        "response": "F"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102a4",
+      "replacement": "pico_still_start",
+      "case": {
+        "success": 0,
+        "response": "True"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102a4",
+      "replacement": "pico_still_start",
+      "case": {
+        "success": 0,
+        "response": "true"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102a4",
+      "replacement": "pico_still_start",
+      "case": {
+        "success": 1,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102a4",
+      "replacement": "pico_still_start",
+      "case": {
+        "success": 1,
+        "response": "T"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102a4",
+      "replacement": "pico_still_start",
+      "case": {
+        "success": 1,
+        "response": "F"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102a4",
+      "replacement": "pico_still_start",
+      "case": {
+        "success": 1,
+        "response": "True"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102a4",
+      "replacement": "pico_still_start",
+      "case": {
+        "success": 1,
+        "response": "true"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20010560",
+      "replacement": "pico_still_set_fan",
+      "case": {
+        "enabled": 0,
+        "success": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20010560",
+      "replacement": "pico_still_set_fan",
+      "case": {
+        "enabled": 0,
+        "success": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20010560",
+      "replacement": "pico_still_set_fan",
+      "case": {
+        "enabled": 1,
+        "success": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20010560",
+      "replacement": "pico_still_set_fan",
+      "case": {
+        "enabled": 1,
+        "success": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102e8",
+      "replacement": "pico_still_start_once",
+      "case": {
+        "active": 0,
+        "start_result": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102e8",
+      "replacement": "pico_still_start_once",
+      "case": {
+        "active": 0,
+        "start_result": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200102e8",
+      "replacement": "pico_still_start_once",
+      "case": {
+        "active": 1,
+        "start_result": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x200102e8",
+      "replacement": "pico_still_start_once",
+      "case": {
+        "active": 1,
+        "start_result": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x200102e8",
+      "replacement": "pico_still_start_once",
+      "case": {
+        "active": 255,
+        "start_result": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x200102e8",
+      "replacement": "pico_still_start_once",
+      "case": {
+        "active": 255,
+        "start_result": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x20010340",
+      "replacement": "pico_still_stop",
+      "case": {
+        "active": 0,
+        "stop_result": 0
+      },
+      "kind": "inactive_noop_effects_original_serial_count_not_bool_return",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0,
+      "return_contract": "Original r0 is incidental Serial.println byte count; reconstructed bool is defined false."
+    },
+    {
+      "original_address": "0x20010340",
+      "replacement": "pico_still_stop",
+      "case": {
+        "active": 0,
+        "stop_result": 1
+      },
+      "kind": "inactive_noop_effects_original_serial_count_not_bool_return",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0,
+      "return_contract": "Original r0 is incidental Serial.println byte count; reconstructed bool is defined false."
+    },
+    {
+      "original_address": "0x20010340",
+      "replacement": "pico_still_stop",
+      "case": {
+        "active": 1,
+        "stop_result": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20010340",
+      "replacement": "pico_still_stop",
+      "case": {
+        "active": 1,
+        "stop_result": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20010340",
+      "replacement": "pico_still_stop",
+      "case": {
+        "active": 255,
+        "stop_result": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20010340",
+      "replacement": "pico_still_stop",
+      "case": {
+        "active": 255,
+        "stop_result": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": "0"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": "-0"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": "-1"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": "0.005"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": "1.005"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": "10.255"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": "99.995"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": "153.7"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": "1e-10"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": "1234567.89"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": "4294967296"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x200064d8",
+      "replacement": "pico_still_parse_response",
+      "case": {
+        "repeated_field": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 0,
+        "success": 0,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 0,
+        "success": 0,
+        "response": "partial"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 0,
+        "success": 1,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 0,
+        "success": 1,
+        "response": "10.25,20.5,30.75,4,1.25,0,1,0"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 0,
+        "success": 1,
+        "response": ",,,,,,,"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 0,
+        "success": 1,
+        "response": "-1,-2,-3,-4,-0.5,1,0,1"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 1,
+        "success": 0,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 1,
+        "success": 0,
+        "response": "partial"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 1,
+        "success": 1,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 1,
+        "success": 1,
+        "response": "10.25,20.5,30.75,4,1.25,0,1,0"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 1,
+        "success": 1,
+        "response": ",,,,,,,"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 1,
+        "success": 1,
+        "response": "-1,-2,-3,-4,-0.5,1,0,1"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 254,
+        "success": 0,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 254,
+        "success": 0,
+        "response": "partial"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 254,
+        "success": 1,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 254,
+        "success": 1,
+        "response": "10.25,20.5,30.75,4,1.25,0,1,0"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 254,
+        "success": 1,
+        "response": ",,,,,,,"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 254,
+        "success": 1,
+        "response": "-1,-2,-3,-4,-0.5,1,0,1"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 255,
+        "success": 0,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 255,
+        "success": 0,
+        "response": "partial"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 255,
+        "success": 1,
+        "response": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 255,
+        "success": 1,
+        "response": "10.25,20.5,30.75,4,1.25,0,1,0"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 255,
+        "success": 1,
+        "response": ",,,,,,,"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "replacement": "pico_still_read_status",
+      "case": {
+        "previous_failures": 255,
+        "success": 1,
+        "response": "-1,-2,-3,-4,-0.5,1,0,1"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000c468",
+      "replacement": "pico_still_choose_access_point",
+      "case": {
+        "networks": [],
+        "selected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000c468",
+      "replacement": "pico_still_choose_access_point",
+      "case": {
+        "networks": [
+          "Home",
+          "Other"
+        ],
+        "selected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x2000c468",
+      "replacement": "pico_still_choose_access_point",
+      "case": {
+        "networks": [
+          "PicoStill_"
+        ],
+        "selected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000c468",
+      "replacement": "pico_still_choose_access_point",
+      "case": {
+        "networks": [
+          "Home",
+          "PicoStill_aabbcc"
+        ],
+        "selected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x2000c468",
+      "replacement": "pico_still_choose_access_point",
+      "case": {
+        "networks": [
+          "PicoStill_aaa",
+          "Elsewhere",
+          "PicoStill_bbb",
+          "PicoStill_ccc"
+        ],
+        "selected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000c468",
+      "replacement": "pico_still_choose_access_point",
+      "case": {
+        "networks": [
+          "PicoStill_aaa",
+          "Elsewhere",
+          "PicoStill_bbb",
+          "PicoStill_ccc"
+        ],
+        "selected": 2
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000c468",
+      "replacement": "pico_still_choose_access_point",
+      "case": {
+        "networks": [
+          "PicoStill_00",
+          "PicoStill_01",
+          "PicoStill_02",
+          "PicoStill_03",
+          "PicoStill_04",
+          "PicoStill_05",
+          "PicoStill_06",
+          "PicoStill_07",
+          "PicoStill_08",
+          "PicoStill_09",
+          "PicoStill_10",
+          "PicoStill_11",
+          "PicoStill_12",
+          "PicoStill_13",
+          "PicoStill_14",
+          "PicoStill_15",
+          "PicoStill_16",
+          "PicoStill_17",
+          "PicoStill_18",
+          "PicoStill_19",
+          "PicoStill_20",
+          "PicoStill_21"
+        ],
+        "selected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 46
+    },
+    {
+      "original_address": "0x2000c468",
+      "replacement": "pico_still_choose_access_point",
+      "case": {
+        "networks": [
+          "PicoStill_00",
+          "PicoStill_01",
+          "PicoStill_02",
+          "PicoStill_03",
+          "PicoStill_04",
+          "PicoStill_05",
+          "PicoStill_06",
+          "PicoStill_07",
+          "PicoStill_08",
+          "PicoStill_09",
+          "PicoStill_10",
+          "PicoStill_11",
+          "PicoStill_12",
+          "PicoStill_13",
+          "PicoStill_14",
+          "PicoStill_15",
+          "PicoStill_16",
+          "PicoStill_17",
+          "PicoStill_18",
+          "PicoStill_19",
+          "PicoStill_20",
+          "PicoStill_21"
+        ],
+        "selected": 21
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 46
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 0,
+        "connect_result": 0,
+        "ip_result": 0,
+        "home_ip": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 0,
+        "connect_result": 0,
+        "ip_result": 0,
+        "home_ip": [
+          192,
+          168,
+          1,
+          22
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 0,
+        "connect_result": 0,
+        "ip_result": 1,
+        "home_ip": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 0,
+        "connect_result": 0,
+        "ip_result": 1,
+        "home_ip": [
+          192,
+          168,
+          1,
+          22
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 0,
+        "connect_result": 1,
+        "ip_result": 0,
+        "home_ip": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 0,
+        "connect_result": 1,
+        "ip_result": 0,
+        "home_ip": [
+          192,
+          168,
+          1,
+          22
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 0,
+        "connect_result": 1,
+        "ip_result": 1,
+        "home_ip": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 0,
+        "connect_result": 1,
+        "ip_result": 1,
+        "home_ip": [
+          192,
+          168,
+          1,
+          22
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 1,
+        "connect_result": 0,
+        "ip_result": 0,
+        "home_ip": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 1,
+        "connect_result": 0,
+        "ip_result": 0,
+        "home_ip": [
+          192,
+          168,
+          1,
+          22
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 1,
+        "connect_result": 0,
+        "ip_result": 1,
+        "home_ip": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 1,
+        "connect_result": 0,
+        "ip_result": 1,
+        "home_ip": [
+          192,
+          168,
+          1,
+          22
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 1,
+        "connect_result": 1,
+        "ip_result": 0,
+        "home_ip": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 1,
+        "connect_result": 1,
+        "ip_result": 0,
+        "home_ip": [
+          192,
+          168,
+          1,
+          22
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 1,
+        "connect_result": 1,
+        "ip_result": 1,
+        "home_ip": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 6
+    },
+    {
+      "original_address": "0x2000dcc8",
+      "replacement": "pico_still_connect_wifi",
+      "case": {
+        "home": 1,
+        "connect_result": 1,
+        "ip_result": 1,
+        "home_ip": [
+          192,
+          168,
+          1,
+          22
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 6
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 0,
+        "scenario": "immediate_success"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 0,
+        "scenario": "false_ping"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 0,
+        "scenario": "retries_then_success"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 0,
+        "scenario": "connect_failure"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 0,
+        "scenario": "timeout_after_retries"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 7
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 0,
+        "scenario": "zero_timeout"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 0,
+        "scenario": "absolute_deadline_wrap"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 1,
+        "scenario": "immediate_success"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 1,
+        "scenario": "false_ping"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 1,
+        "scenario": "retries_then_success"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 1,
+        "scenario": "connect_failure"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 1,
+        "scenario": "timeout_after_retries"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 7
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 1,
+        "scenario": "zero_timeout"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20010104",
+      "replacement": "pico_still_wait_response",
+      "case": {
+        "home": 1,
+        "scenario": "absolute_deadline_wrap"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": true,
+      "ordered_events": 1
+    }
+  ],
+  "repaired_input_checks": [
+    {
+      "original_address": "0x2000bf9c",
+      "previous_failures": 0,
+      "response": "123456789012345,2,3,4,5,6,7,8",
+      "original_success": 1,
+      "rebuilt_success": 0,
+      "change": "Reject malformed telemetry instead of ignoring parser failure."
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "previous_failures": 0,
+      "response": "1,2,3",
+      "original_success": 1,
+      "rebuilt_success": 0,
+      "change": "Reject malformed telemetry instead of ignoring parser failure."
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "previous_failures": 254,
+      "response": "123456789012345,2,3,4,5,6,7,8",
+      "original_success": 1,
+      "rebuilt_success": 0,
+      "change": "Reject malformed telemetry instead of ignoring parser failure."
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "previous_failures": 254,
+      "response": "1,2,3",
+      "original_success": 1,
+      "rebuilt_success": 0,
+      "change": "Reject malformed telemetry instead of ignoring parser failure."
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "previous_failures": 255,
+      "response": "123456789012345,2,3,4,5,6,7,8",
+      "original_success": 1,
+      "rebuilt_success": 0,
+      "change": "Reject malformed telemetry instead of ignoring parser failure."
+    },
+    {
+      "original_address": "0x2000bf9c",
+      "previous_failures": 255,
+      "response": "1,2,3",
+      "original_success": 1,
+      "rebuilt_success": 0,
+      "change": "Reject malformed telemetry instead of ignoring parser failure."
+    },
+    {
+      "original_address": "0x2000c468",
+      "change": "23 matching networks",
+      "rebuilt_success": false
+    },
+    {
+      "original_address": "0x2000c468",
+      "change": "SSID longer than 31 bytes",
+      "rebuilt_success": false
+    },
+    {
+      "original_address": "0x2000c468",
+      "change": "identifier longer than owned 15-byte payload",
+      "rebuilt_success": false
+    },
+    {
+      "original_address": "0x2000c468",
+      "change": "negative selection",
+      "rebuilt_success": false
+    },
+    {
+      "original_address": "0x2000c468",
+      "change": "selection beyond match count",
+      "rebuilt_success": false
+    }
+  ],
+  "failures": [],
+  "elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "reference_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "test_sha256": "e276aca28b5746dcac985d4a05c82601400db7e6026629f7818246a581fbf79f",
+  "evidence_per_entry": {
+    "0x20006308": 4,
+    "0x2000632c": 4,
+    "0x20006380": 4,
+    "0x20006434": 4,
+    "0x20006454": 8,
+    "0x2000bf28": 8,
+    "0x2000bf64": 20,
+    "0x200102a4": 10,
+    "0x20010560": 4,
+    "0x200102e8": 6,
+    "0x20010340": 6,
+    "0x200064d8": 12,
+    "0x2000bf9c": 24,
+    "0x2000c468": 8,
+    "0x2000dcc8": 16,
+    "0x20010104": 14
+  },
+  "scope": "Original/rebuilt Still-network comparisons at explicit subordinate boundaries.\n\nThe real original and reconstructed control flow, formatting, parsers, owned\nstate and failure handling execute. Scripted Still replies and SDK/UI services\nreplace external I/O. Folded IPv4 helpers and malformed-input repairs are\nidentified separately. No hardware or network session is operated.\n"
+}

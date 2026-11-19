@@ -1,0 +1,6349 @@
+{
+  "passed": true,
+  "cases": 195,
+  "original_functions": 16,
+  "mismatches": 0,
+  "original_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "native_c_compared": true,
+  "rebuilt_arm_compared": true,
+  "rebuilt_elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "scope": "Ordered GPIO/mode/delay calls and meaningful returns; original filter predicate executes. UI pause/prompt boundaries are controlled and restore the filter.",
+  "limits": "No electrical behavior, interrupts during waits, or complete UI implementation.",
+  "results": [
+    {
+      "original_function": "pico_actuators_initialize",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          3,
+          27,
+          1
+        ],
+        [
+          3,
+          8,
+          1
+        ],
+        [
+          3,
+          24,
+          1
+        ],
+        [
+          3,
+          5,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_step_filter_is_inserted",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_step_filter_is_inserted",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_step_filter_is_inserted",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_actuators_all_off",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_actuators_off_except_drain",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_and_drain_pumps_off",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_heater_on",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          5,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_heater_off",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          5,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_on",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_steam_pump_off",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          27,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_on",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_off",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          8,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_on",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_shuttle_pump_off",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          24,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_is_on",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          8,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_is_on",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_drain_pump_is_on",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_start_drain_and_steam_pumps",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          6,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          5,
+          500,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 0,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 1,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 4,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 8,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        0,
+        0
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        0
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 0,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 1,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 2,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 3,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 4,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 5,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 6,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    },
+    {
+      "original_function": "pico_pause_outputs_for_missing_filter",
+      "phase": 255,
+      "readings": [
+        1,
+        1
+      ],
+      "resume_mask": 7,
+      "events": [
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          4,
+          100,
+          0
+        ],
+        [
+          1,
+          11,
+          1
+        ],
+        [
+          2,
+          5,
+          0
+        ],
+        [
+          2,
+          27,
+          0
+        ],
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          24,
+          0
+        ],
+        [
+          7,
+          0,
+          0
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          27,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          8,
+          1
+        ],
+        [
+          1,
+          11,
+          0
+        ],
+        [
+          2,
+          24,
+          1
+        ]
+      ]
+    }
+  ]
+}

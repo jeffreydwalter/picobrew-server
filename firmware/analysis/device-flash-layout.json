@@ -1,0 +1,188 @@
+{
+  "source": "Owner-provided firmware-review.zip inspection report from verified full flash backup",
+  "source_backup_sha256": "837a728400da02b9da4a7d563e1b67fb24d6a5af03c054963c4b1de60c72343f",
+  "source_backup_bytes": 1048576,
+  "flash_block_bytes": 4096,
+  "flash_blocks": 256,
+  "filesystem_reserved_blocks": 5,
+  "recognized_fat_index": 1,
+  "recognized_fat_revision": 225,
+  "used_blocks": 173,
+  "free_blocks": 83,
+  "free_extents": [
+    {
+      "start_block": 81,
+      "end_block": 101,
+      "blocks": 21,
+      "bytes": 86016
+    },
+    {
+      "start_block": 178,
+      "end_block": 213,
+      "blocks": 36,
+      "bytes": 147456
+    },
+    {
+      "start_block": 230,
+      "end_block": 255,
+      "blocks": 26,
+      "bytes": 106496
+    }
+  ],
+  "files": [
+    {
+      "file_id": 0,
+      "filename": "/sys/mcuimg.bin",
+      "start_block": 71,
+      "size_blocks": 4,
+      "mirrored": true,
+      "total_blocks": 8,
+      "flags_hex": "0x0"
+    },
+    {
+      "file_id": 4,
+      "filename": "/sys/servicepack.ucf",
+      "start_block": 5,
+      "size_blocks": 33,
+      "mirrored": true,
+      "total_blocks": 66,
+      "flags_hex": "0x8"
+    },
+    {
+      "file_id": 6,
+      "filename": "/tmp/phy.cal",
+      "start_block": 115,
+      "size_blocks": 5,
+      "mirrored": true,
+      "total_blocks": 10,
+      "flags_hex": "0x8"
+    },
+    {
+      "file_id": 7,
+      "filename": "/sys/pref.net",
+      "start_block": 109,
+      "size_blocks": 2,
+      "mirrored": true,
+      "total_blocks": 4,
+      "flags_hex": "0x8"
+    },
+    {
+      "file_id": 8,
+      "filename": "/sys/stacfg.ini",
+      "start_block": 113,
+      "size_blocks": 1,
+      "mirrored": true,
+      "total_blocks": 2,
+      "flags_hex": "0x8"
+    },
+    {
+      "file_id": 9,
+      "filename": "/sys/mcubootinfo.bin",
+      "start_block": 79,
+      "size_blocks": 1,
+      "mirrored": true,
+      "total_blocks": 2,
+      "flags_hex": "0x8"
+    },
+    {
+      "file_id": 10,
+      "filename": "/sys/mcuimg1.bin",
+      "start_block": 214,
+      "size_blocks": 16,
+      "mirrored": false,
+      "total_blocks": 16,
+      "flags_hex": "0xc"
+    },
+    {
+      "file_id": 11,
+      "filename": "sys/uid.txt",
+      "start_block": 106,
+      "size_blocks": 1,
+      "mirrored": false,
+      "total_blocks": 1,
+      "flags_hex": "0xc"
+    },
+    {
+      "file_id": 12,
+      "filename": "/sys/mdns.cfg",
+      "start_block": 102,
+      "size_blocks": 1,
+      "mirrored": true,
+      "total_blocks": 2,
+      "flags_hex": "0x8"
+    },
+    {
+      "file_id": 13,
+      "filename": "/sys/mode.cfg",
+      "start_block": 104,
+      "size_blocks": 1,
+      "mirrored": true,
+      "total_blocks": 2,
+      "flags_hex": "0x8"
+    },
+    {
+      "file_id": 14,
+      "filename": "ssid.txt",
+      "start_block": 107,
+      "size_blocks": 1,
+      "mirrored": false,
+      "total_blocks": 1,
+      "flags_hex": "0xc"
+    },
+    {
+      "file_id": 15,
+      "filename": "/sys/ipcfg.ini",
+      "start_block": 128,
+      "size_blocks": 1,
+      "mirrored": true,
+      "total_blocks": 2,
+      "flags_hex": "0x8"
+    },
+    {
+      "file_id": 16,
+      "filename": "wifisecurity.txt",
+      "start_block": 108,
+      "size_blocks": 1,
+      "mirrored": false,
+      "total_blocks": 1,
+      "flags_hex": "0xc"
+    },
+    {
+      "file_id": 17,
+      "filename": "wifipass.txt",
+      "start_block": 125,
+      "size_blocks": 1,
+      "mirrored": false,
+      "total_blocks": 1,
+      "flags_hex": "0xc"
+    },
+    {
+      "file_id": 18,
+      "filename": "/sys/mcuimg2.bin",
+      "start_block": 130,
+      "size_blocks": 48,
+      "mirrored": false,
+      "total_blocks": 48,
+      "flags_hex": "0xc"
+    },
+    {
+      "file_id": 19,
+      "filename": "userpref.txt",
+      "start_block": 126,
+      "size_blocks": 1,
+      "mirrored": false,
+      "total_blocks": 1,
+      "flags_hex": "0xc"
+    },
+    {
+      "file_id": 20,
+      "filename": "ss.txt",
+      "start_block": 127,
+      "size_blocks": 1,
+      "mirrored": false,
+      "total_blocks": 1,
+      "flags_hex": "0xc"
+    }
+  ],
+  "scope": "Raw allocation-table evidence; logical mirrored-file selection requires a live read. Configuration-file contents and private firmware are excluded."
+}

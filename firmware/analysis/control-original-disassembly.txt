@@ -1,0 +1,446 @@
+
+pico_control_timers_initialize
+20005080 push       {r3, r4, r5, lr}               
+20005082 bl         #0x20019ade                    IntMasterDisable
+20005086 ldr        r4, [pc, #0x80]                 [20005108]=40030000
+20005088 ldr        r5, [pc, #0x80]                 [2000510c]=40031000
+2000508a movs       r1, #1                         
+2000508c movs       r0, #0xe                       
+2000508e bl         #0x20019d64                    PRCMPeripheralClkEnable
+20005092 movs       r0, #0xe                       
+20005094 bl         #0x20019df4                    PRCMPeripheralReset
+20005098 mov        r0, r4                         
+2000509a movs       r1, #0x22                      
+2000509c bl         #0x2001a4ec                    TimerConfigure
+200050a0 mov        r0, r4                         
+200050a2 movs       r1, #0xff                      
+200050a4 ldr        r2, [pc, #0x68]                 [20005110]=04c4b400
+200050a6 bl         #0x2001a514                    TimerLoadSet
+200050aa ldr        r2, [pc, #0x68]                 [20005114]=2000e089
+200050ac mov        r0, r4                         
+200050ae movs       r1, #0xff                      
+200050b0 bl         #0x2001a528                    TimerIntRegister
+200050b4 mov        r0, r4                         
+200050b6 movs       r1, #1                         
+200050b8 bl         #0x2001a588                    TimerIntEnable
+200050bc movs       r1, #1                         
+200050be movs       r0, #0xf                       
+200050c0 bl         #0x20019d64                    PRCMPeripheralClkEnable
+200050c4 movs       r0, #0xf                       
+200050c6 bl         #0x20019df4                    PRCMPeripheralReset
+200050ca mov        r0, r5                         
+200050cc movs       r1, #0x22                      
+200050ce bl         #0x2001a4ec                    TimerConfigure
+200050d2 mov        r0, r5                         
+200050d4 movs       r1, #0xff                      
+200050d6 ldr        r2, [pc, #0x40]                 [20005118]=00186a00
+200050d8 bl         #0x2001a514                    TimerLoadSet
+200050dc ldr        r2, [pc, #0x3c]                 [2000511c]=2000d1c1
+200050de mov        r0, r5                         
+200050e0 movs       r1, #0xff                      
+200050e2 bl         #0x2001a528                    TimerIntRegister
+200050e6 mov        r0, r5                         
+200050e8 movs       r1, #1                         
+200050ea bl         #0x2001a588                    TimerIntEnable
+200050ee mov        r0, r5                         
+200050f0 movs       r1, #0xff                      
+200050f2 bl         #0x2001a4dc                    TimerEnable
+200050f6 mov        r0, r4                         
+200050f8 movs       r1, #0xff                      
+200050fa bl         #0x2001a4dc                    TimerEnable
+200050fe pop.w      {r3, r4, r5, lr}               
+20005102 b.w        #0x20019ad4                    IntMasterEnable
+20005106 nop                                       
+20005108 movs       r0, r0                         
+2000510a ands       r3, r0                         
+2000510c asrs       r0, r0, #0x20                  
+2000510e ands       r3, r0                         
+
+pico_heater_pump_timer_isr
+2000d1c0 push       {r3, r4, r5, r6, r7, lr}       
+2000d1c2 bl         #0x20018efc                    millis
+2000d1c6 mov        r5, r0                         
+2000d1c8 bl         #0x20019ade                    IntMasterDisable
+2000d1cc movs       r1, #1                         
+2000d1ce ldr        r0, [pc, #0xac]                 [2000d27c]=40031000
+2000d1d0 bl         #0x2001a590                    TimerIntStatus
+2000d1d4 mov        r1, r0                         
+2000d1d6 ldr        r0, [pc, #0xa4]                 [2000d27c]=40031000
+2000d1d8 bl         #0x2001a59a                    TimerIntClear
+2000d1dc ldr        r3, [pc, #0xa0]                 [2000d280]=2002dabe
+2000d1de ldrb       r3, [r3]                       
+2000d1e0 cmp        r3, #0                         
+2000d1e2 beq        #0x2000d274                    
+2000d1e4 ldr        r4, [pc, #0x9c]                 [2000d284]=2002d2f8
+2000d1e6 ldrb.w     r3, [r4, #0x61]                
+2000d1ea cmp        r3, #0                         
+2000d1ec bne        #0x2000d274                    
+2000d1ee ldr.w      r2, [r4, #0x200]               
+2000d1f2 movw       r3, #0xbb8                     
+2000d1f6 subs       r2, r5, r2                     
+2000d1f8 cmp        r2, r3                         
+2000d1fa bls        #0x2000d210                    
+2000d1fc ldr.w      r3, [r4, #0x200]               
+2000d200 addw       r3, r3, #0xbb8                 
+2000d204 str.w      r3, [r4, #0x200]               
+2000d208 ldr.w      r3, [r4, #0x200]               
+2000d20c str.w      r3, [r4, #0x208]               
+2000d210 ldr.w      r0, [r4, #0x200]               
+2000d214 ldr        r6, [pc, #0x6c]                 [2000d284]=2002d2f8
+2000d216 subs       r0, r5, r0                     
+2000d218 bl         #0x20020dd0                    __aeabi_ui2d
+2000d21c add.w      r7, r6, #0x1e8                 
+2000d220 mov        r2, r0                         
+2000d222 mov        r3, r1                         
+2000d224 ldrd       r0, r1, [r7]                   
+2000d228 bl         #0x200213dc                    __aeabi_dcmpgt
+2000d22c cbz        r0, #0x2000d23e                
+2000d22e bl         #0x20005f40                    pico_heater_on
+2000d232 ldr.w      r3, [r6, #0x20c]               
+2000d236 adds       r3, #0x14                      
+2000d238 str.w      r3, [r6, #0x20c]               
+2000d23c b          #0x2000d242                    
+2000d23e bl         #0x20005f48                    pico_heater_off
+2000d242 ldr.w      r2, [r4, #0x204]               
+2000d246 ldr.w      r3, [r4, #0x208]               
+2000d24a subs       r3, r5, r3                     
+2000d24c cmp        r2, r3                         
+2000d24e bls        #0x2000d256                    
+2000d250 bl         #0x2000d0e0                    pico_shuttle_pump_on
+2000d254 b          #0x2000d25a                    
+2000d256 bl         #0x20005f22                    pico_shuttle_pump_off
+2000d25a ldr.w      r2, [r4, #0x208]               
+2000d25e ldr        r3, [pc, #0x24]                 [2000d284]=2002d2f8
+2000d260 subs       r5, r5, r2                     
+2000d262 cmp.w      r5, #0x1f4                     
+2000d266 bls        #0x2000d274                    
+2000d268 ldr.w      r2, [r3, #0x208]               
+2000d26c add.w      r2, r2, #0x1f4                 
+2000d270 str.w      r2, [r3, #0x208]               
+2000d274 pop.w      {r3, r4, r5, r6, r7, lr}       
+2000d278 b.w        #0x20019ad4                    IntMasterEnable
+2000d27c asrs       r0, r0, #0x20                  
+2000d27e ands       r3, r0                         
+2000d280 bge        #0x2000d200                    
+2000d282 movs       r0, #2                         
+2000d284 bhs        #0x2000d278                    
+2000d286 movs       r0, #2                         
+
+pico_temperature_control_timer_isr
+2000e088 push.w     {r0, r1, r2, r4, r5, r6, r7, r8, sb, sl, fp, lr} 
+2000e08c bl         #0x20018efc                    millis
+2000e090 mov        fp, r0                         
+2000e092 bl         #0x20019ade                    IntMasterDisable
+2000e096 movs       r1, #1                         
+2000e098 ldr        r0, [pc, #0x29c]                [2000e338]=40030000
+2000e09a ldr        r4, [pc, #0x2a0]                [2000e33c]=2002bf10
+2000e09c bl         #0x2001a590                    TimerIntStatus
+2000e0a0 mov        r1, r0                         
+2000e0a2 ldr        r0, [pc, #0x294]                [2000e338]=40030000
+2000e0a4 bl         #0x2001a59a                    TimerIntClear
+2000e0a8 ldrb       r3, [r4, #0x10]                
+2000e0aa cbz        r3, #0x2000e0da                
+2000e0ac ldrb       r3, [r4, #3]                   
+2000e0ae ldrb       r2, [r4, #1]                   
+2000e0b0 ldrb       r0, [r4]                       
+2000e0b2 adds       r1, r3, #1                     
+2000e0b4 strb       r1, [r4, #3]                   
+2000e0b6 adds       r1, r3, r2                     
+2000e0b8 uxtb       r1, r1                         
+2000e0ba ldr        r2, [pc, #0x284]                [2000e340]=200272ce
+2000e0bc bl         #0x20005284                    pico_display_text_at_cell
+2000e0c0 ldrb       r1, [r4, #1]                   
+2000e0c2 ldrb       r2, [r4, #3]                   
+2000e0c4 ldrb       r3, [r4, #2]                   
+2000e0c6 add        r2, r1                         
+2000e0c8 cmp        r2, r3                         
+2000e0ca bne        #0x2000e0d6                    
+2000e0cc ldrb       r0, [r4]                       
+2000e0ce bl         #0x20009ef4                    pico_display_clear_row_from_column
+2000e0d2 movs       r3, #0                         
+2000e0d4 strb       r3, [r4, #3]                   
+2000e0d6 bl         #0x20004494                    pico_display_flush
+2000e0da bl         #0x200067a0                    pico_temperature_read_pin25
+2000e0de bl         #0x20020e14                    __aeabi_f2d
+2000e0e2 ldr        r6, [pc, #0x260]                [2000e344]=2002d2f8
+2000e0e4 mov        r7, r6                         
+2000e0e6 strd       r0, r1, [r7, #0x1f0]!          
+2000e0ea bl         #0x20006680                    pico_temperature_read_pin26
+2000e0ee bl         #0x20020e14                    __aeabi_f2d
+2000e0f2 mov        r3, r6                         
+2000e0f4 mov        r4, r0                         
+2000e0f6 mov        r5, r1                         
+2000e0f8 strd       r4, r5, [r3, #0x1f8]!          
+2000e0fc ldrb.w     r2, [r6, #0x62]                
+2000e100 cmp        r2, #8                         
+2000e102 mov        r8, r3                         
+2000e104 ldr.w      r3, [r6, #0x1a8]               
+2000e108 beq        #0x2000e112                    
+2000e10a cmp        r3, #0                         
+2000e10c bne.w      #0x2000e3a2                    
+2000e110 b          #0x2000e118                    
+2000e112 adds       r3, #1                         
+2000e114 str.w      r3, [r6, #0x1a8]               
+2000e118 ldr        r3, [pc, #0x22c]                [2000e348]=2002dabe
+2000e11a ldrb       r2, [r3]                       
+2000e11c mov        sb, r3                         
+2000e11e cmp        r2, #0                         
+2000e120 beq.w      #0x2000e37e                    
+2000e124 ldrb.w     r3, [r6, #0x61]                
+2000e128 ldr.w      sl, [pc, #0x218]                [2000e344]=2002d2f8
+2000e12c cmp        r3, #0                         
+2000e12e bne.w      #0x2000e37e                    
+2000e132 ldrd       r2, r3, [r7]                   
+2000e136 strd       r2, r3, [sp]                   
+2000e13a mov        r0, r2                         
+2000e13c mov        r1, r3                         
+2000e13e movs       r2, #0                         
+2000e140 ldr        r3, [pc, #0x208]                [2000e34c]=40400000
+2000e142 bl         #0x200213a0                    __aeabi_dcmplt
+2000e146 cbnz       r0, #0x2000e156                
+2000e148 mov        r0, r4                         
+2000e14a mov        r1, r5                         
+2000e14c movs       r2, #0                         
+2000e14e ldr        r3, [pc, #0x1fc]                [2000e34c]=40400000
+2000e150 bl         #0x200213a0                    __aeabi_dcmplt
+2000e154 cbz        r0, #0x2000e16c                
+2000e156 ldr        r0, [pc, #0x1ec]                [2000e344]=2002d2f8
+2000e158 bl         #0x20005f50                    pico_heat_controller_stop
+2000e15c bl         #0x20005f12                    pico_steam_pump_off
+2000e160 bl         #0x20005f1a                    pico_drain_pump_off
+2000e164 movs       r3, #3                         
+2000e166 strb.w     r3, [r6, #0x61]                
+2000e16a b          #0x2000e1b0                    
+2000e16c mov        r0, r4                         
+2000e16e mov        r1, r5                         
+2000e170 adr        r3, #0x1a4                     
+2000e172 ldrd       r2, r3, [r3]                   
+2000e176 bl         #0x200213dc                    __aeabi_dcmpgt
+2000e17a cbz        r0, #0x2000e180                
+2000e17c bl         #0x2000e054                    pico_halt_heater_malfunction
+2000e180 ldrd       r0, r1, [sp]                   
+2000e184 adr        r3, #0x198                     
+2000e186 ldrd       r2, r3, [r3]                   
+2000e18a bl         #0x200213dc                    __aeabi_dcmpgt
+2000e18e cbz        r0, #0x2000e1b6                
+2000e190 add.w      r3, sl, #0x1d0                 
+2000e194 ldrd       r0, r1, [r3]                   
+2000e198 adr        r3, #0x18c                     
+2000e19a ldrd       r2, r3, [r3]                   
+2000e19e bl         #0x200213dc                    __aeabi_dcmpgt
+2000e1a2 cbz        r0, #0x2000e1b6                
+2000e1a4 mov        r0, sl                         
+2000e1a6 bl         #0x20005f50                    pico_heat_controller_stop
+2000e1aa movs       r3, #1                         
+2000e1ac strb.w     r3, [sl, #0x61]                
+2000e1b0 bl         #0x20019ade                    IntMasterDisable
+2000e1b4 b          #0x2000e250                    
+2000e1b6 ldr        r4, [pc, #0x18c]                [2000e344]=2002d2f8
+2000e1b8 add.w      r0, r4, #0xb0                  
+2000e1bc bl         #0x200146d4                    PID_compute
+2000e1c0 add.w      r0, r4, #0x128                 
+2000e1c4 bl         #0x200146d4                    PID_compute
+2000e1c8 ldr.w      r3, [r6, #0x200]               
+2000e1cc rsb        fp, r3, fp                     
+2000e1d0 movw       r3, #0xbb8                     
+2000e1d4 cmp        fp, r3                         
+2000e1d6 bls        #0x2000e1ec                    
+2000e1d8 ldr.w      r3, [r4, #0x200]               
+2000e1dc addw       r3, r3, #0xbb8                 
+2000e1e0 str.w      r3, [r4, #0x200]               
+2000e1e4 ldr.w      r3, [r4, #0x200]               
+2000e1e8 str.w      r3, [r4, #0x208]               
+2000e1ec ldr        r4, [pc, #0x160]                [2000e350]=2002d510
+2000e1ee movs       r2, #0                         
+2000e1f0 ldrd       r0, r1, [r4]                   
+2000e1f4 movs       r3, #0                         
+2000e1f6 bl         #0x200213a0                    __aeabi_dcmplt
+2000e1fa mov        r1, r4                         
+2000e1fc cbnz       r0, #0x2000e204                
+2000e1fe ldrd       r2, r3, [r4]                   
+2000e202 b          #0x2000e208                    
+2000e204 movs       r2, #0                         
+2000e206 movs       r3, #0                         
+2000e208 strd       r2, r3, [r1]                   
+2000e20c ldr.w      sl, [pc, #0x134]                [2000e344]=2002d2f8
+2000e210 ldrd       r4, r5, [r1]                   
+2000e214 add.w      r3, sl, #0x1e0                 
+2000e218 ldrd       r0, r1, [r3]                   
+2000e21c adr        r3, #0x110                     
+2000e21e ldrd       r2, r3, [r3]                   
+2000e222 bl         #0x20021110                    __aeabi_ddiv
+2000e226 mov        r2, r4                         
+2000e228 mov        r3, r5                         
+2000e22a bl         #0x20020ebc                    __aeabi_dmul
+2000e22e ldr        r3, [pc, #0x124]                [2000e354]=407f4000
+2000e230 movs       r2, #0                         
+2000e232 bl         #0x20020ebc                    __aeabi_dmul
+2000e236 bl         #0x20021440                    __aeabi_d2uiz
+2000e23a str.w      r0, [r6, #0x204]               
+2000e23e ldr.w      r3, [r6, #0x204]               
+2000e242 cmp        r3, #0x15                      
+2000e244 ite        hi                             
+2000e246 ldrhi.w    r3, [sl, #0x204]               
+2000e24a movls      r3, #0x15                      
+2000e24c str.w      r3, [r6, #0x204]               
+2000e250 ldrb.w     r4, [r6, #0x61]                
+2000e254 ldr.w      sl, [pc, #0xec]                 [2000e344]=2002d2f8
+2000e258 cmp        r4, #0                         
+2000e25a bne.w      #0x2000e37e                    
+2000e25e ldr.w      r3, [sl, #0x1a4]               
+2000e262 adds       r3, #1                         
+2000e264 str.w      r3, [sl, #0x1a4]               
+2000e268 ldr.w      r3, [sl, #0x1a4]               
+2000e26c cmp        r3, #0x3b                      
+2000e26e ble        #0x2000e35c                    
+2000e270 mov        r0, sl                         
+2000e272 bl         #0x20005004                    pico_heat_record_temperature_sample
+2000e276 str.w      r4, [sl, #0x1a4]               
+2000e27a ldrd       r4, r5, [r7]                   
+2000e27e mov        r6, sl                         
+2000e280 ldrd       r2, r3, [r6, #0x1b8]!          
+2000e284 mov        r0, r4                         
+2000e286 mov        r1, r5                         
+2000e288 bl         #0x200213dc                    __aeabi_dcmpgt
+2000e28c cbnz       r0, #0x2000e294                
+2000e28e ldrd       r2, r3, [r6]                   
+2000e292 b          #0x2000e298                    
+2000e294 mov        r2, r4                         
+2000e296 mov        r3, r5                         
+2000e298 strd       r2, r3, [r6]                   
+2000e29c ldr        r6, [pc, #0xb8]                 [2000e358]=2002d4a8
+2000e29e mov        r1, r5                         
+2000e2a0 mov        r0, r4                         
+2000e2a2 ldrd       r2, r3, [r6]                   
+2000e2a6 bl         #0x200213dc                    __aeabi_dcmpgt
+2000e2aa mov        r1, r6                         
+2000e2ac cbnz       r0, #0x2000e2b4                
+2000e2ae ldrd       r2, r3, [r6]                   
+2000e2b2 b          #0x2000e2b8                    
+2000e2b4 mov        r2, r4                         
+2000e2b6 mov        r3, r5                         
+2000e2b8 strd       r2, r3, [r1]                   
+2000e2bc mov        r2, r4                         
+2000e2be ldrd       r0, r1, [r1]                   
+2000e2c2 mov        r3, r5                         
+2000e2c4 bl         #0x20005120                    pico_heat_classify_temperature_progress
+2000e2c8 cmp        r0, #2                         
+2000e2ca ldr        r6, [pc, #0x78]                 [2000e344]=2002d2f8
+2000e2cc beq        #0x2000e2e8                    
+2000e2ce cmp        r0, #3                         
+2000e2d0 beq        #0x2000e2fa                    
+2000e2d2 cmp        r0, #1                         
+2000e2d4 bne        #0x2000e37e                    
+2000e2d6 mov        r0, r6                         
+2000e2d8 bl         #0x20005f50                    pico_heat_controller_stop
+2000e2dc bl         #0x20005f12                    pico_steam_pump_off
+2000e2e0 bl         #0x20005f1a                    pico_drain_pump_off
+2000e2e4 movs       r3, #5                         
+2000e2e6 b          #0x2000e30a                    
+2000e2e8 mov        r0, r6                         
+2000e2ea bl         #0x20005f50                    pico_heat_controller_stop
+2000e2ee bl         #0x20005f12                    pico_steam_pump_off
+2000e2f2 bl         #0x20005f1a                    pico_drain_pump_off
+2000e2f6 movs       r3, #6                         
+2000e2f8 b          #0x2000e30a                    
+2000e2fa mov        r0, r6                         
+2000e2fc bl         #0x20005f50                    pico_heat_controller_stop
+2000e300 bl         #0x20005f12                    pico_steam_pump_off
+2000e304 bl         #0x20005f1a                    pico_drain_pump_off
+2000e308 movs       r3, #7                         
+2000e30a strb.w     r3, [r6, #0x61]                
+2000e30e bl         #0x20019ade                    IntMasterDisable
+2000e312 b          #0x2000e37e                    
+2000e314 nop.w                                     
+2000e318 movs       r0, r0                         
+2000e31a movs       r0, r0                         
+2000e31c asrs       r0, r0, #0x20                  
+2000e31e eors       r0, r7                         
+2000e320 movs       r0, r0                         
+2000e322 movs       r0, r0                         
+2000e324 b          #0x2000e328                    
+2000e326 eors       r2, r5                         
+2000e328 movs       r0, r0                         
+2000e32a movs       r0, r0                         
+2000e32c str        r0, [r0]                       
+2000e32e eors       r0, r5                         
+2000e330 movs       r0, r0                         
+2000e332 movs       r0, r0                         
+2000e334 strb       r0, [r0]                       
+2000e336 lsls       r7, r4                         
+2000e338 movs       r0, r0                         
+2000e33a ands       r3, r0                         
+2000e33c yield                                     
+2000e33e movs       r0, #2                         
+2000e340 strb       r6, [r1, #0xb]                 
+2000e342 movs       r0, #2                         
+2000e344 bhs        #0x2000e338                    
+2000e346 movs       r0, #2                         
+2000e348 bge        #0x2000e2c8                    
+2000e34a movs       r0, #2                         
+2000e34c movs       r0, r0                         
+2000e34e eors       r0, r0                         
+2000e350 bpl        #0x2000e374                    
+2000e352 movs       r0, #2                         
+2000e354 ands       r0, r0                         
+2000e356 eors       r7, r7                         
+2000e358 bmi        #0x2000e2ac                    
+2000e35a movs       r0, #2                         
+2000e35c ldr.w      r2, [sl, #0x1a4]               
+2000e360 movs       r3, #0x1e                      
+2000e362 sdiv       r1, r2, r3                     
+2000e366 mls        r3, r3, r1, r2                 
+2000e36a cbnz       r3, #0x2000e37e                
+2000e36c ldrd       r2, r3, [r7]                   
+2000e370 add.w      r1, sl, #0x1b0                 
+2000e374 mov        r0, sl                         
+2000e376 strd       r2, r3, [r1]                   
+2000e37a bl         #0x20005004                    pico_heat_record_temperature_sample
+2000e37e ldrb.w     r3, [sb]                       
+2000e382 cbnz       r3, #0x2000e398                
+2000e384 ldrd       r0, r1, [r8]                   
+2000e388 adr        r3, #0x24                      
+2000e38a ldrd       r2, r3, [r3]                   
+2000e38e bl         #0x200213dc                    __aeabi_dcmpgt
+2000e392 cmp        r0, #0                         
+2000e394 bne.w      #0x2000e17c                    
+2000e398 add        sp, #0xc                       
+2000e39a pop.w      {r4, r5, r6, r7, r8, sb, sl, fp, lr} 
+2000e39e b.w        #0x20019ad4                    IntMasterEnable
+2000e3a2 ldr.w      r3, [r6, #0x1a8]               
+2000e3a6 subs       r3, #1                         
+2000e3a8 b          #0x2000e114                    
+2000e3aa nop                                       
+2000e3ac nop.w                                     
+2000e3b0 movs       r0, r0                         
+2000e3b2 movs       r0, r0                         
+2000e3b4 asrs       r0, r0, #0x20                  
+2000e3b6 eors       r0, r7                         
+2000e3b8 push       {r4, lr}                       
+2000e3ba mov        r4, r0                         
+2000e3bc bl         #0x20004488                    pico_display_clear
+2000e3c0 mov        r1, r4                         
+2000e3c2 movs       r0, #1                         
+2000e3c4 bl         #0x200052dc                    pico_display_center_text
+2000e3c8 pop.w      {r4, lr}                       
+2000e3cc b.w        #0x2000c7f8                    pico_ui_wait_for_continue
+
+Non-returning heater fault boundary
+2000e054 push       {r3, lr}
+2000e056 bl         #0x20019ad4
+2000e05a ldr        r3, [pc, #0x24]
+2000e05c movs       r2, #0
+2000e05e strb       r2, [r3]
+2000e060 bl         #0x20005fae
+2000e064 bl         #0x2000cb40
+2000e068 bl         #0x20019ade
+2000e06c bl         #0x20004488
+2000e070 bl         #0x2000a980
+2000e074 movs       r0, #0x18
+2000e076 bl         #0x2000dfec
+2000e07a bl         #0x20018efc
+2000e07e b          #0x2000e07a
+2000e080 bge        #0x2000e000
+2000e082 movs       r0, #2
+2000e084 movs       r0, r0
+2000e086 movs       r0, r0

@@ -1,0 +1,29 @@
+{
+  "evidence_source": "Owner-supplied browser screenshots after the verified first standalone install; no independent device capture",
+  "observation_date_as_recorded": "2026-11-18",
+  "installed_candidate": {
+    "size_bytes": 161720,
+    "sha256": "a8fc16afce43c4b91b82374a339b86631daefe1a40f08df5f8bdd7a0d0a8d904"
+  },
+  "observed": {
+    "console_connected": true,
+    "protected_status_and_display_polling_indicated": true,
+    "wort_f": 76.0,
+    "thermoblock_f": 83.3,
+    "target_display": "Unheated",
+    "filter_display": "Filter removed",
+    "oled_preview_rotated_180_degrees": true,
+    "sidebar_identifier_overflow": true
+  },
+  "privacy": "SSID, hostname, LAN addresses and device identifier omitted; raw screenshots not published",
+  "limits": [
+    "Screenshot supports successful connected-console use; individual authenticated HTTP responses were not supplied.",
+    "Readings do not verify calibration or physical outputs.",
+    "Firmware 1.0.0 changes are not included in this physical result."
+  ],
+  "next_physical_checks": [
+    "Install the separate 1.0.0 candidate and matching browser bundle",
+    "Confirm upright preview, arrows, responsive layout and fresh DHCP after network changes",
+    "Validate real brew logging, interlocks and physical control in a controlled session"
+  ]
+}

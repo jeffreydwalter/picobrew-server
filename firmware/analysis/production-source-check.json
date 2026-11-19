@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "production_files": 65,
+  "findings": [],
+  "scope": "No old application RAM/code address calls, unresolved-return macros or raw decompiler labels in production C/C++ after removing comments. Explicit TI peripheral addresses are allowed."
+}

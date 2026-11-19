@@ -63,7 +63,7 @@ func validateRecipe(recipe domain.MachineRecipe) error {
 		return invalid("Recipe ID, name or step count is invalid")
 	}
 	for i, step := range recipe.Steps {
-		if !validLabel(step.Name, 21) || step.Location < 1 || step.Location > 6 || (step.TargetF != 0 && (step.TargetF < 60 || step.TargetF > 212)) || step.Minutes < 1 || step.Minutes > 599 || step.DrainMinutes < 0 || step.DrainMinutes > 120 {
+		if !validLabel(step.Name, 21) || step.Location < 1 || step.Location > 6 || (step.TargetF != 0 && (step.TargetF < 60 || step.TargetF > 212)) || step.Minutes < 0 || step.Minutes > 599 || step.DrainMinutes < 0 || step.DrainMinutes > 120 {
 			return invalid(fmt.Sprintf("Recipe step %d is outside the firmware limits", i+1))
 		}
 	}

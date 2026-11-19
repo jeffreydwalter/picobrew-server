@@ -1,0 +1,16 @@
+{
+  "scope": "Full dependency bootstrap extraction from cached pinned official archives, then real ARM compile/link with the installed compiler",
+  "sdk_archive_sha256": "1172b29afc4d761d501d7afecc73342df9fcf67e0d5be0506fa0bd1be3fd5caa",
+  "toolchain_archive_sha256": "97dbb4f019ad1650b732faffcc881689cedc14e2b7ee863d390e0a41ef16c9a3",
+  "compiler": "arm-none-eabi-gcc (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)",
+  "sdk": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/energia",
+  "arm_prefix": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/bin/arm-none-eabi-",
+  "integration_report": "build-bootstrap-verified/validation.json",
+  "retained_application_symbols": 42,
+  "binary_size": 28584,
+  "binary_sha256": "5fdae693d04332e64a858d4fc5efd1fd0525b4df8d870d5d3910d154dde4187b",
+  "undefined_symbols": "",
+  "missing_application_symbols": [],
+  "full_firmware": false,
+  "pass": true
+}

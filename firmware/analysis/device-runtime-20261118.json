@@ -1,0 +1,69 @@
+{
+  "evidence_source": "Owner-supplied runtime observations and curl output; no independent device capture or runtime firmware hash",
+  "observation_date_as_recorded": "2026-11-18",
+  "response_wall_clock_timestamp_provided": false,
+  "installed_candidate": {
+    "size_bytes": 161720,
+    "sha256": "a8fc16afce43c4b91b82374a339b86631daefe1a40f08df5f8bdd7a0d0a8d904",
+    "identity_basis": "Previously verified installation followed by owner-reported boot and standalone health response",
+    "installation_record": "analysis/device-install-20261118.json"
+  },
+  "owner_reported_application_boot": true,
+  "owner_reported_network_menu_use": true,
+  "boot_trigger": "Not explicitly identified in the supplied runtime observations",
+  "http_request": {
+    "method": "GET",
+    "path": "/api/v1/health",
+    "api_key_required": false
+  },
+  "http_response": {
+    "protocol": "HTTP/1.1",
+    "status": 200,
+    "reason": "OK",
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Content-Length": "92",
+      "Connection": "close",
+      "Cache-Control": "no-store",
+      "X-Content-Type-Options": "nosniff",
+      "Content-Security-Policy": "default-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'none'"
+    },
+    "body": {
+      "api_version": 1,
+      "mode": "standalone",
+      "ready": true,
+      "auth_configured": true,
+      "uptime_ms": 132543
+    }
+  },
+  "private_hostname_and_lan_address_omitted": true,
+  "observed": {
+    "hostname_resolved_to_ipv4": true,
+    "tcp_port_80_connected": true,
+    "standalone_application_served_public_health": true,
+    "application_reported_ready": true,
+    "application_reported_api_key_configured": true
+  },
+  "wifi_ssid_change": {
+    "owner_observation": "Status displayed the newly selected SSID alongside an address outside the expected subnet for that network",
+    "owner_reported_resolution": "A reboot corrected DHCP addressing",
+    "source_findings": [
+      "The status screen prints the configured SSID rather than the currently associated SSID",
+      "The connection adapter can return WiFi.status() without a new connection request when the SDK connecting flag remains set"
+    ],
+    "exact_runtime_cause_established": false,
+    "issue_open": true,
+    "firmware_fix_included": false,
+    "radio_band_verified": false
+  },
+  "not_yet_physically_verified": [
+    "Bearer-authenticated API request",
+    "Browser console loading and rendering",
+    "Full display and encoder behavior",
+    "Physical sensor accuracy and output states",
+    "Interlock behavior and controlled thermal operation",
+    "Complete brewing or maintenance program",
+    "Stock restoration and interrupted-write recovery"
+  ],
+  "next_physical_step": "Open the browser console, authenticate with the existing private API key and inspect read-only status/display data before starting any program"
+}

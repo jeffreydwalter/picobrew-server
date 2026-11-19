@@ -42,15 +42,18 @@ type Status struct {
 	} `json:"encoder"`
 }
 type Capabilities struct {
-	APIVersion           int      `json:"api_version"`
-	FirmwareVersion      string   `json:"firmware_version"`
-	Commands             []string `json:"commands"`
-	RecipeCapacity       int      `json:"recipe_capacity"`
-	StepCapacity         int      `json:"step_capacity"`
-	FrontPanel           bool     `json:"front_panel"`
-	HistoryPersistent    bool     `json:"history_persistent"`
-	TelemetryForwarding  bool     `json:"telemetry_forwarding"`
-	DedicatedPauseResume bool     `json:"dedicated_pause_resume"`
+	APIVersion            int      `json:"api_version"`
+	FirmwareVersion       string   `json:"firmware_version"`
+	Commands              []string `json:"commands"`
+	RecipeCapacity        int      `json:"recipe_capacity"`
+	StepCapacity          int      `json:"step_capacity"`
+	FrontPanel            bool     `json:"front_panel"`
+	HistoryPersistent     bool     `json:"history_persistent"`
+	TelemetryForwarding   bool     `json:"telemetry_forwarding"`
+	DedicatedPauseResume  bool     `json:"dedicated_pause_resume"`
+	ZeroMinuteSteps       bool     `json:"zero_minute_steps"`
+	RestoreDefaultRecipes bool     `json:"restore_default_recipes"`
+	StarterRecipeCount    int      `json:"starter_recipe_count"`
 }
 type DeviceView struct {
 	Device
@@ -119,26 +122,44 @@ type Carbonation struct {
 	Volumes      float64 `json:"volumes,omitempty"`
 	TemperatureC float64 `json:"temperature_c,omitempty"`
 }
+
+// RecipeProvenance identifies the immutable original record from which an
+// editable library copy was made. Warnings describe incomplete conversions.
+type RecipeProvenance struct {
+	CatalogID  string   `json:"catalog_id"`
+	SourceID   string   `json:"source_id"`
+	Repository string   `json:"repository"`
+	Commit     string   `json:"commit"`
+	Path       string   `json:"path"`
+	SHA256     string   `json:"sha256"`
+	SourceURL  string   `json:"source_url"`
+	License    string   `json:"license"`
+	Warnings   []string `json:"warnings"`
+}
 type Recipe struct {
-	ID           string             `json:"id"`
-	Name         string             `json:"name"`
-	Style        string             `json:"style"`
-	Description  string             `json:"description"`
-	BatchLiters  float64            `json:"batch_liters"`
-	Efficiency   float64            `json:"efficiency"`
-	Ingredients  []Ingredient       `json:"ingredients"`
-	Steps        []RecipeStep       `json:"steps"`
-	Tags         []string           `json:"tags"`
-	Notes        string             `json:"notes"`
-	Revision     int64              `json:"revision"`
-	CreatedAt    time.Time          `json:"created_at"`
-	UpdatedAt    time.Time          `json:"updated_at"`
-	Type         string             `json:"type,omitempty"`
-	BoilLiters   float64            `json:"boil_liters,omitempty"`
-	BoilMinutes  float64            `json:"boil_minutes,omitempty"`
-	Water        map[string]float64 `json:"water,omitempty"`
-	Fermentation []FermentationStep `json:"fermentation,omitempty"`
-	Carbonation  Carbonation        `json:"carbonation,omitempty"`
+	ID            string             `json:"id"`
+	Name          string             `json:"name"`
+	Style         string             `json:"style"`
+	Description   string             `json:"description"`
+	BatchLiters   float64            `json:"batch_liters"`
+	Efficiency    float64            `json:"efficiency"`
+	Ingredients   []Ingredient       `json:"ingredients"`
+	Steps         []RecipeStep       `json:"steps"`
+	Tags          []string           `json:"tags"`
+	Notes         string             `json:"notes"`
+	Revision      int64              `json:"revision"`
+	CreatedAt     time.Time          `json:"created_at"`
+	UpdatedAt     time.Time          `json:"updated_at"`
+	Type          string             `json:"type,omitempty"`
+	BoilLiters    float64            `json:"boil_liters,omitempty"`
+	BoilMinutes   float64            `json:"boil_minutes,omitempty"`
+	Water         map[string]float64 `json:"water,omitempty"`
+	Fermentation  []FermentationStep `json:"fermentation,omitempty"`
+	Carbonation   Carbonation        `json:"carbonation,omitempty"`
+	Kind          string             `json:"kind,omitempty"`
+	SourceModel   string             `json:"source_model,omitempty"`
+	NativeProgram *MachineRecipe     `json:"native_program,omitempty"`
+	Provenance    *RecipeProvenance  `json:"provenance,omitempty"`
 }
 type Profile struct {
 	ID               string          `json:"id"`

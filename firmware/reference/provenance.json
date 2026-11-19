@@ -1,0 +1,22 @@
+{
+  "filename": "original-0.1.34.bin",
+  "size_bytes": 162792,
+  "sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "format": "Raw MCU image, not the ASCII OTA envelope",
+  "load_address": "0x20004000",
+  "matches_archived_maintainer_mcuimg2_bin": true,
+  "source_urls": {
+    "ota": "https://raw.githubusercontent.com/chiefwigms/picobrew_pico/36acae3003845b72568ef5f7d6cf168acb6f9b69/app/firmware/pico/pico_0_1_34.bin",
+    "direct_dump": "https://github.com/chiefwigms/picobrew_pico/files/8985914/mcuimg2.zip",
+    "hardware_evidence": "https://github.com/chiefwigms/picobrew_pico/issues/354#issuecomment-1165734746",
+    "ti_programmer_guide": "https://www.ti.com/lit/ug/swru369d/swru369d.pdf"
+  },
+  "embedded_build": {
+    "version": "v0.1.34",
+    "date": "Dec 16 2019",
+    "time": "12:59:40",
+    "git_hash": "d0da766714f2012e98f8e43ecd6519895caf565e",
+    "branch": "dev"
+  },
+  "hardware_tested": false
+}

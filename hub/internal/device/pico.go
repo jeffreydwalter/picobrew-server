@@ -292,6 +292,22 @@ func (p *pico) PutRecipe(ctx context.Context, recipe domain.MachineRecipe) error
 		return err
 	}
 	defer p.unlock()
+	for _, step := range recipe.Steps {
+		if step.Minutes != 0 {
+			continue
+		}
+		// A successful current discovery is required for a new wire feature.
+		// Never infer support from a firmware version or a previously cached
+		// capability after the appliance may have restarted/changed firmware.
+		capabilities, err := p.discover(ctx)
+		if err != nil {
+			return err
+		}
+		if !capabilities.ZeroMinuteSteps {
+			return &Error{StatusCode: 409, Code: "unsupported_zero_minute_steps", Message: "This firmware does not advertise zero-minute heating steps. Update the brewer firmware before sending the original program."}
+		}
+		break
+	}
 	path := "/api/v1/recipes/" + recipe.ID
 	if err := p.request(ctx, http.MethodPut, path, recipe, nil, 200, 201); err != nil {
 		return err

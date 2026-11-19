@@ -1,0 +1,168 @@
+[
+  {
+    "address": "0x2001b71c",
+    "name": "libc_realloc",
+    "return_type": "void *",
+    "prototype": "void *libc_realloc(void *allocation, unsigned int count);",
+    "evidence": "Thumb2001b71c-2001b724 shuffles allocator arguments, adds global reentrancy context and tail-branches to2001b72c, whose return is an allocation pointer. String_change_buffer consumes that pointer. Wrapper does not modify the returned r0.",
+    "body_return_expression": "return FUN_2001b72c(DAT_2002b798, allocation, count);"
+  },
+  {
+    "address": "0x2001baf8",
+    "name": "unresolved_c_library_07",
+    "semantic_identity": "newlib _sbrk_r",
+    "return_type": "void *",
+    "prototype": "void *unresolved_c_library_07(int *reentrancy, int increment);",
+    "evidence": "Calls _sbrk at2001bb04. Both return paths2001bb0c and2001bb16 preserve r0. Only side effect on failure is copying global errno into *reentrancy. Returns the prior break or(void*)-1.",
+    "body_return_expression": "return pvVar1; (on both existing bare return paths)"
+  },
+  {
+    "address": "0x2002024c",
+    "name": "unresolved_c_library_21",
+    "semantic_identity": "newlib s2b (decimal string to Bigint)",
+    "return_type": "int *",
+    "prototype": "int *unresolved_c_library_21(int *reentrancy, int textAddress, int digitsBeforeDecimal, int totalDigits, int initialDigits);",
+    "evidence": "Allocates Bigint at20020154, places initial mantissa word, then multiplies/adds decimal digits through200201b4. Epilogue200202ce leaves returned allocation/result pointer in r0. Every loop call feeds its r0 pointer into the next call.",
+    "body_return_expression": "return piVar2;"
+  },
+  {
+    "address": "0x20020380",
+    "name": "unresolved_c_library_24",
+    "semantic_identity": "newlib i2b (integer to Bigint)",
+    "return_type": "int *",
+    "prototype": "int *unresolved_c_library_24(int *reentrancy, int value);",
+    "evidence": "Calls Bigint allocator20020154 at20020386. Writes value at[r0+0x14] and word count1 at[r0+0x10]; pop at20020390 preserves allocation pointer r0.",
+    "body_return_expression": "return piVar1;"
+  },
+  {
+    "address": "0x2002056c",
+    "name": "unresolved_c_library_27",
+    "semantic_identity": "newlib lshift (Bigint left shift)",
+    "return_type": "int *",
+    "prototype": "int *unresolved_c_library_27(int *reentrancy, unsigned int *value, unsigned int shift);",
+    "evidence": "Allocates shifted Bigint, copies shifted limbs, recycles input into reentrancy freelist. At20020602 writes result word count through r0; epilogue2002060a preserves that result pointer. Both aligned and unaligned shift paths converge there.",
+    "body_return_expression": "return piVar1;"
+  },
+  {
+    "address": "0x20020670",
+    "name": "unresolved_c_library_29",
+    "semantic_identity": "newlib diff (Bigint difference)",
+    "return_type": "int *",
+    "prototype": "int *unresolved_c_library_29(int *reentrancy, int leftAddress, int rightAddress);",
+    "evidence": "Allocates difference Bigint, records sign and subtracts limbs. Nonzero path stores word count through r0 at20020720 then returns. Equal-operands path allocates zero Bigint and returns same r0 at20020740.",
+    "body_return_expression": "return piVar2; (on both existing bare return paths)"
+  },
+  {
+    "address": "0x20018888",
+    "name": "MFRC522_transceive_data",
+    "return_type": "int",
+    "prototype": "int MFRC522_transceive_data(int reader, int sendData, unsigned char sendCount, unsigned char *receiveData, unsigned char *receiveCount, char *validBits, unsigned char receiveAlignment, char checkCrc);",
+    "evidence": "Calls MFRC522_communicate_with_card2001872c at200188ac; add sp and pop at200188b0/200188b2 preserve status in r0. Request/select/halt callers compare that value to image status constants1,3,4,5.",
+    "body_return_expression": "return FUN_2001872c(reader, 0x0c, 0x30, sendData, sendCount, receiveData, receiveCount, validBits, receiveAlignment, checkCrc);"
+  },
+  {
+    "address": "0x20021bb0",
+    "name": "soft_unsigned_long_long_divmod",
+    "return_type": "unsigned long long",
+    "prototype": "unsigned long long soft_unsigned_long_long_divmod(unsigned int numeratorLow, unsigned int numeratorHigh, unsigned int denominatorLow, unsigned int denominatorHigh, int *remainder);",
+    "evidence": "Calls unsigned64 division20021e7c at20021bbe; quotient remains r0/r1 throughout remainder calculation.20021bd8 stores64-bit remainder via fifth parameter and pop20021bdc preserves both r0/r1. This helper has a normal64-bit C return plus explicit remainder pointer.",
+    "body_return_expression": "return uVar3;",
+    "related_abi_note": "Caller20021b54 forwards quotient r0/r1 and loads remainder into r2/r3. That wrapper is the special AEABI divmod ABI; its current uint-only return is incomplete, but no wrapper signature change is included here."
+  },
+  {
+    "address": "0x20006128",
+    "name": "pico_execute_current_program_instruction",
+    "prototype": "unsigned int pico_execute_current_program_instruction(unsigned int screen_id, int sound_alarm);",
+    "evidence": "Thumb 0x20006134 calls pico_ui_run_instruction_screen; 0x20006138 restores SP and 0x2000613a returns without modifying r0. The returned action is tested by cooking/draining callers."
+  },
+  {
+    "address": "0x20008b1c",
+    "name": "pico_wifi_connect_with_screen",
+    "prototype": "int pico_wifi_connect_with_screen(void);",
+    "evidence": "Thumb 0x20008b60 tail-branches to connect-to-stored-WiFi at 0x20008a8c, which explicitly returns r0=0 at 0x20008ab0 and r0=1 at 0x20008afc."
+  },
+  {
+    "address": "0x20008b70",
+    "name": "pico_wifi_reconnect",
+    "prototype": "int pico_wifi_reconnect(void);",
+    "evidence": "Thumb 0x20008b82 tail-branches to 0x20008a8c on initialized/success paths. Init-failure branch compares r0 with zero at 0x20008b8a and returns that same zero at 0x20008b8e."
+  },
+  {
+    "address": "0x2000c334",
+    "name": "pico_ui_choose_language",
+    "prototype": "unsigned int pico_ui_choose_language(void);",
+    "evidence": "Selection returned by 0x2000c2c2 at 0x2000c34a remains in r0 on every return. For selection0 the stored zero is produced in r2, leaving r0 unchanged; selections1/2 store r0 directly."
+  },
+  {
+    "address": "0x2000c36c",
+    "name": "pico_ui_choose_units",
+    "prototype": "unsigned int pico_ui_choose_units(void);",
+    "evidence": "After selection, Thumb 0x2000c382 tests r0, 0x2000c386 normalizes nonzero r0 to1, 0x2000c388 stores that byte and 0x2000c38a returns it. This is the normalized metric preference, not an invented success code."
+  },
+  {
+    "address": "0x2000c7f8",
+    "name": "pico_ui_wait_for_continue",
+    "prototype": "unsigned int pico_ui_wait_for_continue(void);",
+    "evidence": "Thumb 0x2000c80a tail-branches to menu_choose(7,1,0); its selection value survives in r0."
+  },
+  {
+    "address": "0x2000f1b8",
+    "name": "pico_diagnostic_buzzer",
+    "prototype": "int pico_diagnostic_buzzer(void);",
+    "evidence": "Thumb 0x2000f1dc tail-branches to pico_buzzer_off at 0x2000cb46, whose explicit 0/1 status is retained."
+  },
+  {
+    "address": "0x2000dfec",
+    "name": "pico_api_report_error",
+    "prototype": "int pico_api_report_error(int error_code);",
+    "evidence": "Thumb 0x2000e038 calls pico_api_open_request; SP restoration and return at 0x2000e03c/0x2000e040 leave request result in r0. WiFi diagnostics branch on this actual request result."
+  },
+  {
+    "address": "0x20012b04",
+    "name": "pico_api_get_associated_picopaks",
+    "prototype": "int pico_api_get_associated_picopaks(int *total_items, int *page_offset, int *menu_item_count, int item_identifiers, int item_titles, int *loaded_items);",
+    "evidence": "Thumb 0x20012b3c calls common recipe-list parser0x20012968; epilogue at 0x20012b40/0x20012b44 does not touch r0, preserving parser 0/1 result."
+  },
+  {
+    "address": "0x20012b4c",
+    "name": "pico_api_get_recipe_list",
+    "prototype": "int pico_api_get_recipe_list(int *total_items, int *page_offset, int *menu_item_count, int item_identifiers);",
+    "evidence": "Thumb 0x20012b84 calls common recipe-list parser0x20012968; epilogue at 0x20012b88/0x20012b8c does not touch r0, preserving parser 0/1 result."
+  },
+  {
+    "address": "0x20006680",
+    "name": "pico_temperature_read_pin26",
+    "prototype": "float pico_temperature_read_pin26(void);",
+    "evidence": "Raw Thumb: BL __aeabi_d2f at0x20006756 immediately precedes POP {r3,r4,r5,r6,r7,pc} at0x2000675a; r0 is unchanged. Timer ISR calls this at0x2000e0ea then __aeabi_f2d at0x2000e0ee, consuming its float r0 result."
+  },
+  {
+    "address": "0x200067a0",
+    "name": "pico_temperature_read_pin25",
+    "prototype": "float pico_temperature_read_pin25(void);",
+    "evidence": "Raw Thumb: BL __aeabi_d2f at0x20006876 leaves float Fahrenheit in r0. Session types2/4 call __aeabi_fsub(result,2.0) at0x2000688a; all paths POP without changing r0 at0x2000688e. Timer ISR immediately passes return into __aeabi_f2d at0x2000e0de."
+  },
+  {
+    "address": "0x20005c00",
+    "name": "pico_device_compute_uid",
+    "prototype": "unsigned int pico_device_compute_uid(void);",
+    "evidence": "Exact effective machine return: timeout copies zero-valued r4 to r0 at0x20005c3e. Success loads [0x20005c9c]=0x44035000 into r0 at0x20005c84 and calls SHAMD5IntDisable at0x20005c8e; that SDK function never writes r0, so success returns0x44035000. Caller0x2000a594 explicitly tests r0 after call at0x2000a5a8. Do not invent/normalize success to1; retain observed nonzero register value."
+  },
+  {
+    "address": "0x2000cde0",
+    "name": "pico_controller_set_brew_phase",
+    "prototype": "void pico_controller_set_brew_phase(int controller,int brew_phase);",
+    "evidence": "All five direct callers ignore return. Raw common epilogue at0x2000cf2c stores phase byte then returns without defining a result. Last callee varies between pump digitalWrite wrappers, PID-mode setter and interrupt-state helper; inferred uint return propagates irrelevant r0 residue from void actuator calls. No result contract exists in caller use."
+  },
+  {
+    "address": "0x200059f4",
+    "name": "pico_settings_save_shuttle_scale",
+    "prototype": "bool pico_settings_save_shuttle_scale(void);",
+    "evidence": "Raw PUSH {r0,r1,r2,lr} allocates a12-byte local text buffer. Function overwrites r0/r1 with global shuttle-scale double at0x200059f8, converts it and formats into SP at0x20005a04. No incoming register values are read before formatting overwrites the buffer. These phantom arguments caused the apparent drain_pump_off return at its caller; save still forwards actual file-write boolean."
+  },
+  {
+    "address": "0x200096a0",
+    "name": "pico_screen_wifi_no_signal",
+    "prototype": "void pico_screen_wifi_no_signal(void);",
+    "evidence": "All four incoming values only initialize local text scratch storage; strcpy of selected-language NoWiFiSignal message overwrites it before use. Removing phantom parameters removes the sole apparent64-bit use of pico_display_stop_progress_indicator; progress stop remains void."
+  }
+]

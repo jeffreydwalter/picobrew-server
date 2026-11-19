@@ -284,3 +284,170 @@ describe('UI interactions against the real isolated Go simulator', () => {
     )
   })
 })
+
+describe('community catalogue and local recipe slots', () => {
+  it('copies a native recipe, preserves zero-minute steps, previews transfer, edits its machine slot and skips overwrites', async () => {
+    let deviceID = ''
+    let recipeID = ''
+    try {
+      const created = await simulationMutation('/devices', {
+        name: 'DOM catalogue brewer',
+        adapter: 'simulator',
+        model: 'pico-pro',
+        enabled: true,
+      })
+      deviceID = created.id
+      await simulationMutation(`/devices/${deviceID}/test`)
+      const original = await (await originalFetch(origin + '/api/v1/catalog/picopak-64')).json()
+      const before = await (
+        await originalFetch(origin + `/api/v1/devices/${deviceID}/recipes`)
+      ).json()
+      await open('/catalog?kind=native-program&q=Pico%20Pale')
+      await user.click(await screen.findByRole('button', { name: 'Pico Pale' }))
+      await screen.findByRole('heading', { name: 'The original machine schedule' })
+      expect(screen.getAllByRole('cell', { name: 'Reach target' }).length).toBeGreaterThan(0)
+      await user.click(screen.getByRole('button', { name: 'Copy to my library' }))
+      await screen.findByRole('button', { name: 'Save program' })
+      recipeID = window.location.hash.split('/recipes/')[1]
+      expect(recipeID).toBeTruthy()
+      expect(screen.queryByLabelText('Batch size (L)', { exact: true })).toBeNull()
+      expect(screen.queryByRole('button', { name: 'Add ingredient' })).toBeNull()
+      expect(
+        (screen.getByLabelText('Step 1 hold (min)', { exact: true }) as HTMLInputElement).value
+      ).toBe('0')
+      await user.clear(screen.getByLabelText('Program notes', { exact: true }))
+      await user.type(
+        screen.getByLabelText('Program notes', { exact: true }),
+        'Exact original program retained.'
+      )
+      await user.click(screen.getByRole('button', { name: 'Save program' }))
+      await screen.findByText('Machine program saved to your library.')
+      const saved = await (await originalFetch(origin + `/api/v1/recipes/${recipeID}`)).json()
+      expect(saved.native_program).toEqual(original.native_program)
+      expect(saved.ingredients).toEqual([])
+      expect(saved.batch_liters).toBe(0)
+      expect(saved.efficiency).toBe(0)
+      expect(saved.provenance.catalog_id).toBe('picopak-64')
+      expect(saved.notes).toBe('Exact original program retained.')
+
+      await user.click(screen.getByRole('button', { name: 'Preview & send' }))
+      let dialog = await screen.findByRole('dialog', { name: 'Send recipes & programs' })
+      await user.selectOptions(
+        within(dialog).getByLabelText('Transfer to machine', { exact: true }),
+        deviceID
+      )
+      await user.click(within(dialog).getByRole('button', { name: 'Preview transfer' }))
+      dialog = await screen.findByRole('dialog', { name: 'Review this transfer' })
+      expect(
+        within(dialog).getByText(`${before.recipes.length} / 16`, { exact: true })
+      ).toBeTruthy()
+      expect(within(dialog).getByText('Ready to send', { exact: true })).toBeTruthy()
+      await user.click(within(dialog).getByRole('button', { name: 'Send 1 program' }))
+      dialog = await screen.findByRole('dialog', { name: 'Transfer receipt' })
+      await within(dialog).findByText('Verified on machine', { exact: true })
+      const after = await (
+        await originalFetch(origin + `/api/v1/devices/${deviceID}/recipes`)
+      ).json()
+      expect(
+        after.recipes.find((program: { id: string }) => program.id === original.native_program.id)
+      ).toEqual(original.native_program)
+      for (const existing of before.recipes) expect(after.recipes).toContainEqual(existing)
+      const device = await (await originalFetch(origin + `/api/v1/devices/${deviceID}`)).json()
+      expect(device.status.busy).toBe(false)
+      await user.click(within(dialog).getByRole('button', { name: 'Done' }))
+
+      window.location.hash = `/devices/${deviceID}`
+      await screen.findByRole('heading', { name: 'DOM catalogue brewer', level: 1 })
+      await waitFor(() => expect(screen.getByRole('option', { name: 'Pico Pale' })).toBeTruthy())
+      await user.selectOptions(
+        screen.getByLabelText('Recipe on this machine', { exact: true }),
+        original.native_program.id
+      )
+      await user.click(screen.getByRole('button', { name: 'Edit saved program' }))
+      dialog = await screen.findByRole('dialog', {
+        name: 'Edit the machine’s saved program',
+      })
+      await user.clear(within(dialog).getByLabelText('Saved program name', { exact: true }))
+      await user.type(
+        within(dialog).getByLabelText('Saved program name', { exact: true }),
+        'Pico Pale bench edit'
+      )
+      await user.click(within(dialog).getByRole('button', { name: 'Save to machine' }))
+      await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull())
+      const changed = await (
+        await originalFetch(origin + `/api/v1/devices/${deviceID}/recipes`)
+      ).json()
+      expect(
+        changed.recipes.find((program: { id: string }) => program.id === original.native_program.id)
+      ).toMatchObject({ name: 'Pico Pale bench edit', steps: original.native_program.steps })
+      expect(
+        (await (await originalFetch(origin + `/api/v1/recipes/${recipeID}`)).json()).name
+      ).toBe('Pico Pale')
+
+      window.location.hash = `/recipes/${recipeID}`
+      await user.click(await screen.findByRole('button', { name: 'Preview & send' }))
+      dialog = await screen.findByRole('dialog', { name: 'Send recipes & programs' })
+      await user.selectOptions(
+        within(dialog).getByLabelText('Transfer to machine', { exact: true }),
+        deviceID
+      )
+      await user.click(within(dialog).getByRole('button', { name: 'Preview transfer' }))
+      dialog = await screen.findByRole('dialog', { name: 'Review this transfer' })
+      expect(within(dialog).getByText('Skipped', { exact: true })).toBeTruthy()
+      expect(within(dialog).getByText(/enable updating matching recipes/)).toBeTruthy()
+      expect(
+        (
+          within(dialog).getByRole('button', {
+            name: 'Send 0 programs',
+          }) as HTMLButtonElement
+        ).disabled
+      ).toBe(true)
+    } finally {
+      if (deviceID)
+        await originalFetch(origin + `/api/v1/devices/${deviceID}`, {
+          method: 'DELETE',
+          headers: { 'X-CSRF-Token': csrfToken },
+        })
+      if (recipeID)
+        await originalFetch(origin + `/api/v1/recipes/${recipeID}`, {
+          method: 'DELETE',
+          headers: { 'X-CSRF-Token': csrfToken },
+        })
+    }
+  })
+
+  it('browses cleaning records and reads local images, machine artwork and attributed source records', async () => {
+    await open('/catalog?kind=maintenance')
+    await screen.findByRole('heading', { name: 'A whole library to explore.' })
+    await waitFor(() =>
+      expect(document.querySelectorAll('.catalog-card').length).toBeGreaterThan(0)
+    )
+    expect(
+      (screen.getByLabelText('Catalogue type', { exact: true }) as HTMLSelectElement).value
+    ).toBe('maintenance')
+    expect(screen.getAllByText('Cleaning program', { exact: true }).length).toBeGreaterThan(0)
+    await user.click(screen.getByRole('button', { name: 'Machine guides & artwork' }))
+    const dialog = await screen.findByRole('dialog', {
+      name: 'Machine guides & artwork',
+    })
+    await waitFor(() =>
+      expect(dialog.querySelectorAll('.machine-artwork img').length).toBeGreaterThan(0)
+    )
+    const images = Array.from(dialog.querySelectorAll('img'))
+    for (const image of images)
+      expect(image.getAttribute('src')).toMatch(/^\/api\/v1\/catalog\/assets\//)
+    const response = await originalFetch(new URL(images[0].getAttribute('src')!, origin))
+    expect(response.ok).toBe(true)
+    expect(response.headers.get('content-type')).toMatch(/^image\//)
+    expect((await response.text()).length).toBeGreaterThan(100)
+    await user.click(within(dialog).getByRole('button', { name: 'Close dialog' }))
+    await user.click(screen.getByRole('button', { name: 'Sources & credits' }))
+    const sources = await screen.findByRole('dialog', {
+      name: 'Catalogue sources & credits',
+    })
+    expect(
+      within(sources).getByRole('heading', { name: 'PicoPak and ZPak program archive' })
+    ).toBeTruthy()
+    expect(within(sources).getAllByText('No repository license supplied').length).toBeGreaterThan(0)
+  })
+})

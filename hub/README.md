@@ -41,7 +41,9 @@ This seeds three simulated brewers, two example recipes and three historical bre
 - **Manage a fleet.** See each machine's connection, state, temperature and active recipe. Open several machines in separate tabs while the fleet continues streaming updates.
 - **Operate an S/Pro.** Mirror its OLED, turn or press its dial, select an installed recipe, open its advertised maintenance programs, stop outputs, and update its display/forwarding preferences. The console exposes the capabilities reported by that device.
 - **Curate recipes.** Maintain ingredients, mash/boil steps, water chemistry, fermentation and carbonation details, tags and notes. Every save creates a revision; simultaneous edits are detected. Import/export JSON and BeerXML, and aggregate selected recipes into a shopping list.
+- **Browse the community catalogue.** Search 5,282 bundled recipe/program entries, view attributed beer illustrations and source records, and copy entries to your editable library. Native PicoPak programs retain their exact routing and timings, including zero-minute heating steps; they have no invented ingredient quantities or batch volume. See [catalogue contents and provenance](docs/community-catalog.md).
 - **Adapt and deploy.** Save measured model defaults in Settings, preview batch and efficiency scaling for the target model, review warnings and compartment routing, then deploy the compiled recipe to one idle machine. Deployment and starting are separate actions. The original library recipe stays intact.
+- **Transfer several programs.** Select library entries and preview what fits on a brewer. Existing recipes are preserved by default; matching updates require an explicit choice. Confirm the reviewed batch to write and verify each program. Receipts identify verified, skipped and unconfirmed entries, including after a Hub restart. The machine page can also edit the installed slots used by the brewer's own interface.
 - **Keep the brew record.** Import retained sessions automatically, preserve their available sensor samples beyond the device's ring buffer, chart temperatures and phase/controller state, add notes and ratings, and export JSON or CSV. Disconnections, truncated data and unknown start times remain visible.
 - **Use optional AI.** Supply an OpenAI or Anthropic API key and a model available to your account. Generate a structured recipe draft, ask about an active brew, or analyze recorded history. An opt-in monitor reviews online active brews at most once every five minutes per machine, with advice saved in the console. Drafts require review and saving. The AI has no machine command tools.
 - **Build other clients.** Browse the authenticated API explorer or download `/api/v1/openapi.json`. The same API serves the UI, with session authentication, CSRF protection and idempotent command receipts.
@@ -106,6 +108,7 @@ For a complete backup, stop the server, copy the **entire data directory**, and 
 # Go tests, including SQLite, HTTP adapters, concurrency and command outcomes
 go test -race ./...
 go vet ./...
+CATALOG_REQUIRE_FIRMWARE=1 python3 -m unittest discover -s tools -p 'test_*.py'
 
 # Frontend typecheck / optimized build and focused unit tests
 npm --prefix web ci
@@ -130,6 +133,7 @@ For interactive development run the Go server and `npm --prefix web run dev`. Vi
 | `internal/server` | HTTP API, owner sessions, encrypted credentials, fleet orchestration, history import, optional AI monitor |
 | `internal/device` | Exact S/Pro REST adapter and deterministic, stateful simulator |
 | `internal/recipe` | Canonical recipe validation, adaptation, native compilation, JSON/BeerXML exchange |
+| `internal/catalog` | Pinned offline recipes, native programs, original records, illustrations and source provenance |
 | `internal/store` | SQLite migrations, record versions, encrypted blobs, deduplicated telemetry |
 | `internal/ai` | Bounded OpenAI/Anthropic clients with no machine tools |
 | `internal/domain` | Shared server models |

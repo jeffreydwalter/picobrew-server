@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-11-17T02:54:45.417934+00:00",
+  "command": "python tests/test_local_api.py",
+  "result": "passed",
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "unit_groups": 10,
+  "persistence_fault_cases": {
+    "truncated_recipe_or_catalog_write": 921,
+    "partial_existing_file_overwrite_with_retained_tail": 921,
+    "total": 1842
+  },
+  "sanitizer": {
+    "address": true,
+    "undefined_behavior": true,
+    "leak_detection": false,
+    "leak_detection_reason": "Target allocates no memory; LeakSanitizer cannot inspect this ptrace-based runner.",
+    "arbitrary_byte_requests": 15000,
+    "structured_json_mutations": 6000,
+    "valid_recipe_prefix_truncations": true,
+    "shared_request_response_arena": true,
+    "result": "passed"
+  },
+  "scope": [
+    "Actual src/local_api.c and src/local_store.c run unchanged against fake flash, clock, and control boundaries.",
+    "Recipe CRUD, 15-step boundary, 16-record capacity, stable IDs, slot reuse, reboot persistence and front-panel recipe loading.",
+    "Every short-write boundary in 489-byte recipe and 432-byte catalog records tested after a valid commit, then rebooted.",
+    "Retained-tail partial overwrites accept only the old or complete valid new committed recipe. A write error can be commit-uncertain; clients must read before retrying.",
+    "Storage read/stat failures fail closed; malformed catalog is preserved, never silently reset to empty.",
+    "Strict bounded JSON, invalid/duplicate fields and unsafe paths, shared input/output arena, settings rollback and persistent local session counters.",
+    "Controller command dispatch, missing recipe prevalidation, busy recipe/settings mutation rejection, stop/clear-stop results and virtual encoder validation.",
+    "Status/readiness, display framebuffer encoding, eight-entry volatile event ring and reboot behavior."
+  ],
+  "openapi": {
+    "file": "docs/openapi.json",
+    "routes": 9,
+    "schemas": 20,
+    "local_references_resolve": true,
+    "representative_payloads_validated": true,
+    "validation_method": "JSON parse/local-reference checks plus representative request/response payloads checked with jsonschema Draft4 after OpenAPI nullable conversion. No separate full OpenAPI meta-schema validator was installed."
+  },
+  "limitations": [
+    "No physical appliance, power-cut hardware test, SLFS wear test, network timing measurement, thermal behavior or native transport validation is claimed by this suite.",
+    "Controller is stubbed here; safe-stop and scheduling behavior require the separate controller tests and hardware validation.",
+    "First-ever torn catalog initialization without any valid bank fails closed for recovery.",
+    "Events are RAM-only; persistent recipe/settings/session-sequence records are not full session history or durable telemetry.",
+    "No dedicated program pause/resume API; front-panel encoder/menu flow provides existing prompts and controls."
+  ],
+  "sha256": {
+    "include/picobrew/local_api.h": "e31f6dfacb33c6dc4b3616460598914a301268bd7edc361d38f5cf77d67d082a",
+    "src/local_api.c": "e557ce791927af1f8c44571dc88a5af622526892fa5b577a854ff24668abdab0",
+    "include/picobrew/local_store.h": "d1a277c116a5b767081b83eb06e30ae92a179c31f13b6e40005bce8bf952b80a",
+    "src/local_store.c": "8b6ef355b78f1e0354fb0b9183280c76941bf0bd15ed6d01aafaeae0878f616d",
+    "include/picobrew/http_server.h": "394f8356b60f1ac97927d05966e519d03bfceb0f0450468451736776b90b669c",
+    "include/picobrew/local_control.h": "674eb5d8a62a007b5582113290faf3e853149deb164aea35c8354368cd7ed22a",
+    "tests/standalone/local_api_host.c": "afb07f295fcc7affa45cde3860dfddf6fa4c170db69b78f862cb88d2c75ffb46",
+    "tests/test_local_api.py": "6eceb6e571a599fca3a072d4284ce3d4c46acc0762533d05938942ee2c202b1c",
+    "docs/openapi.json": "530aca22474ea8ee96eedf7def63f8f85bdfa1e42ba54edf7af69a7cc8961127"
+  }
+}

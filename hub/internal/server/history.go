@@ -405,7 +405,7 @@ func (s *Server) writeBackup(ctx context.Context, target io.Writer) error {
 		return json.NewEncoder(f).Encode(value)
 	}
 	err := s.db.ReadSnapshot(ctx, func(snapshot *store.Snapshot) error {
-		for _, kind := range []string{"device", "profile", "recipe", "recipe-revision", "brew", "deployment", "ai-advice"} {
+		for _, kind := range []string{"device", "profile", "recipe", "recipe-revision", "brew", "deployment", "batch-deployment", "ai-advice"} {
 			rows, err := snapshot.List(kind)
 			if err != nil {
 				return err

@@ -1,0 +1,72 @@
+{
+  "firmware_version": "1.0.1",
+  "hardware_executed": false,
+  "prior_physical_version": "1.0.0",
+  "prior_physical_evidence": "analysis/device-upgrade-1.0.0-20261118.json",
+  "change_scope": [
+    "Continuous Settings layout with compact rows and responsive controls",
+    "Firmware version and matching browser descriptors",
+    "Released 1.0.0 accepted as a pinned USB upgrade source"
+  ],
+  "binary": {
+    "path": "firmware/standalone/pico-s-pro-standalone.bin",
+    "size_bytes": 164600,
+    "sha256": "7f1ce21158b6f0f0297087e37c71cda23926e1a5c4902d938f4f0162929d36ce"
+  },
+  "ram": {
+    "heap_reservation_bytes": 32768,
+    "stack_reservation_bytes": 32768,
+    "unallocated_bytes": 952
+  },
+  "web_bundle": {
+    "manifest_sha256": "a65d853c56f7a9751364523234c7c3aa41d04ff126c263dd9bdb69cb2a33eb0f",
+    "compressed_bytes": 21764,
+    "allocation_blocks": 8,
+    "fits_existing_1_0_0_allocations": true
+  },
+  "installer": {
+    "revision": 5,
+    "original_backup_required": true,
+    "released_1_0_0_upgrade_source": {
+      "size_bytes": 164600,
+      "sha256": "652f94f941a4551ebb4a2df17e818dec3b3aebd2fc1cf43ec6bcb2e5ec684558"
+    }
+  },
+  "local_checks": [
+    {
+      "command": "python tools/build_firmware.py --standalone",
+      "result": "passed"
+    },
+    {
+      "command": "python -m unittest discover -s tests -p test_pico_flash_install.py",
+      "result": "passed",
+      "cases": 51
+    },
+    {
+      "command": "python tests/test_local_api.py",
+      "result": "passed",
+      "cases": 13,
+      "memory_safety": "ASan/UBSan truncations and 21000 random/structured input trials"
+    },
+    {
+      "command": "python tests/test_local_telemetry.py",
+      "result": "passed",
+      "cases": 16
+    }
+  ],
+  "browser_validation": {
+    "command": "make web-test",
+    "workflow": ".github/workflows/standalone.yml",
+    "settings_preview_widths": [
+      1440,
+      1920,
+      390
+    ],
+    "result_source": "Use CI for the exact published commit; local Chromium is unavailable in this environment."
+  },
+  "physical_checks_remaining": [
+    "Install and boot 1.0.1",
+    "Inspect Settings on the physical device and exercise saved preferences/forwarding/disconnection",
+    "Complete remaining 1.0.0 hardware checks in docs/hardware-validation.md"
+  ]
+}

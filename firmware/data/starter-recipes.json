@@ -1,0 +1,500 @@
+{
+  "source_repository": "https://github.com/jeffreydwalter/picopak-library",
+  "source_upstream": "https://github.com/tmack8001/picopak-library",
+  "source_commit": "93a9e104ba696a56f667050eae8e969e0b732e36",
+  "attribution": "Original PicoBrew programs and the tmack8001 archive. No repository license supplied.",
+  "description": "Native PicoPak machine programs only. Ingredient quantities and water setup are not supplied by these records. All step values and names are preserved.",
+  "recipes": [
+    {
+      "id": "pico-pak-64",
+      "name": "Pico Pale",
+      "source_path": "recipes/picopaks/64.json",
+      "source_sha256": "595544e349774d5f1e1440ed388df5ca32716e239c69d7bf6a6f2bb92175c2f0",
+      "steps": [
+        {
+          "name": "Heating",
+          "location": 1,
+          "target_f": 110,
+          "minutes": 0,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Dough In",
+          "location": 2,
+          "target_f": 110,
+          "minutes": 7,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 1",
+          "location": 2,
+          "target_f": 148,
+          "minutes": 18,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 2",
+          "location": 2,
+          "target_f": 156,
+          "minutes": 27,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash Out",
+          "location": 2,
+          "target_f": 176,
+          "minutes": 7,
+          "drain_minutes": 2
+        },
+        {
+          "name": "Hops 1",
+          "location": 3,
+          "target_f": 203,
+          "minutes": 20,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 2",
+          "location": 4,
+          "target_f": 203,
+          "minutes": 5,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 3",
+          "location": 5,
+          "target_f": 203,
+          "minutes": 3,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 4",
+          "location": 6,
+          "target_f": 203,
+          "minutes": 7,
+          "drain_minutes": 5
+        }
+      ]
+    },
+    {
+      "id": "pico-pak-17",
+      "name": "ENIAC Mosaic IPA",
+      "source_path": "recipes/picopaks/17.json",
+      "source_sha256": "8b78ab1ecb2ef433aa87cc029785d4044eb2fc7892ee34363dad64e3a443be03",
+      "steps": [
+        {
+          "name": "Heating",
+          "location": 1,
+          "target_f": 110,
+          "minutes": 0,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Dough In",
+          "location": 2,
+          "target_f": 110,
+          "minutes": 7,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 1",
+          "location": 2,
+          "target_f": 148,
+          "minutes": 25,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 2",
+          "location": 2,
+          "target_f": 156,
+          "minutes": 20,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash Out",
+          "location": 2,
+          "target_f": 176,
+          "minutes": 7,
+          "drain_minutes": 2
+        },
+        {
+          "name": "Hops 1",
+          "location": 3,
+          "target_f": 203,
+          "minutes": 15,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 2",
+          "location": 4,
+          "target_f": 203,
+          "minutes": 15,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 3",
+          "location": 5,
+          "target_f": 203,
+          "minutes": 10,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 4",
+          "location": 6,
+          "target_f": 203,
+          "minutes": 10,
+          "drain_minutes": 5
+        }
+      ]
+    },
+    {
+      "id": "pico-pak-20",
+      "name": "Dead Guy Ale",
+      "source_path": "recipes/picopaks/20.json",
+      "source_sha256": "041cc9f19228b0509ea45a99c2959358a38415f0f01c6fab6fbe5e4e5b2eb112",
+      "steps": [
+        {
+          "name": "Heating",
+          "location": 1,
+          "target_f": 110,
+          "minutes": 0,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Dough In",
+          "location": 2,
+          "target_f": 110,
+          "minutes": 7,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 1",
+          "location": 2,
+          "target_f": 148,
+          "minutes": 20,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 2",
+          "location": 2,
+          "target_f": 156,
+          "minutes": 25,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash Out",
+          "location": 2,
+          "target_f": 176,
+          "minutes": 7,
+          "drain_minutes": 2
+        },
+        {
+          "name": "Hops 1",
+          "location": 3,
+          "target_f": 203,
+          "minutes": 12,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 2",
+          "location": 4,
+          "target_f": 203,
+          "minutes": 10,
+          "drain_minutes": 5
+        }
+      ]
+    },
+    {
+      "id": "pico-pak-6",
+      "name": "Party Porter",
+      "source_path": "recipes/picopaks/6.json",
+      "source_sha256": "977f38651beb37f7edc80e9ef257b46a7922875b7c54fcfd9218a3eb577af576",
+      "steps": [
+        {
+          "name": "Heating",
+          "location": 1,
+          "target_f": 110,
+          "minutes": 0,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Dough In",
+          "location": 2,
+          "target_f": 110,
+          "minutes": 7,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 1",
+          "location": 2,
+          "target_f": 148,
+          "minutes": 25,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 2",
+          "location": 2,
+          "target_f": 156,
+          "minutes": 20,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash Out",
+          "location": 2,
+          "target_f": 176,
+          "minutes": 7,
+          "drain_minutes": 2
+        },
+        {
+          "name": "Hops 1",
+          "location": 3,
+          "target_f": 203,
+          "minutes": 15,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 2",
+          "location": 4,
+          "target_f": 203,
+          "minutes": 10,
+          "drain_minutes": 5
+        }
+      ]
+    },
+    {
+      "id": "pico-pak-4",
+      "name": "Tweaties American Wheat Ale",
+      "source_path": "recipes/picopaks/4.json",
+      "source_sha256": "a8a1f9146b9a6a96416b2946f13cf6882ca9bebcb18ea8f6eefe5107909d9674",
+      "steps": [
+        {
+          "name": "Heating",
+          "location": 1,
+          "target_f": 110,
+          "minutes": 0,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Dough In",
+          "location": 2,
+          "target_f": 110,
+          "minutes": 7,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 1",
+          "location": 2,
+          "target_f": 148,
+          "minutes": 15,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 2",
+          "location": 2,
+          "target_f": 156,
+          "minutes": 30,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash Out",
+          "location": 2,
+          "target_f": 176,
+          "minutes": 7,
+          "drain_minutes": 2
+        },
+        {
+          "name": "Hops 1",
+          "location": 3,
+          "target_f": 203,
+          "minutes": 15,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 2",
+          "location": 4,
+          "target_f": 203,
+          "minutes": 20,
+          "drain_minutes": 5
+        }
+      ]
+    },
+    {
+      "id": "pico-pak-43",
+      "name": "Saison Blanc",
+      "source_path": "recipes/picopaks/43.json",
+      "source_sha256": "725dee208ec7aa4df90464bd4e3138666884583422edd18396771f4cceb91317",
+      "steps": [
+        {
+          "name": "Heating",
+          "location": 1,
+          "target_f": 110,
+          "minutes": 0,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Dough In",
+          "location": 2,
+          "target_f": 110,
+          "minutes": 7,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 1",
+          "location": 2,
+          "target_f": 148,
+          "minutes": 25,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 2",
+          "location": 2,
+          "target_f": 156,
+          "minutes": 20,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash Out",
+          "location": 2,
+          "target_f": 176,
+          "minutes": 7,
+          "drain_minutes": 2
+        },
+        {
+          "name": "Hops 1",
+          "location": 3,
+          "target_f": 203,
+          "minutes": 17,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 2",
+          "location": 4,
+          "target_f": 203,
+          "minutes": 13,
+          "drain_minutes": 5
+        }
+      ]
+    },
+    {
+      "id": "pico-pak-46",
+      "name": "Buffalo Craft Lager",
+      "source_path": "recipes/picopaks/46.json",
+      "source_sha256": "2347471b083508aff5a97720d3ddb4fce6add772b6d9e9058c3238f552568e6e",
+      "steps": [
+        {
+          "name": "Heating",
+          "location": 1,
+          "target_f": 110,
+          "minutes": 0,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Dough In",
+          "location": 2,
+          "target_f": 110,
+          "minutes": 7,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 1",
+          "location": 2,
+          "target_f": 148,
+          "minutes": 15,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 2",
+          "location": 2,
+          "target_f": 156,
+          "minutes": 30,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash Out",
+          "location": 2,
+          "target_f": 176,
+          "minutes": 7,
+          "drain_minutes": 2
+        },
+        {
+          "name": "Hops 1",
+          "location": 3,
+          "target_f": 203,
+          "minutes": 10,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 4",
+          "location": 6,
+          "target_f": 203,
+          "minutes": 8,
+          "drain_minutes": 5
+        }
+      ]
+    },
+    {
+      "id": "pico-pak-7049",
+      "name": "Shankill Stout",
+      "source_path": "recipes/picopaks/7049.json",
+      "source_sha256": "0c68333ffbe5d1bd1fa1e2a9841ed725b561bd8d607b9626f1b6b079701dd6dd",
+      "steps": [
+        {
+          "name": "Heating",
+          "location": 1,
+          "target_f": 110,
+          "minutes": 0,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Dough In",
+          "location": 2,
+          "target_f": 110,
+          "minutes": 7,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 1",
+          "location": 2,
+          "target_f": 148,
+          "minutes": 25,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash 2",
+          "location": 2,
+          "target_f": 156,
+          "minutes": 20,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Mash Out",
+          "location": 2,
+          "target_f": 176,
+          "minutes": 7,
+          "drain_minutes": 2
+        },
+        {
+          "name": "Hops 1",
+          "location": 3,
+          "target_f": 203,
+          "minutes": 15,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 3",
+          "location": 5,
+          "target_f": 203,
+          "minutes": 8,
+          "drain_minutes": 0
+        },
+        {
+          "name": "Hops 4",
+          "location": 6,
+          "target_f": 203,
+          "minutes": 10,
+          "drain_minutes": 5
+        }
+      ]
+    }
+  ]
+}

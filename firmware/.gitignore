@@ -1,0 +1,7 @@
+/build/
+/.deps/
+/.venv/
+__pycache__/
+*.pyc
+/private/
+/firmware/backups/

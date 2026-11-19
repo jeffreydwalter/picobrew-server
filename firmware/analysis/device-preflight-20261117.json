@@ -1,0 +1,54 @@
+{
+  "evidence_source": "Owner-supplied terminal output from the physical Pico Pro; transcribed, not a captured tool report",
+  "terminal_start_timestamp_as_reported": "2026-11-17 23:04:38.171",
+  "private_report_basename": "pico-pro-preflight-20261117-230434.json",
+  "tool": "tools/pico_flash_preflight.py",
+  "tool_sha256": "ff260976fcf17ae298bb8f6ead68340204a6cec39b123e757eb5c5b1202633f2",
+  "reference_backup_sha256": "837a728400da02b9da4a7d563e1b67fb24d6a5af03c054963c4b1de60c72343f",
+  "transport": {
+    "kind": "Direct CH340 USB with queued receive",
+    "usb_id": "1a86:7523",
+    "requested_baud": 921600,
+    "calculated_baud": 923076.9230769231,
+    "baud_measured_on_wire": false,
+    "queue_depth": 8,
+    "transfer_bytes": 4096
+  },
+  "bootloader_version": "0.4.1.2",
+  "sram_helper_bytes": 49588,
+  "storage": {
+    "storage_id": 2,
+    "block_size": 4096,
+    "block_count": 256,
+    "size_bytes": 1048576
+  },
+  "files": {
+    "/sys/mcuimg.bin": {
+      "size_bytes": 14956,
+      "sha256": "67e22913fd7805a84d965928198f7d8cb795af125b81f1e0c29479a84980b975"
+    },
+    "/sys/mcuimg1.bin": {
+      "size_bytes": 50504,
+      "sha256": "26829ef97df46e6d3667afe8352fa86492f3ddf667371f2d19eafa8468862c63"
+    },
+    "/sys/mcuimg2.bin": {
+      "size_bytes": 162792,
+      "sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702"
+    },
+    "/sys/mcuimg3.bin": {
+      "exists": false
+    },
+    "/sys/mcubootinfo.bin": {
+      "size_bytes": 8,
+      "sha256": "59112b9c5cd615ee3427b916c2a35a0a89a40a80250197169a545fb93b8e9435",
+      "hex": "01 3d 00 20 ba dc cd ab"
+    }
+  },
+  "boot_selector": 1,
+  "boot_magic": "0xabcddcba",
+  "selected_application_from_bootloader_audit": "/sys/mcuimg2.bin",
+  "transport_reads_complete": true,
+  "qualified": true,
+  "flash_written_or_erased": false,
+  "standalone_installed_or_booted": false
+}

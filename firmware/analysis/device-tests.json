@@ -1,0 +1,2767 @@
+{
+  "passed": 170,
+  "failed": 0,
+  "firmware_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "source_sha256": "1021304e106cc16e9aefd4b2859a44dceaaf5343f54d29f102215b81c1708c7f",
+  "scope": "Original and rebuilt device instructions; exact ordered auxiliary SPI, GPIO, clock, UI/error/log boundary events and application state. Filter predicate, actuator and controller-stop functions are previously verified service boundaries.",
+  "limits": "Scripted hardware replies; no physical motor, interrupt race or heating validation.",
+  "cases": [
+    {
+      "operation": "initialize",
+      "argument": 0,
+      "case": {},
+      "events": 4,
+      "original_instructions": 22
+    },
+    {
+      "operation": "filter_init",
+      "argument": 0,
+      "case": {},
+      "events": 1,
+      "original_instructions": 4
+    },
+    {
+      "operation": "temperature_init",
+      "argument": 0,
+      "case": {},
+      "events": 2,
+      "original_instructions": 11
+    },
+    {
+      "operation": "selected",
+      "argument": 0,
+      "case": {
+        "selected": 0
+      },
+      "events": 8,
+      "original_instructions": 37
+    },
+    {
+      "operation": "command",
+      "argument": 0,
+      "case": {
+        "replies": [
+          0
+        ]
+      },
+      "events": 13,
+      "original_instructions": 51
+    },
+    {
+      "operation": "ready",
+      "argument": 0,
+      "case": {
+        "replies": [
+          0
+        ]
+      },
+      "events": 13,
+      "original_instructions": 61
+    },
+    {
+      "operation": "selected",
+      "argument": 1,
+      "case": {
+        "selected": 1
+      },
+      "events": 8,
+      "original_instructions": 37
+    },
+    {
+      "operation": "command",
+      "argument": 1,
+      "case": {
+        "replies": [
+          1
+        ]
+      },
+      "events": 13,
+      "original_instructions": 51
+    },
+    {
+      "operation": "ready",
+      "argument": 0,
+      "case": {
+        "replies": [
+          1
+        ]
+      },
+      "events": 13,
+      "original_instructions": 61
+    },
+    {
+      "operation": "selected",
+      "argument": 11,
+      "case": {
+        "selected": 11
+      },
+      "events": 8,
+      "original_instructions": 37
+    },
+    {
+      "operation": "command",
+      "argument": 11,
+      "case": {
+        "replies": [
+          11
+        ]
+      },
+      "events": 13,
+      "original_instructions": 51
+    },
+    {
+      "operation": "ready",
+      "argument": 0,
+      "case": {
+        "replies": [
+          11
+        ]
+      },
+      "events": 13,
+      "original_instructions": 61
+    },
+    {
+      "operation": "selected",
+      "argument": 41,
+      "case": {
+        "selected": 41
+      },
+      "events": 8,
+      "original_instructions": 37
+    },
+    {
+      "operation": "command",
+      "argument": 41,
+      "case": {
+        "replies": [
+          41
+        ]
+      },
+      "events": 13,
+      "original_instructions": 51
+    },
+    {
+      "operation": "ready",
+      "argument": 0,
+      "case": {
+        "replies": [
+          41
+        ]
+      },
+      "events": 13,
+      "original_instructions": 61
+    },
+    {
+      "operation": "selected",
+      "argument": 55,
+      "case": {
+        "selected": 55
+      },
+      "events": 8,
+      "original_instructions": 37
+    },
+    {
+      "operation": "command",
+      "argument": 55,
+      "case": {
+        "replies": [
+          55
+        ]
+      },
+      "events": 13,
+      "original_instructions": 51
+    },
+    {
+      "operation": "ready",
+      "argument": 0,
+      "case": {
+        "replies": [
+          55
+        ]
+      },
+      "events": 13,
+      "original_instructions": 61
+    },
+    {
+      "operation": "selected",
+      "argument": 88,
+      "case": {
+        "selected": 88
+      },
+      "events": 8,
+      "original_instructions": 37
+    },
+    {
+      "operation": "command",
+      "argument": 88,
+      "case": {
+        "replies": [
+          88
+        ]
+      },
+      "events": 13,
+      "original_instructions": 51
+    },
+    {
+      "operation": "ready",
+      "argument": 0,
+      "case": {
+        "replies": [
+          88
+        ]
+      },
+      "events": 14,
+      "original_instructions": 66
+    },
+    {
+      "operation": "selected",
+      "argument": 255,
+      "case": {
+        "selected": 255
+      },
+      "events": 8,
+      "original_instructions": 37
+    },
+    {
+      "operation": "command",
+      "argument": 255,
+      "case": {
+        "replies": [
+          255
+        ]
+      },
+      "events": 13,
+      "original_instructions": 51
+    },
+    {
+      "operation": "ready",
+      "argument": 0,
+      "case": {
+        "replies": [
+          255
+        ]
+      },
+      "events": 13,
+      "original_instructions": 61
+    },
+    {
+      "operation": "wait",
+      "argument": 0,
+      "case": {
+        "replies": [
+          12
+        ]
+      },
+      "events": 13,
+      "original_instructions": 68
+    },
+    {
+      "operation": "wait",
+      "argument": 0,
+      "case": {
+        "replies": [
+          0,
+          12
+        ]
+      },
+      "events": 27,
+      "original_instructions": 138
+    },
+    {
+      "operation": "wait",
+      "argument": 0,
+      "case": {
+        "replies": [
+          0,
+          0,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 208
+    },
+    {
+      "operation": "wait",
+      "argument": 0,
+      "case": {
+        "replies": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      },
+      "events": 2099,
+      "original_instructions": 10498
+    },
+    {
+      "operation": "wait",
+      "argument": 0,
+      "case": {
+        "replies": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      },
+      "events": 2113,
+      "original_instructions": 10568
+    },
+    {
+      "operation": "wait",
+      "argument": 0,
+      "case": {
+        "replies": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          12
+        ]
+      },
+      "events": 2115,
+      "original_instructions": 10578
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 0,
+        "replies": [
+          11,
+          0,
+          12
+        ]
+      },
+      "events": 40,
+      "original_instructions": 198
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 0,
+        "replies": [
+          11,
+          2,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 193
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 0,
+        "replies": [
+          11,
+          3,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 196
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 0,
+        "replies": [
+          11,
+          255,
+          12
+        ]
+      },
+      "events": 40,
+      "original_instructions": 198
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 0,
+        "replies": [
+          0,
+          12
+        ]
+      },
+      "events": 27,
+      "original_instructions": 142
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 1,
+        "replies": [
+          11,
+          0,
+          12
+        ]
+      },
+      "events": 1,
+      "original_instructions": 14
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 1,
+        "replies": [
+          11,
+          2,
+          12
+        ]
+      },
+      "events": 1,
+      "original_instructions": 14
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 1,
+        "replies": [
+          11,
+          3,
+          12
+        ]
+      },
+      "events": 1,
+      "original_instructions": 14
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 1,
+        "replies": [
+          11,
+          255,
+          12
+        ]
+      },
+      "events": 1,
+      "original_instructions": 14
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 1,
+        "replies": [
+          0,
+          12
+        ]
+      },
+      "events": 1,
+      "original_instructions": 14
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 2,
+        "replies": [
+          11,
+          0,
+          12
+        ]
+      },
+      "events": 40,
+      "original_instructions": 198
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 2,
+        "replies": [
+          11,
+          2,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 193
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 2,
+        "replies": [
+          11,
+          3,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 196
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 2,
+        "replies": [
+          11,
+          255,
+          12
+        ]
+      },
+      "events": 40,
+      "original_instructions": 198
+    },
+    {
+      "operation": "on",
+      "argument": 0,
+      "case": {
+        "buzzer": 2,
+        "replies": [
+          0,
+          12
+        ]
+      },
+      "events": 27,
+      "original_instructions": 142
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 0,
+        "replies": [
+          11,
+          0,
+          12
+        ]
+      },
+      "events": 1,
+      "original_instructions": 14
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 0,
+        "replies": [
+          11,
+          2,
+          12
+        ]
+      },
+      "events": 1,
+      "original_instructions": 14
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 0,
+        "replies": [
+          11,
+          3,
+          12
+        ]
+      },
+      "events": 1,
+      "original_instructions": 14
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 0,
+        "replies": [
+          11,
+          255,
+          12
+        ]
+      },
+      "events": 1,
+      "original_instructions": 14
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 0,
+        "replies": [
+          0,
+          12
+        ]
+      },
+      "events": 1,
+      "original_instructions": 14
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 1,
+        "replies": [
+          11,
+          0,
+          12
+        ]
+      },
+      "events": 40,
+      "original_instructions": 198
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 1,
+        "replies": [
+          11,
+          2,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 193
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 1,
+        "replies": [
+          11,
+          3,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 196
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 1,
+        "replies": [
+          11,
+          255,
+          12
+        ]
+      },
+      "events": 40,
+      "original_instructions": 198
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 1,
+        "replies": [
+          0,
+          12
+        ]
+      },
+      "events": 27,
+      "original_instructions": 142
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 2,
+        "replies": [
+          11,
+          0,
+          12
+        ]
+      },
+      "events": 40,
+      "original_instructions": 198
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 2,
+        "replies": [
+          11,
+          2,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 193
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 2,
+        "replies": [
+          11,
+          3,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 196
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 2,
+        "replies": [
+          11,
+          255,
+          12
+        ]
+      },
+      "events": 40,
+      "original_instructions": 198
+    },
+    {
+      "operation": "off",
+      "argument": 0,
+      "case": {
+        "buzzer": 2,
+        "replies": [
+          0,
+          12
+        ]
+      },
+      "events": 27,
+      "original_instructions": 142
+    },
+    {
+      "operation": "capabilities",
+      "argument": 0,
+      "case": {
+        "replies": [
+          41,
+          0
+        ]
+      },
+      "events": 34,
+      "original_instructions": 153
+    },
+    {
+      "operation": "detect",
+      "argument": 0,
+      "case": {
+        "replies": [
+          41,
+          0
+        ]
+      },
+      "events": 35,
+      "original_instructions": 175
+    },
+    {
+      "operation": "detect",
+      "argument": 0,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          41,
+          0
+        ]
+      },
+      "events": 35,
+      "original_instructions": 175
+    },
+    {
+      "operation": "capabilities",
+      "argument": 0,
+      "case": {
+        "replies": [
+          41,
+          1
+        ]
+      },
+      "events": 34,
+      "original_instructions": 153
+    },
+    {
+      "operation": "detect",
+      "argument": 0,
+      "case": {
+        "replies": [
+          41,
+          1
+        ]
+      },
+      "events": 35,
+      "original_instructions": 170
+    },
+    {
+      "operation": "detect",
+      "argument": 0,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          41,
+          1
+        ]
+      },
+      "events": 35,
+      "original_instructions": 170
+    },
+    {
+      "operation": "capabilities",
+      "argument": 0,
+      "case": {
+        "replies": [
+          41,
+          2
+        ]
+      },
+      "events": 34,
+      "original_instructions": 153
+    },
+    {
+      "operation": "detect",
+      "argument": 0,
+      "case": {
+        "replies": [
+          41,
+          2
+        ]
+      },
+      "events": 35,
+      "original_instructions": 175
+    },
+    {
+      "operation": "detect",
+      "argument": 0,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          41,
+          2
+        ]
+      },
+      "events": 35,
+      "original_instructions": 175
+    },
+    {
+      "operation": "capabilities",
+      "argument": 0,
+      "case": {
+        "replies": [
+          41,
+          255
+        ]
+      },
+      "events": 34,
+      "original_instructions": 153
+    },
+    {
+      "operation": "detect",
+      "argument": 0,
+      "case": {
+        "replies": [
+          41,
+          255
+        ]
+      },
+      "events": 35,
+      "original_instructions": 170
+    },
+    {
+      "operation": "detect",
+      "argument": 0,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          41,
+          255
+        ]
+      },
+      "events": 35,
+      "original_instructions": 170
+    },
+    {
+      "operation": "capabilities",
+      "argument": 0,
+      "case": {
+        "replies": [
+          0,
+          12
+        ]
+      },
+      "events": 26,
+      "original_instructions": 129
+    },
+    {
+      "operation": "detect",
+      "argument": 0,
+      "case": {
+        "replies": [
+          0,
+          12,
+          12,
+          41,
+          1
+        ]
+      },
+      "events": 74,
+      "original_instructions": 370
+    },
+    {
+      "operation": "torque",
+      "argument": 0,
+      "case": {
+        "replies": [
+          12,
+          59,
+          0,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 183
+    },
+    {
+      "operation": "torque",
+      "argument": 0,
+      "case": {
+        "replies": [
+          12,
+          0,
+          12
+        ]
+      },
+      "events": 26,
+      "original_instructions": 128
+    },
+    {
+      "operation": "torque",
+      "argument": 1,
+      "case": {
+        "replies": [
+          12,
+          59,
+          1,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 183
+    },
+    {
+      "operation": "torque",
+      "argument": 1,
+      "case": {
+        "replies": [
+          12,
+          0,
+          12
+        ]
+      },
+      "events": 26,
+      "original_instructions": 128
+    },
+    {
+      "operation": "torque",
+      "argument": 2,
+      "case": {
+        "replies": [
+          12,
+          59,
+          2,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 183
+    },
+    {
+      "operation": "torque",
+      "argument": 2,
+      "case": {
+        "replies": [
+          12,
+          0,
+          12
+        ]
+      },
+      "events": 26,
+      "original_instructions": 128
+    },
+    {
+      "operation": "torque",
+      "argument": 255,
+      "case": {
+        "replies": [
+          12,
+          59,
+          255,
+          12
+        ]
+      },
+      "events": 39,
+      "original_instructions": 183
+    },
+    {
+      "operation": "torque",
+      "argument": 255,
+      "case": {
+        "replies": [
+          12,
+          0,
+          12
+        ]
+      },
+      "events": 26,
+      "original_instructions": 128
+    },
+    {
+      "operation": "torque",
+      "argument": 256,
+      "case": {
+        "replies": [
+          12,
+          59,
+          0,
+          12
+        ]
+      },
+      "events": 52,
+      "original_instructions": 252
+    },
+    {
+      "operation": "torque",
+      "argument": 256,
+      "case": {
+        "replies": [
+          12,
+          0,
+          12
+        ]
+      },
+      "events": 26,
+      "original_instructions": 128
+    },
+    {
+      "operation": "torque",
+      "argument": 4294967295,
+      "case": {
+        "replies": [
+          12,
+          59,
+          255,
+          12
+        ]
+      },
+      "events": 52,
+      "original_instructions": 252
+    },
+    {
+      "operation": "torque",
+      "argument": 4294967295,
+      "case": {
+        "replies": [
+          12,
+          0,
+          12
+        ]
+      },
+      "events": 26,
+      "original_instructions": 128
+    },
+    {
+      "operation": "move",
+      "argument": 0,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          1,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 0,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          1,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 0,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          1,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 0,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          1,
+          7,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 0,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          1,
+          255,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 1,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          2,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 1,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          2,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 1,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          2,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 1,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          2,
+          7,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 1,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          2,
+          255,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          3,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          3,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          3,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          3,
+          7,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          3,
+          255,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 5,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          6,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 5,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          6,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 5,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          6,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 5,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          6,
+          7,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 5,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          6,
+          255,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 6,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          7,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 6,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          7,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 6,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          7,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 6,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          7,
+          7,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 6,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          7,
+          255,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 255,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          0,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 275
+    },
+    {
+      "operation": "move",
+      "argument": 255,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          0,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 275
+    },
+    {
+      "operation": "move",
+      "argument": 255,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          0,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 275
+    },
+    {
+      "operation": "move",
+      "argument": 255,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          0,
+          7,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 275
+    },
+    {
+      "operation": "move",
+      "argument": 255,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          0,
+          255,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 275
+    },
+    {
+      "operation": "move",
+      "argument": 256,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          1,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 275
+    },
+    {
+      "operation": "move",
+      "argument": 256,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          1,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 275
+    },
+    {
+      "operation": "move",
+      "argument": 256,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          1,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 275
+    },
+    {
+      "operation": "move",
+      "argument": 256,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          1,
+          7,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 275
+    },
+    {
+      "operation": "move",
+      "argument": 256,
+      "case": {
+        "legacy": 0,
+        "replies": [
+          33,
+          1,
+          255,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 275
+    },
+    {
+      "operation": "move",
+      "argument": 0,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          7,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 0,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          7,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 0,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          7,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 264
+    },
+    {
+      "operation": "move",
+      "argument": 0,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          7,
+          7,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 0,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          7,
+          255,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 195
+    },
+    {
+      "operation": "move",
+      "argument": 1,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          1,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 1,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          1,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 1,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          1,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 1,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          1,
+          7,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 197
+    },
+    {
+      "operation": "move",
+      "argument": 1,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          1,
+          255,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 197
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          2,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          2,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          2,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          2,
+          7,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 197
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          2,
+          255,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 197
+    },
+    {
+      "operation": "move",
+      "argument": 5,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          5,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 5,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          5,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 5,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          5,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 5,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          5,
+          7,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 197
+    },
+    {
+      "operation": "move",
+      "argument": 5,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          5,
+          255,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 197
+    },
+    {
+      "operation": "move",
+      "argument": 6,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          6,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 6,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          6,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 6,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          6,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 6,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          6,
+          7,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 197
+    },
+    {
+      "operation": "move",
+      "argument": 6,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          6,
+          255,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 197
+    },
+    {
+      "operation": "move",
+      "argument": 255,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          255,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 255,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          255,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 255,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          255,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 266
+    },
+    {
+      "operation": "move",
+      "argument": 255,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          255,
+          7,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 197
+    },
+    {
+      "operation": "move",
+      "argument": 255,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          255,
+          255,
+          12
+        ]
+      },
+      "events": 41,
+      "original_instructions": 197
+    },
+    {
+      "operation": "move",
+      "argument": 256,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          0,
+          0,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 277
+    },
+    {
+      "operation": "move",
+      "argument": 256,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          0,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 277
+    },
+    {
+      "operation": "move",
+      "argument": 256,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          0,
+          6,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 277
+    },
+    {
+      "operation": "move",
+      "argument": 256,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          0,
+          7,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 277
+    },
+    {
+      "operation": "move",
+      "argument": 256,
+      "case": {
+        "legacy": 1,
+        "replies": [
+          33,
+          0,
+          255,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 277
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "replies": [
+          0,
+          12
+        ]
+      },
+      "events": 27,
+      "original_instructions": 143
+    },
+    {
+      "operation": "move",
+      "argument": 2,
+      "case": {
+        "replies": [
+          33,
+          0,
+          12
+        ]
+      },
+      "events": 40,
+      "original_instructions": 205
+    },
+    {
+      "operation": "home",
+      "argument": 0,
+      "case": {
+        "replies": [
+          33,
+          3,
+          1,
+          12
+        ]
+      },
+      "events": 54,
+      "original_instructions": 267
+    },
+    {
+      "operation": "service",
+      "argument": 0,
+      "case": {
+        "readings": [
+          0
+        ]
+      },
+      "events": 4,
+      "original_instructions": 14
+    },
+    {
+      "operation": "service",
+      "argument": 0,
+      "case": {
+        "readings": [
+          1,
+          0
+        ]
+      },
+      "events": 3,
+      "original_instructions": 15
+    },
+    {
+      "operation": "service",
+      "argument": 0,
+      "case": {
+        "readings": [
+          1,
+          1,
+          1
+        ]
+      },
+      "events": 3,
+      "original_instructions": 15
+    },
+    {
+      "operation": "service",
+      "argument": 0,
+      "case": {
+        "readings": [
+          1,
+          0
+        ],
+        "ticks": [
+          1000,
+          1000,
+          1001
+        ]
+      },
+      "events": 6,
+      "original_instructions": 23
+    },
+    {
+      "operation": "filter_wait",
+      "argument": 0,
+      "case": {},
+      "events": 5,
+      "original_instructions": 17
+    },
+    {
+      "operation": "filter_alarm",
+      "argument": 0,
+      "case": {
+        "replies": [
+          11,
+          2,
+          12,
+          11,
+          3,
+          12
+        ],
+        "ticks": [
+          0,
+          1,
+          1001,
+          1002
+        ]
+      },
+      "events": 88,
+      "original_instructions": 490
+    },
+    {
+      "operation": "click_alarm",
+      "argument": 0,
+      "case": {
+        "replies": [
+          11,
+          2,
+          12,
+          11,
+          3,
+          12
+        ]
+      },
+      "events": 118,
+      "original_instructions": 600
+    },
+    {
+      "operation": "heat_check",
+      "argument": 0,
+      "case": {
+        "temperatures": [
+          250.0
+        ]
+      },
+      "events": 0,
+      "original_instructions": 42
+    },
+    {
+      "operation": "heat_check",
+      "argument": 0,
+      "case": {
+        "temperatures": [
+          80.0,
+          90.0,
+          229.0,
+          230.0
+        ]
+      },
+      "events": 6,
+      "original_instructions": 213
+    },
+    {
+      "operation": "heat_check",
+      "argument": 0,
+      "case": {
+        "temperatures": [
+          80.0,
+          80.0,
+          80.0
+        ],
+        "ticks": [
+          0,
+          15000,
+          15001
+        ]
+      },
+      "events": 7,
+      "original_instructions": 185
+    },
+    {
+      "operation": "heat_check",
+      "argument": 0,
+      "case": {
+        "temperatures": [
+          100.0,
+          100.0,
+          230.0
+        ],
+        "ticks": [
+          0,
+          20000,
+          20001
+        ]
+      },
+      "events": 5,
+      "original_instructions": 245
+    }
+  ]
+}

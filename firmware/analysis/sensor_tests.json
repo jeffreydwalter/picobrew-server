@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "original_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "cases": 16384,
+  "native_c_compared": true,
+  "rebuilt_arm_compared": true,
+  "rebuilt_elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "groups": [
+    {
+      "pin": 26,
+      "session_type": 1,
+      "cases": 4096,
+      "mismatches": 0,
+      "max_rebuilt_arm_instructions": 4021
+    },
+    {
+      "pin": 25,
+      "session_type": 1,
+      "cases": 4096,
+      "mismatches": 0,
+      "max_rebuilt_arm_instructions": 4029
+    },
+    {
+      "pin": 25,
+      "session_type": 2,
+      "cases": 4096,
+      "mismatches": 0,
+      "max_rebuilt_arm_instructions": 4071
+    },
+    {
+      "pin": 25,
+      "session_type": 4,
+      "cases": 4096,
+      "mismatches": 0,
+      "max_rebuilt_arm_instructions": 4073
+    }
+  ],
+  "mismatch_count": 0,
+  "sample_mismatches": [],
+  "scope": "Exact returned binary32 bits across ADC 0..4095; pin26 session1 and pin25 sessions1/2/4. Original math instructions and linked rebuilt math library execute.",
+  "limits": "No physical sensor calibration, full appliance, or input outside the documented ADC domain."
+}

@@ -1,0 +1,483 @@
+{
+  "passed": true,
+  "production_elf_sha256": "38d4e0426c0928ad9b84c862979c539f788168a2f4e66c6f0ef7071d47e33cd6",
+  "test_sha256": "283d6dfc18686e30347650c00914e9e0eff29ca859970893e4542cd47aa17c1e",
+  "total_cases": 47,
+  "total_checks": 92214,
+  "native_calls": 1183,
+  "cases": [
+    {
+      "name": "malloc_alignment_write_free_reallocate_0",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 403,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_1",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 403,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_2",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 403,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_3",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 403,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_4",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 403,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_7",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 403,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_8",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 403,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_9",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 403,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_15",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 411,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_16",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 411,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_17",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 411,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_31",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 411,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_32",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 411,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_255",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 411,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_256",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 411,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_257",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 411,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_1023",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 413,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_4096",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 417,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "malloc_alignment_write_free_reallocate_16384",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 423,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "calloc_zeroed_0_by_12",
+      "checks": 11,
+      "native_calls": 2,
+      "arm_instructions": 306,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "calloc_zeroed_8_by_0",
+      "checks": 11,
+      "native_calls": 2,
+      "arm_instructions": 306,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "calloc_zeroed_1_by_1",
+      "checks": 11,
+      "native_calls": 2,
+      "arm_instructions": 306,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "calloc_zeroed_17_by_13",
+      "checks": 11,
+      "native_calls": 2,
+      "arm_instructions": 1223,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "calloc_zeroed_32_by_256",
+      "checks": 11,
+      "native_calls": 2,
+      "arm_instructions": 33098,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "calloc_multiplication_overflow_4294967295_by_2",
+      "checks": 18,
+      "native_calls": 4,
+      "arm_instructions": 56,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "calloc_multiplication_overflow_2147483648_by_2",
+      "checks": 18,
+      "native_calls": 4,
+      "arm_instructions": 56,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "calloc_multiplication_overflow_65536_by_65536",
+      "checks": 18,
+      "native_calls": 4,
+      "arm_instructions": 56,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "calloc_multiplication_overflow_268435456_by_16",
+      "checks": 18,
+      "native_calls": 4,
+      "arm_instructions": 56,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "empty_heap_and_realloc_failure_32768",
+      "checks": 47,
+      "native_calls": 10,
+      "arm_instructions": 937,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "empty_heap_and_realloc_failure_32769",
+      "checks": 47,
+      "native_calls": 10,
+      "arm_instructions": 937,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "empty_heap_and_realloc_failure_2147483647",
+      "checks": 47,
+      "native_calls": 10,
+      "arm_instructions": 438,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "empty_heap_and_realloc_failure_2147483648",
+      "checks": 47,
+      "native_calls": 10,
+      "arm_instructions": 438,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "empty_heap_and_realloc_failure_4294967295",
+      "checks": 47,
+      "native_calls": 10,
+      "arm_instructions": 438,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "realloc_null_growth_shrink_and_zero",
+      "checks": 60,
+      "native_calls": 8,
+      "arm_instructions": 952,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "exhaustion_and_recovery_block_128",
+      "checks": 83664,
+      "native_calls": 470,
+      "arm_instructions": 42911,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "exhaustion_and_recovery_block_1024",
+      "checks": 1753,
+      "native_calls": 66,
+      "arm_instructions": 14127,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "exhaustion_and_recovery_block_4096",
+      "checks": 189,
+      "native_calls": 20,
+      "arm_instructions": 10294,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "sdk_heap_exact_bounds_signed_growth_and_shrink",
+      "checks": 77,
+      "native_calls": 17,
+      "arm_instructions": 510,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "signed_sbrk_rejection_after_0_delta_-1",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 162,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "signed_sbrk_rejection_after_0_delta_-2147483648",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 162,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "signed_sbrk_rejection_after_0_delta_2147483647",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 158,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "signed_sbrk_rejection_after_0_delta_32769",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 158,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "signed_sbrk_rejection_after_0_delta_-536870912",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 162,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "signed_sbrk_rejection_after_32_delta_-33",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 162,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "signed_sbrk_rejection_after_32768_delta_1",
+      "checks": 27,
+      "native_calls": 6,
+      "arm_instructions": 158,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "bounded_mixed_allocation_sequence_seed_7",
+      "checks": 2242,
+      "native_calls": 182,
+      "arm_instructions": 39180,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    },
+    {
+      "name": "bounded_mixed_allocation_sequence_seed_421",
+      "checks": 3165,
+      "native_calls": 188,
+      "arm_instructions": 94470,
+      "heap_lower": "0x20037458",
+      "heap_upper": "0x2003f458",
+      "initial_stack": "0x20033400",
+      "memory_faults": []
+    }
+  ],
+  "substituted_functions": [],
+  "physical_device_executed": false,
+  "scope": "Actual production malloc/calloc/realloc/free, full-newlib allocation family, bounded adapter and genuine SDK _sbrk execute under ARM emulation. Tests cover alignment, ownership, live-data preservation, calloc multiplication overflow and zeroing, empty/nonempty-heap exhaustion, free/reuse, realloc failure preservation, signed heap bounds and errno. Physical data access is restricted to application SRAM and the vector-table stack is used. This is bounded single-threaded runtime validation, not whole-appliance peak-memory or interrupt-concurrency validation."
+}

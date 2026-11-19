@@ -76,6 +76,18 @@ func Validate(r domain.Recipe) error {
 	if len(r.ID) > 256 || strings.ContainsRune(r.ID, '\x00') {
 		return errors.New("invalid recipe id")
 	}
+	if err := validateOrigin(r); err != nil {
+		return err
+	}
+	if IsNative(r) {
+		return validateNativeLibrary(r)
+	}
+	if r.Kind != "" && r.Kind != "recipe" {
+		return errors.New("recipe kind must be recipe, native-program or maintenance")
+	}
+	if r.NativeProgram != nil {
+		return errors.New("a native_program requires kind native-program or maintenance")
+	}
 	if !finite(r.BatchLiters) || r.BatchLiters <= 0 || r.BatchLiters > 10000 {
 		return errors.New("batch_liters must be positive and at most 10000")
 	}
@@ -146,8 +158,11 @@ func Validate(r domain.Recipe) error {
 		if !finite(step.TargetC) || step.TargetC < 0 || step.TargetC > 100 {
 			return fmt.Errorf("step %d target_c must be 0–100 Celsius", i+1)
 		}
-		if step.Minutes < 1 || step.Minutes > 43200 || step.DrainMinutes < 0 || step.DrainMinutes > 1440 {
+		if step.Minutes < 0 || step.Minutes > 43200 || step.DrainMinutes < 0 || step.DrainMinutes > 1440 {
 			return fmt.Errorf("step %d has invalid duration", i+1)
+		}
+		if step.Minutes == 0 && (step.Kind != "heat" && step.Kind != "cool" || step.TargetC == 0) {
+			return fmt.Errorf("step %d: zero minutes requires a heat/cool step with an explicit target", i+1)
 		}
 		if step.Location < 0 || step.Location > 6 {
 			return fmt.Errorf("step %d location must be 0 (unmapped) or an explicit 1–6", i+1)
@@ -190,6 +205,9 @@ func Adapt(r domain.Recipe, profile domain.Profile, batchLiters float64) (domain
 	}
 	if !finite(profile.BatchLiters) || profile.BatchLiters <= 0 || !finite(profile.Efficiency) || profile.Efficiency <= 0 || profile.Efficiency > 100 || !finite(profile.MaxTargetC) || profile.MaxTargetC <= 0 || profile.MaxTargetC > 100 || !finite(profile.MaxGrainKG) || profile.MaxGrainKG < 0 || profile.MaxSteps < 0 || profile.HopSlots < 0 {
 		return domain.Adapted{}, errors.New("profile has invalid capacity, temperature or efficiency")
+	}
+	if IsNative(r) {
+		return adaptNative(r, profile, builtIn, batchLiters)
 	}
 	if batchLiters == 0 {
 		batchLiters = profile.BatchLiters
@@ -365,7 +383,7 @@ func NativeJSON(r domain.MachineRecipe) ([]byte, error) {
 		return nil, errors.New("invalid native recipe id, name or step count")
 	}
 	for i, s := range r.Steps {
-		if !validLabel(s.Name, 21) || s.Location < 1 || s.Location > 6 || (s.TargetF != 0 && (s.TargetF < 60 || s.TargetF > 212)) || s.Minutes < 1 || s.Minutes > 599 || s.DrainMinutes < 0 || s.DrainMinutes > 120 {
+		if !validLabel(s.Name, 21) || s.Location < 1 || s.Location > 6 || (s.TargetF != 0 && (s.TargetF < 60 || s.TargetF > 212)) || s.Minutes < 0 || s.Minutes > 599 || s.DrainMinutes < 0 || s.DrainMinutes > 120 {
 			return nil, fmt.Errorf("invalid native step %d", i+1)
 		}
 	}

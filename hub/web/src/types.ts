@@ -39,6 +39,7 @@ export interface Capabilities {
   history_persistent: boolean
   telemetry_forwarding: boolean
   dedicated_pause_resume: boolean
+  zero_minute_steps?: boolean
 }
 export interface Device {
   id: string
@@ -99,6 +100,17 @@ export interface RecipeStep {
   infuse_liters?: number
   ramp_minutes?: number
 }
+export interface RecipeProvenance {
+  catalog_id: string
+  source_id: string
+  repository: string
+  commit: string
+  path: string
+  sha256: string
+  source_url: string
+  license: string
+  warnings: string[]
+}
 export interface Recipe {
   id: string
   name: string
@@ -119,6 +131,10 @@ export interface Recipe {
   water?: Record<string, number>
   fermentation?: { name: string; target_c: number; days: number }[]
   carbonation?: { method?: string; volumes?: number; temperature_c?: number }
+  kind?: string
+  source_model?: string
+  native_program?: MachineRecipe
+  provenance?: RecipeProvenance
 }
 export interface Profile {
   id: string
@@ -215,3 +231,125 @@ export interface AIResult {
   limitations: string[]
 }
 export type Unit = 'F' | 'C'
+
+export interface CatalogSource {
+  id: string
+  name: string
+  repository: string
+  upstream: string
+  commit: string
+  license: string
+  attribution: string
+  notes: string
+  record_count: number
+  valid_count: number
+  entry_count: number
+  excluded_count: number
+  excluded_reasons: Record<string, number>
+  asset_count: number
+  reference_count: number
+}
+export interface CatalogSummary {
+  id: string
+  name: string
+  kind: string
+  source_id: string
+  source_model: string
+  models: string[]
+  deploy_models: string[]
+  style: string
+  author: string
+  description: string
+  abv?: number
+  ibu?: number
+  srm?: number
+  image_url?: string
+  image_kind?: string
+  source_record_count: number
+  can_copy: boolean
+  can_deploy: boolean
+  featured: boolean
+  official: boolean
+}
+export interface CatalogDetail extends CatalogSummary {
+  recipe?: Recipe
+  native_program?: MachineRecipe
+  warnings: string[]
+  provenance: RecipeProvenance
+  source_records: { id: string; path: string; sha256: string; bytes: number }[]
+  source_url: string
+  notes: string
+  source_parameters?: unknown
+}
+export interface CatalogPage {
+  items: CatalogSummary[]
+  total: number
+  offset: number
+  limit: number
+  sources: CatalogSource[]
+  styles: string[]
+}
+export interface CatalogReferences {
+  items: {
+    id: string
+    title: string
+    description: string
+    models: string[]
+    source_id: string
+    asset_path: string
+    url: string
+    content_type: string
+    source_url: string
+    bundled: boolean
+    available: boolean
+    download_url?: string
+    sha256: string
+  }[]
+  assets: {
+    path: string
+    url: string
+    title: string
+    kind: string
+    models: string[]
+    source_id: string
+    source_path: string
+    sha256: string
+    bytes: number
+    content_type: string
+    attribution: string
+    license: string
+    bundled: boolean
+    download_url?: string
+  }[]
+}
+export interface DeploymentItem {
+  recipe_id: string
+  source_revision: number
+  batch_liters: number
+  name: string
+  status: string
+  reason?: string
+  update: boolean
+  warnings: string[]
+  native?: MachineRecipe
+  previous?: MachineRecipe
+}
+export interface BulkDeployment {
+  id: string
+  device_id: string
+  device_uid: string
+  profile_id: string
+  state: string
+  created_at: string
+  expires_at: string
+  capacity: number
+  used: number
+  available: number
+  planned_count: number
+  new_count: number
+  update_count: number
+  verified_count: number
+  started: boolean
+  inventory_sha256: string
+  items: DeploymentItem[]
+}

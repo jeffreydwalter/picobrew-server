@@ -1,0 +1,98 @@
+[
+  {
+    "caller": "pico_wifi_check_status",
+    "address": "2000bc50",
+    "callee": "IPAddress_construct_octets",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "pico_wifi_resolve_server",
+    "address": "2000dd58",
+    "callee": "WiFi_set_dns",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "pico_wifi_ensure_connection",
+    "address": "2000fc4c",
+    "callee": "pico_display_flush",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "pico_diagnostic_wifi",
+    "address": "2000fccc",
+    "callee": "pico_display_clear",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "pico_diagnostic_wifi",
+    "address": "2000fccc",
+    "callee": "pico_ui_draw_wifi_test_heading",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "pico_ui_network_menu",
+    "address": "2000ff98",
+    "callee": "pico_screen_wifi_connected",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "unresolved_simplelink_protocol_51",
+    "address": "20017ee4",
+    "callee": "libc_memcpy",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "String_change_buffer",
+    "address": "2001989a",
+    "callee": "libc_realloc",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "unresolved_c_library_01",
+    "address": "2001ae90",
+    "callee": "libc_malloc",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "unresolved_c_library_03",
+    "address": "2001aeec",
+    "callee": "unresolved_c_library_07",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "unresolved_c_library_03",
+    "address": "2001aeec",
+    "callee": "unresolved_c_library_07",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "unresolved_c_library_07",
+    "address": "2001baf8",
+    "callee": "_sbrk",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "unresolved_c_library_08",
+    "address": "2001d214",
+    "callee": "libc_memchr",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "unresolved_c_library_11",
+    "address": "2001f720",
+    "callee": "unresolved_c_library_07",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "unresolved_c_library_11",
+    "address": "2001f720",
+    "callee": "unresolved_c_library_07",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  },
+  {
+    "caller": "unresolved_c_library_11",
+    "address": "2001f720",
+    "callee": "unresolved_c_library_07",
+    "issue": "Caller uses residual registers after a void call; return contract is not recovered."
+  }
+]

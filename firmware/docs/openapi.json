@@ -1,0 +1,2206 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Pico S/Pro Standalone API",
+    "version": "1.1.0",
+    "description": "Local appliance API implemented by src/local_api.c. Experimental reconstructed firmware; hardware behavior and timing still require bench validation. The appliance serves HTTP on its LAN address with a separately provisioned bearer key. API calls are bounded to 4095 body bytes, one connection at a time; Content-Length and application/json are required for POST, PUT and PATCH. Chunked transfer, CORS, cookies and query parameters other than the documented history id are unsupported. Recipes/settings and the local session counter use CRC-checked, readback-verified two-bank SLFS records. Recent events are an eight-entry RAM ring. Brew history is stored on the Pico in a bounded shared flash pool and survives normal restarts; the oldest completed histories are retired as space is needed. 503 on a write can mean commit verification failed after data was written: read the resource before retrying. Calls that start workflows return acceptance, not completion."
+  },
+  "servers": [
+    {
+      "url": "http://{device}",
+      "description": "Pico LAN address; use a trusted isolated LAN or an external TLS tunnel.",
+      "variables": {
+        "device": {
+          "default": "192.168.1.100",
+          "description": "Appliance IP address, optionally with port."
+        }
+      }
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Appliance"
+    },
+    {
+      "name": "Recipes"
+    },
+    {
+      "name": "Control"
+    },
+    {
+      "name": "Settings"
+    },
+    {
+      "name": "Reporting"
+    }
+  ],
+  "paths": {
+    "/api/v1": {
+      "get": {
+        "operationId": "getCapabilities",
+        "summary": "Discover implemented local capabilities",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Discovery"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        },
+        "tags": [
+          "Appliance"
+        ]
+      }
+    },
+    "/api/v1/health": {
+      "get": {
+        "operationId": "getHealth",
+        "summary": "Check readiness and API-key provisioning",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Health"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        },
+        "security": [],
+        "tags": [
+          "Appliance"
+        ],
+        "description": "Only this GET API route is public. It reveals no credentials or temperatures."
+      }
+    },
+    "/api/v1/status": {
+      "get": {
+        "operationId": "getStatus",
+        "summary": "Read controller, workflow and front-panel state",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Status"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        },
+        "tags": [
+          "Appliance"
+        ],
+        "description": "Foreground snapshot. ready=false suppresses sensor values. Reading status does not energize outputs."
+      }
+    },
+    "/api/v1/display": {
+      "get": {
+        "operationId": "getDisplay",
+        "summary": "Read the 128\u00d764 appliance display",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Display"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        },
+        "tags": [
+          "Appliance"
+        ]
+      }
+    },
+    "/api/v1/recipes": {
+      "get": {
+        "operationId": "listRecipes",
+        "summary": "List persisted local recipes",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecipeList"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        },
+        "tags": [
+          "Recipes"
+        ]
+      }
+    },
+    "/api/v1/recipes/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RecipeId"
+          }
+        }
+      ],
+      "get": {
+        "operationId": "getRecipe",
+        "summary": "Read a complete local recipe",
+        "responses": {
+          "200": {
+            "description": "Recipe",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recipe"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        },
+        "tags": [
+          "Recipes"
+        ]
+      },
+      "put": {
+        "operationId": "putRecipe",
+        "tags": [
+          "Recipes"
+        ],
+        "summary": "Create or replace a persisted recipe while idle",
+        "description": "The old committed recipe remains referenced while the inactive data and catalog banks are written. A first-ever torn catalog initialization fails closed, preserving files for recovery. Existing appliance menus can select these local recipes.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecipeInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Existing recipe replaced",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recipe"
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Recipe created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Recipe"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "413": {
+            "$ref": "#/components/responses/TooLarge"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "507": {
+            "$ref": "#/components/responses/Full"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteRecipe",
+        "tags": [
+          "Recipes"
+        ],
+        "summary": "Remove a recipe while idle",
+        "description": "No request body. Commits catalog removal; freed slots are reused without formatting or deleting unrelated flash files.",
+        "responses": {
+          "204": {
+            "description": "Deleted; empty response body"
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        }
+      }
+    },
+    "/api/v1/commands": {
+      "post": {
+        "operationId": "postCommand",
+        "tags": [
+          "Control"
+        ],
+        "summary": "Queue a workflow or operate the virtual front panel",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CommandRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Accepted by control layer",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CommandAccepted"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFound"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "413": {
+            "$ref": "#/components/responses/TooLarge"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        }
+      }
+    },
+    "/api/v1/settings": {
+      "get": {
+        "operationId": "getSettings",
+        "summary": "Read nonsecret display preferences",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Settings"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        },
+        "tags": [
+          "Settings"
+        ]
+      },
+      "patch": {
+        "operationId": "patchSettings",
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Persist supported preferences while idle",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SettingsPatch"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Settings saved and read back",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Settings"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "413": {
+            "$ref": "#/components/responses/TooLarge"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        }
+      }
+    },
+    "/api/v1/events": {
+      "get": {
+        "operationId": "getEvents",
+        "summary": "Read the recent volatile event ring",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Events"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        },
+        "tags": [
+          "Reporting"
+        ],
+        "description": "Contains at most eight recent events since boot, in sequence order. Old events are overwritten. Persistent brew samples and session metadata are available from /api/v1/history. Persistent session IDs use a separately committed monotonically increasing counter."
+      }
+    },
+    "/api/v1/history": {
+      "get": {
+        "operationId": "getHistory",
+        "summary": "List retained brews and recording capacity",
+        "tags": [
+          "Reporting"
+        ],
+        "description": "Recorded automatically on the Pico, independent of HTTP clients or Wi-Fi association. Regular snapshots every 15 seconds plus phase/step/status transitions. A current RAM tail is checkpointed at most every 60 seconds while foreground storage is available. A restart marks an unfinished session interrupted; uncommitted readings may be lost. The truncated and storage_error flags identify incomplete histories. Only brewing/manual brewing workflows are recorded; settings and maintenance do not replace them.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/History"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        }
+      }
+    },
+    "/api/v1/history/samples/{offset}": {
+      "parameters": [
+        {
+          "name": "offset",
+          "in": "path",
+          "required": true,
+          "description": "Zero-based row offset; follow next_offset until null.",
+          "schema": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4224,
+            "example": 0
+          }
+        },
+        {
+          "name": "id",
+          "in": "query",
+          "required": true,
+          "description": "The id from the retained session metadata. This prevents combining samples from different brews.",
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295,
+            "example": 1
+          }
+        }
+      ],
+      "get": {
+        "operationId": "getHistorySamples",
+        "summary": "Read a page of recorded brew samples",
+        "tags": [
+          "Reporting"
+        ],
+        "description": "At most 32 rows per response. A removed or unknown session id returns 409; refresh the inventory instead of combining pages. An offset equal to record_count returns an empty page. JSON/CSV export is assembled by clients from these pages; the device never builds an entire log in RAM.",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HistoryPage"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        }
+      }
+    },
+    "/api/v1/telemetry": {
+      "get": {
+        "operationId": "getTelemetry",
+        "summary": "Read optional telemetry destination and delivery status",
+        "tags": [
+          "Reporting"
+        ],
+        "description": "Forwarding defaults off. When enabled the Pico sends best-effort status snapshots to the configured HTTP host/port. Local history and brewing continue independently. Counters are since boot. Hostname resolution is performed only while idle; socket progress is nonblocking and bounded. There is no historical backlog upload.",
+        "responses": {
+          "200": {
+            "description": "Saved configuration and current forwarding status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Telemetry"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        }
+      },
+      "put": {
+        "operationId": "putTelemetry",
+        "summary": "Configure optional telemetry forwarding while idle",
+        "tags": [
+          "Settings"
+        ],
+        "description": "Supply all three fields. Persists two CRC/readback-verified configuration records. Use an IP address or hostname, not a URL. Fixed receiver path /api/v1/telemetry, HTTP only, default port8080. Provider secrets and the Pico API key are never sent to this receiver.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TelemetryConfig"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Saved configuration and current forwarding status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Telemetry"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "405": {
+            "$ref": "#/components/responses/MethodNotAllowed"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "default": {
+            "$ref": "#/components/responses/ProtocolError"
+          }
+        }
+      }
+    },
+    "/api/v1/recipes/restore-defaults": {
+      "post": {
+        "operationId": "restoreStarterRecipes",
+        "tags": [
+          "Recipes"
+        ],
+        "summary": "Add missing starter PicoPak recipes while idle",
+        "description": "No request body. Content-Type: application/json and Content-Length: 0 are required. Preserves existing IDs including edited defaults. Checks free slots before writing; verifies all new recipe records before one catalogue commit. Read the catalogue after an uncertain 503 before retrying.",
+        "responses": {
+          "200": {
+            "description": "Starter recipes present; existing IDs preserved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "added": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 8
+                    },
+                    "preserved": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 8
+                    },
+                    "capacity": {
+                      "type": "integer",
+                      "enum": [
+                        16
+                      ]
+                    }
+                  },
+                  "required": [
+                    "added",
+                    "preserved",
+                    "capacity"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "409": {
+            "$ref": "#/components/responses/Conflict"
+          },
+          "503": {
+            "$ref": "#/components/responses/Unavailable"
+          },
+          "507": {
+            "description": "Not enough free recipe slots to add all missing starters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "64 lowercase hexadecimal characters",
+        "description": "Provision /local/api.key separately. Missing/invalid key returns 401; unprovisioned API returns 503 except public health. Plain HTTP does not encrypt the key; limit use to a trusted LAN or add TLS externally."
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Stable machine-readable error code."
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable explanation; present for dispatcher errors, omitted by the transport."
+          }
+        },
+        "required": [
+          "error"
+        ]
+      },
+      "RecipeId": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 20,
+        "pattern": "^[A-Za-z0-9_-]+$",
+        "description": "Client-selected stable, case-sensitive ID. No path separators or URL escapes."
+      },
+      "RecipeStep": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 21,
+            "pattern": "^[ -~]+$"
+          },
+          "location": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6,
+            "description": "Existing firmware's brewing compartment number; preserve appliance plumbing semantics."
+          },
+          "target_f": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 212,
+            "oneOf": [
+              {
+                "enum": [
+                  0
+                ]
+              },
+              {
+                "minimum": 60,
+                "maximum": 212
+              }
+            ],
+            "description": "Fahrenheit; 0 means unheated. Nonzero targets must be 60\u2013212."
+          },
+          "minutes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 599,
+            "description": "Active hold duration in minutes after reaching the target; 0 preserves native PicoPak heating-only steps. Requires zero_minute_steps capability."
+          },
+          "drain_minutes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 120,
+            "default": 0
+          }
+        },
+        "required": [
+          "name",
+          "location",
+          "target_f",
+          "minutes"
+        ]
+      },
+      "RecipeInput": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/RecipeId"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 31,
+            "pattern": "^[ -~]+$"
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RecipeStep"
+            },
+            "maxItems": 15,
+            "minItems": 1
+          }
+        },
+        "required": [
+          "name",
+          "steps"
+        ],
+        "description": "Complete recipe replacement. Optional id must match the URL. All labels are printable ASCII, matching the appliance font. Unknown/duplicate JSON fields, fractional numbers, and escaped control characters are rejected."
+      },
+      "Recipe": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/RecipeId"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 31,
+            "pattern": "^[ -~]+$"
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RecipeStep"
+            },
+            "maxItems": 15,
+            "minItems": 1
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "steps"
+        ]
+      },
+      "RecipeSummary": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/RecipeId"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 31,
+            "pattern": "^[ -~]+$"
+          },
+          "steps": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 15
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "steps"
+        ]
+      },
+      "RecipeList": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "recipes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RecipeSummary"
+            },
+            "maxItems": 16
+          },
+          "capacity": {
+            "type": "integer",
+            "enum": [
+              16
+            ]
+          }
+        },
+        "required": [
+          "recipes",
+          "capacity"
+        ]
+      },
+      "Settings": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "temperature_unit": {
+            "type": "string",
+            "enum": [
+              "F",
+              "C"
+            ]
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "en",
+              "es",
+              "fr"
+            ]
+          },
+          "detailed_status": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "temperature_unit",
+          "language",
+          "detailed_status"
+        ]
+      },
+      "SettingsPatch": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "temperature_unit": {
+            "type": "string",
+            "enum": [
+              "F",
+              "C"
+            ]
+          },
+          "language": {
+            "type": "string",
+            "enum": [
+              "en",
+              "es",
+              "fr"
+            ]
+          },
+          "detailed_status": {
+            "type": "boolean"
+          }
+        },
+        "minProperties": 1,
+        "description": "Partial update, accepted only at the main menu. Wi-Fi credentials, calibration, API key, and raw outputs are not settings in this API."
+      },
+      "Health": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "api_version": {
+            "type": "integer",
+            "enum": [
+              1
+            ]
+          },
+          "firmware_version": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+            "description": "Running firmware release as major.minor.patch, independent of api_version.",
+            "example": "1.0.0"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "standalone"
+            ]
+          },
+          "ready": {
+            "type": "boolean"
+          },
+          "auth_configured": {
+            "type": "boolean"
+          },
+          "uptime_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295,
+            "description": "Milliseconds since boot; wraps at 2^32. No wall clock is assumed."
+          }
+        },
+        "required": [
+          "api_version",
+          "firmware_version",
+          "mode",
+          "ready",
+          "auth_configured",
+          "uptime_ms"
+        ]
+      },
+      "Discovery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "api_version": {
+            "type": "integer",
+            "enum": [
+              1
+            ]
+          },
+          "firmware_version": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+            "description": "Running firmware release as major.minor.patch, independent of api_version.",
+            "example": "1.0.0"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "standalone"
+            ]
+          },
+          "recipe_capacity": {
+            "type": "integer",
+            "enum": [
+              16
+            ]
+          },
+          "step_capacity": {
+            "type": "integer",
+            "enum": [
+              15
+            ]
+          },
+          "commands": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "brew",
+                "sous-vide",
+                "cold-brew",
+                "manual",
+                "rinse",
+                "first-rinse",
+                "descale",
+                "circulate",
+                "drain-reservoir",
+                "drain-filter",
+                "rack-beer",
+                "utilities",
+                "settings",
+                "stop",
+                "clear-stop",
+                "encoder"
+              ]
+            },
+            "maxItems": 16
+          },
+          "dedicated_pause_resume": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "front_panel": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          },
+          "events_persistent": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          },
+          "recipe_labels": {
+            "type": "string",
+            "enum": [
+              "printable ASCII"
+            ]
+          },
+          "history_persistent": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          },
+          "history_capacity_records": {
+            "type": "integer",
+            "enum": [
+              4224
+            ]
+          },
+          "history_capacity_sessions": {
+            "type": "integer",
+            "enum": [
+              8
+            ]
+          },
+          "telemetry_forwarding": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          },
+          "zero_minute_steps": {
+            "type": "boolean",
+            "enum": [
+              true
+            ],
+            "description": "Accepts zero-minute heating-only steps. Absent on older firmware; clients must not alter native durations to bypass validation."
+          },
+          "restore_default_recipes": {
+            "type": "boolean",
+            "enum": [
+              true
+            ],
+            "description": "Supports POST /api/v1/recipes/restore-defaults while idle."
+          },
+          "starter_recipe_count": {
+            "type": "integer",
+            "enum": [
+              8
+            ]
+          }
+        },
+        "required": [
+          "api_version",
+          "firmware_version",
+          "mode",
+          "recipe_capacity",
+          "step_capacity",
+          "commands",
+          "dedicated_pause_resume",
+          "front_panel",
+          "events_persistent",
+          "recipe_labels",
+          "history_persistent",
+          "history_capacity_records",
+          "history_capacity_sessions",
+          "telemetry_forwarding",
+          "zero_minute_steps",
+          "restore_default_recipes",
+          "starter_recipe_count"
+        ]
+      },
+      "Status": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "uptime_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "ready": {
+            "type": "boolean"
+          },
+          "device_uid": {
+            "type": "string",
+            "description": "Existing appliance identifier."
+          },
+          "busy": {
+            "type": "boolean"
+          },
+          "stopped": {
+            "type": "boolean"
+          },
+          "command": {
+            "type": "string",
+            "description": "Current control context: initializing, idle, front-panel, or a dispatched remote program name. A 202 response acknowledges queuing; the command name changes when dispatched."
+          },
+          "device_state": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255,
+            "description": "Recovered internal device-state code."
+          },
+          "phase": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255,
+            "description": "Recovered controller phase code; raw numeric code retained to avoid guessing semantics."
+          },
+          "controller_status": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          },
+          "compartment": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 255
+          },
+          "wort_f": {
+            "type": "number",
+            "format": "double",
+            "nullable": true,
+            "description": "Wort sensor Fahrenheit, rounded to one decimal; null before initialization or for nonfinite/out-of-range values."
+          },
+          "thermoblock_f": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "target_f": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "step_seconds": {
+            "type": "integer",
+            "minimum": -2147483648,
+            "maximum": 2147483647,
+            "description": "Current controller step counter; not a wall-clock timestamp."
+          },
+          "current_step": {
+            "type": "integer",
+            "minimum": -2147483648,
+            "maximum": 2147483647
+          },
+          "step_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 15
+          },
+          "recipe_name": {
+            "type": "string"
+          },
+          "step_name": {
+            "type": "string"
+          },
+          "session_id": {
+            "type": "string"
+          },
+          "filter_inserted": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "encoder": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "position": {
+                "type": "integer"
+              },
+              "min": {
+                "type": "integer"
+              },
+              "max": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "position",
+              "min",
+              "max"
+            ]
+          },
+          "stop_reason": {
+            "type": "string",
+            "enum": [
+              "none",
+              "requested",
+              "filter-removed"
+            ],
+            "description": "Reason for latched output inhibition; clear-stop requires the main-menu boundary."
+          }
+        },
+        "required": [
+          "uptime_ms",
+          "ready",
+          "device_uid",
+          "busy",
+          "stopped",
+          "command",
+          "device_state",
+          "phase",
+          "controller_status",
+          "compartment",
+          "wort_f",
+          "thermoblock_f",
+          "target_f",
+          "step_seconds",
+          "current_step",
+          "step_count",
+          "recipe_name",
+          "step_name",
+          "session_id",
+          "filter_inserted",
+          "encoder",
+          "stop_reason"
+        ]
+      },
+      "Display": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "width": {
+            "type": "integer",
+            "enum": [
+              128
+            ]
+          },
+          "height": {
+            "type": "integer",
+            "enum": [
+              64
+            ]
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "page-lsb-hex"
+            ]
+          },
+          "data": {
+            "type": "string",
+            "minLength": 2048,
+            "maxLength": 2048,
+            "pattern": "^[0-9a-f]+$",
+            "description": "1024 raw panel-order bytes as lowercase hex. Raw pixel (x,y) is bit (y & 7) of byte x + floor(y / 8) * 128. The Pico uses a fixed 180-degree graphics rotation: upright screen pixel (x,y) reads raw pixel (127-x,63-y). Clients must apply that orientation; the API returns the raw framebuffer unchanged."
+          }
+        },
+        "required": [
+          "width",
+          "height",
+          "format",
+          "data"
+        ]
+      },
+      "CommandAccepted": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "accepted": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          },
+          "command": {
+            "type": "string",
+            "enum": [
+              "brew",
+              "sous-vide",
+              "cold-brew",
+              "manual",
+              "rinse",
+              "first-rinse",
+              "descale",
+              "circulate",
+              "drain-reservoir",
+              "drain-filter",
+              "rack-beer",
+              "utilities",
+              "settings",
+              "stop",
+              "clear-stop",
+              "encoder"
+            ]
+          }
+        },
+        "required": [
+          "accepted",
+          "command"
+        ]
+      },
+      "BrewCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "command": {
+            "type": "string",
+            "enum": [
+              "brew"
+            ]
+          },
+          "recipe_id": {
+            "$ref": "#/components/schemas/RecipeId"
+          }
+        },
+        "required": [
+          "command",
+          "recipe_id"
+        ]
+      },
+      "EncoderCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "command": {
+            "type": "string",
+            "enum": [
+              "encoder"
+            ]
+          },
+          "delta": {
+            "type": "integer",
+            "minimum": -100,
+            "maximum": 100,
+            "default": 0
+          },
+          "click": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "command"
+        ],
+        "anyOf": [
+          {
+            "required": [
+              "delta"
+            ],
+            "properties": {
+              "delta": {
+                "not": {
+                  "enum": [
+                    0
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "required": [
+              "click"
+            ],
+            "properties": {
+              "click": {
+                "enum": [
+                  true
+                ]
+              }
+            }
+          }
+        ],
+        "description": "Virtual rotary encoder movement and/or one click. A zero delta with no click is rejected. Uses the existing screen/menu flow and its prompts."
+      },
+      "ProgramCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "command": {
+            "type": "string",
+            "enum": [
+              "sous-vide",
+              "cold-brew",
+              "manual",
+              "rinse",
+              "first-rinse",
+              "descale",
+              "circulate",
+              "drain-reservoir",
+              "drain-filter",
+              "rack-beer",
+              "utilities",
+              "settings",
+              "stop",
+              "clear-stop"
+            ]
+          }
+        },
+        "required": [
+          "command"
+        ]
+      },
+      "CommandRequest": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BrewCommand"
+          },
+          {
+            "$ref": "#/components/schemas/EncoderCommand"
+          },
+          {
+            "$ref": "#/components/schemas/ProgramCommand"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "command",
+          "mapping": {
+            "brew": "#/components/schemas/BrewCommand",
+            "sous-vide": "#/components/schemas/ProgramCommand",
+            "cold-brew": "#/components/schemas/ProgramCommand",
+            "manual": "#/components/schemas/ProgramCommand",
+            "rinse": "#/components/schemas/ProgramCommand",
+            "first-rinse": "#/components/schemas/ProgramCommand",
+            "descale": "#/components/schemas/ProgramCommand",
+            "circulate": "#/components/schemas/ProgramCommand",
+            "drain-reservoir": "#/components/schemas/ProgramCommand",
+            "drain-filter": "#/components/schemas/ProgramCommand",
+            "rack-beer": "#/components/schemas/ProgramCommand",
+            "utilities": "#/components/schemas/ProgramCommand",
+            "settings": "#/components/schemas/ProgramCommand",
+            "stop": "#/components/schemas/ProgramCommand",
+            "clear-stop": "#/components/schemas/ProgramCommand",
+            "encoder": "#/components/schemas/EncoderCommand"
+          }
+        },
+        "description": "Start commands queue until the main-menu boundary. No raw output, temperature override, or unattended prompt bypass. stop latches output inhibition; clear-stop succeeds only after returning to the main menu. Dedicated pause/resume is unavailable; use the virtual front panel."
+      },
+      "Event": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sequence": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295
+          },
+          "uptime_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "kind": {
+            "type": "string",
+            "maxLength": 15
+          },
+          "detail": {
+            "type": "string",
+            "maxLength": 47
+          }
+        },
+        "required": [
+          "sequence",
+          "uptime_ms",
+          "kind",
+          "detail"
+        ]
+      },
+      "Events": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "events": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Event"
+            },
+            "maxItems": 8
+          },
+          "next_sequence": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295
+          },
+          "capacity": {
+            "type": "integer",
+            "enum": [
+              8
+            ]
+          },
+          "volatile": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "events",
+          "next_sequence",
+          "capacity",
+          "volatile"
+        ]
+      },
+      "HistorySession": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "available",
+          "id",
+          "command",
+          "recipe_name",
+          "state",
+          "duration_ms",
+          "record_count",
+          "persisted_record_count",
+          "first_elapsed_ms",
+          "gap_count",
+          "truncated",
+          "storage_error",
+          "recovered_after_restart"
+        ],
+        "properties": {
+          "available": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "command": {
+            "type": "string",
+            "maxLength": 15
+          },
+          "recipe_name": {
+            "type": "string",
+            "maxLength": 31
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "empty",
+              "recording",
+              "completed",
+              "interrupted"
+            ]
+          },
+          "duration_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "record_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4224
+          },
+          "persisted_record_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4224
+          },
+          "first_elapsed_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "gap_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "truncated": {
+            "type": "boolean"
+          },
+          "storage_error": {
+            "type": "boolean"
+          },
+          "recovered_after_restart": {
+            "type": "boolean"
+          }
+        }
+      },
+      "History": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "available",
+          "id",
+          "command",
+          "recipe_name",
+          "state",
+          "duration_ms",
+          "record_count",
+          "persisted_record_count",
+          "first_elapsed_ms",
+          "gap_count",
+          "truncated",
+          "storage_error",
+          "recovered_after_restart",
+          "sample_interval_ms",
+          "checkpoint_interval_ms",
+          "capacity_records",
+          "capacity_sessions",
+          "page_records",
+          "fields",
+          "sessions"
+        ],
+        "properties": {
+          "available": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "command": {
+            "type": "string",
+            "maxLength": 15
+          },
+          "recipe_name": {
+            "type": "string",
+            "maxLength": 31
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "empty",
+              "recording",
+              "completed",
+              "interrupted"
+            ]
+          },
+          "duration_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "record_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4224
+          },
+          "persisted_record_count": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4224
+          },
+          "first_elapsed_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "gap_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "truncated": {
+            "type": "boolean"
+          },
+          "storage_error": {
+            "type": "boolean"
+          },
+          "recovered_after_restart": {
+            "type": "boolean"
+          },
+          "sample_interval_ms": {
+            "type": "integer",
+            "enum": [
+              15000
+            ]
+          },
+          "checkpoint_interval_ms": {
+            "type": "integer",
+            "enum": [
+              60000
+            ]
+          },
+          "capacity_records": {
+            "type": "integer",
+            "enum": [
+              4224
+            ]
+          },
+          "capacity_sessions": {
+            "type": "integer",
+            "enum": [
+              8
+            ]
+          },
+          "page_records": {
+            "type": "integer",
+            "enum": [
+              32
+            ]
+          },
+          "fields": {
+            "type": "array",
+            "minItems": 11,
+            "maxItems": 11,
+            "items": {
+              "type": "string"
+            },
+            "example": [
+              "elapsed_ms",
+              "wort_f",
+              "thermoblock_f",
+              "target_f",
+              "step_seconds",
+              "phase",
+              "controller_status",
+              "compartment",
+              "current_step",
+              "flags",
+              "device_state"
+            ]
+          },
+          "sessions": {
+            "type": "array",
+            "maxItems": 8,
+            "description": "Retained sessions in newest-first order. The top-level metadata repeats the current/latest session. Total sample storage is shared; eight is a catalog limit, not a guarantee of eight complete brews.",
+            "items": {
+              "$ref": "#/components/schemas/HistorySession"
+            }
+          }
+        }
+      },
+      "HistoryPage": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "offset",
+          "samples",
+          "next_offset"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 4294967295
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4224
+          },
+          "samples": {
+            "type": "array",
+            "maxItems": 32,
+            "description": "Each row follows the fields array from GET /history. Temperatures are degrees Fahrenheit or null if unavailable; 255 means an unknown current_step. Flags: ready=1, busy=2, stopped=4, filter inserted=8, sampling gap=16. Recorded times are elapsed milliseconds, without an assumed wall clock.",
+            "items": {
+              "type": "array",
+              "minItems": 11,
+              "maxItems": 11,
+              "items": {
+                "type": "number",
+                "nullable": true
+              }
+            }
+          },
+          "next_offset": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4224,
+            "nullable": true
+          }
+        }
+      },
+      "TelemetryConfig": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "enabled",
+          "host",
+          "port"
+        ],
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "host": {
+            "type": "string",
+            "maxLength": 127,
+            "default": "",
+            "description": "IPv4 address or ASCII hostname, without scheme, path, credentials or port. Empty is allowed only when disabled."
+          },
+          "port": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535,
+            "default": 8080
+          }
+        },
+        "example": {
+          "enabled": false,
+          "host": "",
+          "port": 8080
+        }
+      },
+      "Telemetry": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "enabled",
+          "host",
+          "port",
+          "interval_ms",
+          "path",
+          "status"
+        ],
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "default": false
+          },
+          "host": {
+            "type": "string",
+            "maxLength": 127,
+            "default": "",
+            "description": "IPv4 address or ASCII hostname, without scheme, path, credentials or port. Empty is allowed only when disabled."
+          },
+          "port": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535,
+            "default": 8080
+          },
+          "interval_ms": {
+            "type": "integer",
+            "enum": [
+              15000
+            ]
+          },
+          "path": {
+            "type": "string",
+            "enum": [
+              "/api/v1/telemetry"
+            ]
+          },
+          "status": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "resolved",
+              "sent",
+              "failed",
+              "dropped",
+              "last_success_ms",
+              "last_http_status",
+              "storage_error",
+              "last_error"
+            ],
+            "properties": {
+              "state": {
+                "type": "string",
+                "enum": [
+                  "disabled",
+                  "offline",
+                  "waiting-idle",
+                  "ready",
+                  "connecting",
+                  "sending",
+                  "receiving",
+                  "backoff"
+                ]
+              },
+              "resolved": {
+                "type": "boolean"
+              },
+              "sent": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "failed": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "dropped": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "last_success_ms": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "last_http_status": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 999
+              },
+              "storage_error": {
+                "type": "boolean"
+              },
+              "last_error": {
+                "type": "string",
+                "enum": [
+                  "none",
+                  "dns",
+                  "socket",
+                  "connect",
+                  "send",
+                  "receive",
+                  "http",
+                  "timeout",
+                  "config",
+                  "capacity"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "TelemetryUpload": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "schema_version",
+          "firmware_version",
+          "status"
+        ],
+        "properties": {
+          "schema_version": {
+            "type": "integer",
+            "enum": [
+              1
+            ]
+          },
+          "firmware_version": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Status"
+          }
+        },
+        "description": "Outbound JSON sent to the separately configured HTTP receiver. This is not an inbound POST route on the Pico. No device API key is included."
+      }
+    },
+    "responses": {
+      "BadRequest": {
+        "description": "Invalid or duplicate fields, malformed JSON, invalid ID, or unsupported command.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Unauthorized": {
+        "description": "Missing or incorrect bearer key.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "MethodNotAllowed": {
+        "description": "Resource exists but this method is unsupported.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "NotFound": {
+        "description": "Recipe or resource not found.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Conflict": {
+        "description": "Appliance busy, stop latched, or command not safe in current workflow state.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "TooLarge": {
+        "description": "Request body exceeds 4095 bytes.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Unavailable": {
+        "description": "Not ready, bearer key unprovisioned, storage I/O error, or corrupt records preserved for recovery. Read before retrying an uncertain write.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "Full": {
+        "description": "Sixteen local recipe slots are occupied or a generation counter is exhausted.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      },
+      "ProtocolError": {
+        "description": "Bounded HTTP transport or dispatcher rejected the request (e.g. 408, 411, 413, 415, 431, 500 or 501).",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            }
+          }
+        }
+      }
+    }
+  }
+}

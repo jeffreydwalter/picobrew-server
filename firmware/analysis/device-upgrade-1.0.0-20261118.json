@@ -1,0 +1,132 @@
+{
+  "evidence_source": "Owner-supplied terminal output and subsequent running-version confirmation, plus the referenced installer success conditions; private JSON report and USB capture were not supplied",
+  "terminal_start_timestamp_as_reported": "2026-11-18 09:36:07.593",
+  "terminal_timezone_explicit_in_output": false,
+  "private_report_basename": "pico-pro-install-20261118-093607.json",
+  "private_journal_basename": "pico-pro-install-20261118-093607.json.journal.jsonl",
+  "tool": "tools/pico_flash_install.py",
+  "installer_reference_commit": "0a7d4991bcdb29871534e08fd73a784637bae79b",
+  "installer_reference_revision": 4,
+  "installer_reference_sha256": "bd10e4eb925fc37927208d6e7e2938d1905c1b016cd5a1b13dae1c18658f2987",
+  "client_checkout_commit_reported": false,
+  "operation": "install",
+  "firmware_version": "1.0.0",
+  "local_original_backup_verified": true,
+  "reference_backup_sha256": "837a728400da02b9da4a7d563e1b67fb24d6a5af03c054963c4b1de60c72343f",
+  "transport": {
+    "kind": "CH340 direct USB",
+    "usb_id": "1a86:7523",
+    "requested_baud": 921600,
+    "calculated_baud": 923076.923,
+    "queued_receive_transfers": 8
+  },
+  "bootloader_version": "0.4.1.2",
+  "initial_and_apps_handshakes_passed": true,
+  "bootloader_entry_trigger": "Not explicitly identified by the transcript; the prompt offered power-on or blue RESET",
+  "sram_helper_uploaded": true,
+  "flash": {
+    "size_bytes": 1048576,
+    "block_size": 4096,
+    "block_count": 256
+  },
+  "initial_verified_files": {
+    "/sys/mcuimg.bin": {
+      "size_bytes": 14956,
+      "sha256": "67e22913fd7805a84d965928198f7d8cb795af125b81f1e0c29479a84980b975"
+    },
+    "/sys/mcuimg1.bin": {
+      "size_bytes": 50504,
+      "sha256": "26829ef97df46e6d3667afe8352fa86492f3ddf667371f2d19eafa8468862c63"
+    },
+    "/sys/mcubootinfo.bin": {
+      "size_bytes": 8,
+      "sha256": "59112b9c5cd615ee3427b916c2a35a0a89a40a80250197169a545fb93b8e9435"
+    },
+    "/sys/mcuimg2.bin": {
+      "size_bytes": 161720,
+      "sha256": "a8fc16afce43c4b91b82374a339b86631daefe1a40f08df5f8bdd7a0d0a8d904"
+    }
+  },
+  "key_file": "/local/api.key",
+  "key_created": false,
+  "key_existing_file_rewrite_verified_from_success_condition": true,
+  "browser_files_created": [
+    "/local/web/i.gz",
+    "/local/web/a.gz",
+    "/local/web/e.gz",
+    "/local/web/h.gz",
+    "/local/web/s.gz"
+  ],
+  "browser_bundle_verified_from_success_condition": {
+    "reference_manifest_sha256": "c14d40b8b91cfc9c0591690dae681d3587da83d8d2afb7427563a59493c4656f",
+    "file_count": 5,
+    "compressed_bytes": 21618,
+    "complete_readbacks_match_pinned_payloads": true,
+    "note": "The per-file hashes were not printed; the referenced installer requires matching browser-file readbacks before rewriting the application."
+  },
+  "application_file": "/sys/mcuimg2.bin",
+  "application_rewritten": true,
+  "existing_application_allocation_retained_from_tool_behavior": true,
+  "installed_application_verified_from_success_condition": {
+    "size_bytes": 164600,
+    "sha256": "652f94f941a4551ebb4a2df17e818dec3b3aebd2fc1cf43ec6bcb2e5ec684558",
+    "full_byte_comparison_passed": true,
+    "note": "The final application size/hash were not printed. These are the referenced installer pinned target values; success requires complete readback equality."
+  },
+  "final_key_matches_host_verified_from_success_condition": true,
+  "final_protected_hashes_match_initial": true,
+  "success_marker": "SUCCESS: standalone firmware, browser files and API key verified",
+  "persistent_files_written": [
+    "/local/api.key",
+    "/local/web/i.gz",
+    "/local/web/a.gz",
+    "/local/web/e.gz",
+    "/local/web/h.gz",
+    "/local/web/s.gz",
+    "/sys/mcuimg2.bin"
+  ],
+  "boot_record_written": false,
+  "erase_delete_or_format_commands_sent": false,
+  "existing_file_write_erases_target_contents": true,
+  "application_started_by_installer": false,
+  "post_install_runtime": {
+    "owner_report": "ok! We're running 1.0.0!",
+    "boot_reported_successful": true,
+    "firmware_version_reported": "1.0.0",
+    "reset_and_cable_sequence_reported": false,
+    "health_response_captured": false,
+    "browser_features_verified": false,
+    "browser_console_observed": true,
+    "browser_footer_version": "1.0.0",
+    "browser_pages_observed": [
+      "Overview",
+      "Settings"
+    ],
+    "oled_orientation_confirmed_by_owner": true,
+    "oled_owner_report": "OLED fixed",
+    "arrow_controls_visible": true,
+    "history_and_api_navigation_visible": true,
+    "functional_control_navigation_tested": false,
+    "displayed_readings": {
+      "wort_f": 76.0,
+      "thermoblock_f": 83.3,
+      "target_label": "Unheated",
+      "step_time_label": "0:00",
+      "mode_badge": "READY",
+      "filter_badge": "FILTER REMOVED"
+    },
+    "sensor_calibration_or_interlock_behavior_proven": false,
+    "settings_layout_feedback": "Owner rejected the three-card settings layout; a separate UI patch is being prepared."
+  },
+  "physical_stock_restore_validated": false,
+  "physical_interrupted_write_recovery_validated": false,
+  "remaining_physical_checks": [
+    "Capture versioned health response",
+    "Exercise arrow controls, History and API explorer functions",
+    "Change network without reboot",
+    "Real brew history, restart persistence and export",
+    "Optional receiver behavior",
+    "Physical interlocks and controlled thermal program",
+    "Stock restoration and interrupted application rewrite"
+  ]
+}

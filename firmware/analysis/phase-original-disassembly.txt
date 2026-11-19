@@ -1,0 +1,465 @@
+
+pico_shuttle_update_calibration 0x20005a20
+20005a20 push.w    {r3, r4, r5, r6, r7, r8, sb, sl, fp, lr}
+20005a24 ldrb.w    sl, [r0, #0x1a0]
+20005a28 mov       r4, r0
+20005a2a add.w     r6, r0, #0x220
+20005a2e add.w     r5, r0, #0x218
+20005a32 cmp.w     sl, #0
+20005a36 beq       #0x20005a4c
+20005a38 ldrd      r0, r1, [r6]
+20005a3c adr       r3, #0x188
+20005a3e ldrd      r2, r3, [r3]
+20005a42 bl        #0x20020b58 ; __aeabi_dadd
+20005a46 strd      r0, r1, [r5]
+20005a4a b         #0x20005bbc
+20005a4c ldr       r7, [pc, #0x198] ; [20005be8]=2002bc70
+20005a4e ldr.w     fp, [pc, #0x1a4] ; [20005bf4]=2002bc6c
+20005a52 ldrb      r3, [r7]
+20005a54 cbnz      r3, #0x20005a84
+20005a56 add.w     r3, r0, #0x1f8
+20005a5a ldrd      r0, r1, [r3]
+20005a5e adr       r3, #0x170
+20005a60 ldrd      r2, r3, [r3]
+20005a64 mov.w     r8, #1
+20005a68 bl        #0x200213c8 ; __aeabi_dcmpge
+20005a6c cbnz      r0, #0x20005a70
+20005a6e mov       r8, r0
+20005a70 movs      r3, #0
+20005a72 str.w     r3, [r4, #0x20c]
+20005a76 strb.w    r8, [r7]
+20005a7a bl        #0x20018efc ; millis
+20005a7e str.w     r0, [fp]
+20005a82 b         #0x20005bb0
+20005a84 ldr.w     r8, [pc, #0x170] ; [20005bf8]=2002bc68
+20005a88 ldrb.w    r3, [r8]
+20005a8c mov       sb, r8
+20005a8e cbnz      r3, #0x20005ab2
+20005a90 bl        #0x20018efc ; millis
+20005a94 ldr.w     r3, [fp]
+20005a98 movw      r2, #0xea60
+20005a9c subs      r0, r0, r3
+20005a9e cmp       r0, r2
+20005aa0 ite       ls
+20005aa2 movls     r0, #0
+20005aa4 movhi     r0, #1
+20005aa6 strb.w    r0, [r8]
+20005aaa eor       r0, r0, #1
+20005aae strb      r0, [r7]
+20005ab0 b         #0x20005bb0
+20005ab2 bl        #0x20018efc ; millis
+20005ab6 ldr.w     r3, [fp]
+20005aba movw      r2, #0xea60
+20005abe subs      r0, r0, r3
+20005ac0 cmp       r0, r2
+20005ac2 bls       #0x20005bb0
+20005ac4 ldr.w     r2, [r4, #0x20c]
+20005ac8 strb.w    sl, [r7]
+20005acc movw      r3, #0x684c
+20005ad0 cmp       r2, r3
+20005ad2 ldr       r7, [pc, #0x118] ; [20005bec]=2002bc64
+20005ad4 bls       #0x20005ae6
+20005ad6 ldrd      r0, r1, [r6]
+20005ada adr       r3, #0xfc
+20005adc ldrd      r2, r3, [r3]
+20005ae0 bl        #0x20020b54 ; __aeabi_dsub
+20005ae4 b         #0x20005b00
+20005ae6 ldr.w     r2, [r4, #0x20c]
+20005aea movw      r3, #0x58ab
+20005aee cmp       r2, r3
+20005af0 bhi       #0x20005b28
+20005af2 ldrd      r0, r1, [r6]
+20005af6 adr       r3, #0xe0
+20005af8 ldrd      r2, r3, [r3]
+20005afc bl        #0x20020b58 ; __aeabi_dadd
+20005b00 ldr.w     r8, [r7]
+20005b04 strd      r0, r1, [r6]
+20005b08 add.w     r3, r8, #1
+20005b0c str       r3, [r7]
+20005b0e ldrd      r0, r1, [r6]
+20005b12 bl        #0x20021480 ; __aeabi_d2f
+20005b16 ldr       r3, [pc, #0xd8] ; [20005bf0]=2002bc58
+20005b18 str.w     r0, [r3, r8, lsl #2]
+20005b1c ldr       r3, [r7]
+20005b1e ldr.w     r8, [pc, #0xcc] ; [20005bec]=2002bc64
+20005b22 cmp       r3, #3
+20005b24 bne       #0x20005bb0
+20005b26 b         #0x20005b5c
+20005b28 adr       r3, #0xb4
+20005b2a ldrd      r2, r3, [r3]
+20005b2e add.w     r1, r4, #0x1d8
+20005b32 strd      r2, r3, [r1]
+20005b36 movs      r3, #1
+20005b38 ldrd      r0, r1, [r6]
+20005b3c strb.w    r3, [r4, #0x1a0]
+20005b40 adr       r3, #0x84
+20005b42 ldrd      r2, r3, [r3]
+20005b46 bl        #0x20020b58 ; __aeabi_dadd
+20005b4a strd      r0, r1, [r5]
+20005b4e bl        #0x200059f4 ; pico_settings_save_shuttle_scale
+20005b52 strb.w    sl, [r8]
+20005b56 str.w     sl, [r7]
+20005b5a b         #0x20005bb8
+20005b5c ldr       r7, [pc, #0x90] ; [20005bf0]=2002bc58
+20005b5e ldr.w     sl, [r7, #8]
+20005b62 ldr       r0, [r7]
+20005b64 mov       r1, sl
+20005b66 bl        #0x20021a64 ; __aeabi_fcmpeq
+20005b6a cbz       r0, #0x20005ba2
+20005b6c adr       r3, #0x70
+20005b6e ldrd      r2, r3, [r3]
+20005b72 add.w     r1, r4, #0x1d8
+20005b76 strd      r2, r3, [r1]
+20005b7a movs      r3, #1
+20005b7c ldrd      r0, r1, [r6]
+20005b80 strb.w    r3, [r4, #0x1a0]
+20005b84 adr       r3, #0x40
+20005b86 ldrd      r2, r3, [r3]
+20005b8a bl        #0x20020b58 ; __aeabi_dadd
+20005b8e strd      r0, r1, [r5]
+20005b92 bl        #0x200059f4 ; pico_settings_save_shuttle_scale
+20005b96 movs      r3, #0
+20005b98 strb.w    r3, [sb]
+20005b9c str.w     r3, [r8]
+20005ba0 b         #0x20005bb8
+20005ba2 ldr       r3, [r7, #4]
+20005ba4 str       r3, [r7]
+20005ba6 movs      r3, #2
+20005ba8 str.w     sl, [r7, #4]
+20005bac str.w     r3, [r8]
+20005bb0 ldrd      r2, r3, [r6]
+20005bb4 strd      r2, r3, [r5]
+20005bb8 ldrb.w    sl, [r4, #0x1a0]
+20005bbc mov       r0, sl
+
+pico_controller_set_brew_phase 0x2000cde0
+2000cde0 push      {r4, r5, lr}
+2000cde2 sub       sp, #0x8c
+2000cde4 ldr       r3, [pc, #0x168] ; [2000cf50]=200260eb
+2000cde6 str       r1, [sp]
+2000cde8 ldr       r2, [pc, #0x168] ; [2000cf54]=200260e5
+2000cdea mov       r4, r0
+2000cdec mov       r5, r1
+2000cdee add       r0, sp, #8
+2000cdf0 movs      r1, #0x80
+2000cdf2 bl        #0x2001bb1c ; libc_snprintf
+2000cdf6 add       r2, sp, #8
+2000cdf8 ldr       r0, [pc, #0x15c] ; [2000cf58]=20024f28
+2000cdfa ldr       r1, [pc, #0x160] ; [2000cf5c]=200282c9
+2000cdfc bl        #0x20004a94 ; pico_log_serial
+2000ce00 ldr       r3, [pc, #0x15c] ; [2000cf60]=2002d524
+2000ce02 movs      r2, #0
+2000ce04 str       r2, [r3, #0x44]
+2000ce06 strb.w    r2, [r3, #0x48]
+2000ce0a cmp       r5, #8
+2000ce0c bhi.w     #0x2000cf26
+2000ce10 tbb       [pc, r5]
+2000ce14 lsls      r6, r4, #0x14
+2000ce16 asrs      r4, r3
+2000ce18 str       r1, [r1, #0x18]
+2000ce1a ldr       r5, [r7, #0x34]
+2000ce1c movs      r6, r4
+2000ce1e movs      r2, #2
+2000ce20 str       r2, [r3, #0x44]
+2000ce22 movs      r2, #1
+2000ce24 strb.w    r2, [r3, #0x48]
+2000ce28 add.w     r3, r4, #0x220
+2000ce2c ldrd      r0, r1, [r3]
+2000ce30 adr       r3, #0x104
+2000ce32 ldrd      r2, r3, [r3]
+2000ce36 bl        #0x20020b58 ; __aeabi_dadd
+2000ce3a add.w     r3, r4, #0x218
+2000ce3e strd      r0, r1, [r3]
+2000ce42 add.w     r0, r4, #0x63
+2000ce46 bl        #0x20008498 ; pico_label_holding
+2000ce4a b         #0x2000ce8a
+2000ce4c movs      r2, #3
+2000ce4e mov       r0, r4
+2000ce50 str       r2, [r3, #0x44]
+2000ce52 bl        #0x20005f50 ; pico_heat_controller_stop
+2000ce56 add.w     r0, r4, #0x63
+2000ce5a bl        #0x2000846c ; pico_label_cooling
+2000ce5e b         #0x2000cee4
+2000ce60 movs      r2, #1
+2000ce62 mov       r0, r4
+2000ce64 str       r2, [r3, #0x44]
+2000ce66 bl        #0x20005a20 ; pico_shuttle_update_calibration
+2000ce6a cbz       r0, #0x2000ce74
+2000ce6c adr       r3, #0xd0
+2000ce6e ldrd      r2, r3, [r3]
+2000ce72 b         #0x2000ce7a
+2000ce74 adr       r3, #0xd0
+2000ce76 ldrd      r2, r3, [r3]
+2000ce7a add.w     r1, r4, #0x1d8
+2000ce7e strd      r2, r3, [r1]
+2000ce82 add.w     r0, r4, #0x63
+2000ce86 bl        #0x20008440 ; pico_label_heating
+2000ce8a bl        #0x2000d2c4 ; pico_controller_start_circulation
+2000ce8e mov       r0, r4
+2000ce90 bl        #0x20005028 ; pico_heat_controller_start
+2000ce94 b         #0x2000cf2c
+2000ce96 mov       r0, r4
+2000ce98 bl        #0x20005f50 ; pico_heat_controller_stop
+2000ce9c add.w     r0, r4, #0x63
+2000cea0 bl        #0x200084c4 ; pico_label_draining
+2000cea4 bl        #0x2000cfe8 ; pico_drain_pump_on
+2000cea8 bl        #0x2000cfbc ; pico_steam_pump_on
+2000ceac bl        #0x2000d0e0 ; pico_shuttle_pump_on
+2000ceb0 movw      r0, #0x1388
+2000ceb4 bl        #0x20018f08 ; delay
+2000ceb8 bl        #0x20018efc ; millis
+2000cebc str.w     r0, [r4, #0x210]
+2000cec0 bl        #0x20005f22 ; pico_shuttle_pump_off
+2000cec4 bl        #0x20005f12 ; pico_steam_pump_off
+2000cec8 movs      r0, #0
+2000ceca bl        #0x2000cd4c ; pico_stepper_move_to_compartment
+2000cece movs      r3, #0
+2000ced0 strb.w    r3, [r4, #0x60]
+2000ced4 b         #0x2000cf2c
+2000ced6 mov       r0, r4
+2000ced8 bl        #0x20005f50 ; pico_heat_controller_stop
+2000cedc add.w     r0, r4, #0x63
+2000cee0 bl        #0x20008498 ; pico_label_holding
+2000cee4 bl        #0x2000d2c4 ; pico_controller_start_circulation
+2000cee8 b         #0x2000cf2c
+2000ceea mov       r0, r4
+2000ceec bl        #0x20005f50 ; pico_heat_controller_stop
+2000cef0 bl        #0x2000d0e0 ; pico_shuttle_pump_on
+2000cef4 add.w     r0, r4, #0x63
+2000cef8 bl        #0x20008498 ; pico_label_holding
+2000cefc bl        #0x2000cfe8 ; pico_drain_pump_on
+2000cf00 ldrb.w    r3, [r4, #0x60]
+2000cf04 cmp       r3, #1
+2000cf06 beq       #0x2000cf2c
+2000cf08 bl        #0x2000cfbc ; pico_steam_pump_on
+2000cf0c b         #0x2000cf2c
+2000cf0e add.w     r0, r4, #0x63
+2000cf12 bl        #0x20008498 ; pico_label_holding
+2000cf16 mov       r0, r4
+2000cf18 bl        #0x20005f50 ; pico_heat_controller_stop
+2000cf1c bl        #0x2000cfe8 ; pico_drain_pump_on
+2000cf20 bl        #0x2000d0e0 ; pico_shuttle_pump_on
+2000cf24 b         #0x2000cf00
+2000cf26 mov       r0, r4
+2000cf28 bl        #0x20005f50 ; pico_heat_controller_stop
+2000cf2c strb.w    r5, [r4, #0x62]
+2000cf30 add       sp, #0x8c
+2000cf32 pop       {r4, r5, pc}
+2000cf34 nop.w     
+2000cf38 ldr       r1, [sp, #0x268]
+2000cf3a ldr       r1, [sp, #0x264]
+2000cf3c ldr       r1, [sp, #0x264]
+2000cf3e subs      r7, #0xb9
+2000cf40 movs      r0, r0
+2000cf42 movs      r0, r0
+2000cf44 adr       r0, #0
+2000cf46 eors      r4, r6
+2000cf48 movs      r0, r0
+2000cf4a movs      r0, r0
+
+pico_start_drain_and_steam_pumps 0x2000d288
+2000d288 push      {r4, lr}
+2000d28a ldr       r4, [pc, #0x34] ; [2000d2c0]=2002d2f8
+2000d28c ldrb.w    r3, [r4, #0x62]
+2000d290 cmp       r3, #4
+2000d292 beq       #0x2000d29a
+2000d294 bl        #0x20004f64 ; pico_step_filter_is_inserted
+2000d298 cbz       r0, #0x2000d2b6
+2000d29a movs      r1, #1
+2000d29c movs      r0, #8
+2000d29e bl        #0x200190fc ; digitalWrite
+2000d2a2 mov.w     r0, #0x1f4
+2000d2a6 bl        #0x20018f08 ; delay
+2000d2aa movs      r0, #0x1b
+2000d2ac movs      r1, #1
+2000d2ae pop.w     {r4, lr}
+2000d2b2 b.w       #0x200190fc ; digitalWrite
+2000d2b6 mov       r0, r4
+2000d2b8 bl        #0x2000cf86 ; pico_controller_pause_until_resume
+2000d2bc b         #0x2000d29a
+2000d2be nop       
+2000d2c0 bhs       #0x2000d2b4
+2000d2c2 movs      r0, #2
+2000d2c4 push      {r3, lr}
+2000d2c6 ldr       r3, [pc, #0x1c] ; [2000d2e4]=2002c108
+2000d2c8 ldr       r3, [r3, #0x30]
+2000d2ca subs      r3, #3
+2000d2cc cmp       r3, #2
+2000d2ce bls       #0x2000d2d8
+2000d2d0 pop.w     {r3, lr}
+2000d2d4 b.w       #0x2000d288 ; pico_start_drain_and_steam_pumps
+2000d2d8 bl        #0x20005f1a ; pico_drain_pump_off
+2000d2dc pop.w     {r3, lr}
+2000d2e0 b.w       #0x2000cfbc ; pico_steam_pump_on
+2000d2e4 stm       r1!, {r3}
+2000d2e6 movs      r0, #2
+2000d2e8 push      {r4, lr}
+2000d2ea bl        #0x20004f64 ; pico_step_filter_is_inserted
+2000d2ee cbnz      r0, #0x2000d30a
+2000d2f0 ldr       r4, [pc, #0x1c] ; [2000d310]=2002d2f8
+2000d2f2 mov       r0, r4
+2000d2f4 bl        #0x20005f50 ; pico_heat_controller_stop
+2000d2f8 bl        #0x20005f2a ; pico_steam_and_drain_pumps_off
+2000d2fc bl        #0x2000cc30 ; pico_prompt_insert_filter_with_alarm
+2000d300 mov       r0, r4
+2000d302 ldrb.w    r1, [r4, #0x62]
+2000d306 bl        #0x2000cde0 ; pico_controller_set_brew_phase
+2000d30a movs      r0, #0
+2000d30c pop       {r4, pc}
+2000d30e nop       
+2000d310 bhs       #0x2000d304
+2000d312 movs      r0, #2
+2000d314 push      {r3, r4, r5, lr}
+2000d316 mov       r4, r0
+2000d318 mov       r5, r1
+2000d31a bl        #0x20018efc ; millis
+2000d31e mov       r0, r4
+2000d320 bl        #0x20005f50 ; pico_heat_controller_stop
+2000d324 mov       r0, r5
+2000d326 bl        #0x20007494 ; pico_screen_ending_step
+2000d32a bl        #0x20004494 ; pico_display_flush
+2000d32e bl        #0x20005f12 ; pico_steam_pump_off
+2000d332 ldr       r3, [pc, #0x48] ; [2000d37c]=2002c108
+2000d334 ldr       r3, [r3, #0x30]
+2000d336 subs      r3, #3
+2000d338 cmp       r3, #2
+2000d33a bls       #0x2000d340
+2000d33c bl        #0x2000cfe8 ; pico_drain_pump_on
+2000d340 mov.w     r0, #0x3e8
+2000d344 bl        #0x20018f08 ; delay
+2000d348 ldrb.w    r3, [r4, #0x60]
+2000d34c cmp       r3, #3
+2000d34e bne       #0x2000d364
+2000d350 movs      r0, #6
+2000d352 bl        #0x2000cd4c ; pico_stepper_move_to_compartment
+2000d356 movs      r3, #6
+2000d358 strb.w    r3, [r4, #0x60]
+2000d35c movw      r0, #0x7530
+2000d360 bl        #0x20018f08 ; delay
+2000d364 movs      r3, #0
+2000d366 movs      r2, #4
+2000d368 strb.w    r3, [r4, #0x61]
+2000d36c strb.w    r2, [r4, #0x62]
+2000d370 strb.w    r3, [r4, #0xa8]
+2000d374 pop.w     {r3, r4, r5, lr}
+2000d378 b.w       #0x20004488 ; pico_display_clear
+2000d37c stm       r1!, {r3}
+2000d37e movs      r0, #2
+
+pico_label_heating 0x20008440
+20008440 ldr       r3, [pc, #0x18] ; [2000845c]=2002c164
+20008442 ldrb      r3, [r3]
+20008444 cmp       r3, #1
+20008446 beq       #0x20008450
+20008448 cmp       r3, #2
+2000844a beq       #0x20008454
+2000844c ldr       r1, [pc, #0x10] ; [20008460]=20022cba
+2000844e b         #0x20008456
+20008450 ldr       r1, [pc, #0x10] ; [20008464]=20022cc3
+20008452 b         #0x20008456
+20008454 ldr       r1, [pc, #0x10] ; [20008468]=20022cd2
+20008456 b.w       #0x2001bdec ; libc_strcpy
+2000845a nop       
+2000845c stm       r1!, {r2, r5, r6}
+2000845e movs      r0, #2
+20008460 cmp       r4, #0xba
+20008462 movs      r0, #2
+20008464 cmp       r4, #0xc3
+20008466 movs      r0, #2
+20008468 cmp       r4, #0xd2
+2000846a movs      r0, #2
+2000846c ldr       r3, [pc, #0x18] ; [20008488]=2002c164
+2000846e ldrb      r3, [r3]
+20008470 cmp       r3, #1
+20008472 beq       #0x2000847c
+20008474 cmp       r3, #2
+20008476 beq       #0x20008480
+20008478 ldr       r1, [pc, #0x10] ; [2000848c]=20022cdd
+2000847a b         #0x20008482
+2000847c ldr       r1, [pc, #0x10] ; [20008490]=20022ce6
+2000847e b         #0x20008482
+20008480 ldr       r1, [pc, #0x10] ; [20008494]=20022cf4
+20008482 b.w       #0x2001bdec ; libc_strcpy
+20008486 nop       
+20008488 stm       r1!, {r2, r5, r6}
+2000848a movs      r0, #2
+2000848c cmp       r4, #0xdd
+2000848e movs      r0, #2
+20008490 cmp       r4, #0xe6
+20008492 movs      r0, #2
+20008494 cmp       r4, #0xf4
+20008496 movs      r0, #2
+20008498 ldr       r3, [pc, #0x18] ; [200084b4]=2002c164
+2000849a ldrb      r3, [r3]
+2000849c cmp       r3, #1
+2000849e beq       #0x200084a8
+200084a0 cmp       r3, #2
+200084a2 beq       #0x200084ac
+200084a4 ldr       r1, [pc, #0x10] ; [200084b8]=20022d05
+200084a6 b         #0x200084ae
+200084a8 ldr       r1, [pc, #0x10] ; [200084bc]=20022d0e
+200084aa b         #0x200084ae
+200084ac ldr       r1, [pc, #0x10] ; [200084c0]=20022d18
+200084ae b.w       #0x2001bdec ; libc_strcpy
+200084b2 nop       
+200084b4 stm       r1!, {r2, r5, r6}
+200084b6 movs      r0, #2
+200084b8 cmp       r5, #5
+200084ba movs      r0, #2
+200084bc cmp       r5, #0xe
+200084be movs      r0, #2
+200084c0 cmp       r5, #0x18
+200084c2 movs      r0, #2
+200084c4 ldr       r3, [pc, #0x18] ; [200084e0]=2002c164
+200084c6 ldrb      r3, [r3]
+200084c8 cmp       r3, #1
+200084ca beq       #0x200084d4
+200084cc cmp       r3, #2
+200084ce beq       #0x200084d8
+200084d0 ldr       r1, [pc, #0x10] ; [200084e4]=20022d22
+200084d2 b         #0x200084da
+200084d4 ldr       r1, [pc, #0x10] ; [200084e8]=20022d2c
+200084d6 b         #0x200084da
+200084d8 ldr       r1, [pc, #0x10] ; [200084ec]=20022d34
+200084da b.w       #0x2001bdec ; libc_strcpy
+200084de nop       
+200084e0 stm       r1!, {r2, r5, r6}
+200084e2 movs      r0, #2
+200084e4 cmp       r5, #0x22
+200084e6 movs      r0, #2
+200084e8 cmp       r5, #0x2c
+200084ea movs      r0, #2
+200084ec cmp       r5, #0x34
+200084ee movs      r0, #2
+
+2000cf68 push     {r4, lr}
+2000cf6a movs     r1, #9
+2000cf6c mov      r4, r0
+2000cf6e movs     r0, #0
+2000cf70 bl       #0x20009ef4 ; pico_display_clear_row_from_column
+2000cf74 movs     r3, #0
+2000cf76 strb.w   r3, [r4, #0x61]
+2000cf7a mov      r0, r4
+2000cf7c ldrb.w   r1, [r4, #0x62]
+2000cf80 bl       #0x2000cde0 ; pico_controller_set_brew_phase
+2000cf84 pop      {r4, pc}
+2000cf86 push     {r4, lr}
+2000cf88 mov      r4, r0
+2000cf8a bl       #0x20005f50 ; pico_heat_controller_stop
+2000cf8e bl       #0x20005f2a ; pico_steam_and_drain_pumps_off
+2000cf92 bl       #0x2000a414 ; pico_ui_wait_for_resume
+2000cf96 mov      r0, r4
+2000cf98 ldrb.w   r1, [r4, #0x62]
+2000cf9c bl       #0x2000cde0 ; pico_controller_set_brew_phase
+2000cfa0 ldrb.w   r3, [r4, #0x62]
+2000cfa4 tst.w    r3, #0xfd
+2000cfa8 bne      #0x2000cfba
+2000cfaa bl       #0x20004870 ; pico_display_refresh_current_page
+2000cfae movw     r0, #0x1388
+2000cfb2 pop.w    {r4, lr}
+2000cfb6 b.w      #0x20018f08
+2000cfba pop      {r4, pc}
+20005bbc mov      r0, sl
+20005bbe pop.w    {r3, r4, r5, r6, r7, r8, sb, sl, fp, pc}
+20005bc2 nop      
+20005bc4 nop.w    

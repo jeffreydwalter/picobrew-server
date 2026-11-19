@@ -93,6 +93,11 @@ func New(cfg Config) (*Server, error) {
 		cancel()
 		return nil, e
 	}
+	if e = s.recoverDeployments(); e != nil {
+		db.Close()
+		cancel()
+		return nil, e
+	}
 	if cfg.Demo {
 		if e = s.seedDemo(); e != nil {
 			db.Close()
@@ -196,6 +201,7 @@ func (s *Server) routes() http.Handler {
 			r.Get("/devices/{id}/display", s.display)
 			r.Post("/devices/{id}/commands", s.command)
 			r.Get("/devices/{id}/recipes", s.machineRecipes)
+			r.Put("/devices/{id}/recipes/{recipe_id}", s.updateMachineRecipe)
 			r.Delete("/devices/{id}/recipes/{recipe_id}", s.deleteMachineRecipe)
 			r.Get("/devices/{id}/settings", s.machineSettings)
 			r.Patch("/devices/{id}/settings", s.machineSettings)
@@ -203,9 +209,18 @@ func (s *Server) routes() http.Handler {
 			r.Put("/devices/{id}/telemetry", s.machineTelemetry)
 			r.Post("/devices/{id}/sync-history", s.syncHistory)
 			r.Post("/devices/{id}/deploy", s.deploy)
+			r.Post("/devices/{id}/deployments", s.planDeployment)
+			r.Get("/devices/{id}/deployments/{deployment_id}", s.getDeployment)
+			r.Post("/devices/{id}/deployments/{deployment_id}/execute", s.executeDeployment)
 			r.Get("/profiles", s.profiles)
 			r.Put("/profiles/{id}", s.saveProfile)
 			r.Delete("/profiles/{id}", s.saveProfile)
+			r.Get("/catalog", s.listCatalog)
+			r.Get("/catalog/references", s.catalogReferences)
+			r.Get("/catalog/assets/*", s.catalogAsset)
+			r.Get("/catalog/{id}", s.getCatalogEntry)
+			r.Post("/catalog/{id}/copy", s.copyCatalogEntry)
+			r.Get("/catalog/{id}/source", s.catalogOriginal)
 			r.Get("/recipes", s.listRecipes)
 			r.Post("/recipes", s.saveRecipe)
 			r.Post("/recipes/import", s.importRecipes)

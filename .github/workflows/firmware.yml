@@ -1,0 +1,98 @@
+name: Verify standalone firmware
+
+on:
+  push:
+    paths: ['firmware/**', '.github/workflows/firmware.yml']
+  pull_request:
+    paths: ['firmware/**', '.github/workflows/firmware.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    working-directory: firmware
+
+concurrency:
+  group: firmware-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  usb-tools:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned USB tool dependencies
+        run: python -m pip install -r requirements-usb.txt
+      - name: Read-only protocol, receive-queue and offline-inspection simulations
+        run: make usb-test PYTHON=python
+
+  host-and-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser test dependencies
+        run: |
+          python -m pip install -r requirements-web-test.txt
+          python -m playwright install --with-deps chromium
+      - name: Portable firmware tests
+        run: make standalone-test PYTHON=python
+      - name: Browser against the real portable C API
+        run: make web-test PYTHON=python
+      - name: Preserve browser previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-previews
+          path: firmware/build/web-preview/*.png
+          if-no-files-found: ignore
+
+  arm-firmware:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Python test dependencies
+        run: python -m pip install -r requirements-test.txt
+      - name: Bootstrap pinned compiler and Energia SDK
+        run: make bootstrap PYTHON=python
+      - name: Link appliance image and verify native flash recovery
+        run: make standalone-storage-test PYTHON=python
+      - name: Verify the committed installation package matches the build
+        run: |
+          cmp build/standalone/firmware/pico-s-pro-standalone.bin firmware/standalone/pico-s-pro-standalone.bin
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          built = json.loads(Path('build/standalone/firmware/firmware-report.json').read_text())
+          packaged = json.loads(Path('firmware/standalone/firmware-report.json').read_text())
+          manifest = hashlib.sha256(Path('firmware/web/manifest.json').read_bytes()).hexdigest()
+          assert packaged['binary_sha256'] == built['binary_sha256']
+          assert packaged['app_sources_sha256'] == built['app_sources_sha256']
+          assert packaged['browser_manifest_sha256'] == built['browser_manifest_sha256'] == manifest
+          print('Packaged firmware, source identities and browser bundle match the clean build.')
+          PY
+      - name: Verify ARM interrupt and filter-trip guards
+        run: make standalone-arm-test PYTHON=python
+      - name: Preserve firmware candidate and image evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: standalone-firmware-candidate
+          path: |
+            firmware/build/standalone/firmware/pico-s-pro-standalone.bin
+            firmware/build/standalone/firmware/pico-s-pro-standalone.elf
+            firmware/build/standalone/firmware/pico-s-pro-standalone.map
+            firmware/build/standalone/firmware/firmware-report.json
+            firmware/firmware/web/

@@ -1,0 +1,95 @@
+{
+  "scope": "Offline firmware analysis and host/protocol simulation, plus owner-reported physical backup, logical-file preflight, API-key create/rewrite/readback, standalone installation with complete readback, application boot and public health HTTP response; authenticated requests and physical output behavior remain unverified",
+  "reference_backup_sha256": "837a728400da02b9da4a7d563e1b67fb24d6a5af03c054963c4b1de60c72343f",
+  "original_main_exact_reference_match": true,
+  "original_main_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "bootloader_instruction_emulation_cases": 19,
+  "physical_logical_boot_record_read_pending": false,
+  "physical_preflight_record": "analysis/device-preflight-20261117.json",
+  "physical_key_attempt_record": "analysis/device-key-attempt-20261117.json",
+  "physical_preflight_qualified": true,
+  "logical_boot_record_hex": "01 3d 00 20 ba dc cd ab",
+  "selected_application": "/sys/mcuimg2.bin",
+  "factory_reset_guard_profiles": [
+    "standalone protected",
+    "legacy preserved"
+  ],
+  "candidate": {
+    "size_bytes": 161720,
+    "sha256": "a8fc16afce43c4b91b82374a339b86631daefe1a40f08df5f8bdd7a0d0a8d904",
+    "heap_bytes": 32768,
+    "stack_bytes": 32768,
+    "hardware_executed": true,
+    "hardware_installed_and_readback_verified": true
+  },
+  "checks": [
+    {
+      "command": "make standalone PYTHON=.venv/bin/python",
+      "passed": true
+    },
+    {
+      "command": "make standalone-test PYTHON=.venv/bin/python",
+      "passed": true,
+      "sanitizers": [
+        "ASan",
+        "UBSan"
+      ]
+    },
+    {
+      "command": ".venv/bin/python tests/test_native_storage.py --elf build/standalone/firmware/pico-s-pro-standalone.elf",
+      "passed": true,
+      "scenarios": 5
+    },
+    {
+      "command": "make standalone-arm-test PYTHON=.venv/bin/python",
+      "passed": true
+    },
+    {
+      "command": "python tests/test_pico_flash_preflight.py (with pinned cc3200tool installed)",
+      "passed": true,
+      "tests": 25
+    },
+    {
+      "name": "Private preflight integration through native asynchronous receive queue",
+      "passed": true,
+      "cases": 2,
+      "physical_USB": false
+    },
+    {
+      "command": "make usb-test (with requirements-usb.txt installed)",
+      "passed": true,
+      "tests": 99,
+      "scope": "Synthetic wire, native-queue and offline-inspection tests; no physical hardware"
+    },
+    {
+      "command": "python tests/test_pico_flash_install.py (with requirements-usb.txt installed)",
+      "passed": true,
+      "tests": 31,
+      "parameterized_subcases": 80,
+      "scope": "Synthetic destructive file-write model, protocol guards, restore, private journals, credential redaction and classified initial/APPS handshake failures"
+    }
+  ],
+  "preflight_script_sha256": "ff260976fcf17ae298bb8f6ead68340204a6cec39b123e757eb5c5b1202633f2",
+  "browser_sources_changed": false,
+  "guarded_writer_tool": "tools/pico_flash_install.py",
+  "guarded_writer_sha256": "e8f5c6ebe91711b097b63b042356832ca2338c51194dc6cfb332a46ace5fd94e",
+  "next_physical_step": "Authenticate in the browser console and inspect read-only status/display data; physical outputs, thermal operation and stock restoration remain untested",
+  "bootloader_audit_tool": "tools/audit_device_bootloader.py",
+  "bootloader_audit_results": "analysis/device-bootloader-emulation-results.json",
+  "flash_allocation_record": "analysis/device-flash-layout.json",
+  "guarded_writer_revision": 2,
+  "physical_key_provisioning_record": "analysis/device-key-provisioning-20261117.json",
+  "live_file_write_validated": true,
+  "live_file_write_validation_scope": "/local/api.key creation, readback and existing-file rewrite, plus pinned /sys/mcuimg2.bin installation and complete readback; final key/protected-state verification",
+  "live_application_installation_validated": true,
+  "live_application_restore_validated": false,
+  "physical_application_installation_record": "analysis/device-install-20261118.json",
+  "live_interrupted_write_recovery_validated": false,
+  "physical_runtime_record": "analysis/device-runtime-20261118.json",
+  "live_application_boot_validated": true,
+  "live_public_health_api_validated": true,
+  "live_authenticated_api_validated": false,
+  "live_browser_console_validated": false,
+  "wifi_ssid_change_requires_reboot_reported": true,
+  "wifi_ssid_change_issue_open": true
+}

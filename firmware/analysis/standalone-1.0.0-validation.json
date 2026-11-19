@@ -1,0 +1,87 @@
+{
+  "firmware_version": "1.0.0",
+  "hardware_executed": true,
+  "prior_physical_candidate": "analysis/device-browser-20261118.json",
+  "binary": {
+    "path": "firmware/standalone/pico-s-pro-standalone.bin",
+    "size_bytes": 164600,
+    "sha256": "652f94f941a4551ebb4a2df17e818dec3b3aebd2fc1cf43ec6bcb2e5ec684558"
+  },
+  "ram": {
+    "heap_reservation_bytes": 32768,
+    "stack_reservation_bytes": 32768,
+    "unallocated_bytes": 952,
+    "new_lazy_heap_payload_bytes": 4704,
+    "allocator_overhead_additional": true,
+    "physical_peak_usage_measured": false
+  },
+  "web_bundle": {
+    "manifest_sha256": "c14d40b8b91cfc9c0591690dae681d3587da83d8d2afb7427563a59493c4656f",
+    "file_count": 5,
+    "compressed_bytes": 21618,
+    "allocation_blocks": 8
+  },
+  "local_checks": [
+    {
+      "command": "make standalone-test",
+      "result": "passed",
+      "scope": "HTTP streaming/auth, native Wi-Fi, API, history, telemetry, receiver and foreground controls"
+    },
+    {
+      "command": "make usb-test",
+      "result": "passed",
+      "cases": 113,
+      "scope": "Probe, queued USB receive, backup, preflight, installer and offline inspection before the two final capacity cases"
+    },
+    {
+      "command": "python tests/test_pico_flash_install.py",
+      "result": "passed",
+      "cases": 47,
+      "scope": "Includes the two final existing-allocation capacity boundary cases"
+    },
+    {
+      "command": "make standalone-arm-test",
+      "result": "passed",
+      "scope": "Actual ARM foreground exclusion and interrupt filter-trip controls"
+    },
+    {
+      "command": "python tests/test_native_storage.py --elf build/standalone/firmware/pico-s-pro-standalone.elf",
+      "result": "passed",
+      "cases": 5,
+      "scope": "Actual ARM bridge, SLFS and SimpleLink with simulated command transport"
+    },
+    {
+      "command": "make standalone",
+      "result": "passed",
+      "scope": "Pinned native compiler/SDK, vectors, symbol hygiene, 32 KiB reservations and RAM bounds"
+    }
+  ],
+  "browser_validation": {
+    "local_execution": "unavailable: Chromium process-singleton socket creation is prohibited in this environment",
+    "ci_command": "make web-test",
+    "workflow": ".github/workflows/standalone.yml",
+    "result_source": "Use the workflow run for the exact published commit; CI results are not fabricated into this local record."
+  },
+  "retained_images": [
+    "/sys/mcuimg.bin",
+    "/sys/mcuimg1.bin",
+    "/sys/mcuimg2.bin"
+  ],
+  "deferred": [
+    "AI integration",
+    "Recovery-image deletion"
+  ],
+  "physical_checks_remaining": [
+    "Capture versioned health response and exercise browser controls/features",
+    "Network switch without reboot",
+    "Real brew history/restart/export",
+    "Optional receiver failure during a brew",
+    "Physical interlocks and complete thermal program",
+    "Stock restoration and interrupted application rewrite"
+  ],
+  "hardware_execution_evidence": "Owner reported running 1.0.0, provided Overview and Settings screenshots with the 1.0.0 footer, and confirmed the OLED preview is upright.",
+  "physical_installation_verified": true,
+  "physical_installation_and_boot_record": "analysis/device-upgrade-1.0.0-20261118.json",
+  "source_commit": "0a7d4991bcdb29871534e08fd73a784637bae79b",
+  "physical_browser_observation": "Overview and Settings rendered, upright OLED confirmed; arrows and History/API navigation visible. Control/feature operation remains unverified."
+}

@@ -19,6 +19,9 @@ func TestOpenAPICatalogMatchesEveryRegisteredAPIRoute(t *testing.T) {
 	actual := map[string]bool{}
 	if err := chi.Walk(router, func(method, route string, _ http.Handler, _ ...func(http.Handler) http.Handler) error {
 		if strings.HasPrefix(route, "/api/v1/") {
+			// Chi captures nested asset directories with a wildcard; OpenAPI
+			// represents that same argument as a named path parameter.
+			route = strings.Replace(route, "/catalog/assets/*", "/catalog/assets/{asset_path}", 1)
 			actual[method+" "+strings.TrimPrefix(route, "/api/v1")] = true
 		}
 		return nil

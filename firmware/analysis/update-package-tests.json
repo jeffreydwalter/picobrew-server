@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cases": 1,
+  "application_elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "firmware_binary_sha256": "ae2703e62fea7c56e266c5aefcdd98b1170b9fce45b2696124838d8c1551e31b",
+  "update_body_sha256": "d19c8feeadeba81ae82505ae51c09a1b9a61bea35210fba254a5cdb732316a08",
+  "firmware_bytes": 160296,
+  "update_body_bytes": 320634,
+  "receiver": "pico_update_receive",
+  "destination": "/sys/mcuimg2.bin",
+  "scope": "Complete generated update body decoded by actual rebuilt ARM receiver; exact reconstructed binary and boot-record bytes observed through in-memory file/MD5/socket boundaries.",
+  "hardware_executed": false
+}

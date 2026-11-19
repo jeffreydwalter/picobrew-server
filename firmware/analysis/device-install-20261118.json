@@ -1,0 +1,63 @@
+{
+  "evidence_source": "Owner-supplied terminal output plus the verified tool's success conditions; not the private JSON report or a USB capture",
+  "terminal_start_timestamp_as_reported": "2026-11-18 00:14:02.441",
+  "private_report_basename": "pico-pro-install-20261118-001357.json",
+  "tool": "tools/pico_flash_install.py",
+  "install_revision": 2,
+  "tool_sha256": "e8f5c6ebe91711b097b63b042356832ca2338c51194dc6cfb332a46ace5fd94e",
+  "operation": "install",
+  "reference_backup_sha256": "837a728400da02b9da4a7d563e1b67fb24d6a5af03c054963c4b1de60c72343f",
+  "local_original_backup_verified": true,
+  "bootloader_version": "0.4.1.2",
+  "initial_and_apps_handshakes_passed": true,
+  "bootloader_entry_trigger": "Not explicitly identified in the supplied terminal output",
+  "sram_helper_uploaded": true,
+  "queued_usb_receive_transfers": 8,
+  "flash_size_bytes": 1048576,
+  "block_size": 4096,
+  "block_count": 256,
+  "initial_verified_files": {
+    "/sys/mcuimg.bin": {
+      "size_bytes": 14956,
+      "sha256": "67e22913fd7805a84d965928198f7d8cb795af125b81f1e0c29479a84980b975"
+    },
+    "/sys/mcuimg1.bin": {
+      "size_bytes": 50504,
+      "sha256": "26829ef97df46e6d3667afe8352fa86492f3ddf667371f2d19eafa8468862c63"
+    },
+    "/sys/mcubootinfo.bin": {
+      "size_bytes": 8,
+      "sha256": "59112b9c5cd615ee3427b916c2a35a0a89a40a80250197169a545fb93b8e9435"
+    },
+    "/sys/mcuimg2.bin": {
+      "size_bytes": 162792,
+      "sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702"
+    }
+  },
+  "key_file": "/local/api.key",
+  "key_created": false,
+  "key_existing_file_rewrite_verified_from_success_condition": true,
+  "application_file": "/sys/mcuimg2.bin",
+  "application_rewritten": true,
+  "existing_application_allocation_retained_from_tool_behavior": true,
+  "installed_application_verified_from_success_condition": {
+    "size_bytes": 161720,
+    "sha256": "a8fc16afce43c4b91b82374a339b86631daefe1a40f08df5f8bdd7a0d0a8d904",
+    "full_byte_comparison_passed": true,
+    "note": "The final application metadata was not printed; the success marker requires complete readback matching the pinned candidate."
+  },
+  "final_key_matches_host_verified_from_success_condition": true,
+  "final_protected_hashes_match_initial": true,
+  "success_marker": "SUCCESS: standalone firmware and API key verified",
+  "persistent_files_written": [
+    "/local/api.key",
+    "/sys/mcuimg2.bin"
+  ],
+  "boot_record_written": false,
+  "erase_delete_or_format_commands_sent": false,
+  "existing_file_write_erases_target_contents": true,
+  "application_started": false,
+  "physical_stock_restore_validated": false,
+  "physical_interrupted_write_recovery_validated": false,
+  "next_physical_step": "First standalone boot and observation of display, controls, network access and output behavior"
+}

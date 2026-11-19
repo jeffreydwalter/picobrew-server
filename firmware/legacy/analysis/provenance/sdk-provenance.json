@@ -1,0 +1,214 @@
+{
+  "repository": "energia/cc3200-core",
+  "commit": "c5507401fe46454d38c3ce3af0a140df8fc088a3",
+  "files": [
+    {
+      "path": "system/inc/hw_memmap.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/inc/hw_memmap.h",
+      "bytes": 3824,
+      "sha256": "5d0d1d20325ff40dc95dccb396353a32e39363056a59d6c3748eb9b3819cc037"
+    },
+    {
+      "path": "system/driverlib/rom.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/rom.h",
+      "bytes": 112960,
+      "sha256": "2857e999f5b8cb5224e277515a33a76c8eec09e9e6985d65fc3544839a373b65"
+    },
+    {
+      "path": "system/driverlib/shamd5.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/shamd5.c",
+      "bytes": 33985,
+      "sha256": "9da1e45caef3471fb7115da09ba8d30c92a575a58447a7c623dfbe50fd108157"
+    },
+    {
+      "path": "system/driverlib/shamd5.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/shamd5.h",
+      "bytes": 5595,
+      "sha256": "da6ffa8e3de9ab0139b3cefbec0caef8a7293ad2ce7e43c00bdc6dca84e70d80"
+    },
+    {
+      "path": "system/inc/hw_shamd5.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/inc/hw_shamd5.h",
+      "bytes": 64811,
+      "sha256": "fe2c62eabf7897992ad09332abd46aa11be8aa18ed6aaed3ec187aa4ece6aa09"
+    },
+    {
+      "path": "system/driverlib/prcm.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/prcm.c",
+      "bytes": 60643,
+      "sha256": "a071a00478ff62de554bb256c8785549dcd8e2d8e60b52cb37498fe6ad095541"
+    },
+    {
+      "path": "system/driverlib/prcm.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/prcm.h",
+      "bytes": 12970,
+      "sha256": "78b857dcf6802e84d85fb850667b8dd1a54c87f1a7956983a05bab203a58dba7"
+    },
+    {
+      "path": "system/driverlib/interrupt.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/interrupt.c",
+      "bytes": 25491,
+      "sha256": "2f15a771d17712f87713ec13ff76be32d01fa5bad9aafd19a2a2cc1d42901853"
+    },
+    {
+      "path": "system/driverlib/interrupt.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/interrupt.h",
+      "bytes": 4951,
+      "sha256": "e57414d56e8e188ea073eac43c3a22a47b2fdda8e4a61e20f1355b42e684622e"
+    },
+    {
+      "path": "system/driverlib/utils.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/utils.c",
+      "bytes": 3720,
+      "sha256": "a6ecb4badcff64766840d8b14b6f9a968b8210ab1e1058b6b0bbd19a11cca8a7"
+    },
+    {
+      "path": "system/driverlib/utils.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/utils.h",
+      "bytes": 2792,
+      "sha256": "1793d8f8927e4699c95d48671c50fc07854e0f6becdbd5463519fdffa1bffa80"
+    },
+    {
+      "path": "system/driverlib/gpio.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/gpio.c",
+      "bytes": 23424,
+      "sha256": "91930c7b78e213706c59671f9b7bc8cc33b4822de6d9c2c53d05252777b0fdfa"
+    },
+    {
+      "path": "system/driverlib/gpio.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/gpio.h",
+      "bytes": 6406,
+      "sha256": "4618305f57c603f218d6bb214891ad70f675a522adbf4b6ee369f143eebdd474"
+    },
+    {
+      "path": "system/driverlib/timer.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/timer.c",
+      "bytes": 37277,
+      "sha256": "c9294df549ad8663c034380218835e7a99b8cf09bf21bb407b2eeef2389e6da5"
+    },
+    {
+      "path": "system/driverlib/timer.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/timer.h",
+      "bytes": 10629,
+      "sha256": "0afa5deaf3f18457505f6b2188b6027179eb5699e45730ea674bc8a4307e531c"
+    },
+    {
+      "path": "system/driverlib/uart.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/uart.c",
+      "bytes": 48709,
+      "sha256": "9d720460c804e03a08ddcc87e42bb65902cb8c62782592624dc43ef145968c30"
+    },
+    {
+      "path": "system/driverlib/uart.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/uart.h",
+      "bytes": 11721,
+      "sha256": "201534b4528e4558d931e9529aa704954bccc7fc2bf6d675fb275eb83e39fb72"
+    },
+    {
+      "path": "libraries/WiFi/utility/fs.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/libraries/WiFi/utility/fs.h",
+      "bytes": 18398,
+      "sha256": "3b8b6e434ca135c334422a67ba01f7ad10d53674b80083fb928ca886621b4826"
+    },
+    {
+      "path": "cores/cc3200/wiring.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/cores/cc3200/wiring.c",
+      "bytes": 3481,
+      "sha256": "7c07458fc137a15f148ee8cb3c7724a65b6afc48057be77a9be46895d70d5779"
+    },
+    {
+      "path": "cores/cc3200/itoa.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/cores/cc3200/itoa.c",
+      "bytes": 2939,
+      "sha256": "4e70ea46d5631b943ee5017baa72ff4ef5570b5adb5c5071ee7301fb31c729fb"
+    },
+    {
+      "path": "cores/cc3200/stdlib_noniso.c",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "path": "cores/cc3200/main.cpp",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/cores/cc3200/main.cpp",
+      "bytes": 933,
+      "sha256": "52f427daa1605476d9f5d7cbbc98b8cf6105d65398b6482ce2c75d5d9c71bde5"
+    },
+    {
+      "path": "system/driverlib/adc.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/adc.h",
+      "bytes": 5154,
+      "sha256": "80f8f5d007fcfdf7732a07c768dc7ed6900b073ffb458b9bf2e307a6efe335be"
+    },
+    {
+      "path": "system/driverlib/adc.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/adc.c",
+      "bytes": 21263,
+      "sha256": "8c0951a21d354cee9b0b3269e728b6c63becf1e49326d34f2542817f08911a3f"
+    },
+    {
+      "path": "system/driverlib/cpu.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/cpu.h",
+      "bytes": 2980,
+      "sha256": "f399e5561ae5cfefb5344b484715031f8cb0e1f71c01d46d4c5e135cc439b2e6"
+    },
+    {
+      "path": "system/driverlib/cpu.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/cpu.c",
+      "bytes": 11599,
+      "sha256": "7374093374a64d66e146b49f846487ed12a9dce6fab6a02f22b1b870aaeffb4f"
+    },
+    {
+      "path": "system/driverlib/pin.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/pin.h",
+      "bytes": 6900,
+      "sha256": "23cbf5de101e13188850d5e645f0a0e842a9a7c172705a2b33a1a9f700fea3b0"
+    },
+    {
+      "path": "system/driverlib/pin.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/pin.c",
+      "bytes": 19505,
+      "sha256": "edeeafbc6c7568b7def9a5e1f1508752083ff65437c702afe8dbb76c5d33de92"
+    },
+    {
+      "path": "system/driverlib/spi.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/spi.h",
+      "bytes": 7691,
+      "sha256": "18cc9c930381f3d23a9028ecdf848361732a365efccc993baafe1e4c1519e888"
+    },
+    {
+      "path": "system/driverlib/spi.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/spi.c",
+      "bytes": 41106,
+      "sha256": "8f81e693a4c75ddd5f6da817ff4e02a7bb0f26e407ab55dfacff5acc9114b481"
+    },
+    {
+      "path": "system/driverlib/systick.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/systick.h",
+      "bytes": 3138,
+      "sha256": "9b7db8fbbf2fa1fb86466ba09b138177cfa469b89733bdb6b19fbd46f9652eed"
+    },
+    {
+      "path": "system/driverlib/systick.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/systick.c",
+      "bytes": 9028,
+      "sha256": "b7d06f097ec723c5b94646b2366e70ad7e3735977aae687411b6b51d5501fc6c"
+    },
+    {
+      "path": "system/driverlib/udma.h",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/udma.h",
+      "bytes": 24638,
+      "sha256": "179699eb6418ce1cdcc8c915a22657b7419aefd57d8092cccc6621b5cd2d68ba"
+    },
+    {
+      "path": "system/driverlib/udma.c",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/udma.c",
+      "bytes": 44008,
+      "sha256": "4f7e5d8b91cbe15c69577dd19a7b360234ea12010db2700ea2b6a8f5358853bc"
+    },
+    {
+      "path": "system/driverlib/libdriverlib.a",
+      "url": "https://raw.githubusercontent.com/energia/cc3200-core/c5507401fe46454d38c3ce3af0a140df8fc088a3/system/driverlib/libdriverlib.a",
+      "bytes": 113040,
+      "sha256": "f816025aed436dec296c424b41ddbfd940fd6eb8e05479311e5eff0a8c5b601b"
+    }
+  ]
+}

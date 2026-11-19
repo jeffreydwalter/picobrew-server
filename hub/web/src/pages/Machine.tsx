@@ -33,6 +33,8 @@ import {
   SectionHeading,
 } from '../components/ui'
 import OLED from '../components/OLED'
+import { TransferDialog } from '../components/TransferDialog'
+import { InstalledProgramDialog } from '../components/InstalledProgramDialog'
 import { DeviceDialog, DeviceKeyNotice, RemoveDeviceDialog } from '../components/DeviceDialogs'
 import { TemperatureChart } from '../components/Charts'
 import { deviceState, duration, temperature } from '../lib/utils'
@@ -70,6 +72,8 @@ export default function Machine({ id }: { id: string }) {
   const [removing, setRemoving] = useState(false)
   const [testingConnection, setTestingConnection] = useState(false)
   const [removeRecipe, setRemoveRecipe] = useState(false)
+  const [editRecipe, setEditRecipe] = useState<MachineRecipe | null>(null)
+  const [transferRecipes, setTransferRecipes] = useState(false)
   const [error, setError] = useState('')
   const history =
     hub.brews.find((brew) => brew.device_id === id && brew.state === 'recording') ||
@@ -289,15 +293,33 @@ export default function Machine({ id }: { id: string }) {
             <Play size={16} />
             Start recipe
           </Button>
-          <button className="text-button recipe-link" onClick={() => hub.navigate('/recipes')}>
+          <button className="text-button recipe-link" onClick={() => setTransferRecipes(true)}>
             <BookOpen size={15} />
-            Send a recipe from the library
+            Send recipes from the library
             <ArrowUpRight size={14} />
           </button>
+          <ErrorBanner message={native.error} retry={native.reload} />
           <div className="native-library">
             <small>
               {recipes.length} / {device.capabilities?.recipe_capacity || '—'} recipe slots used
             </small>
+            <Button
+              variant="ghost"
+              disabled={
+                !recipeID ||
+                !device.online ||
+                !status?.ready ||
+                !!status?.busy ||
+                !!status?.stopped ||
+                !!pending
+              }
+              onClick={() =>
+                setEditRecipe(recipes.find((recipe) => recipe.id === recipeID) || null)
+              }
+            >
+              <Pencil size={13} />
+              Edit saved program
+            </Button>
             <Button
               variant="ghost"
               className="danger-text"
@@ -450,6 +472,25 @@ export default function Machine({ id }: { id: string }) {
         />
       )}{' '}
       {settings && <MachineSettings id={id} onClose={() => setSettings(false)} />}
+      {transferRecipes && (
+        <TransferDialog
+          recipes={hub.recipes}
+          initialDeviceID={id}
+          onClose={() => {
+            setTransferRecipes(false)
+            native.reload()
+          }}
+          onComplete={native.reload}
+        />
+      )}
+      {editRecipe && (
+        <InstalledProgramDialog
+          deviceID={id}
+          initial={editRecipe}
+          onClose={() => setEditRecipe(null)}
+          onSaved={native.reload}
+        />
+      )}
       {editing && <DeviceDialog device={device} onClose={() => setEditing(false)} />}
       {removing && (
         <RemoveDeviceDialog

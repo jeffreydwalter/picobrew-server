@@ -1,0 +1,407 @@
+{
+  "entries": [
+    {
+      "original_address": "0x2000621c",
+      "replacement": "pico_device_spi_initialize",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000624c",
+      "replacement": "pico_device_spi_selected_byte",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000629c",
+      "replacement": "pico_device_spi_command",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000ca5c",
+      "replacement": "pico_device_stepper_ready",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000ca7e",
+      "replacement": "pico_device_wait_stepper",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000cb40",
+      "replacement": "pico_device_buzzer",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000cb46",
+      "replacement": "pico_device_buzzer",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000ccac",
+      "replacement": "pico_device_stepper_capabilities",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000ccd8",
+      "replacement": "pico_device_detect_stepper",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000cd24",
+      "replacement": "pico_device_set_torque",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000cd4c",
+      "replacement": "pico_device_move_compartment",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000d40c",
+      "replacement": "pico_device_move_home",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20005078",
+      "replacement": "pico_device_filter_input_initialize",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20006666",
+      "replacement": "pico_device_temperature_inputs_initialize",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20004f88",
+      "replacement": "pico_device_wait_for_filter",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20009674",
+      "replacement": "pico_device_service_button",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000cc00",
+      "replacement": "pico_device_alarm_while_filter_missing",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000cc50",
+      "replacement": "pico_device_alarm_until_encoder_press",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000c880",
+      "replacement": "pico_device_check_thermoblock_heating",
+      "source": "src/device.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_device.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018494",
+      "replacement": "pico_rfid_construct",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x200184a0",
+      "replacement": "pico_rfid_configure_spi",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x200184bc",
+      "replacement": "pico_rfid_write_register",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018500",
+      "replacement": "pico_rfid_write_register_buffer",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018550",
+      "replacement": "pico_rfid_read_register",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018598",
+      "replacement": "pico_rfid_read_register_buffer",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x200185ac",
+      "replacement": "pico_rfid_set_register_bits",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x200185ca",
+      "replacement": "pico_rfid_clear_register_bits",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x200185e8",
+      "replacement": "pico_rfid_calculate_crc",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2001865e",
+      "replacement": "pico_rfid_reset",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018698",
+      "replacement": "pico_rfid_initialize_reader",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018724",
+      "replacement": "pico_rfid_antenna_off",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2001872c",
+      "replacement": "pico_rfid_communicate",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018888",
+      "replacement": "pico_rfid_transceive",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018916",
+      "replacement": "pico_rfid_request",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018928",
+      "replacement": "pico_rfid_select",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018b9a",
+      "replacement": "pico_rfid_power_down",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018bbc",
+      "replacement": "pico_rfid_power_up",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018bd8",
+      "replacement": "pico_rfid_halt",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018c22",
+      "replacement": "pico_rfid_is_new_card_present",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20018c44",
+      "replacement": "pico_rfid_read_card_serial",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20006040",
+      "replacement": "pico_rfid_probe",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000c900",
+      "replacement": "pico_rfid_application_initialize",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid_application.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20006070",
+      "replacement": "pico_rfid_read_uid_until_click",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid_application.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20006104",
+      "replacement": "pico_rfid_read_uid",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid_application.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000c94c",
+      "replacement": "pico_rfid_wait_for_picopak",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid_application.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x2000ca34",
+      "replacement": "pico_rfid_read_picopak",
+      "source": "src/rfid.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_rfid_application.py",
+      "notes": "Original/rebuilt ARM comparisons at documented service boundaries; not exhaustive input or physical coverage."
+    },
+    {
+      "original_address": "0x20012e10",
+      "replacement": "pico_application_loop",
+      "source": "src/application.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_application.py",
+      "notes": "Boot/recovery/service branches and main menu dispatch are compared at existing domain entry points."
+    },
+    {
+      "original_address": "0x20012e9c",
+      "replacement": "pico_application_loop",
+      "source": "src/application.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_application.py",
+      "notes": "Boot/recovery/service branches and main menu dispatch are compared at existing domain entry points."
+    },
+    {
+      "original_address": "0x200131bc",
+      "replacement": "pico_application_setup",
+      "source": "src/application.c",
+      "status": "implemented_and_tested",
+      "validation": "tests/test_application.py",
+      "notes": "Boot/recovery/service branches and main menu dispatch are compared at existing domain entry points."
+    },
+    {
+      "original_address": "0x20004f98",
+      "replacement": "!pico_filter_is_inserted(actuators)",
+      "source": "src/device.c",
+      "status": "inlined_predicate",
+      "validation": [
+        "tests/test_actuators.py",
+        "tests/test_device.py"
+      ],
+      "notes": "Original is (inserted^1)&255; filter implementation returns0 or1. Original complement executes in alarm differential paths."
+    }
+  ]
+}

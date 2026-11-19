@@ -1,0 +1,286 @@
+{
+  "passed": true,
+  "full_firmware_linked": true,
+  "hardware_tested": false,
+  "reference_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "indexed_application_entries": 462,
+  "accounted_application_entries": 462,
+  "additional_dependency_or_unindexed_entries": 79,
+  "production_c_modules": 39,
+  "production_cpp_units": 4,
+  "compiler": "arm-none-eabi-gcc (GNU Arm Embedded Toolchain 10.3-2021.10) 10.3.1 20210824 (release)",
+  "runtime": "Compiler-provided newlib-nano stdio, full-newlib allocation family, bounded SDK heap adapter, libm/libgcc/libnosys and pinned Energia/TI SDK",
+  "application_elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "validated_scenarios": 29145,
+  "failures": 0,
+  "suites": [
+    {
+      "name": "sensors",
+      "scenarios": 16384,
+      "failures": 0,
+      "report": "analysis/sensor_tests.json",
+      "report_sha256": "2bcd344b257908fbf39682e6248c08593e5a1429f406d726794615110ee9a2c4",
+      "scope": "Exact returned binary32 bits across ADC 0..4095; pin26 session1 and pin25 sessions1/2/4. Original math instructions and linked rebuilt math library execute."
+    },
+    {
+      "name": "actuators",
+      "scenarios": 195,
+      "failures": 0,
+      "report": "analysis/actuator_tests.json",
+      "report_sha256": "af6e77094b7e1f8dae0f1404e4c66cd6c84c03b8433713c4d6b82c8d355bfc7f",
+      "scope": "Ordered GPIO/mode/delay calls and meaningful returns; original filter predicate executes. UI pause/prompt boundaries are controlled and restore the filter."
+    },
+    {
+      "name": "state_pid",
+      "scenarios": 524,
+      "failures": 0,
+      "report": "analysis/state-pid-tests.json",
+      "report_sha256": "26ffa66f51c6bb2f53416a390b02d4a699357b735ca0ae66ce4db2068d8f3656",
+      "scope": "Original global initializer/PID/telemetry/menu/numeric instructions versus portable compiled C; 8 KiB of application RAM, service ordering and state at each service boundary compared. SDK construction/registration calls mocked."
+    },
+    {
+      "name": "control",
+      "scenarios": 812,
+      "failures": 0,
+      "report": "analysis/control-tests.json",
+      "report_sha256": "06f0ed462fccb7cad1c408d5828410044c2fb5bc6129e04b3d9f93732767676a",
+      "scope": "Compiled relocatable C including real C PID versus original ARM ISR/control/PID instructions. State bytes, signal values, meaningful return values, and ordered I/O events compared."
+    },
+    {
+      "name": "phases",
+      "scenarios": 1163,
+      "failures": 0,
+      "report": "analysis/phase-tests.json",
+      "report_sha256": "95d7462791e43451b59d158efc457fb8ed4624fd916eb52af9f18d62febc44d4",
+      "scope": "Exact controller/auxiliary state bytes, meaningful returns, and ordered I/O events with state snapshots. Original and rebuilt phase, control/PID, filter debounce and actuator logic execute."
+    },
+    {
+      "name": "device",
+      "scenarios": 170,
+      "failures": 0,
+      "report": "analysis/device-tests.json",
+      "report_sha256": "15b7f6b03dd1329cff880929d7e6e049d887a34eb88ec652a9239c28d022bff6",
+      "scope": "Original and rebuilt device instructions; exact ordered auxiliary SPI, GPIO, clock, UI/error/log boundary events and application state. Filter predicate, actuator and controller-stop functions are previously verified service boundaries."
+    },
+    {
+      "name": "rfid",
+      "scenarios": 397,
+      "failures": 0,
+      "report": "analysis/rfid-tests.json",
+      "report_sha256": "c75955709e5cbda629826258fcfb67b44fd5b2296a1b4942cb22ef364f269534",
+      "scope": "Original and rebuilt RFID register, FIFO, CRC, request, anti-collision/select, power and probe instructions execute. Hardware SPI/GPIO/register behavior is a deterministic model; state, returns and exact I/O ordering compared."
+    },
+    {
+      "name": "rfid_application",
+      "scenarios": 61,
+      "failures": 0,
+      "report": "analysis/rfid-application-tests.json",
+      "report_sha256": "71843e46af5d432c0c9d271b059fdf5fdda36359d564914e12df07ed47fb9eb8",
+      "scope": "Application UID reads run through actual RFID register/FIFO/CRC/select code, deterministic SPI model, encoder/filter/time boundaries. Error, cancellation, filter timeout and UID lengths compared; capacity repairs checked with canaries."
+    },
+    {
+      "name": "application",
+      "scenarios": 37,
+      "failures": 0,
+      "report": "analysis/application-tests.json",
+      "report_sha256": "7a4d371bc5a849799bceb63ed680121d32166868cc8b3ba822e318a18a52a72a",
+      "scope": "Original/rebuilt startup and six-way main menu orchestration traces, required application service tables and real network-to-display context binding. Domain workflows are intercepted here and tested separately."
+    },
+    {
+      "name": "network",
+      "scenarios": 3453,
+      "failures": 0,
+      "report": "analysis/network-tests.json",
+      "report_sha256": "f4d40e5e68ad849d1b8094dad0524e3a0a4cbfa4d8d7da498163238892e609be",
+      "scope": "Function-level original Thumb/recompiled ARM differential and bounded I/O scenarios; no radio, flash-device, MCU or appliance test."
+    },
+    {
+      "name": "network_direct",
+      "scenarios": 185,
+      "failures": 0,
+      "report": "analysis/network-direct-tests.json",
+      "report_sha256": "2694805d4ca9cf8afbdadee4eaa2218b6d67237498ef7432bca18ba448f15ea6",
+      "scope": "Direct comparisons for previously review-only Pico network/storage entries.\n\nOriginal Thumb and rebuilt ARM bodies execute independently. Subordinate\nservices are controlled explicitly; state, returns and ordered effects are\ncompared. Folded helpers and deliberate repaired inputs are labeled separately.\nNo socket, radio, flash, or physical brewer is operated.\n"
+    },
+    {
+      "name": "network_direct_still",
+      "scenarios": 163,
+      "failures": 0,
+      "report": "analysis/network-direct-still-tests.json",
+      "report_sha256": "b58b9174fc4b0d62b302b0edc2e9f9b7861835e0a1f586505ac6e76683018c22",
+      "scope": "Original/rebuilt Still-network comparisons at explicit subordinate boundaries.\n\nThe real original and reconstructed control flow, formatting, parsers, owned\nstate and failure handling execute. Scripted Still replies and SDK/UI services\nreplace external I/O. Folded IPv4 helpers and malformed-input repairs are\nidentified separately. No hardware or network session is operated.\n"
+    },
+    {
+      "name": "recipe",
+      "scenarios": 1735,
+      "failures": 0,
+      "report": "analysis/recipe-tests.json",
+      "report_sha256": "2def63bd6683461036b33ee17df5f747d8610d012cdc88d67f2800381b72ab33",
+      "scope": "UI, network, clock, mechanics, and previously verified core controller/phase routines are explicit controlled boundaries. The original and candidate run in separate ARM emulator instances."
+    },
+    {
+      "name": "ui",
+      "scenarios": 643,
+      "failures": 0,
+      "report": "analysis/ui-tests.json",
+      "report_sha256": "414c5864178d6efa89d75341fa9f4fb2e541a6a4971163c33044573ced8f91d0",
+      "scope": "Original/rebuilt ARM states and ordered observable effects; domain report records exact cases."
+    },
+    {
+      "name": "ui_interactions",
+      "scenarios": 668,
+      "failures": 0,
+      "report": "analysis/ui-interactions-tests.json",
+      "report_sha256": "20183b8f33871a3af2c2a7e1c990d87fae1a15ccad9932113ed07ef0a5936396",
+      "scope": "Original/rebuilt ARM states and ordered observable effects; domain report records exact cases."
+    },
+    {
+      "name": "ui_workflows",
+      "scenarios": 396,
+      "failures": 0,
+      "report": "analysis/ui-workflows-tests.json",
+      "report_sha256": "8ee4d03e9b3cf6ac361170d172d87aa80d0cc9a2195b64fb9798f2e7b5e89624",
+      "scope": "Original/rebuilt ARM states and ordered observable effects; domain report records exact cases."
+    },
+    {
+      "name": "ui_direct_display",
+      "scenarios": 1064,
+      "failures": 0,
+      "report": "analysis/ui-direct-display-tests.json",
+      "report_sha256": "a1e60523800cae2f1f789830cd70dabff096fb7ae3d6eb4f2c40a8c4bf4becfc",
+      "scope": "Direct original/rebuilt ARM checks for the remaining display-side entries.\n\nDraws through the real reconstructed and original rasterizers. OLED flushes,\nclocks and SDK MAC retrieval are explicit boundaries; returned strings,\nassertions/logging, mutable state, complete framebuffers and flush sequences\nare compared. Removed SDK field thunks are compared with owned public fields.\n"
+    },
+    {
+      "name": "ui_direct_menus",
+      "scenarios": 306,
+      "failures": 0,
+      "report": "analysis/ui-direct-menus-tests.json",
+      "report_sha256": "062201f61816ab94173293804961c80a6e255978044ee463d2ffa9b2d6967ce3",
+      "scope": "Direct original and reconstructed ARM entry execution with actual rasterization and menu/state mutation. Ordered screen, input, actuator, storage, network and diagnostic-dispatch effects are compared at explicitly controlled subordinate boundaries. Synthetic callback tables use compiler DWARF field offsets. No physical peripheral timing, appliance startup or complete brew is exercised."
+    },
+    {
+      "name": "ui_direct_workflows",
+      "scenarios": 543,
+      "failures": 0,
+      "report": "analysis/ui-direct-workflows-tests.json",
+      "report_sha256": "905e57c927bc32bbcd071b87fefd0bc675067103ffd3f94a1f179660b5b790ad",
+      "scope": "Direct original/rebuilt ARM entry execution. Actual framebuffers, flushed frames, menu labels, settings, returns and ordered service requests are compared; hardware/network/recipe services and user input are explicitly controlled. Not physical or exhaustive path validation."
+    }
+  ],
+  "native_socket_scenarios": 32,
+  "full_image_update_receiver_scenarios": 1,
+  "native_startup_scenarios": 4,
+  "native_startup_assertions": 1632,
+  "native_boundary_scenarios": 56,
+  "native_allocator_scenarios": 47,
+  "native_allocator_assertions": 92214,
+  "native_allocator_calls": 1183,
+  "native_serial_scenarios": 106,
+  "immutable_asset_checks": 52,
+  "immutable_asset_arrays": 44,
+  "immutable_asset_bytes": 8836,
+  "edit_rebuild_checks": 20,
+  "firmware": {
+    "binary_bytes": 160296,
+    "binary_sha256": "ae2703e62fea7c56e266c5aefcdd98b1170b9fce45b2696124838d8c1551e31b",
+    "elf_sha256": "38d4e0426c0928ad9b84c862979c539f788168a2f4e66c6f0ef7071d47e33cd6",
+    "layout": {
+      "passed": true,
+      "load_address": "0x20004000",
+      "ram_end": "0x20040000",
+      "initial_stack_pointer": "0x20033400",
+      "reset_vector": "0x20017a45",
+      "entry": "0x20017a45",
+      "binary_bytes": 160296,
+      "bss_bytes": 49240,
+      "heap_bytes": 32768,
+      "sdk_stack_bytes": 32768,
+      "unallocated_ram_bytes": 2984,
+      "load_segments": [
+        {
+          "start": "0x20004000",
+          "memory_bytes": 160296,
+          "file_bytes": 160296
+        }
+      ],
+      "undefined_symbols": [],
+      "test_symbols": [],
+      "required_entry_symbols": {
+        "ResetISR": "0x20017a45",
+        "main": "0x2001ad21",
+        "setup": "0x20004569",
+        "loop": "0x20004575",
+        "pico_application_setup": "0x20005001",
+        "pico_application_loop": "0x200051f9",
+        "pico_application_initialize": "0x2000d9e9",
+        "pico_application_bind_services": "0x20004ee5",
+        "pico_recipe_run_step": "0x20009be1",
+        "pico_temperature_control_timer_isr": "0x2000578d",
+        "pico_heater_pump_timer_isr": "0x20005859",
+        "g_pfnVectors": "0x20004000",
+        "_heap": "0x20037458",
+        "_eheap": "0x2003f458",
+        "_bss": "0x2002b400",
+        "_ebss": "0x20037458"
+      }
+    }
+  },
+  "sdk": {
+    "upstream_sources_compiled": 53,
+    "retained_public_definitions": 579,
+    "undefined_symbols": [],
+    "upstream_warnings": 52
+  },
+  "production_source_check": {
+    "passed": true,
+    "production_files": 65,
+    "findings": [],
+    "scope": "No old application RAM/code address calls, unresolved-return macros or raw decompiler labels in production C/C++ after removing comments. Explicit TI peripheral addresses are allowed."
+  },
+  "test_source_sha256": {
+    "tests/test_network_direct.py": "baa4c37752cf5a191426b8cfb19f5c2fed57997178c662adbeb7f5490ba1783f",
+    "tests/test_native_startup.py": "66af69e42ebeb4c18d236fe39ae990924a7f76b617fb1e7836f025eb85b628ab",
+    "tests/actuator_fixture.c": "f6c4ead6b42dd15e27dd22af48722ecd6fc30d0fcd0d5d11a6fe256de3e39f69",
+    "tests/recipe_fixture.c": "e7f9c01de8f6e4963f29b94f8e4fdcee104e2a3c7f39296255b6d8a6b5b6ab28",
+    "tests/test_recipe.py": "7568d04712b843c401616c13401aa4faa7ff361fbd3af01850f06965efa8fbb6",
+    "tests/test_rfid_application.py": "84c35d7196c6fe0a1ff1a40a7df19ccd94b17e822679933f9a33edcdd2eb5c7d",
+    "tests/phase_fixture.c": "5b5571c042cb645326affee42efb7f0367b9011094c2bfea914aeefc6fb96567",
+    "tests/test_native_network_direct.py": "3f32fcf566201e2d7808b4eb195401bab7bbc4ce92f7a7198a14fd77955916be",
+    "tests/recipe_reference.json": "6f089cb5420f60aa917507ad97c094874d767a9dfacc7635fb85ec52c1da6eac",
+    "tests/test_ui.py": "587770e9f6cf61ec1f4bb8b76b006804c4f302ea176e3a14fde77e7422f538b9",
+    "tests/test_state_pid.py": "73b545f29fc0df243144a72454b575e4f85650343c17cd0d50ce6ed8d0ecece1",
+    "tests/test_ui_interactions.py": "ddd780c49e2f2a6d0f8e73f201a84d48cf6722073827377ac0c7dda6a69aef7e",
+    "tests/network_fixture.c": "725d5b71821547fbacecec282c828e3e545f52e21abd490aac367bc9f9057f2d",
+    "tests/test_edit_rebuild.py": "8002d114ca5a7daba3e0922d67726da2b7fdf99c1f3843f368a6811f330dd1bf",
+    "tests/test_application.py": "2f01327002128e8d3157d6122bf117a7cbfa1e88a7478a97b2d642b396c07288",
+    "tests/test_rfid.py": "96fd23e477afb2d1060c96f9bf083818171ad74c601645860c423ee134d6f912",
+    "tests/test_ui_assets.py": "a97470e637161c389e569f4fb24d14a3c34ac38e54faefc3b5dc4ac0deab969d",
+    "tests/test_network_direct_still.py": "e276aca28b5746dcac985d4a05c82601400db7e6026629f7818246a581fbf79f",
+    "tests/ui_original_entries.json": "048b5fbe9b937440b50cf9867c2ff14864e7f0975f3a63967d29f98f2fca59b7",
+    "tests/test_native_allocator.py": "283d6dfc18686e30347650c00914e9e0eff29ca859970893e4542cd47aa17c1e",
+    "tests/test_ui_workflows.py": "fe8bc6a00db97422a5b49a66dd4deeb13ebd2c45b0ef3751e16180aeab2fcbab",
+    "tests/control_fixture.c": "cdb7867428de9e65d3c5a769c8674e64a35806817c8d5b6ce46aa6c9522c767a",
+    "tests/test_native_network.py": "3b71bfeb76e909d20ae4f477567def33ed3ac675267fe15ee7d92d6ec4668cc2",
+    "tests/test_device.py": "546849c8a2a645773211614f28276835bb037535bf3e08c5099ba57e0b5242bc",
+    "tests/fast_arm.py": "99d1d019889042234438811cb8880816f060db90de70dfec2405c06b57feeb12",
+    "tests/test_ui_direct_workflows.py": "d04a81b862c9fb40ef382491df94966bb589483edb08947aa71c187d3dabe71d",
+    "tests/test_ui_direct_display.py": "ff220f5d81938dd44e625e48cfdf778ecba02e6cdbd9a3b45f9fa3b8814684d4",
+    "tests/state_pid_fixture.c": "4ad11028ddbdaaee7262f6a928ac2e082e83966cf79c67e45b7f1d1508162066",
+    "tests/device_fixture.c": "5a08f15689edb4e9358a744b977a1a399886391b71a2523943f4320c78982a25",
+    "tests/test_actuators.py": "04d36e0a97a479def2a9b6960c90ffa345c942d7bf0c6fb5023c73e50cd01b82",
+    "tests/ui_original_inventory.json": "0cd32b3cfc5e1b4b8a3e0c87621e927f090f3aa66d648262346695326a5dea85",
+    "tests/test_update_package.py": "f3a3cd5936a18b5fd24cd13ccbb4268cbcc23969e2f6b288724183601aaf5650",
+    "tests/test_network.py": "19b38d642a58fe30379a3819ff78f698a582fbb3b905032cd7d49b7bd2a33634",
+    "tests/test_native_serial.py": "b1fd1c528ff121384d75763c475ab3c2dca7ee6f45ec12abf2e685cf21b54f6c",
+    "tests/application_fixture.c": "8f6958e5b52fb911cb19cb403858156e9c71da169c3683bda23d4410ebf8f3ff",
+    "tests/test_phase.py": "5396a2e291e643b8702991ea677333d27dc3fb88cdbbdbb401c4b172f7d366e7",
+    "tests/rfid_fixture.c": "10a1923c376535b7b0cbf6b7225dad5db526bc5716019f54e860883bed6ae894",
+    "tests/ui_test_support.py": "54fef2e5f2f01e87c0a8e7976e994dd73b704ba081fe3459a9b3f0759492f344",
+    "tests/test_control.py": "9869fed170a4e3eb0c5d226b82ca1e7d2b4edf187ced3964aea6060afa92403b",
+    "tests/test_sensors.py": "8ae2b4a08cc700aecb94c0ffdb5f8e451b3d70556adcd50ac842fef3c11d01ff",
+    "tests/ui_fixture.c": "e5eed2751cbce20ce3ce1c91c8ff39435955e8b53ab96875482e5bc69bb2f99d",
+    "tests/test_ui_direct_menus.py": "042d0f3aa0ccb45b2eedfd38b53ef7668347b71e37de4652103d7d29a58130f9",
+    "tests/validation_entry.c": "7dd12a304b183cac9cc3bc579c8b50b0e7ef663677a3bea21c66d49a4efa78a4"
+  },
+  "limits": "Counts combine exact original/rebuilt ARM comparisons, documented bounded-input regressions and concrete integration checks. Complete entry accounting is not exhaustive path coverage. No physical device, real radio/flash, interrupt race, full brew, installation or recovery test was performed."
+}

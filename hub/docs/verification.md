@@ -1,5 +1,18 @@
 # Verification record
 
+## Community catalogue and bulk transfers — local checks, 19 November 2026
+
+- Full Go package suite with the race detector, `go vet ./...`, and production build: passed.
+- Eight Python conversion, static-asset and cross-component tests: passed. The mandatory starter check compares the firmware's eight default programs with the bundled catalogue, including IDs, names, exact steps and source hashes.
+- Catalogue integrity checks cover every copyable entry, every advertised native deployment, original source checksums, excluded malformed/empty records, local asset containment and immutable source data.
+- Transfer tests cover slot limits, preserving existing programs by default, explicitly updating matching IDs, no duplicate execution, changes to source revisions/profiles/inventory/capabilities, busy machines, uncertain writes and receipt recovery after restart.
+- Installed-slot editing tests cover idle-state checks, stale expected values, verified write outcomes and absence of automatic brew starts.
+- Frontend typecheck/build and all 22 unit tests: passed.
+- All seven DOM integration tests against an isolated Go simulator: passed. The added workflows exercise catalogue lookup, copying, exact zero-minute schedules, bulk preview/transfer, installed-slot editing, overwrite prevention, cleaning records and local artwork/source credits.
+- Local Chromium launch was blocked before reaching the application by a denied browser socket operation. Real-browser/mobile assertions and screenshots must be verified in the published commit's GitHub Actions run.
+
+These are local implementation checks. They do not claim a new physical brewing test or a successful remote CI run; the exact published commit's checks provide that evidence.
+
 ## Machine management and device-key advisory — local checks
 
 - Full Go race tests, vet and production build: passed.

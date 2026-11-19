@@ -1,0 +1,429 @@
+Read-only return-contract audit. ARM Thumb, little-endian, soft-float; firmware base0x20004000.
+Raw binary SHA256 e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702.
+Function body sizes from original metadata; trailing literal bytes may appear as instructions.
+
+
+FUNCTION 20006680 FUN_20006680
+20006680: push {r3, r4, r5, r6, r7, lr}
+20006682: movs r0, #0x1a
+20006684: bl #0x20018f98
+20006688: movs r1, #0
+2000668a: mov r4, r0
+2000668c: movs r0, #0x1a
+2000668e: bl #0x20019054
+20006692: adds r0, r4, #1
+20006694: bl #0x20020df0
+20006698: adr r3, #0xc4
+2000669a: ldrd r2, r3, [r3]
+2000669e: mov r6, r0
+200066a0: mov r7, r1
+200066a2: bl #0x20020ebc
+200066a6: mov r2, r6
+200066a8: mov r4, r0
+200066aa: mov r5, r1
+200066ac: mov r3, r7
+200066ae: adr r1, #0xb8
+200066b0: ldrd r0, r1, [r1]
+200066b4: bl #0x20020b54
+200066b8: mov r2, r0
+200066ba: mov r3, r1
+200066bc: mov r0, r4
+200066be: mov r1, r5
+200066c0: bl #0x20021110
+200066c4: bl #0x200213f0
+200066c8: bl #0x20020df0
+200066cc: bl #0x2001a950
+200066d0: bl #0x20021480
+200066d4: bl #0x20020e14
+200066d8: adr r3, #0x94
+200066da: ldrd r2, r3, [r3]
+200066de: mov r4, r0
+200066e0: mov r5, r1
+200066e2: bl #0x20020ebc
+200066e6: adr r3, #0x90
+200066e8: ldrd r2, r3, [r3]
+200066ec: bl #0x20020b58
+200066f0: adr r3, #0x8c
+200066f2: ldrd r2, r3, [r3]
+200066f6: mov r6, r0
+200066f8: mov r7, r1
+200066fa: mov r0, r4
+200066fc: mov r1, r5
+200066fe: bl #0x20020ebc
+20006702: mov r2, r4
+20006704: mov r3, r5
+20006706: bl #0x20020ebc
+2000670a: mov r2, r4
+2000670c: mov r3, r5
+2000670e: bl #0x20020ebc
+20006712: mov r2, r0
+20006714: mov r3, r1
+20006716: mov r0, r6
+20006718: mov r1, r7
+2000671a: bl #0x20020b58
+2000671e: mov r2, r0
+20006720: mov r3, r1
+20006722: movs r0, #0
+20006724: ldr r1, [pc, #0x70]
+20006726: bl #0x20021110
+2000672a: bl #0x20021480
+2000672e: bl #0x20020e14
+20006732: adr r3, #0x54
+20006734: ldrd r2, r3, [r3]
+20006738: bl #0x20020b54
+2000673c: bl #0x20021480
+20006740: bl #0x20020e14
+20006744: adr r3, #0x48
+20006746: ldrd r2, r3, [r3]
+2000674a: bl #0x20020ebc
+2000674e: movs r2, #0
+20006750: ldr r3, [pc, #0x48]
+20006752: bl #0x20020b58
+20006756: bl #0x20021480
+2000675a: pop {r3, r4, r5, r6, r7, pc}
+
+FUNCTION 200067a0 FUN_200067a0
+200067a0: push {r3, r4, r5, r6, r7, lr}
+200067a2: movs r0, #0x19
+200067a4: bl #0x20018f98
+200067a8: movs r1, #0
+200067aa: mov r4, r0
+200067ac: movs r0, #0x19
+200067ae: bl #0x20019054
+200067b2: adds r0, r4, #1
+200067b4: bl #0x20020df0
+200067b8: adr r3, #0xd4
+200067ba: ldrd r2, r3, [r3]
+200067be: mov r6, r0
+200067c0: mov r7, r1
+200067c2: bl #0x20020ebc
+200067c6: mov r2, r6
+200067c8: mov r4, r0
+200067ca: mov r5, r1
+200067cc: mov r3, r7
+200067ce: adr r1, #0xc8
+200067d0: ldrd r0, r1, [r1]
+200067d4: bl #0x20020b54
+200067d8: mov r2, r0
+200067da: mov r3, r1
+200067dc: mov r0, r4
+200067de: mov r1, r5
+200067e0: bl #0x20021110
+200067e4: bl #0x200213f0
+200067e8: bl #0x20020df0
+200067ec: bl #0x2001a950
+200067f0: bl #0x20021480
+200067f4: bl #0x20020e14
+200067f8: adr r3, #0xa4
+200067fa: ldrd r2, r3, [r3]
+200067fe: mov r4, r0
+20006800: mov r5, r1
+20006802: bl #0x20020ebc
+20006806: adr r3, #0xa0
+20006808: ldrd r2, r3, [r3]
+2000680c: bl #0x20020b58
+20006810: adr r3, #0x9c
+20006812: ldrd r2, r3, [r3]
+20006816: mov r6, r0
+20006818: mov r7, r1
+2000681a: mov r0, r4
+2000681c: mov r1, r5
+2000681e: bl #0x20020ebc
+20006822: mov r2, r4
+20006824: mov r3, r5
+20006826: bl #0x20020ebc
+2000682a: mov r2, r4
+2000682c: mov r3, r5
+2000682e: bl #0x20020ebc
+20006832: mov r2, r0
+20006834: mov r3, r1
+20006836: mov r0, r6
+20006838: mov r1, r7
+2000683a: bl #0x20020b58
+2000683e: mov r2, r0
+20006840: mov r3, r1
+20006842: movs r0, #0
+20006844: ldr r1, [pc, #0x80]
+20006846: bl #0x20021110
+2000684a: bl #0x20021480
+2000684e: bl #0x20020e14
+20006852: adr r3, #0x64
+20006854: ldrd r2, r3, [r3]
+20006858: bl #0x20020b54
+2000685c: bl #0x20021480
+20006860: bl #0x20020e14
+20006864: adr r3, #0x58
+20006866: ldrd r2, r3, [r3]
+2000686a: bl #0x20020ebc
+2000686e: ldr r3, [pc, #0x5c]
+20006870: movs r2, #0
+20006872: bl #0x20020b58
+20006876: bl #0x20021480
+2000687a: ldr r3, [pc, #0x54]
+2000687c: ldr r3, [r3, #0x30]
+2000687e: cmp r3, #2
+20006880: beq #0x20006886
+20006882: cmp r3, #4
+20006884: bne #0x2000688e
+20006886: mov.w r1, #0x40000000
+2000688a: bl #0x20021528
+2000688e: pop {r3, r4, r5, r6, r7, pc}
+
+FUNCTION 20005c00 FUN_20005c00
+20005c00: push {r4, r5, r6, lr}
+20005c02: sub sp, #0x60
+20005c04: bl #0x20018efc
+20005c08: add r1, sp, #4
+20005c0a: mov r5, r0
+20005c0c: ldr r0, [pc, #0x88]
+20005c0e: bl #0x20014b9c
+20005c12: movs r0, #0x12
+20005c14: movs r1, #1
+20005c16: bl #0x20019d64
+20005c1a: ldr r0, [pc, #0x80]
+20005c1c: ldr r1, [pc, #0x80]
+20005c1e: bl #0x2001a004
+20005c22: ldr r0, [pc, #0x78]
+20005c24: movs r1, #0xf
+20005c26: bl #0x20019fa0
+20005c2a: ldr r3, [pc, #0x78]
+20005c2c: ldrb r4, [r3]
+20005c2e: cbnz r4, #0x20005c42
+20005c30: bl #0x20018efc
+20005c34: movw r3, #0x2710
+20005c38: subs r0, r0, r5
+20005c3a: cmp r0, r3
+20005c3c: bls #0x20005c2a
+20005c3e: mov r0, r4
+20005c40: b #0x20005c92
+20005c42: ldr r0, [pc, #0x58]
+20005c44: movs r1, #0x18
+20005c46: movs r4, #0
+20005c48: add r6, sp, #0x20
+20005c4a: strb r4, [r3]
+20005c4c: bl #0x2001a016
+20005c50: ldr r0, [pc, #0x48]
+20005c52: add r1, sp, #4
+20005c54: movs r2, #6
+20005c56: mov r3, r6
+20005c58: bl #0x2001a0ec
+20005c5c: ldrb r5, [r6, r4]
+20005c5e: cmp r5, #0xf
+20005c60: bhi #0x20005c6a
+20005c62: ldr r0, [pc, #0x44]
+20005c64: ldr r1, [pc, #0x44]
+20005c66: bl #0x2001bb84
+20005c6a: add r1, sp, #0xc
+20005c6c: movs r2, #0x10
+20005c6e: mov r0, r5
+20005c70: bl #0x20018cc4
+20005c74: adds r4, #1
+20005c76: mov r1, r0
+20005c78: ldr r0, [pc, #0x2c]
+20005c7a: bl #0x2001bb84
+20005c7e: cmp r4, #0x10
+20005c80: bne #0x20005c5c
+20005c82: ldr r3, [pc, #0x2c]
+20005c84: ldr r0, [pc, #0x14]
+20005c86: movs r2, #0
+20005c88: movs r1, #0xf
+20005c8a: strb.w r2, [r3, #0x21]
+20005c8e: bl #0x20019fd0
+20005c92: add sp, #0x60
+20005c94: pop {r4, r5, r6, pc}
+
+FUNCTION 20019fd0 SHAMD5IntDisable
+20019fd0: ldr r3, [pc, #0x2c]
+20019fd2: ldr r2, [r3]
+20019fd4: push {r4, lr}
+20019fd6: ubfx r4, r1, #0x10, #3
+20019fda: orrs r2, r4
+20019fdc: str r2, [r3]
+20019fde: ldr.w r3, [r0, #0x11c]
+20019fe2: uxth r1, r1
+20019fe4: bic.w r1, r3, r1
+20019fe8: str.w r1, [r0, #0x11c]
+20019fec: ldr.w r3, [r0, #0x11c]
+20019ff0: cbnz r3, #0x20019ffe
+20019ff2: ldr.w r3, [r0, #0x110]
+20019ff6: bic r3, r3, #4
+20019ffa: str.w r3, [r0, #0x110]
+20019ffe: pop {r4, pc}
+
+FUNCTION 2000a594 FUN_2000a594
+2000a594: push {r4, r5, r6, lr}
+2000a596: ldr r5, [pc, #0x2c]
+2000a598: ldr r0, [pc, #0x2c]
+2000a59a: adds r1, r5, #1
+2000a59c: movs r2, #0x21
+2000a59e: bl #0x2000a538
+2000a5a2: mov r4, r0
+2000a5a4: mov r6, r0
+2000a5a6: cbnz r0, #0x2000a5be
+2000a5a8: bl #0x20005c00
+2000a5ac: mov r4, r0
+2000a5ae: cbz r0, #0x2000a5be
+2000a5b0: ldr r0, [pc, #0x14]
+2000a5b2: strb.w r6, [r5, #0x21]
+2000a5b6: adds r1, r5, #1
+2000a5b8: movs r2, #0x21
+2000a5ba: bl #0x20005678
+2000a5be: mov r0, r4
+2000a5c0: pop {r4, r5, r6, pc}
+
+FUNCTION 200093d0 FUN_200093d0
+200093d0: push {r0, r1, r4, lr}
+200093d2: movs r4, #0
+200093d4: ldrb r3, [r0, #1]
+200093d6: strb r4, [r0, #0x10]
+200093d8: ldrb r2, [r0]
+200093da: ldrb r0, [r0, #2]
+200093dc: add.w r1, r3, r3, lsl #1
+200093e0: subs r3, r0, r3
+200093e2: add.w r3, r3, r3, lsl #1
+200093e6: movs r0, #8
+200093e8: stm.w sp, {r0, r4}
+200093ec: lsls r1, r1, #1
+200093ee: ldr r0, [pc, #0x14]
+200093f0: lsls r2, r2, #3
+200093f2: lsls r3, r3, #1
+200093f4: bl #0x20013c44
+200093f8: add sp, #8
+200093fa: pop.w {r4, lr}
+200093fe: b.w #0x20004494
+
+FUNCTION 20004494 FUN_20004494
+20004494: ldr r0, [pc, #4]
+20004496: b.w #0x20013a04
+2000449a: nop 
+
+FUNCTION 200059f4 FUN_200059f4
+200059f4: push {r0, r1, r2, lr}
+200059f6: ldr r3, [pc, #0x20]
+200059f8: ldrd r0, r1, [r3]
+200059fc: bl #0x20021480
+20005a00: mov r1, sp
+20005a02: movs r2, #3
+20005a04: bl #0x20005950
+20005a08: mov r1, sp
+20005a0a: movs r2, #6
+20005a0c: ldr r0, [pc, #0xc]
+20005a0e: bl #0x20005678
+20005a12: add sp, #0xc
+20005a14: ldr pc, [sp], #4
+
+FUNCTION 200096a0 FUN_200096a0
+200096a0: push {r0, r1, r2, r3, r4, r5, r6, lr}
+200096a2: movs r0, #6
+200096a4: bl #0x200094b0
+200096a8: ldr r3, [pc, #0x28]
+200096aa: ldrb r3, [r3]
+200096ac: cmp r3, #1
+200096ae: mov r0, sp
+200096b0: beq #0x200096ba
+200096b2: cmp r3, #2
+200096b4: beq #0x200096be
+200096b6: ldr r1, [pc, #0x20]
+200096b8: b #0x200096c0
+200096ba: ldr r1, [pc, #0x20]
+200096bc: b #0x200096c0
+200096be: ldr r1, [pc, #0x20]
+200096c0: bl #0x2001bdec
+200096c4: movs r0, #6
+200096c6: movs r1, #0
+200096c8: mov r2, sp
+200096ca: bl #0x20005284
+200096ce: add sp, #0x1c
+200096d0: ldr pc, [sp], #4
+
+FUNCTION 20005028 FUN_20005028
+20005028: ldrb.w r3, [r0, #0x61]
+2000502c: push {r4, lr}
+2000502e: mov r4, r0
+20005030: cbnz r3, #0x20005070
+20005032: str.w r3, [r0, #0x1a4]
+20005036: str.w r3, [r0, #0x1ac]
+2000503a: bl #0x20018efc
+2000503e: str.w r0, [r4, #0x200]
+20005042: ldr.w r3, [r4, #0x200]
+20005046: str.w r3, [r4, #0x208]
+2000504a: add.w r0, r4, #0xb0
+2000504e: movs r1, #1
+20005050: bl #0x20014962
+20005054: add.w r0, r4, #0x128
+20005058: movs r1, #1
+2000505a: bl #0x20014962
+2000505e: add.w r4, r4, #0x1b8
+20005062: movs r2, #0
+20005064: movs r3, #0
+20005066: strd r2, r3, [r4]
+2000506a: ldr r3, [pc, #8]
+2000506c: movs r2, #1
+2000506e: strb r2, [r3]
+20005070: pop {r4, pc}
+
+FUNCTION 2000cfbc FUN_2000cfbc
+2000cfbc: push {r4, lr}
+2000cfbe: ldr r4, [pc, #0x24]
+2000cfc0: ldrb.w r3, [r4, #0x62]
+2000cfc4: cmp r3, #4
+2000cfc6: beq #0x2000cfce
+2000cfc8: bl #0x20004f64
+2000cfcc: cbz r0, #0x2000cfda
+2000cfce: movs r0, #0x1b
+2000cfd0: movs r1, #1
+2000cfd2: pop.w {r4, lr}
+2000cfd6: b.w #0x200190fc
+2000cfda: mov r0, r4
+2000cfdc: bl #0x2000cf86
+2000cfe0: b #0x2000cfce
+
+FUNCTION 2000cfe8 FUN_2000cfe8
+2000cfe8: push {r4, lr}
+2000cfea: ldr r4, [pc, #0x24]
+2000cfec: ldrb.w r3, [r4, #0x62]
+2000cff0: cmp r3, #4
+2000cff2: beq #0x2000cffa
+2000cff4: bl #0x20004f64
+2000cff8: cbz r0, #0x2000d006
+2000cffa: movs r0, #8
+2000cffc: movs r1, #1
+2000cffe: pop.w {r4, lr}
+2000d002: b.w #0x200190fc
+2000d006: mov r0, r4
+2000d008: bl #0x2000cf86
+2000d00c: b #0x2000cffa
+
+FUNCTION 2000d0e0 FUN_2000d0e0
+2000d0e0: push {r4, lr}
+2000d0e2: ldr r4, [pc, #0x24]
+2000d0e4: ldrb.w r3, [r4, #0x62]
+2000d0e8: cmp r3, #4
+2000d0ea: beq #0x2000d0f2
+2000d0ec: bl #0x20004f64
+2000d0f0: cbz r0, #0x2000d0fe
+2000d0f2: movs r0, #0x18
+2000d0f4: movs r1, #1
+2000d0f6: pop.w {r4, lr}
+2000d0fa: b.w #0x200190fc
+2000d0fe: mov r0, r4
+2000d100: bl #0x2000cf86
+2000d104: b #0x2000d0f2
+
+FUNCTION 2000d2c4 FUN_2000d2c4
+2000d2c4: push {r3, lr}
+2000d2c6: ldr r3, [pc, #0x1c]
+2000d2c8: ldr r3, [r3, #0x30]
+2000d2ca: subs r3, #3
+2000d2cc: cmp r3, #2
+2000d2ce: bls #0x2000d2d8
+2000d2d0: pop.w {r3, lr}
+2000d2d4: b.w #0x2000d288
+2000d2d8: bl #0x20005f1a
+2000d2dc: pop.w {r3, lr}
+2000d2e0: b.w #0x2000cfbc
+
+FUNCTION 20005f1a FUN_20005f1a
+20005f1a: movs r0, #8
+20005f1c: movs r1, #0
+20005f1e: b.w #0x200190fc

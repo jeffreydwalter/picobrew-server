@@ -1,0 +1,23 @@
+{
+  "evidence_source": "Owner-supplied terminal output; transcribed, not the private JSON report or a USB capture",
+  "terminal_start_timestamp_as_reported": "2026-11-17 23:33:53.120",
+  "private_report_basename": "pico-pro-key-20261117-233350.json",
+  "tool": "tools/pico_flash_install.py",
+  "install_revision": 1,
+  "operation": "provision-key",
+  "local_original_backup_verified": true,
+  "initial_rom_version_response_verified": true,
+  "bootloader_version": "0.4.1.2",
+  "uart_switch_command_acknowledged_from_logged_control_flow": true,
+  "failed_stage": "APPS INITIAL ACK",
+  "reported_error": "ProbeError: operation failed; device payload omitted",
+  "handshake_failure_reason": null,
+  "reason_unknown_because": "Revision 1 redacted the entire ProbeError, hiding timeout/NACK/byte-limit distinctions",
+  "helper_upload_reached": false,
+  "filesystem_operations_reached": false,
+  "persistent_write_attempted": false,
+  "key_provisioning_verified": false,
+  "standalone_installed_or_booted": false,
+  "software_followup": "Revision 2 preserves safe handshake stage, failure category, byte count and elapsed time while delegating to the same inherited BREAK sequence",
+  "physical_cause_established": false
+}

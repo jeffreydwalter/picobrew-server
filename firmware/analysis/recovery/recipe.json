@@ -1,0 +1,635 @@
+{
+  "reference_image_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "status_note": "All43 newly recovered domain entries compile and pass1694 original-vs-rebuilt ARM differential scenarios. Five shared phase entries were already verified in the core suite. The recipe decoder and restart parser also pass41 malformed-input checks where original undefined memory behavior is intentionally repaired.",
+  "functions": [
+    {
+      "original_address": "0x20004900",
+      "original_name": "pico_program_log_configuration",
+      "original_module": "programs",
+      "replacement": "pico_recipe_program_log",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 7
+    },
+    {
+      "original_address": "0x20004bc0",
+      "original_name": "pico_program_initialize_context",
+      "original_module": "programs",
+      "replacement": "pico_recipe_program_initialize",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 50
+    },
+    {
+      "original_address": "0x20005fdc",
+      "original_name": "pico_location_table_value",
+      "original_module": "programs",
+      "replacement": "pico_recipe_location_value",
+      "source": "src/recipe_programs.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 6
+    },
+    {
+      "original_address": "0x20006128",
+      "original_name": "pico_execute_current_program_instruction",
+      "original_module": "programs",
+      "replacement": "pico_recipe_instruction",
+      "source": "src/recipe_programs.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 12
+    },
+    {
+      "original_address": "0x20006144",
+      "original_name": "pico_prompt_manual_temperature_duration",
+      "original_module": "programs",
+      "replacement": "pico_recipe_prompt_parameters",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 1
+    },
+    {
+      "original_address": "0x20006168",
+      "original_name": "pico_execute_pause_custom_instructions",
+      "original_module": "programs",
+      "replacement": "pico_recipe_pause_instructions",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 8
+    },
+    {
+      "original_address": "0x20008244",
+      "original_name": "pico_recipe_initialize_cleaning_steps",
+      "original_module": "programs",
+      "replacement": "pico_recipe_initialize_cleaning",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 7
+    },
+    {
+      "original_address": "0x20008c90",
+      "original_name": "pico_parse_delimited_field",
+      "original_module": "parsing",
+      "replacement": "pico_recipe_delimited_field",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 250
+    },
+    {
+      "original_address": "0x20008ccc",
+      "original_name": "pico_recipe_parse_server_response",
+      "original_module": "parsing",
+      "replacement": "pico_recipe_parse_response",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 114,
+      "intentional_repairs": [
+        "Bound every text field and respect the declared input extent; reject oversized/unterminated data rather than reproducing original out-of-bounds behavior."
+      ]
+    },
+    {
+      "original_address": "0x2000cde0",
+      "original_name": "pico_controller_set_brew_phase",
+      "original_module": "brewing",
+      "replacement": "pico_phase_set",
+      "source": "src/phase.c",
+      "status": "already_verified_core",
+      "validation": [
+        "Existing ARM phase differential suite"
+      ]
+    },
+    {
+      "original_address": "0x2000cf68",
+      "original_name": "pico_controller_clear_status",
+      "original_module": "brewing",
+      "replacement": "pico_phase_clear_status",
+      "source": "src/phase.c",
+      "status": "already_verified_core",
+      "validation": [
+        "Existing ARM phase differential suite"
+      ]
+    },
+    {
+      "original_address": "0x2000cf86",
+      "original_name": "pico_controller_pause_until_resume",
+      "original_module": "brewing",
+      "replacement": "pico_phase_pause_until_resume",
+      "source": "src/phase.c",
+      "status": "already_verified_core",
+      "validation": [
+        "Existing ARM phase differential suite"
+      ]
+    },
+    {
+      "original_address": "0x2000d148",
+      "original_name": "pico_end_brew_run_outputs_for",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_end_outputs",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 15
+    },
+    {
+      "original_address": "0x2000d2c4",
+      "original_name": "pico_controller_start_circulation",
+      "original_module": "hardware_control",
+      "replacement": "pico_phase_start_circulation",
+      "source": "src/phase.c",
+      "status": "already_verified_core",
+      "validation": [
+        "Existing ARM phase differential suite"
+      ]
+    },
+    {
+      "original_address": "0x2000d2e8",
+      "original_name": "pico_handle_filter_removal",
+      "original_module": "hardware_control",
+      "replacement": "pico_recipe_handle_filter_removal",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 2
+    },
+    {
+      "original_address": "0x2000d314",
+      "original_name": "pico_finish_brew_step",
+      "original_module": "brewing",
+      "replacement": "pico_phase_finish_step",
+      "source": "src/phase.c",
+      "status": "already_verified_core",
+      "validation": [
+        "Existing ARM phase differential suite"
+      ]
+    },
+    {
+      "original_address": "0x2000d380",
+      "original_name": "pico_prime_steam_pump",
+      "original_module": "hardware_control",
+      "replacement": "pico_recipe_prime_steam",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 4
+    },
+    {
+      "original_address": "0x2000d418",
+      "original_name": "pico_restore_idle_hardware",
+      "original_module": "hardware_control",
+      "replacement": "pico_recipe_restore_idle",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 1
+    },
+    {
+      "original_address": "0x2000d484",
+      "original_name": "pico_vacuum_compartments",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_vacuum",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 12
+    },
+    {
+      "original_address": "0x2000d524",
+      "original_name": "pico_run_circulation",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_circulate",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 4
+    },
+    {
+      "original_address": "0x2000d580",
+      "original_name": "pico_drain_reservoir",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_drain_reservoir",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 2
+    },
+    {
+      "original_address": "0x2000d738",
+      "original_name": "pico_flush_compartments",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_flush_compartments",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 5
+    },
+    {
+      "original_address": "0x2000d7ec",
+      "original_name": "pico_flush_compartments_until_press",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_flush_until_press",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 1
+    },
+    {
+      "original_address": "0x2000d7f8",
+      "original_name": "pico_prepare_brew_step_temperature",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_prepare_temperature",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 143
+    },
+    {
+      "original_address": "0x2000da08",
+      "original_name": "pico_heat_flush_compartments",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_heat_flush_compartments",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 5
+    },
+    {
+      "original_address": "0x2000deec",
+      "original_name": "pico_run_rinse_cycle",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_rinse",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 4
+    },
+    {
+      "original_address": "0x2000ed9c",
+      "original_name": "pico_first_rinse_cool_and_flush",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_first_rinse_cool",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 4
+    },
+    {
+      "original_address": "0x2000ee78",
+      "original_name": "pico_first_rinse_heat_test",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_first_rinse_heat",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 4
+    },
+    {
+      "original_address": "0x2000ef2c",
+      "original_name": "pico_drain_step_filter",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_drain_filter",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 1
+    },
+    {
+      "original_address": "0x2000ef48",
+      "original_name": "pico_run_first_rinse",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_first_rinse",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 24
+    },
+    {
+      "original_address": "0x2000f800",
+      "original_name": "pico_run_rack_beer",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_rack_beer",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 1
+    },
+    {
+      "original_address": "0x20010368",
+      "original_name": "pico_end_brew_session",
+      "original_module": "session",
+      "replacement": "pico_recipe_session_end",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 48
+    },
+    {
+      "original_address": "0x2001085c",
+      "original_name": "pico_start_session",
+      "original_module": "session",
+      "replacement": "pico_recipe_session_start",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 4
+    },
+    {
+      "original_address": "0x20010bcc",
+      "original_name": "pico_parse_restart_session",
+      "original_module": "session",
+      "replacement": "pico_recipe_session_restore",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 22,
+      "intentional_repairs": [
+        "Bound every text field and respect the declared input extent; reject oversized/unterminated data rather than reproducing original out-of-bounds behavior."
+      ]
+    },
+    {
+      "original_address": "0x200112b0",
+      "original_name": "pico_setup_instructions",
+      "original_module": "session",
+      "replacement": "pico_recipe_setup",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 16
+    },
+    {
+      "original_address": "0x20011338",
+      "original_name": "pico_reprime_steam_pump",
+      "original_module": "hardware_control",
+      "replacement": "pico_recipe_reprime_steam",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 25
+    },
+    {
+      "original_address": "0x20011420",
+      "original_name": "pico_run_descale_program",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_descale",
+      "source": "src/recipe_utilities.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 10
+    },
+    {
+      "original_address": "0x20011590",
+      "original_name": "pico_run_brew_step",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_run_step",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 652
+    },
+    {
+      "original_address": "0x20011e68",
+      "original_name": "pico_run_recipe_steps",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_run",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 62
+    },
+    {
+      "original_address": "0x20012020",
+      "original_name": "pico_manual_brew_program",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_manual_program",
+      "source": "src/recipe_programs.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 10
+    },
+    {
+      "original_address": "0x20012290",
+      "original_name": "pico_run_post_session_instructions",
+      "original_module": "session",
+      "replacement": "pico_recipe_post_session",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 48
+    },
+    {
+      "original_address": "0x20012568",
+      "original_name": "pico_run_still_program",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_still_program",
+      "source": "src/recipe_programs.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 21
+    },
+    {
+      "original_address": "0x200125c8",
+      "original_name": "pico_run_control_program",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_run_control_program",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 48
+    },
+    {
+      "original_address": "0x20012600",
+      "original_name": "pico_run_deep_clean_program",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_run_deep_clean",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 2
+    },
+    {
+      "original_address": "0x20012624",
+      "original_name": "pico_run_required_maintenance",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_run_required_maintenance",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 4
+    },
+    {
+      "original_address": "0x20012658",
+      "original_name": "pico_run_circulation_program",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_circulation_program",
+      "source": "src/recipe_programs.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 1
+    },
+    {
+      "original_address": "0x20012730",
+      "original_name": "pico_sousvide_coldbrew_program",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_run_cooking_program",
+      "source": "src/recipe_programs.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 15
+    },
+    {
+      "original_address": "0x20012d38",
+      "original_name": "pico_run_brew_program",
+      "original_module": "brewing",
+      "replacement": "pico_recipe_run_brew_program",
+      "source": "src/recipe.c",
+      "status": "implemented_and_arm_differentially_validated",
+      "validation": [
+        "tests/test_recipe.py --elf <linked ARM ELF>",
+        "analysis/recipe-tests.json"
+      ],
+      "differential_cases": 19
+    }
+  ],
+  "source_sha256": {
+    "src/recipe.c": "1fefacfea722931d3a4a7b82b710df61f22513410ebc10971703db5cd0f1c24c",
+    "src/recipe_programs.c": "091fc17523a43e7beb5b317c7f81e00087ec76f29865938fdf8aa2c0673c04ad",
+    "src/recipe_utilities.c": "46d11ef966be041c9a95fa2d248371cd49985b41e2103d95d06e97c5cfe80077",
+    "src/recipe_data.inc": "f080fd4ca64b8789cae24f2f1286cfe8b77a9ca8a394a00506cf672877fc5b92",
+    "include/picobrew/recipe.h": "ee69ae004b7511570244e404a412ee6593b52a0805b5c8a2c2141c0f430f1e97"
+  },
+  "boundary_contract": "Clock, UI, network, mechanical hardware, and previously verified core controller/phase entrypoints are explicit controlled services in the differential suite. This is not physical-appliance validation or end-to-end validation of the complete composed firmware.",
+  "unimplemented_domain_entries": []
+}

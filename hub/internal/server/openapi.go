@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/jeffreydwalter/picobrew-hub/internal/ai"
+	"github.com/jeffreydwalter/picobrew-hub/internal/catalog"
 	"github.com/jeffreydwalter/picobrew-hub/internal/domain"
 )
 
@@ -31,6 +32,16 @@ var endpoints = []endpoint{
 	{"PUT", "/profiles/{id}", "Save measured batch, efficiency and grain limits", map[string]any{"batch_liters": 5, "efficiency": 70, "max_grain_kg": 0}},
 	{"DELETE", "/profiles/{id}", "Restore the model's default planning profile", nil},
 	{"DELETE", "/devices/{id}/recipes/{recipe_id}", "Delete a recipe stored on an idle appliance", nil},
+	{"PUT", "/devices/{id}/recipes/{recipe_id}", "Edit an installed program after checking the previous value", map[string]any{"recipe": domain.MachineRecipe{}, "expected": domain.MachineRecipe{}}},
+	{"POST", "/devices/{id}/deployments", "Preview a capacity-limited bulk recipe transfer", map[string]any{"profile_id": "pico-pro", "overwrite_existing": false, "items": []any{map[string]any{"recipe_id": "library-recipe-id", "source_revision": 1, "batch_liters": 0}}}},
+	{"GET", "/devices/{id}/deployments/{deployment_id}", "Read the saved transfer preview or receipt", nil},
+	{"POST", "/devices/{id}/deployments/{deployment_id}/execute", "Execute a current transfer preview once, without starting a brew", map[string]any{}},
+	{"GET", "/catalog", "Browse pinned community recipes and native programs", nil},
+	{"GET", "/catalog/references", "List attributed support references and bundled artwork", nil},
+	{"GET", "/catalog/assets/{asset_path}", "Read a manifest-listed local image or support reference", nil},
+	{"GET", "/catalog/{id}", "Read an immutable source entry and conversion provenance", nil},
+	{"POST", "/catalog/{id}/copy", "Create an independent editable library copy", map[string]any{}},
+	{"GET", "/catalog/{id}/source", "Download the exact original source JSON", nil},
 }
 
 func (s *Server) openapi(w http.ResponseWriter, r *http.Request) {
@@ -159,7 +170,7 @@ func (r *schemaRegistry) properties(name string) schemaMap {
 
 func buildSchemas() schemaMap {
 	r := &schemaRegistry{values: schemaMap{}}
-	for _, value := range []any{domain.Device{}, domain.DeviceView{}, domain.Capabilities{}, domain.Status{}, domain.Display{}, domain.Recipe{}, domain.MachineRecipe{}, domain.Profile{}, domain.Adapted{}, domain.Brew{}, domain.BrewDetail{}, domain.Sample{}, domain.History{}, domain.Command{}, commandReceipt{}, ai.Config{}, ai.Request{}, ai.Result{}, adviceRecord{}, aiModelList{}} {
+	for _, value := range []any{domain.Device{}, domain.DeviceView{}, domain.Capabilities{}, domain.Status{}, domain.Display{}, domain.Recipe{}, domain.MachineRecipe{}, domain.Profile{}, domain.Adapted{}, domain.Brew{}, domain.BrewDetail{}, domain.Sample{}, domain.History{}, domain.Command{}, commandReceipt{}, ai.Config{}, ai.Request{}, ai.Result{}, adviceRecord{}, aiModelList{}, BulkDeployment{}, DeploymentInput{}, MachineRecipeUpdate{}, catalog.Page{}, catalog.Detail{}, catalog.References{}} {
 		r.describe(reflect.TypeOf(value))
 	}
 	r.properties("DeviceView")["key_reused"] = schemaMap{"type": "boolean", "readOnly": true, "description": "Advisory: another registered physical machine has the same recorded hexadecimal API key, including disabled machines. Derived in memory; no key or fingerprint is returned. Use a separately provisioned key for each brewer. Saving a connection does not change its firmware key."}
@@ -170,6 +181,7 @@ func buildSchemas() schemaMap {
 	r.values["Synced"] = schemaObject(schemaMap{"synced": boolSchema()}, "synced")
 	r.values["Accepted"] = schemaObject(schemaMap{"accepted": boolSchema()}, "accepted")
 	r.values["DeviceRecipes"] = schemaObject(schemaMap{"recipes": schemaArray(schemaRef("MachineRecipe"))}, "recipes")
+	r.values["MachineRecipeUpdated"] = schemaObject(schemaMap{"updated": boolSchema(), "started": boolSchema(), "recipe": schemaRef("MachineRecipe")}, "updated", "started", "recipe")
 	r.values["Deployment"] = schemaObject(schemaMap{"deployed": boolSchema(), "started": boolSchema(), "device_id": stringSchema(), "recipe": schemaRef("MachineRecipe"), "warnings": schemaArray(stringSchema()), "deployment_id": stringSchema()}, "deployed", "started", "device_id", "recipe", "warnings", "deployment_id")
 	r.values["Settings"] = schemaMap{"type": "object", "properties": schemaMap{"temperature_unit": schemaMap{"type": "string", "enum": []string{"F", "C"}}, "language": schemaMap{"type": "string", "enum": []string{"en", "es", "fr"}}, "detailed_status": boolSchema()}, "additionalProperties": true}
 	r.values["Telemetry"] = schemaMap{"type": "object", "properties": schemaMap{"enabled": boolSchema(), "host": stringSchema(), "port": schemaMap{"type": "integer", "minimum": 1, "maximum": 65535}, "state": stringSchema()}, "additionalProperties": true}
@@ -184,15 +196,15 @@ func buildSchemas() schemaMap {
 		recipeProps[name] = schemaMap{"type": "string", "readOnly": true}
 	}
 	r.values["RecipeInput"] = schemaObject(recipeProps, "name", "batch_liters", "efficiency", "steps")
-	r.properties("Recipe")["batch_liters"] = schemaMap{"type": "number", "minimum": 0, "exclusiveMinimum": true, "maximum": 10000}
-	r.properties("Recipe")["efficiency"] = schemaMap{"type": "number", "minimum": 0, "exclusiveMinimum": true, "maximum": 100, "description": "Measured percentage, not a 0–1 fraction."}
-	r.properties("Recipe")["steps"] = schemaMap{"type": "array", "minItems": 1, "maxItems": 256, "items": schemaRef("RecipeStep")}
+	r.properties("Recipe")["batch_liters"] = schemaMap{"type": "number", "minimum": 0, "maximum": 10000, "description": "Positive for an ingredient recipe; exactly zero for a native program with no inferred batch volume."}
+	r.properties("Recipe")["efficiency"] = schemaMap{"type": "number", "minimum": 0, "maximum": 100, "description": "Positive measured percentage for an ingredient recipe; exactly zero for a native program."}
+	r.properties("Recipe")["steps"] = schemaMap{"type": "array", "maxItems": 256, "items": schemaRef("RecipeStep"), "description": "Ingredient recipes require 1–256 canonical steps. Native programs use native_program and leave this list empty."}
 	for _, name := range []string{"batch_liters", "efficiency", "steps"} {
 		recipeProps[name] = r.properties("Recipe")[name]
 	}
 	r.properties("RecipeStep")["location"] = schemaMap{"type": "integer", "minimum": 0, "maximum": 6, "description": "Zero is unmapped. Deployment needs an explicitly verified 1–6; the hub never infers plumbing."}
 	r.properties("RecipeStep")["target_c"] = schemaMap{"type": "number", "minimum": 0, "maximum": 100, "description": "Canonical Celsius; zero is the unheated program sentinel."}
-	r.properties("RecipeStep")["minutes"] = schemaMap{"type": "integer", "minimum": 1, "maximum": 43200, "description": "Native S/Pro deployment limits this to 599 minutes."}
+	r.properties("RecipeStep")["minutes"] = schemaMap{"type": "integer", "minimum": 0, "maximum": 43200, "description": "Zero is allowed only for explicit heat/cool targets. Native S/Pro deployment limits holds to 599 minutes and does not map cooling steps."}
 	r.properties("RecipeStep")["drain_minutes"] = schemaMap{"type": "integer", "minimum": 0, "maximum": 1440, "description": "Native S/Pro deployment limits this to 120 minutes."}
 	r.properties("Ingredient")["kind"] = schemaMap{"type": "string", "enum": []string{"fermentable", "hop", "water", "yeast", "misc"}}
 	r.properties("Ingredient")["unit"] = schemaMap{"type": "string", "enum": []string{"kg", "g", "L", "mL", "count"}, "description": "Fermentable: kg; hop: g; water: L; yeast/misc: g, mL, count."}
@@ -202,8 +214,14 @@ func buildSchemas() schemaMap {
 	r.properties("MachineStep")["name"] = schemaMap{"type": "string", "minLength": 1, "maxLength": 21, "pattern": "^[ -~]+$"}
 	r.properties("MachineStep")["location"] = schemaMap{"type": "integer", "minimum": 1, "maximum": 6}
 	r.properties("MachineStep")["target_f"] = schemaMap{"oneOf": []any{schemaMap{"type": "integer", "enum": []int{0}}, schemaMap{"type": "integer", "minimum": 60, "maximum": 212}}}
-	r.properties("MachineStep")["minutes"] = schemaMap{"type": "integer", "minimum": 1, "maximum": 599}
+	r.properties("MachineStep")["minutes"] = schemaMap{"type": "integer", "minimum": 0, "maximum": 599, "description": "Zero advances after the target is reached; requires firmware zero_minute_steps capability."}
 	r.properties("MachineStep")["drain_minutes"] = schemaMap{"type": "integer", "minimum": 0, "maximum": 120}
+	r.values["NativeSourceStep"] = schemaObject(schemaMap{"name": schemaMap{"type": "string", "minLength": 1, "maxLength": 512}, "location": schemaMap{"type": "integer", "minimum": 0, "maximum": 6}, "target_f": schemaMap{"type": "integer", "minimum": 0, "maximum": 212}, "minutes": schemaMap{"type": "integer", "minimum": 0, "maximum": 43200}, "drain_minutes": schemaMap{"type": "integer", "minimum": 0, "maximum": 1440}}, "name", "location", "target_f", "minutes", "drain_minutes")
+	r.values["NativeSourceProgram"] = schemaObject(schemaMap{"id": schemaMap{"type": "string", "pattern": "^[A-Za-z0-9_-]{1,20}$"}, "name": schemaMap{"type": "string", "minLength": 1, "maxLength": 512}, "steps": schemaMap{"type": "array", "minItems": 1, "maxItems": 256, "items": schemaRef("NativeSourceStep")}}, "id", "name", "steps")
+	r.properties("Recipe")["native_program"] = schemaMap{"allOf": []any{schemaRef("NativeSourceProgram")}, "nullable": true, "description": "Exact archived source schedule, which can exceed a target brewer's limits. Adaptation validates the selected machine before deployment."}
+	r.properties("Recipe")["kind"] = schemaMap{"type": "string", "enum": []string{"", "recipe", "native-program", "maintenance"}}
+	recipeProps["native_program"] = r.properties("Recipe")["native_program"]
+	recipeProps["kind"] = r.properties("Recipe")["kind"]
 	command := schemaMap{}
 	for k, v := range r.properties("Command") {
 		command[k] = v
@@ -254,8 +272,20 @@ func operationParameters(e endpoint) []any {
 		params = append(params, schemaMap{"name": name, "in": "query", "description": description, "required": false, "schema": schema})
 	}
 	switch e.path {
+	case "/catalog":
+		for _, name := range []string{"q", "source", "kind", "model", "style"} {
+			query(name, "Catalogue filter.", stringSchema())
+		}
+		query("offset", "Zero-based result offset.", schemaMap{"type": "integer", "minimum": 0, "default": 0})
+		query("limit", "Results per page.", schemaMap{"type": "integer", "minimum": 1, "maximum": 100, "default": 24})
+	case "/catalog/references":
+		query("model", "Filter by machine model.", stringSchema())
+	case "/catalog/{id}/source":
+		query("record", "Original record ID within this grouped catalogue entry.", stringSchema())
+	case "/catalog/assets/{asset_path}":
+		params[0].(schemaMap)["description"] = "Full manifest asset path, including its source prefix and nested directories."
 	case "/recipes/{id}/export":
-		query("format", "Output format; JSON preserves every canonical field.", schemaMap{"type": "string", "enum": []string{"json", "beerxml"}, "default": "json"})
+		query("format", "JSON preserves every library field; native-json exports a compatible machine program. BeerXML requires a complete recipe.", schemaMap{"type": "string", "enum": []string{"json", "beerxml", "native-json"}, "default": "json"})
 	case "/brews/{id}/export":
 		query("format", "Full recorded samples without graph downsampling.", schemaMap{"type": "string", "enum": []string{"json", "csv"}, "default": "json"})
 	case "/shopping-list":
@@ -287,6 +317,10 @@ func requestSchema(e endpoint) (schemaMap, bool) {
 		name = "TelemetryInput"
 	case "/devices/{id}/deploy":
 		name = "DeployInput"
+	case "/devices/{id}/deployments":
+		name = "DeploymentInput"
+	case "/devices/{id}/recipes/{recipe_id}":
+		name = "MachineRecipeUpdate"
 	case "/profiles/{id}":
 		name = "ProfileInput"
 	case "/recipes", "/recipes/{id}":
@@ -349,7 +383,11 @@ func successResponses(e endpoint) schemaMap {
 	case "/devices/{id}/recipes":
 		schema = schemaRef("DeviceRecipes")
 	case "/devices/{id}/recipes/{recipe_id}":
-		code = "204"
+		if e.method == "DELETE" {
+			code = "204"
+		} else {
+			schema = schemaRef("MachineRecipeUpdated")
+		}
 	case "/devices/{id}/settings":
 		schema = schemaRef("Settings")
 	case "/devices/{id}/telemetry":
@@ -358,6 +396,20 @@ func successResponses(e endpoint) schemaMap {
 		schema = schemaRef("Synced")
 	case "/devices/{id}/deploy":
 		schema = schemaRef("Deployment")
+	case "/devices/{id}/deployments":
+		code = "201"
+		schema = schemaRef("BulkDeployment")
+	case "/devices/{id}/deployments/{deployment_id}", "/devices/{id}/deployments/{deployment_id}/execute":
+		schema = schemaRef("BulkDeployment")
+	case "/catalog":
+		schema = schemaRef("Page")
+	case "/catalog/{id}":
+		schema = schemaRef("Detail")
+	case "/catalog/references":
+		schema = schemaRef("References")
+	case "/catalog/{id}/copy":
+		code = "201"
+		schema = schemaRef("Recipe")
 	case "/profiles":
 		schema = schemaArray(schemaRef("Profile"))
 	case "/profiles/{id}":
@@ -406,6 +458,10 @@ func successResponses(e endpoint) schemaMap {
 	}
 	content := schemaMap{"application/json": schemaMap{"schema": schema}}
 	switch e.path {
+	case "/catalog/assets/{asset_path}":
+		content = schemaMap{"image/png": schemaMap{"schema": schemaMap{"type": "string", "format": "binary"}}, "image/jpeg": schemaMap{"schema": schemaMap{"type": "string", "format": "binary"}}, "application/pdf": schemaMap{"schema": schemaMap{"type": "string", "format": "binary"}}, "image/svg+xml": schemaMap{"schema": stringSchema()}, "text/plain": schemaMap{"schema": stringSchema()}}
+	case "/catalog/{id}/source":
+		content = schemaMap{"application/json": schemaMap{"schema": schemaMap{}}}
 	case "/events":
 		content = schemaMap{"text/event-stream": schemaMap{"schema": stringSchema(), "example": "event: fleet\ndata: []\n\n"}}
 		description = "SSE fleet events; each data field is a JSON DeviceView array."
@@ -465,6 +521,13 @@ func operationResponses(e endpoint, public, requiresJSON bool) schemaMap {
 	}
 	if e.path == "/recipes/{id}/export" {
 		statuses[400] = "Format unsupported, or required BeerXML metadata is missing."
+	}
+	if strings.HasPrefix(e.path, "/catalog") {
+		statuses[400] = "Invalid catalogue filters, pagination or request body."
+		statuses[404] = "Entry, original record or local asset is unavailable."
+		if e.path == "/catalog/{id}/copy" {
+			statuses[422] = "This entry has no verified editable conversion; its original source remains available."
+		}
 	}
 	if e.path == "/ai/assist" {
 		statuses[409] = "AI provider/key/model is not enabled."

@@ -1,0 +1,147 @@
+{
+  "support_library": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/arm-none-eabi/lib/thumb/v7e-m/nofp/libnosys.a",
+  "support_library_sha256": "7778d81b0b7436fe0f263e1c9057a68fff788afcbd4d859e08cadb6e53930134",
+  "process_file_descriptor_providers": {
+    "_exit": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libnosys.a(_exit.o)",
+    "_kill": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libnosys.a(kill.o)",
+    "_getpid": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libnosys.a(getpid.o)",
+    "_write": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libnosys.a(write.o)",
+    "_close": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libnosys.a(close.o)",
+    "_fstat": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libnosys.a(fstat.o)",
+    "_isatty": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libnosys.a(isatty.o)",
+    "_lseek": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libnosys.a(lseek.o)",
+    "_read": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/nofp/libnosys.a(read.o)"
+  },
+  "contract_for_pinned_toolchain": {
+    "process_and_file_descriptors": "Unsupported; libnosys reports ENOSYS rather than successful I/O/process services",
+    "read_write_close_fstat_lseek_kill_getpid": "Return -1 and set errno to ENOSYS (88)",
+    "isatty": "Return 0 and set errno to ENOSYS (88)",
+    "exit": "Does not return; enters an infinite loop",
+    "device_io": "No POSIX descriptor retargeting to Serial, WiFi, or SLFS is supplied"
+  },
+  "sbrk_linked": true,
+  "sbrk_provider": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/energia_cc3200.a(startup_gcc.c.o)",
+  "sdk_heap_provider_verified": true,
+  "bounded_heap_adapter_provider": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/objects/application/energia_runtime_compat_3e5661c80e.o",
+  "bounded_heap_adapter_verified": true,
+  "allocation_providers": {
+    "malloc": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-malloc.o",
+    "free": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-malloc.o",
+    "calloc": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-calloc.o",
+    "realloc": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-realloc.o",
+    "_malloc_r": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-mallocr.o",
+    "_free_r": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-freer.o",
+    "_calloc_r": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-callocr.o",
+    "_realloc_r": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-reallocr.o"
+  },
+  "allocator_provider_verified": true,
+  "allocator": {
+    "library": "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/toolchain/arm-none-eabi/lib/thumb/v7e-m/nofp/libc.a",
+    "library_sha256": "c83ed30a03d0c5d8e477f7dec11cfd78328916e383421f87b38add00bf18b072",
+    "objects": [
+      {
+        "member": "lib_a-malloc.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-malloc.o",
+        "sha256": "113ee69ac2a688f414304ccc041a4c58e6e17eb6facddcff869c4040bed6d214"
+      },
+      {
+        "member": "lib_a-calloc.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-calloc.o",
+        "sha256": "1668a05cf54a08584287282ae565b08292f1c284db2286d516cbfcf3f4ef7807"
+      },
+      {
+        "member": "lib_a-realloc.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-realloc.o",
+        "sha256": "a45bbc29b8b07f3e69539999dff7f338a243d28f717755a3d8b0462401198f24"
+      },
+      {
+        "member": "lib_a-mallocr.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-mallocr.o",
+        "sha256": "53abd33a50b9b862f75d0decb839b0befe636453040dcf7ff0146864f6bc85b8"
+      },
+      {
+        "member": "lib_a-callocr.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-callocr.o",
+        "sha256": "f649e3d0ec5d88cabb0a77af783b718f6d2b4de5123fbe33ab6f557cd67d2a92"
+      },
+      {
+        "member": "lib_a-freer.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-freer.o",
+        "sha256": "dc86b88c9da292570403ead78b81df42c8369b94e790e543794ae7b295e15d63"
+      },
+      {
+        "member": "lib_a-reallocr.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-reallocr.o",
+        "sha256": "564982180b55017bd569b04604342a382790ae677fc6f77dfb82c4e62c938134"
+      },
+      {
+        "member": "lib_a-msizer.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-msizer.o",
+        "sha256": "eed0cc2193b1ba21157bf7053d212b642e1137def1c066ee973b9b2cb14cdc37"
+      },
+      {
+        "member": "lib_a-aligned_alloc.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-aligned_alloc.o",
+        "sha256": "87827b49bb967aecf1369bf1b2cdd7c91e80a33210859dc096d617eb9ed5e45d"
+      },
+      {
+        "member": "lib_a-malign.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-malign.o",
+        "sha256": "e042f8e01999d3e349fc262ea92ae9335bda190bcfd0e85558e79d2a0b193301"
+      },
+      {
+        "member": "lib_a-malignr.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-malignr.o",
+        "sha256": "bc64106b822e6e649670bbcce95bd3071a16394d245fbb147a17a2bb5c8c43be"
+      },
+      {
+        "member": "lib_a-valloc.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-valloc.o",
+        "sha256": "69f47583da07c1b7ff18e30617841535a61908e91e7b74f68efc0417413456f8"
+      },
+      {
+        "member": "lib_a-vallocr.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-vallocr.o",
+        "sha256": "33838c0a38c3b472572c9fb6dacb3eac81b7340aff3b10b9c18daf1227cdbd0a"
+      },
+      {
+        "member": "lib_a-pvallocr.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-pvallocr.o",
+        "sha256": "9d055c3d7864eba259058129cd834149fc10a98ebade44c308aefca3a7b90a49"
+      },
+      {
+        "member": "lib_a-cfreer.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-cfreer.o",
+        "sha256": "f14d11be306904aeae041e28089f5f38d1b600eeabc7aa2259a1ac44d5596449"
+      },
+      {
+        "member": "lib_a-mallinfor.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-mallinfor.o",
+        "sha256": "3b8a3a60379fa09c3366fadc5694561763d4ab9f0e3e09cb7da037728eb78db4"
+      },
+      {
+        "member": "lib_a-malloptr.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-malloptr.o",
+        "sha256": "67ee21f04e0e5486b44c644c4b0748ed296e803f9111ff72adaa41205714034f"
+      },
+      {
+        "member": "lib_a-mallstatsr.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-mallstatsr.o",
+        "sha256": "6ecac1a9dde946fd109afede8d928a8b103e9174d74e4be242df85b3c59050f2"
+      },
+      {
+        "member": "lib_a-reallocarray.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-reallocarray.o",
+        "sha256": "aca86ee1a0ca9a6ff04df1bd5d55e55a4ceca64c19ed5ae10c0887499f2bd504"
+      },
+      {
+        "member": "lib_a-reallocf.o",
+        "path": "/workspace/scratch/e5dd684dd8f0/picobrew-application/build/firmware/native/runtime-allocator/lib_a-reallocf.o",
+        "sha256": "80af8b4558c8eed8a94238c4c2ad3ae314a3b8a8ec49c5640dd8bb20c8b0bb42"
+      }
+    ],
+    "reason": "Use one coherent full-newlib allocation family; pinned nano malloc has an empty-free-list exhaustion defect. Nano stdio remains selected."
+  },
+  "sdk_heap_contract": "Unmodified Energia startup_gcc.c owns heap_end. __wrap__sbrk checks signed growth/shrink against linker _heap/_eheap before invoking it and reports (void*)-1 with syscall errno=ENOMEM on failure. Full-newlib allocation objects from the selected compiler replace the unsafe nano allocation family; nano stdio remains in use.",
+  "scope": "Link integration and selected provider verification; no OS services or hardware-execution claim"
+}

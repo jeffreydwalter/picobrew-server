@@ -1,0 +1,6522 @@
+{
+  "passed": 812,
+  "failed": 0,
+  "firmware_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "candidate_engine": "newly built ARM ELF",
+  "elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "source_sha256": "927e8104a1ac5d6d33c0e3a1539b13aa2eb3771978ac98827fbc6bd2d2780dec",
+  "pid_source_sha256": "b7b84aaa655b1ab70f068a197308fc858dfc7b6a54f11d0d0f3073dddff25207",
+  "original_instructions": 382329,
+  "case_groups": {
+    "0": 423,
+    "1": 205,
+    "2": 12,
+    "3": 12,
+    "4": 7,
+    "5": 131,
+    "6": 2,
+    "7": 10,
+    "8": 10
+  },
+  "native_pid_nan_representation_cases": 0,
+  "scope": "Compiled relocatable C including real C PID versus original ARM ISR/control/PID instructions. State bytes, signal values, meaningful return values, and ordered I/O events compared.",
+  "limitations": "Hardware/UI boundary hooks; no interrupt concurrency. Native-host mode permits counted arithmetic NaN representation differences; rebuilt-ARM mode requires exact state bytes including NaNs. Fatal cases compare behavior up to entry into original non-returning fault handler. Shuttle-on boundary includes original filter interlock contract. Corrupted negative history indices excluded.",
+  "cases": [
+    {
+      "case": "timer-init-enable-0",
+      "operation": 6,
+      "original_instructions": 66,
+      "events": 16,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "timer-init-enable-1",
+      "operation": 6,
+      "original_instructions": 66,
+      "events": 16,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op0-enabled0-status0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op0-enabled0-status1",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op0-enabled0-status3",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op0-enabled0-status7",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op0-enabled0-status255",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op0-enabled1-status0",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op0-enabled1-status1",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op0-enabled1-status3",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op0-enabled1-status7",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op0-enabled1-status255",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op1-enabled0-status0",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op1-enabled0-status1",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op1-enabled0-status3",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op1-enabled0-status7",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op1-enabled0-status255",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op1-enabled1-status0",
+      "operation": 1,
+      "original_instructions": 125,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op1-enabled1-status1",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op1-enabled1-status3",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op1-enabled1-status7",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op1-enabled1-status255",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op7-enabled0-status0",
+      "operation": 7,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op7-enabled0-status1",
+      "operation": 7,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op7-enabled0-status3",
+      "operation": 7,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op7-enabled0-status7",
+      "operation": 7,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op7-enabled0-status255",
+      "operation": 7,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op7-enabled1-status0",
+      "operation": 7,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op7-enabled1-status1",
+      "operation": 7,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op7-enabled1-status3",
+      "operation": 7,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op7-enabled1-status7",
+      "operation": 7,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op7-enabled1-status255",
+      "operation": 7,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op8-enabled0-status0",
+      "operation": 8,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op8-enabled0-status1",
+      "operation": 8,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op8-enabled0-status3",
+      "operation": 8,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op8-enabled0-status7",
+      "operation": 8,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op8-enabled0-status255",
+      "operation": 8,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op8-enabled1-status0",
+      "operation": 8,
+      "original_instructions": 125,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op8-enabled1-status1",
+      "operation": 8,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op8-enabled1-status3",
+      "operation": 8,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op8-enabled1-status7",
+      "operation": 8,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op8-enabled1-status255",
+      "operation": 8,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status0-auto0-enable0",
+      "operation": 2,
+      "original_instructions": 237,
+      "events": 1,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status0-auto0-enable1",
+      "operation": 2,
+      "original_instructions": 237,
+      "events": 1,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status0-auto1-enable0",
+      "operation": 2,
+      "original_instructions": 47,
+      "events": 1,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status0-auto1-enable1",
+      "operation": 2,
+      "original_instructions": 47,
+      "events": 1,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status1-auto0-enable0",
+      "operation": 2,
+      "original_instructions": 5,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status1-auto0-enable1",
+      "operation": 2,
+      "original_instructions": 5,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status1-auto1-enable0",
+      "operation": 2,
+      "original_instructions": 5,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status1-auto1-enable1",
+      "operation": 2,
+      "original_instructions": 5,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status255-auto0-enable0",
+      "operation": 2,
+      "original_instructions": 5,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status255-auto0-enable1",
+      "operation": 2,
+      "original_instructions": 5,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status255-auto1-enable0",
+      "operation": 2,
+      "original_instructions": 5,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op2-status255-auto1-enable1",
+      "operation": 2,
+      "original_instructions": 5,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status0-auto0-enable0",
+      "operation": 3,
+      "original_instructions": 42,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status0-auto0-enable1",
+      "operation": 3,
+      "original_instructions": 42,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status0-auto1-enable0",
+      "operation": 3,
+      "original_instructions": 232,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status0-auto1-enable1",
+      "operation": 3,
+      "original_instructions": 232,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status1-auto0-enable0",
+      "operation": 3,
+      "original_instructions": 42,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status1-auto0-enable1",
+      "operation": 3,
+      "original_instructions": 42,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status1-auto1-enable0",
+      "operation": 3,
+      "original_instructions": 232,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status1-auto1-enable1",
+      "operation": 3,
+      "original_instructions": 232,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status255-auto0-enable0",
+      "operation": 3,
+      "original_instructions": 42,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status255-auto0-enable1",
+      "operation": 3,
+      "original_instructions": 42,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status255-auto1-enable0",
+      "operation": 3,
+      "original_instructions": 232,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "op3-status255-auto1-enable1",
+      "operation": 3,
+      "original_instructions": 232,
+      "events": 4,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-count-0",
+      "operation": 4,
+      "original_instructions": 11,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-count-1",
+      "operation": 4,
+      "original_instructions": 11,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-count-2",
+      "operation": 4,
+      "original_instructions": 11,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-count-3",
+      "operation": 4,
+      "original_instructions": 11,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-count-4",
+      "operation": 4,
+      "original_instructions": 11,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-count-5",
+      "operation": 4,
+      "original_instructions": 11,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-count-6",
+      "operation": 4,
+      "original_instructions": 4,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e1000-out-1.0",
+      "operation": 1,
+      "original_instructions": 98,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e1000-out0.0",
+      "operation": 1,
+      "original_instructions": 92,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e1000-out1.0",
+      "operation": 1,
+      "original_instructions": 104,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e1000-out500.0",
+      "operation": 1,
+      "original_instructions": 104,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e1000-out3000.0",
+      "operation": 1,
+      "original_instructions": 104,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e1000-outinf",
+      "operation": 1,
+      "original_instructions": 112,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e1000-outnan",
+      "operation": 1,
+      "original_instructions": 94,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e4294967280-out-1.0",
+      "operation": 1,
+      "original_instructions": 122,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e4294967280-out0.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e4294967280-out1.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e4294967280-out500.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e4294967280-out3000.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e4294967280-outinf",
+      "operation": 1,
+      "original_instructions": 136,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1000-e4294967280-outnan",
+      "operation": 1,
+      "original_instructions": 119,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e1000-out-1.0",
+      "operation": 1,
+      "original_instructions": 119,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e1000-out0.0",
+      "operation": 1,
+      "original_instructions": 120,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e1000-out1.0",
+      "operation": 1,
+      "original_instructions": 120,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e1000-out500.0",
+      "operation": 1,
+      "original_instructions": 125,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e1000-out3000.0",
+      "operation": 1,
+      "original_instructions": 125,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e1000-outinf",
+      "operation": 1,
+      "original_instructions": 133,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e1000-outnan",
+      "operation": 1,
+      "original_instructions": 116,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e4294967280-out-1.0",
+      "operation": 1,
+      "original_instructions": 122,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e4294967280-out0.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e4294967280-out1.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e4294967280-out500.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e4294967280-out3000.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e4294967280-outinf",
+      "operation": 1,
+      "original_instructions": 136,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1499-e4294967280-outnan",
+      "operation": 1,
+      "original_instructions": 119,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e1000-out-1.0",
+      "operation": 1,
+      "original_instructions": 119,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e1000-out0.0",
+      "operation": 1,
+      "original_instructions": 120,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e1000-out1.0",
+      "operation": 1,
+      "original_instructions": 120,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e1000-out500.0",
+      "operation": 1,
+      "original_instructions": 114,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e1000-out3000.0",
+      "operation": 1,
+      "original_instructions": 125,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e1000-outinf",
+      "operation": 1,
+      "original_instructions": 133,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e1000-outnan",
+      "operation": 1,
+      "original_instructions": 116,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e4294967280-out-1.0",
+      "operation": 1,
+      "original_instructions": 122,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e4294967280-out0.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e4294967280-out1.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e4294967280-out500.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e4294967280-out3000.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e4294967280-outinf",
+      "operation": 1,
+      "original_instructions": 136,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1500-e4294967280-outnan",
+      "operation": 1,
+      "original_instructions": 119,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e1000-out-1.0",
+      "operation": 1,
+      "original_instructions": 122,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e1000-out0.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e1000-out1.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e1000-out500.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e1000-out3000.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e1000-outinf",
+      "operation": 1,
+      "original_instructions": 136,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e1000-outnan",
+      "operation": 1,
+      "original_instructions": 119,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e4294967280-out-1.0",
+      "operation": 1,
+      "original_instructions": 122,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e4294967280-out0.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e4294967280-out1.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e4294967280-out500.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e4294967280-out3000.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e4294967280-outinf",
+      "operation": 1,
+      "original_instructions": 136,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t1501-e4294967280-outnan",
+      "operation": 1,
+      "original_instructions": 119,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e1000-out-1.0",
+      "operation": 1,
+      "original_instructions": 122,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e1000-out0.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e1000-out1.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e1000-out500.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e1000-out3000.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e1000-outinf",
+      "operation": 1,
+      "original_instructions": 136,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e1000-outnan",
+      "operation": 1,
+      "original_instructions": 119,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e4294967280-out-1.0",
+      "operation": 1,
+      "original_instructions": 127,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e4294967280-out0.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e4294967280-out1.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e4294967280-out500.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e4294967280-out3000.0",
+      "operation": 1,
+      "original_instructions": 133,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e4294967280-outinf",
+      "operation": 1,
+      "original_instructions": 141,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t3999-e4294967280-outnan",
+      "operation": 1,
+      "original_instructions": 124,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e1000-out-1.0",
+      "operation": 1,
+      "original_instructions": 122,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e1000-out0.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e1000-out1.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e1000-out500.0",
+      "operation": 1,
+      "original_instructions": 123,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e1000-out3000.0",
+      "operation": 1,
+      "original_instructions": 117,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e1000-outinf",
+      "operation": 1,
+      "original_instructions": 136,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e1000-outnan",
+      "operation": 1,
+      "original_instructions": 119,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e4294967280-out-1.0",
+      "operation": 1,
+      "original_instructions": 127,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e4294967280-out0.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e4294967280-out1.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e4294967280-out500.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e4294967280-out3000.0",
+      "operation": 1,
+      "original_instructions": 133,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e4294967280-outinf",
+      "operation": 1,
+      "original_instructions": 141,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4000-e4294967280-outnan",
+      "operation": 1,
+      "original_instructions": 124,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e1000-out-1.0",
+      "operation": 1,
+      "original_instructions": 125,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e1000-out0.0",
+      "operation": 1,
+      "original_instructions": 126,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e1000-out1.0",
+      "operation": 1,
+      "original_instructions": 120,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e1000-out500.0",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e1000-out3000.0",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e1000-outinf",
+      "operation": 1,
+      "original_instructions": 139,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e1000-outnan",
+      "operation": 1,
+      "original_instructions": 122,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e4294967280-out-1.0",
+      "operation": 1,
+      "original_instructions": 127,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e4294967280-out0.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e4294967280-out1.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e4294967280-out500.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e4294967280-out3000.0",
+      "operation": 1,
+      "original_instructions": 133,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e4294967280-outinf",
+      "operation": 1,
+      "original_instructions": 141,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4001-e4294967280-outnan",
+      "operation": 1,
+      "original_instructions": 124,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e1000-out-1.0",
+      "operation": 1,
+      "original_instructions": 127,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e1000-out0.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e1000-out1.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e1000-out500.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e1000-out3000.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e1000-outinf",
+      "operation": 1,
+      "original_instructions": 141,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e1000-outnan",
+      "operation": 1,
+      "original_instructions": 124,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e4294967280-out-1.0",
+      "operation": 1,
+      "original_instructions": 127,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e4294967280-out0.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e4294967280-out1.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e4294967280-out500.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e4294967280-out3000.0",
+      "operation": 1,
+      "original_instructions": 128,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e4294967280-outinf",
+      "operation": 1,
+      "original_instructions": 141,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t9000-e4294967280-outnan",
+      "operation": 1,
+      "original_instructions": 124,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e1000-out-1.0",
+      "operation": 1,
+      "original_instructions": 130,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e1000-out0.0",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e1000-out1.0",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e1000-out500.0",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e1000-out3000.0",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e1000-outinf",
+      "operation": 1,
+      "original_instructions": 144,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e1000-outnan",
+      "operation": 1,
+      "original_instructions": 127,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e4294967280-out-1.0",
+      "operation": 1,
+      "original_instructions": 98,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e4294967280-out0.0",
+      "operation": 1,
+      "original_instructions": 92,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e4294967280-out1.0",
+      "operation": 1,
+      "original_instructions": 104,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e4294967280-out500.0",
+      "operation": 1,
+      "original_instructions": 104,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e4294967280-out3000.0",
+      "operation": 1,
+      "original_instructions": 104,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e4294967280-outinf",
+      "operation": 1,
+      "original_instructions": 112,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t4294967280-e4294967280-outnan",
+      "operation": 1,
+      "original_instructions": 94,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e1000-out-1.0",
+      "operation": 1,
+      "original_instructions": 130,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e1000-out0.0",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e1000-out1.0",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e1000-out500.0",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e1000-out3000.0",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e1000-outinf",
+      "operation": 1,
+      "original_instructions": 144,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e1000-outnan",
+      "operation": 1,
+      "original_instructions": 127,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e4294967280-out-1.0",
+      "operation": 1,
+      "original_instructions": 120,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e4294967280-out0.0",
+      "operation": 1,
+      "original_instructions": 121,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e4294967280-out1.0",
+      "operation": 1,
+      "original_instructions": 121,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e4294967280-out500.0",
+      "operation": 1,
+      "original_instructions": 126,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e4294967280-out3000.0",
+      "operation": 1,
+      "original_instructions": 126,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e4294967280-outinf",
+      "operation": 1,
+      "original_instructions": 134,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "outputs-t15-e4294967280-outnan",
+      "operation": 1,
+      "original_instructions": 117,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase0-seconds0",
+      "operation": 0,
+      "original_instructions": 112,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase0-seconds1",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase0-seconds2147483647",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase0-seconds2147483648",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase0-seconds4294967295",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase1-seconds0",
+      "operation": 0,
+      "original_instructions": 112,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase1-seconds1",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase1-seconds2147483647",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase1-seconds2147483648",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase1-seconds4294967295",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase4-seconds0",
+      "operation": 0,
+      "original_instructions": 112,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase4-seconds1",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase4-seconds2147483647",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase4-seconds2147483648",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase4-seconds4294967295",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase8-seconds0",
+      "operation": 0,
+      "original_instructions": 111,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase8-seconds1",
+      "operation": 0,
+      "original_instructions": 111,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase8-seconds2147483647",
+      "operation": 0,
+      "original_instructions": 111,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase8-seconds2147483648",
+      "operation": 0,
+      "original_instructions": 111,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase8-seconds4294967295",
+      "operation": 0,
+      "original_instructions": 111,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase255-seconds0",
+      "operation": 0,
+      "original_instructions": 112,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase255-seconds1",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase255-seconds2147483647",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase255-seconds2147483648",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "step-counter-phase255-seconds4294967295",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "progress-2-3-8-0",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "progress-2-3-8-4",
+      "operation": 0,
+      "original_instructions": 138,
+      "events": 10,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "progress-2-3-8-5",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "progress-255-255-0-255",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "progress-2-200-250-55",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-0.0-enabled0",
+      "operation": 0,
+      "original_instructions": 114,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-0.0-enabled0",
+      "operation": 0,
+      "original_instructions": 114,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-31.999-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-31.999-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-32.0-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-32.0-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-32.001-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-32.001-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-194.999-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-194.999-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-195.0-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-195.0-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-195.001-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-195.001-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-214.999-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-214.999-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-215.0-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-215.0-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-215.001-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-215.001-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-384.999-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-384.999-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-385.0-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-385.0-enabled0",
+      "operation": 0,
+      "original_instructions": 109,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-385.001-enabled0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-385.001-enabled0",
+      "operation": 0,
+      "original_instructions": 114,
+      "events": 7,
+      "fatal_boundary": true,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-inf-enabled0",
+      "operation": 0,
+      "original_instructions": 117,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-inf-enabled0",
+      "operation": 0,
+      "original_instructions": 124,
+      "events": 7,
+      "fatal_boundary": true,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary--inf-enabled0",
+      "operation": 0,
+      "original_instructions": 117,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary--inf-enabled0",
+      "operation": 0,
+      "original_instructions": 124,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-nan-enabled0",
+      "operation": 0,
+      "original_instructions": 117,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-nan-enabled0",
+      "operation": 0,
+      "original_instructions": 113,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-0.0-enabled1",
+      "operation": 0,
+      "original_instructions": 408,
+      "events": 14,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-0.0-enabled1",
+      "operation": 0,
+      "original_instructions": 446,
+      "events": 14,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-31.999-enabled1",
+      "operation": 0,
+      "original_instructions": 408,
+      "events": 14,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-31.999-enabled1",
+      "operation": 0,
+      "original_instructions": 446,
+      "events": 14,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-32.0-enabled1",
+      "operation": 0,
+      "original_instructions": 2149,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-32.0-enabled1",
+      "operation": 0,
+      "original_instructions": 2166,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-32.001-enabled1",
+      "operation": 0,
+      "original_instructions": 2178,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-32.001-enabled1",
+      "operation": 0,
+      "original_instructions": 2173,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-194.999-enabled1",
+      "operation": 0,
+      "original_instructions": 1663,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-194.999-enabled1",
+      "operation": 0,
+      "original_instructions": 2213,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-195.0-enabled1",
+      "operation": 0,
+      "original_instructions": 1641,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-195.0-enabled1",
+      "operation": 0,
+      "original_instructions": 2212,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-195.001-enabled1",
+      "operation": 0,
+      "original_instructions": 1660,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-195.001-enabled1",
+      "operation": 0,
+      "original_instructions": 2212,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-214.999-enabled1",
+      "operation": 0,
+      "original_instructions": 1684,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-214.999-enabled1",
+      "operation": 0,
+      "original_instructions": 2206,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-215.0-enabled1",
+      "operation": 0,
+      "original_instructions": 1679,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-215.0-enabled1",
+      "operation": 0,
+      "original_instructions": 2205,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-215.001-enabled1",
+      "operation": 0,
+      "original_instructions": 576,
+      "events": 12,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-215.001-enabled1",
+      "operation": 0,
+      "original_instructions": 2206,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-384.999-enabled1",
+      "operation": 0,
+      "original_instructions": 576,
+      "events": 12,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-384.999-enabled1",
+      "operation": 0,
+      "original_instructions": 2205,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-385.0-enabled1",
+      "operation": 0,
+      "original_instructions": 576,
+      "events": 12,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-385.0-enabled1",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-385.001-enabled1",
+      "operation": 0,
+      "original_instructions": 576,
+      "events": 12,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-385.001-enabled1",
+      "operation": 0,
+      "original_instructions": 194,
+      "events": 7,
+      "fatal_boundary": true,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-inf-enabled1",
+      "operation": 0,
+      "original_instructions": 593,
+      "events": 12,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-inf-enabled1",
+      "operation": 0,
+      "original_instructions": 211,
+      "events": 7,
+      "fatal_boundary": true,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary--inf-enabled1",
+      "operation": 0,
+      "original_instructions": 416,
+      "events": 14,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary--inf-enabled1",
+      "operation": 0,
+      "original_instructions": 461,
+      "events": 14,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "wort-boundary-nan-enabled1",
+      "operation": 0,
+      "original_instructions": 1395,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "thermo-boundary-nan-enabled1",
+      "operation": 0,
+      "original_instructions": 1930,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "target-limit-194.999",
+      "operation": 0,
+      "original_instructions": 1728,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "target-limit-195.0",
+      "operation": 0,
+      "original_instructions": 1722,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "target-limit-195.001",
+      "operation": 0,
+      "original_instructions": 576,
+      "events": 12,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend0-auto0",
+      "operation": 0,
+      "original_instructions": 456,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend28-auto0",
+      "operation": 0,
+      "original_instructions": 456,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend29-auto0",
+      "operation": 0,
+      "original_instructions": 472,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend58-auto0",
+      "operation": 0,
+      "original_instructions": 456,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend59-auto0",
+      "operation": 0,
+      "original_instructions": 590,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend60-auto0",
+      "operation": 0,
+      "original_instructions": 590,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend2147483647-auto0",
+      "operation": 0,
+      "original_instructions": 456,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend4294967294-auto0",
+      "operation": 0,
+      "original_instructions": 456,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend4294967295-auto0",
+      "operation": 0,
+      "original_instructions": 472,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend0-auto0",
+      "operation": 0,
+      "original_instructions": 447,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend28-auto0",
+      "operation": 0,
+      "original_instructions": 447,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend29-auto0",
+      "operation": 0,
+      "original_instructions": 463,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend58-auto0",
+      "operation": 0,
+      "original_instructions": 447,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend59-auto0",
+      "operation": 0,
+      "original_instructions": 581,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend60-auto0",
+      "operation": 0,
+      "original_instructions": 581,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend2147483647-auto0",
+      "operation": 0,
+      "original_instructions": 447,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend4294967294-auto0",
+      "operation": 0,
+      "original_instructions": 447,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend4294967295-auto0",
+      "operation": 0,
+      "original_instructions": 463,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend0-auto0",
+      "operation": 0,
+      "original_instructions": 450,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend28-auto0",
+      "operation": 0,
+      "original_instructions": 450,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend29-auto0",
+      "operation": 0,
+      "original_instructions": 466,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend58-auto0",
+      "operation": 0,
+      "original_instructions": 450,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend59-auto0",
+      "operation": 0,
+      "original_instructions": 584,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend60-auto0",
+      "operation": 0,
+      "original_instructions": 584,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend2147483647-auto0",
+      "operation": 0,
+      "original_instructions": 450,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend4294967294-auto0",
+      "operation": 0,
+      "original_instructions": 450,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend4294967295-auto0",
+      "operation": 0,
+      "original_instructions": 466,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend0-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend28-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend29-auto0",
+      "operation": 0,
+      "original_instructions": 511,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend58-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend59-auto0",
+      "operation": 0,
+      "original_instructions": 629,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend60-auto0",
+      "operation": 0,
+      "original_instructions": 629,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend2147483647-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend4294967294-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend4294967295-auto0",
+      "operation": 0,
+      "original_instructions": 511,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend0-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend28-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend29-auto0",
+      "operation": 0,
+      "original_instructions": 511,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend58-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend59-auto0",
+      "operation": 0,
+      "original_instructions": 629,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend60-auto0",
+      "operation": 0,
+      "original_instructions": 629,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend2147483647-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend4294967294-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend4294967295-auto0",
+      "operation": 0,
+      "original_instructions": 511,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend0-auto0",
+      "operation": 0,
+      "original_instructions": 476,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend28-auto0",
+      "operation": 0,
+      "original_instructions": 476,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend29-auto0",
+      "operation": 0,
+      "original_instructions": 492,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend58-auto0",
+      "operation": 0,
+      "original_instructions": 476,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend59-auto0",
+      "operation": 0,
+      "original_instructions": 610,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend60-auto0",
+      "operation": 0,
+      "original_instructions": 610,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend2147483647-auto0",
+      "operation": 0,
+      "original_instructions": 476,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend4294967294-auto0",
+      "operation": 0,
+      "original_instructions": 476,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend4294967295-auto0",
+      "operation": 0,
+      "original_instructions": 492,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend0-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend28-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend29-auto0",
+      "operation": 0,
+      "original_instructions": 511,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend58-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend59-auto0",
+      "operation": 0,
+      "original_instructions": 629,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend60-auto0",
+      "operation": 0,
+      "original_instructions": 629,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend2147483647-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend4294967294-auto0",
+      "operation": 0,
+      "original_instructions": 495,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend4294967295-auto0",
+      "operation": 0,
+      "original_instructions": 511,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend0-auto0",
+      "operation": 0,
+      "original_instructions": 485,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend28-auto0",
+      "operation": 0,
+      "original_instructions": 485,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend29-auto0",
+      "operation": 0,
+      "original_instructions": 501,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend58-auto0",
+      "operation": 0,
+      "original_instructions": 485,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend59-auto0",
+      "operation": 0,
+      "original_instructions": 619,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend60-auto0",
+      "operation": 0,
+      "original_instructions": 619,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend2147483647-auto0",
+      "operation": 0,
+      "original_instructions": 485,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend4294967294-auto0",
+      "operation": 0,
+      "original_instructions": 485,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend4294967295-auto0",
+      "operation": 0,
+      "original_instructions": 501,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend0-auto0",
+      "operation": 0,
+      "original_instructions": 464,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend28-auto0",
+      "operation": 0,
+      "original_instructions": 464,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend29-auto0",
+      "operation": 0,
+      "original_instructions": 480,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend58-auto0",
+      "operation": 0,
+      "original_instructions": 464,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend59-auto0",
+      "operation": 0,
+      "original_instructions": 598,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend60-auto0",
+      "operation": 0,
+      "original_instructions": 598,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend2147483647-auto0",
+      "operation": 0,
+      "original_instructions": 464,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend4294967294-auto0",
+      "operation": 0,
+      "original_instructions": 464,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend4294967295-auto0",
+      "operation": 0,
+      "original_instructions": 480,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend0-auto1",
+      "operation": 0,
+      "original_instructions": 2140,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend28-auto1",
+      "operation": 0,
+      "original_instructions": 2140,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend29-auto1",
+      "operation": 0,
+      "original_instructions": 2156,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend58-auto1",
+      "operation": 0,
+      "original_instructions": 2140,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend59-auto1",
+      "operation": 0,
+      "original_instructions": 2274,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend60-auto1",
+      "operation": 0,
+      "original_instructions": 2274,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend2147483647-auto1",
+      "operation": 0,
+      "original_instructions": 2140,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend4294967294-auto1",
+      "operation": 0,
+      "original_instructions": 2140,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--1.0-trend4294967295-auto1",
+      "operation": 0,
+      "original_instructions": 2156,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend0-auto1",
+      "operation": 0,
+      "original_instructions": 2131,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend28-auto1",
+      "operation": 0,
+      "original_instructions": 2131,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend29-auto1",
+      "operation": 0,
+      "original_instructions": 2147,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend58-auto1",
+      "operation": 0,
+      "original_instructions": 2131,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend59-auto1",
+      "operation": 0,
+      "original_instructions": 2265,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend60-auto1",
+      "operation": 0,
+      "original_instructions": 2265,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend2147483647-auto1",
+      "operation": 0,
+      "original_instructions": 2131,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend4294967294-auto1",
+      "operation": 0,
+      "original_instructions": 2131,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale--0.0-trend4294967295-auto1",
+      "operation": 0,
+      "original_instructions": 2147,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend0-auto1",
+      "operation": 0,
+      "original_instructions": 2134,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend28-auto1",
+      "operation": 0,
+      "original_instructions": 2134,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend29-auto1",
+      "operation": 0,
+      "original_instructions": 2150,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend58-auto1",
+      "operation": 0,
+      "original_instructions": 2134,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend59-auto1",
+      "operation": 0,
+      "original_instructions": 2268,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend60-auto1",
+      "operation": 0,
+      "original_instructions": 2268,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend2147483647-auto1",
+      "operation": 0,
+      "original_instructions": 2134,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend4294967294-auto1",
+      "operation": 0,
+      "original_instructions": 2134,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.0-trend4294967295-auto1",
+      "operation": 0,
+      "original_instructions": 2150,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend0-auto1",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend28-auto1",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend29-auto1",
+      "operation": 0,
+      "original_instructions": 2215,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend58-auto1",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend59-auto1",
+      "operation": 0,
+      "original_instructions": 2333,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend60-auto1",
+      "operation": 0,
+      "original_instructions": 2333,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend2147483647-auto1",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend4294967294-auto1",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.1-trend4294967295-auto1",
+      "operation": 0,
+      "original_instructions": 2215,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend0-auto1",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend28-auto1",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend29-auto1",
+      "operation": 0,
+      "original_instructions": 2215,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend58-auto1",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend59-auto1",
+      "operation": 0,
+      "original_instructions": 2333,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend60-auto1",
+      "operation": 0,
+      "original_instructions": 2333,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend2147483647-auto1",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend4294967294-auto1",
+      "operation": 0,
+      "original_instructions": 2199,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-0.2-trend4294967295-auto1",
+      "operation": 0,
+      "original_instructions": 2215,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend0-auto1",
+      "operation": 0,
+      "original_instructions": 2180,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend28-auto1",
+      "operation": 0,
+      "original_instructions": 2180,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend29-auto1",
+      "operation": 0,
+      "original_instructions": 2196,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend58-auto1",
+      "operation": 0,
+      "original_instructions": 2180,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend59-auto1",
+      "operation": 0,
+      "original_instructions": 2314,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend60-auto1",
+      "operation": 0,
+      "original_instructions": 2314,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend2147483647-auto1",
+      "operation": 0,
+      "original_instructions": 2180,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend4294967294-auto1",
+      "operation": 0,
+      "original_instructions": 2180,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-1.0-trend4294967295-auto1",
+      "operation": 0,
+      "original_instructions": 2196,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend0-auto1",
+      "operation": 0,
+      "original_instructions": 2198,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend28-auto1",
+      "operation": 0,
+      "original_instructions": 2198,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend29-auto1",
+      "operation": 0,
+      "original_instructions": 2214,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend58-auto1",
+      "operation": 0,
+      "original_instructions": 2198,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend59-auto1",
+      "operation": 0,
+      "original_instructions": 2332,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend60-auto1",
+      "operation": 0,
+      "original_instructions": 2332,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend2147483647-auto1",
+      "operation": 0,
+      "original_instructions": 2198,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend4294967294-auto1",
+      "operation": 0,
+      "original_instructions": 2198,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-100.0-trend4294967295-auto1",
+      "operation": 0,
+      "original_instructions": 2214,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend0-auto1",
+      "operation": 0,
+      "original_instructions": 2169,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend28-auto1",
+      "operation": 0,
+      "original_instructions": 2169,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend29-auto1",
+      "operation": 0,
+      "original_instructions": 2185,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend58-auto1",
+      "operation": 0,
+      "original_instructions": 2169,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend59-auto1",
+      "operation": 0,
+      "original_instructions": 2303,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend60-auto1",
+      "operation": 0,
+      "original_instructions": 2303,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend2147483647-auto1",
+      "operation": 0,
+      "original_instructions": 2169,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend4294967294-auto1",
+      "operation": 0,
+      "original_instructions": 2169,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-inf-trend4294967295-auto1",
+      "operation": 0,
+      "original_instructions": 2185,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend0-auto1",
+      "operation": 0,
+      "original_instructions": 2148,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend28-auto1",
+      "operation": 0,
+      "original_instructions": 2148,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend29-auto1",
+      "operation": 0,
+      "original_instructions": 2164,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend58-auto1",
+      "operation": 0,
+      "original_instructions": 2148,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend59-auto1",
+      "operation": 0,
+      "original_instructions": 2282,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend60-auto1",
+      "operation": 0,
+      "original_instructions": 2282,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend2147483647-auto1",
+      "operation": 0,
+      "original_instructions": 2148,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend4294967294-auto1",
+      "operation": 0,
+      "original_instructions": 2148,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "scale-nan-trend4294967295-auto1",
+      "operation": 0,
+      "original_instructions": 2164,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature100.0-pending0",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature100.0-pending1",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature134.999-pending0",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature134.999-pending1",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature135.0-pending0",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature135.0-pending1",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature135.001-pending0",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature135.001-pending1",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature150.0-pending0",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature150.0-pending1",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature180.0-pending0",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature180.0-pending1",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature180.001-pending0",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperature180.001-pending1",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperaturenan-pending0",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase0-temperaturenan-pending1",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature100.0-pending0",
+      "operation": 5,
+      "original_instructions": 312,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature100.0-pending1",
+      "operation": 5,
+      "original_instructions": 312,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature134.999-pending0",
+      "operation": 5,
+      "original_instructions": 312,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature134.999-pending1",
+      "operation": 5,
+      "original_instructions": 312,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature135.0-pending0",
+      "operation": 5,
+      "original_instructions": 211,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature135.0-pending1",
+      "operation": 5,
+      "original_instructions": 211,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature135.001-pending0",
+      "operation": 5,
+      "original_instructions": 217,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature135.001-pending1",
+      "operation": 5,
+      "original_instructions": 217,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature150.0-pending0",
+      "operation": 5,
+      "original_instructions": 217,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature150.0-pending1",
+      "operation": 5,
+      "original_instructions": 217,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature180.0-pending0",
+      "operation": 5,
+      "original_instructions": 211,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature180.0-pending1",
+      "operation": 5,
+      "original_instructions": 211,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature180.001-pending0",
+      "operation": 5,
+      "original_instructions": 218,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperature180.001-pending1",
+      "operation": 5,
+      "original_instructions": 218,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperaturenan-pending0",
+      "operation": 5,
+      "original_instructions": 205,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase1-temperaturenan-pending1",
+      "operation": 5,
+      "original_instructions": 205,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature100.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature100.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature134.999-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature134.999-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature135.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature135.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature135.001-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature135.001-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature150.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature150.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature180.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature180.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature180.001-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperature180.001-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperaturenan-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase2-temperaturenan-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature100.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature100.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature134.999-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature134.999-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature135.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature135.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature135.001-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature135.001-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature150.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature150.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature180.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature180.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature180.001-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperature180.001-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperaturenan-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase4-temperaturenan-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature100.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature100.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature134.999-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature134.999-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature135.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature135.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature135.001-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature135.001-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature150.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature150.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature180.0-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature180.0-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature180.001-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperature180.001-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperaturenan-pending0",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "classifier-phase8-temperaturenan-pending1",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-(100.0, 100.0, 100.0, 100.0, 100.0, 100.0)-pending0",
+      "operation": 5,
+      "original_instructions": 217,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-(100.0, 99.0, 98.0, 97.0, 96.0, 95.0)-pending0",
+      "operation": 5,
+      "original_instructions": 240,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-(100.0, 101.0, 102.0, 103.0, 104.0, 105.0)-pending0",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-(1e+20, -1e+20, 0.0, 1e+20, -1e+20, 0.0)-pending0",
+      "operation": 5,
+      "original_instructions": 200,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-(nan, nan, nan, nan, nan, nan)-pending0",
+      "operation": 5,
+      "original_instructions": 175,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-(100.0, 100.0, 100.0, 100.0, 100.0, 100.0)-pending1",
+      "operation": 5,
+      "original_instructions": 215,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-(100.0, 99.0, 98.0, 97.0, 96.0, 95.0)-pending1",
+      "operation": 5,
+      "original_instructions": 238,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-(100.0, 101.0, 102.0, 103.0, 104.0, 105.0)-pending1",
+      "operation": 5,
+      "original_instructions": 236,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-(1e+20, -1e+20, 0.0, 1e+20, -1e+20, 0.0)-pending1",
+      "operation": 5,
+      "original_instructions": 200,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "history-(nan, nan, nan, nan, nan, nan)-pending1",
+      "operation": 5,
+      "original_instructions": 173,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-0",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-1",
+      "operation": 0,
+      "original_instructions": 129,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-2",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-3",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-4",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-5",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-6",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-7",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-8",
+      "operation": 0,
+      "original_instructions": 70,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-9",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-10",
+      "operation": 0,
+      "original_instructions": 138,
+      "events": 10,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-11",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-12",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-13",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-14",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-15",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-16",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-17",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-18",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-19",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-20",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-21",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-22",
+      "operation": 0,
+      "original_instructions": 1817,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-23",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-24",
+      "operation": 0,
+      "original_instructions": 2132,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-25",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-26",
+      "operation": 0,
+      "original_instructions": 132,
+      "events": 9,
+      "fatal_boundary": true,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-27",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-28",
+      "operation": 0,
+      "original_instructions": 2327,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-29",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-30",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-31",
+      "operation": 0,
+      "original_instructions": 88,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-32",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-33",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-34",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-35",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-36",
+      "operation": 0,
+      "original_instructions": 2256,
+      "events": 11,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-37",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-38",
+      "operation": 0,
+      "original_instructions": 427,
+      "events": 17,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-39",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-40",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-41",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-42",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-43",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-44",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-45",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-46",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-47",
+      "operation": 0,
+      "original_instructions": 2333,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-48",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-49",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-50",
+      "operation": 0,
+      "original_instructions": 88,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-51",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-52",
+      "operation": 0,
+      "original_instructions": 2343,
+      "events": 11,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-53",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-54",
+      "operation": 0,
+      "original_instructions": 1849,
+      "events": 11,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-55",
+      "operation": 0,
+      "original_instructions": 2174,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-56",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-57",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-58",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-59",
+      "operation": 0,
+      "original_instructions": 1697,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-60",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-61",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-62",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-63",
+      "operation": 0,
+      "original_instructions": 129,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-64",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-65",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-66",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-67",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-68",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-69",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-70",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-71",
+      "operation": 0,
+      "original_instructions": 2171,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-72",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-73",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-74",
+      "operation": 0,
+      "original_instructions": 2190,
+      "events": 11,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-75",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-76",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-77",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-78",
+      "operation": 0,
+      "original_instructions": 2213,
+      "events": 11,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-79",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-80",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-81",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-82",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-83",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-84",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-85",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-86",
+      "operation": 0,
+      "original_instructions": 1696,
+      "events": 11,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-87",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-88",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-89",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-90",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-91",
+      "operation": 0,
+      "original_instructions": 129,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-92",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-93",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-94",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-95",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-96",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-97",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-98",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-99",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-100",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-101",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-102",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-103",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-104",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-105",
+      "operation": 0,
+      "original_instructions": 111,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-106",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-107",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-108",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-109",
+      "operation": 5,
+      "original_instructions": 312,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-110",
+      "operation": 0,
+      "original_instructions": 129,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-111",
+      "operation": 0,
+      "original_instructions": 111,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-112",
+      "operation": 0,
+      "original_instructions": 2281,
+      "events": 11,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-113",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-114",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-115",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-116",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-117",
+      "operation": 0,
+      "original_instructions": 88,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-118",
+      "operation": 0,
+      "original_instructions": 2575,
+      "events": 12,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-119",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-120",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-121",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-122",
+      "operation": 0,
+      "original_instructions": 138,
+      "events": 10,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-123",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-124",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-125",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-126",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-127",
+      "operation": 0,
+      "original_instructions": 114,
+      "events": 7,
+      "fatal_boundary": true,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-128",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-129",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-130",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-131",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-132",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-133",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-134",
+      "operation": 0,
+      "original_instructions": 138,
+      "events": 10,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-135",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-136",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-137",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-138",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-139",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-140",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-141",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-142",
+      "operation": 0,
+      "original_instructions": 111,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-143",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-144",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-145",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-146",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-147",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-148",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-149",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-150",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-151",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-152",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-153",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-154",
+      "operation": 0,
+      "original_instructions": 1786,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-155",
+      "operation": 5,
+      "original_instructions": 218,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-156",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-157",
+      "operation": 0,
+      "original_instructions": 2345,
+      "events": 11,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-158",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-159",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-160",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-161",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-162",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-163",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-164",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-165",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-166",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-167",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-168",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-169",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-170",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-171",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-172",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-173",
+      "operation": 0,
+      "original_instructions": 2182,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-174",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-175",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-176",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-177",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-178",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-179",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-180",
+      "operation": 0,
+      "original_instructions": 97,
+      "events": 10,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-181",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-182",
+      "operation": 0,
+      "original_instructions": 2196,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-183",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-184",
+      "operation": 0,
+      "original_instructions": 114,
+      "events": 7,
+      "fatal_boundary": true,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-185",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-186",
+      "operation": 0,
+      "original_instructions": 2094,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-187",
+      "operation": 0,
+      "original_instructions": 129,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-188",
+      "operation": 0,
+      "original_instructions": 111,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-189",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-190",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-191",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-192",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-193",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-194",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-195",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-196",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-197",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-198",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-199",
+      "operation": 0,
+      "original_instructions": 2350,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-200",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-201",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-202",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-203",
+      "operation": 0,
+      "original_instructions": 132,
+      "events": 9,
+      "fatal_boundary": true,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-204",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-205",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-206",
+      "operation": 0,
+      "original_instructions": 2132,
+      "events": 11,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-207",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-208",
+      "operation": 0,
+      "original_instructions": 2325,
+      "events": 16,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-209",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-210",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-211",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-212",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-213",
+      "operation": 0,
+      "original_instructions": 74,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-214",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-215",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-216",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-217",
+      "operation": 0,
+      "original_instructions": 70,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-218",
+      "operation": 0,
+      "original_instructions": 1715,
+      "events": 12,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-219",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-220",
+      "operation": 0,
+      "original_instructions": 408,
+      "events": 14,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-221",
+      "operation": 0,
+      "original_instructions": 70,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-222",
+      "operation": 0,
+      "original_instructions": 97,
+      "events": 10,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-223",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-224",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-225",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-226",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-227",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-228",
+      "operation": 0,
+      "original_instructions": 70,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-229",
+      "operation": 0,
+      "original_instructions": 133,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-230",
+      "operation": 1,
+      "original_instructions": 25,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-231",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-232",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-233",
+      "operation": 0,
+      "original_instructions": 446,
+      "events": 14,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-234",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-235",
+      "operation": 5,
+      "original_instructions": 221,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-236",
+      "operation": 0,
+      "original_instructions": 138,
+      "events": 10,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-237",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-238",
+      "operation": 5,
+      "original_instructions": 218,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-239",
+      "operation": 1,
+      "original_instructions": 131,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-240",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-241",
+      "operation": 5,
+      "original_instructions": 316,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-242",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-243",
+      "operation": 0,
+      "original_instructions": 111,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-244",
+      "operation": 1,
+      "original_instructions": 21,
+      "events": 5,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-245",
+      "operation": 0,
+      "original_instructions": 115,
+      "events": 7,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-246",
+      "operation": 0,
+      "original_instructions": 138,
+      "events": 10,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-247",
+      "operation": 0,
+      "original_instructions": 92,
+      "events": 9,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-248",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    },
+    {
+      "case": "random-249",
+      "operation": 5,
+      "original_instructions": 14,
+      "events": 0,
+      "fatal_boundary": false,
+      "native_pid_nan_representation_differences": []
+    }
+  ]
+}

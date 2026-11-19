@@ -1,0 +1,2709 @@
+{
+  "elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "passed_cases": 668,
+  "failed_cases": 0,
+  "tested_functions": [
+    "hardware_button_high",
+    "hardware_button_low",
+    "hardware_command",
+    "hardware_encoder_init",
+    "hardware_flush",
+    "hardware_initialize",
+    "hardware_invert0",
+    "hardware_invert1",
+    "pico_encoder_clear_click",
+    "pico_encoder_enable_wrap",
+    "pico_encoder_get_position",
+    "pico_encoder_handle_rotation",
+    "pico_encoder_set_position",
+    "pico_encoder_set_range",
+    "pico_encoder_set_step",
+    "pico_encoder_take_click",
+    "pico_format_float_decimal",
+    "pico_menu_choose_with_timeout",
+    "pico_screen_basic_brew_status",
+    "pico_screen_current_step_page",
+    "pico_screen_current_target_page",
+    "pico_screen_detailed_brew_status",
+    "pico_screen_manual_overview_page",
+    "pico_screen_program_status_page",
+    "pico_screen_temperature_page",
+    "pico_screen_thermal_recovery_help",
+    "pico_ui_draw_deep_clean_confirmation"
+  ],
+  "failures": [],
+  "cases": [
+    {
+      "function": "pico_encoder_get_position",
+      "case": "0"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "1"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "2"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "3"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "4"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "5"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "6"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "7"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "8"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "9"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "10"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "11"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "12"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "13"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "14"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "15"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "16"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "17"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "18"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "19"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "20"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "21"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "22"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "23"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "24"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "25"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "26"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "27"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "28"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "29"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "30"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "31"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "32"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "33"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "34"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "35"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "36"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "37"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "38"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "39"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "40"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "41"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "42"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "43"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "44"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "45"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "46"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "47"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "48"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "49"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "50"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "51"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "52"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "53"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "54"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "55"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "56"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "57"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "58"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "59"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "60"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "61"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "62"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "63"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "64"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "65"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "66"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "67"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "68"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "69"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "70"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "71"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "72"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "73"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "74"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "75"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "76"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "77"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "78"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "79"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "80"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "81"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "82"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "83"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "84"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "85"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "86"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "87"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "88"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "89"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "90"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "91"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "92"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "93"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "94"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "95"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "96"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "97"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "98"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "99"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "100"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "101"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "102"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "103"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "104"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "105"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "106"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "107"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "108"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "109"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "110"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "111"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "112"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "113"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "114"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "115"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "116"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "117"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "118"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "119"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "120"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "121"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "122"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "123"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "124"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "125"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "126"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "127"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "128"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "129"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "130"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "131"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "132"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "133"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "134"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "135"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "136"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "137"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "138"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "139"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "140"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "141"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "142"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "143"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "144"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "145"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "146"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "147"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "148"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "149"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "150"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "151"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "152"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "153"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "154"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "155"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "156"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "157"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "158"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "159"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "160"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "161"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "162"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "163"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "164"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "165"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "166"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "167"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "168"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "169"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "170"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "171"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "172"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "173"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "174"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "175"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "176"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "177"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "178"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "179"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "180"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "181"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "182"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "183"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "184"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "185"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "186"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "187"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "188"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "189"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "190"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "191"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "192"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "193"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "194"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "195"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "196"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "197"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "198"
+    },
+    {
+      "function": "pico_encoder_get_position",
+      "case": "199"
+    },
+    {
+      "function": "pico_encoder_set_step",
+      "case": "0"
+    },
+    {
+      "function": "pico_encoder_set_step",
+      "case": "1"
+    },
+    {
+      "function": "pico_encoder_set_step",
+      "case": "255"
+    },
+    {
+      "function": "pico_encoder_set_range",
+      "case": "0"
+    },
+    {
+      "function": "pico_encoder_set_range",
+      "case": "1"
+    },
+    {
+      "function": "pico_encoder_set_range",
+      "case": "255"
+    },
+    {
+      "function": "pico_encoder_enable_wrap",
+      "case": "0"
+    },
+    {
+      "function": "pico_encoder_enable_wrap",
+      "case": "1"
+    },
+    {
+      "function": "pico_encoder_enable_wrap",
+      "case": "255"
+    },
+    {
+      "function": "pico_encoder_set_position",
+      "case": "0"
+    },
+    {
+      "function": "pico_encoder_set_position",
+      "case": "1"
+    },
+    {
+      "function": "pico_encoder_set_position",
+      "case": "255"
+    },
+    {
+      "function": "pico_encoder_clear_click",
+      "case": "0"
+    },
+    {
+      "function": "pico_encoder_clear_click",
+      "case": "1"
+    },
+    {
+      "function": "pico_encoder_clear_click",
+      "case": "255"
+    },
+    {
+      "function": "pico_encoder_take_click",
+      "case": "0"
+    },
+    {
+      "function": "pico_encoder_take_click",
+      "case": "1"
+    },
+    {
+      "function": "pico_encoder_take_click",
+      "case": "255"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,0,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,0,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,0,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,0,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,0,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,0,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,0,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,0,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,1,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,1,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,1,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,1,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,1,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,1,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,1,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,1,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,2,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,2,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,2,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,2,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,2,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,2,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,2,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,2,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,3,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,3,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,3,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,3,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,3,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,3,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,3,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "0,3,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,0,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,0,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,0,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,0,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,0,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,0,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,0,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,0,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,1,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,1,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,1,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,1,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,1,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,1,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,1,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,1,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,2,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,2,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,2,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,2,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,2,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,2,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,2,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,2,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,3,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,3,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,3,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,3,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,3,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,3,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,3,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "1,3,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,0,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,0,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,0,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,0,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,0,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,0,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,0,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,0,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,1,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,1,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,1,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,1,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,1,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,1,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,1,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,1,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,2,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,2,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,2,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,2,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,2,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,2,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,2,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,2,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,3,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,3,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,3,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,3,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,3,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,3,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,3,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "2,3,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,0,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,0,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,0,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,0,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,0,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,0,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,0,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,0,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,1,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,1,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,1,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,1,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,1,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,1,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,1,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,1,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,2,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,2,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,2,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,2,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,2,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,2,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,2,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,2,3,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,3,0,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,3,0,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,3,1,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,3,1,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,3,2,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,3,2,1"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,3,3,0"
+    },
+    {
+      "function": "pico_encoder_handle_rotation",
+      "case": "3,3,3,1"
+    },
+    {
+      "function": "hardware_initialize",
+      "case": "initialize"
+    },
+    {
+      "function": "hardware_flush",
+      "case": "flush"
+    },
+    {
+      "function": "hardware_command",
+      "case": "command"
+    },
+    {
+      "function": "hardware_invert0",
+      "case": "invert0"
+    },
+    {
+      "function": "hardware_invert1",
+      "case": "invert1"
+    },
+    {
+      "function": "hardware_encoder_init",
+      "case": "encoder_init"
+    },
+    {
+      "function": "hardware_button_low",
+      "case": "button_low"
+    },
+    {
+      "function": "hardware_button_high",
+      "case": "button_high"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "0.0,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "0.0,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "0.0,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "0.0,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-0.0,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-0.0,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-0.0,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-0.0,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-0.7,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-0.7,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-0.7,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-0.7,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-5.29,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-5.29,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-5.29,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-5.29,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "5.29,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "5.29,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "5.29,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "5.29,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "99.99,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "99.99,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "99.99,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "99.99,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "153.7,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "153.7,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "153.7,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "153.7,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "123.456,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "123.456,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "123.456,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "123.456,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-139.75085685279748,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-139.75085685279748,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-139.75085685279748,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-139.75085685279748,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "24.657844567054042,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "24.657844567054042,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "24.657844567054042,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "24.657844567054042,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-189.5853283586726,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-189.5853283586726,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-189.5853283586726,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-189.5853283586726,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-45.161421336729035,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-45.161421336729035,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-45.161421336729035,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-45.161421336729035,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "180.36367591476352,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "180.36367591476352,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "180.36367591476352,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "180.36367591476352,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-172.59871781945606,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-172.59871781945606,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-172.59871781945606,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-172.59871781945606,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "53.21204060844099,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "53.21204060844099,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "53.21204060844099,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "53.21204060844099,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-34.39741990510805,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-34.39741990510805,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-34.39741990510805,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-34.39741990510805,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "96.05854654045453,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "96.05854654045453,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "96.05854654045453,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "96.05854654045453,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "217.7184669897644,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "217.7184669897644,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "217.7184669897644,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "217.7184669897644,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "129.00921358796688,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "129.00921358796688,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "129.00921358796688,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "129.00921358796688,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-132.2063677990177,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-132.2063677990177,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-132.2063677990177,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-132.2063677990177,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "110.18360670181926,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "110.18360670181926,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "110.18360670181926,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "110.18360670181926,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "140.58470398361692,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "140.58470398361692,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "140.58470398361692,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "140.58470398361692,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-29.922924807196353,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-29.922924807196353,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-29.922924807196353,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-29.922924807196353,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-106.87648002042219,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-106.87648002042219,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-106.87648002042219,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-106.87648002042219,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-116.55255593525621,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-116.55255593525621,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-116.55255593525621,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-116.55255593525621,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-67.75706244735537,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-67.75706244735537,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-67.75706244735537,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-67.75706244735537,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-11.55285589338925,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-11.55285589338925,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-11.55285589338925,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-11.55285589338925,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "186.07196671174984,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "186.07196671174984,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "186.07196671174984,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "186.07196671174984,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "100.77878260170712,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "100.77878260170712,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "100.77878260170712,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "100.77878260170712,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "161.21027908673454,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "161.21027908673454,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "161.21027908673454,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "161.21027908673454,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-33.68314040469485,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-33.68314040469485,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-33.68314040469485,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-33.68314040469485,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-81.07236119623656,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-81.07236119623656,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-81.07236119623656,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-81.07236119623656,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-171.63803126832488,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-171.63803126832488,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-171.63803126832488,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-171.63803126832488,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "96.61512148472502,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "96.61512148472502,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "96.61512148472502,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "96.61512148472502,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-28.4228016300234,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-28.4228016300234,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-28.4228016300234,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-28.4228016300234,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "60.13404018475279,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "60.13404018475279,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "60.13404018475279,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "60.13404018475279,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-79.34291787503825,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-79.34291787503825,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-79.34291787503825,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-79.34291787503825,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-104.16281461370913,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-104.16281461370913,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-104.16281461370913,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-104.16281461370913,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-6.220731187776494,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-6.220731187776494,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-6.220731187776494,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-6.220731187776494,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-21.547498787581645,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-21.547498787581645,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-21.547498787581645,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-21.547498787581645,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "77.9580063076977,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "77.9580063076977,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "77.9580063076977,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "77.9580063076977,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-121.2812670785962,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-121.2812670785962,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-121.2812670785962,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-121.2812670785962,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-132.6707663013488,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-132.6707663013488,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-132.6707663013488,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-132.6707663013488,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "31.022232494279052,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "31.022232494279052,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "31.022232494279052,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "31.022232494279052,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-32.1907452822885,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-32.1907452822885,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-32.1907452822885,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-32.1907452822885,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-156.6940378896738,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-156.6940378896738,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-156.6940378896738,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-156.6940378896738,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "146.38372231914218,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "146.38372231914218,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "146.38372231914218,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "146.38372231914218,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "91.53426525415449,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "91.53426525415449,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "91.53426525415449,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "91.53426525415449,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-72.68252424237843,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-72.68252424237843,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-72.68252424237843,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-72.68252424237843,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "171.16459659791985,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "171.16459659791985,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "171.16459659791985,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "171.16459659791985,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-64.24907183652022,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-64.24907183652022,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-64.24907183652022,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-64.24907183652022,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-116.62294122074464,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-116.62294122074464,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-116.62294122074464,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-116.62294122074464,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "139.87935364896674,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "139.87935364896674,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "139.87935364896674,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "139.87935364896674,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "4.229114323252418,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "4.229114323252418,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "4.229114323252418,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "4.229114323252418,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-179.99909265972593,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-179.99909265972593,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-179.99909265972593,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-179.99909265972593,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "13.564583134694061,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "13.564583134694061,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "13.564583134694061,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "13.564583134694061,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-125.64038624172669,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-125.64038624172669,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-125.64038624172669,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-125.64038624172669,3"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-91.99569651579418,0"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-91.99569651579418,1"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-91.99569651579418,2"
+    },
+    {
+      "function": "pico_format_float_decimal",
+      "case": "-91.99569651579418,3"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "click,count=1"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "click,count=3"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "click,count=10"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "click,count=22"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "scroll_down,count=1"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "scroll_down,count=3"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "scroll_down,count=10"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "scroll_down,count=22"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "scroll_up,count=1"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "scroll_up,count=3"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "scroll_up,count=10"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "scroll_up,count=22"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "timeout,count=1"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "timeout,count=3"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "timeout,count=10"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "timeout,count=22"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "filter_missing,count=1"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "filter_missing,count=3"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "filter_missing,count=10"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "filter_missing,count=22"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "still_fault,count=1"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "still_fault,count=3"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "still_fault,count=10"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "still_fault,count=22"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "redraw,count=1"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "redraw,count=3"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "redraw,count=10"
+    },
+    {
+      "function": "pico_menu_choose_with_timeout",
+      "case": "redraw,count=22"
+    },
+    {
+      "function": "pico_screen_manual_overview_page",
+      "case": "language=0,celsius=0"
+    },
+    {
+      "function": "pico_screen_manual_overview_page",
+      "case": "language=0,celsius=1"
+    },
+    {
+      "function": "pico_screen_manual_overview_page",
+      "case": "language=1,celsius=0"
+    },
+    {
+      "function": "pico_screen_manual_overview_page",
+      "case": "language=1,celsius=1"
+    },
+    {
+      "function": "pico_screen_manual_overview_page",
+      "case": "language=2,celsius=0"
+    },
+    {
+      "function": "pico_screen_manual_overview_page",
+      "case": "language=2,celsius=1"
+    },
+    {
+      "function": "pico_screen_current_target_page",
+      "case": "language=0,celsius=0"
+    },
+    {
+      "function": "pico_screen_current_target_page",
+      "case": "language=0,celsius=1"
+    },
+    {
+      "function": "pico_screen_current_target_page",
+      "case": "language=1,celsius=0"
+    },
+    {
+      "function": "pico_screen_current_target_page",
+      "case": "language=1,celsius=1"
+    },
+    {
+      "function": "pico_screen_current_target_page",
+      "case": "language=2,celsius=0"
+    },
+    {
+      "function": "pico_screen_current_target_page",
+      "case": "language=2,celsius=1"
+    },
+    {
+      "function": "pico_screen_basic_brew_status",
+      "case": "language=0,celsius=0"
+    },
+    {
+      "function": "pico_screen_basic_brew_status",
+      "case": "language=0,celsius=1"
+    },
+    {
+      "function": "pico_screen_basic_brew_status",
+      "case": "language=1,celsius=0"
+    },
+    {
+      "function": "pico_screen_basic_brew_status",
+      "case": "language=1,celsius=1"
+    },
+    {
+      "function": "pico_screen_basic_brew_status",
+      "case": "language=2,celsius=0"
+    },
+    {
+      "function": "pico_screen_basic_brew_status",
+      "case": "language=2,celsius=1"
+    },
+    {
+      "function": "pico_screen_detailed_brew_status",
+      "case": "language=0,celsius=0"
+    },
+    {
+      "function": "pico_screen_detailed_brew_status",
+      "case": "language=0,celsius=1"
+    },
+    {
+      "function": "pico_screen_detailed_brew_status",
+      "case": "language=1,celsius=0"
+    },
+    {
+      "function": "pico_screen_detailed_brew_status",
+      "case": "language=1,celsius=1"
+    },
+    {
+      "function": "pico_screen_detailed_brew_status",
+      "case": "language=2,celsius=0"
+    },
+    {
+      "function": "pico_screen_detailed_brew_status",
+      "case": "language=2,celsius=1"
+    },
+    {
+      "function": "pico_screen_temperature_page",
+      "case": "language=0,celsius=0"
+    },
+    {
+      "function": "pico_screen_temperature_page",
+      "case": "language=0,celsius=1"
+    },
+    {
+      "function": "pico_screen_temperature_page",
+      "case": "language=1,celsius=0"
+    },
+    {
+      "function": "pico_screen_temperature_page",
+      "case": "language=1,celsius=1"
+    },
+    {
+      "function": "pico_screen_temperature_page",
+      "case": "language=2,celsius=0"
+    },
+    {
+      "function": "pico_screen_temperature_page",
+      "case": "language=2,celsius=1"
+    },
+    {
+      "function": "pico_screen_current_step_page",
+      "case": "language=0,celsius=0"
+    },
+    {
+      "function": "pico_screen_current_step_page",
+      "case": "language=0,celsius=1"
+    },
+    {
+      "function": "pico_screen_current_step_page",
+      "case": "language=1,celsius=0"
+    },
+    {
+      "function": "pico_screen_current_step_page",
+      "case": "language=1,celsius=1"
+    },
+    {
+      "function": "pico_screen_current_step_page",
+      "case": "language=2,celsius=0"
+    },
+    {
+      "function": "pico_screen_current_step_page",
+      "case": "language=2,celsius=1"
+    },
+    {
+      "function": "pico_screen_program_status_page",
+      "case": "language=0,celsius=0"
+    },
+    {
+      "function": "pico_screen_program_status_page",
+      "case": "language=0,celsius=1"
+    },
+    {
+      "function": "pico_screen_program_status_page",
+      "case": "language=1,celsius=0"
+    },
+    {
+      "function": "pico_screen_program_status_page",
+      "case": "language=1,celsius=1"
+    },
+    {
+      "function": "pico_screen_program_status_page",
+      "case": "language=2,celsius=0"
+    },
+    {
+      "function": "pico_screen_program_status_page",
+      "case": "language=2,celsius=1"
+    },
+    {
+      "function": "pico_screen_thermal_recovery_help",
+      "case": "language=0,celsius=0"
+    },
+    {
+      "function": "pico_screen_thermal_recovery_help",
+      "case": "language=0,celsius=1"
+    },
+    {
+      "function": "pico_screen_thermal_recovery_help",
+      "case": "language=1,celsius=0"
+    },
+    {
+      "function": "pico_screen_thermal_recovery_help",
+      "case": "language=1,celsius=1"
+    },
+    {
+      "function": "pico_screen_thermal_recovery_help",
+      "case": "language=2,celsius=0"
+    },
+    {
+      "function": "pico_screen_thermal_recovery_help",
+      "case": "language=2,celsius=1"
+    },
+    {
+      "function": "pico_ui_draw_deep_clean_confirmation",
+      "case": "language=0,celsius=0"
+    },
+    {
+      "function": "pico_ui_draw_deep_clean_confirmation",
+      "case": "language=0,celsius=1"
+    },
+    {
+      "function": "pico_ui_draw_deep_clean_confirmation",
+      "case": "language=1,celsius=0"
+    },
+    {
+      "function": "pico_ui_draw_deep_clean_confirmation",
+      "case": "language=1,celsius=1"
+    },
+    {
+      "function": "pico_ui_draw_deep_clean_confirmation",
+      "case": "language=2,celsius=0"
+    },
+    {
+      "function": "pico_ui_draw_deep_clean_confirmation",
+      "case": "language=2,celsius=1"
+    }
+  ]
+}

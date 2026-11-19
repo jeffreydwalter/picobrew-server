@@ -1,0 +1,56 @@
+{
+  "scope": "Historical target compiler layout/type probe from dependency integration; not current production-link evidence or execution on hardware",
+  "dimensions": {
+    "IPAddress.size": 8,
+    "IPAddress.align": 4,
+    "WiFiClient.size": 296,
+    "WiFiClient.align": 4,
+    "PicoEnergiaObjects.size": 320,
+    "PicoEnergiaObjects.align": 4,
+    "still_home_address.offset": 0,
+    "still_active_address.offset": 8,
+    "http_client.offset": 16,
+    "server_address.offset": 312
+  },
+  "dso_symbol": "2000a558 B __dso_handle",
+  "reviewed_files": {
+    "platform/energia_cc3200.cpp": "c0d0c0365a8991dbe78065aceafed8fe47c1e5fd6e3e64cff1051c9267d90c36",
+    "include/picobrew/energia_cc3200.h": "5d2519922d13d0cf70613a33e0cd68f738799801439b7f81496587e03e541bc4"
+  },
+  "compile_flags": [
+    "-mcpu=cortex-m4",
+    "-mthumb",
+    "-mfloat-abi=soft",
+    "-mabi=aapcs",
+    "-std=gnu++11",
+    "-Os",
+    "-fno-rtti",
+    "-fno-exceptions",
+    "-fno-threadsafe-statics",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-DENERGIA",
+    "-D__CC3200R1M1RGC__",
+    "-I/workspace/scratch/e5dd684dd8f0/picobrew-application/include",
+    "-isystem",
+    "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/energia/cores/cc3200",
+    "-isystem",
+    "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/energia/variants/CC3200-LAUNCHXL",
+    "-isystem",
+    "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/energia/system",
+    "-isystem",
+    "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/energia/libraries/WiFi",
+    "-isystem",
+    "/workspace/scratch/e5dd684dd8f0/pico-app-work/sdk_build/bootstrap-test/energia/libraries/SPI"
+  ],
+  "pass": true,
+  "review_note": "Final lifetime and IntMasterEnable contract comments reviewed; target declarations unchanged.",
+  "status": "historical_sdk_abi_probe",
+  "superseded_for_current_build_by": [
+    "analysis/native-startup-tests.json",
+    "firmware/firmware-report.json",
+    "firmware/build-evidence/validation.json",
+    "firmware/build-evidence/runtime_boundary.json"
+  ]
+}

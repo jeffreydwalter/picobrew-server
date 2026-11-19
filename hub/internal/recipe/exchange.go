@@ -74,6 +74,14 @@ func Export(r domain.Recipe, format string) ([]byte, error) {
 	switch strings.ToLower(strings.TrimSpace(format)) {
 	case "json", "application/json":
 		data, err = json.MarshalIndent(r, "", "  ")
+	case "native", "native-json":
+		if !IsNative(r) || r.NativeProgram == nil {
+			return nil, errors.New("native JSON export requires an explicit native program; adapt a canonical recipe for a specific machine first")
+		}
+		if !strings.HasPrefix(r.SourceModel, "pico") {
+			return nil, errors.New("standalone native JSON export supports Pico S/Pro routing only; use canonical JSON to retain this source model's program")
+		}
+		data, err = NativeJSON(*r.NativeProgram)
 	case "xml", "beerxml", "application/xml", "text/xml":
 		data, err = exportXML(r)
 	default:
@@ -526,6 +534,9 @@ func fromXML(x xmlRecipe) (domain.Recipe, error) {
 }
 
 func exportXML(r domain.Recipe) ([]byte, error) {
+	if IsNative(r) {
+		return nil, errors.New("BeerXML requires a complete ingredient recipe; this record is a machine program without an ingredient bill, batch volume or efficiency. Export JSON to preserve it")
+	}
 	typeName, err := enum(r.Type, "All Grain", "Partial Mash", "Extract")
 	if err != nil {
 		return nil, fmt.Errorf("recipe type is needed for BeerXML: %w", err)

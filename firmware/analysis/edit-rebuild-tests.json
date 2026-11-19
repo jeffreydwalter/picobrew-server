@@ -1,0 +1,118 @@
+{
+  "passed": true,
+  "temperature_comparisons": 15,
+  "unchanged_thermoblock_comparisons": 5,
+  "original_source_sha256": "ea7e2a9ce237afe0404e5bca4b244179b6466b3fd763a0b36a19d7d7d51aed19",
+  "modified_source_sha256": "843ff2c5c06604262232cca59774240d2cc29a61c1e348a691153cdf48968e12",
+  "baseline_elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "modified_elf_sha256": "a277f3e60a0907ba17a4825f9ef50c474905548802b27707f8fb7e4c60aa506e",
+  "production_source_modified": false,
+  "results": [
+    {
+      "adc": 256,
+      "session": 1,
+      "before_f": 226.25364685058594,
+      "after_f": 226.25364685058594,
+      "difference_f": 0.0
+    },
+    {
+      "adc": 256,
+      "session": 2,
+      "before_f": 224.25364685058594,
+      "after_f": 223.75364685058594,
+      "difference_f": -0.5
+    },
+    {
+      "adc": 256,
+      "session": 4,
+      "before_f": 224.25364685058594,
+      "after_f": 223.75364685058594,
+      "difference_f": -0.5
+    },
+    {
+      "adc": 1024,
+      "session": 1,
+      "before_f": 138.58682250976562,
+      "after_f": 138.58682250976562,
+      "difference_f": 0.0
+    },
+    {
+      "adc": 1024,
+      "session": 2,
+      "before_f": 136.58682250976562,
+      "after_f": 136.08682250976562,
+      "difference_f": -0.5
+    },
+    {
+      "adc": 1024,
+      "session": 4,
+      "before_f": 136.58682250976562,
+      "after_f": 136.08682250976562,
+      "difference_f": -0.5
+    },
+    {
+      "adc": 2048,
+      "session": 1,
+      "before_f": 93.04096221923828,
+      "after_f": 93.04096221923828,
+      "difference_f": 0.0
+    },
+    {
+      "adc": 2048,
+      "session": 2,
+      "before_f": 91.04096221923828,
+      "after_f": 90.54096221923828,
+      "difference_f": -0.5
+    },
+    {
+      "adc": 2048,
+      "session": 4,
+      "before_f": 91.04096221923828,
+      "after_f": 90.54096221923828,
+      "difference_f": -0.5
+    },
+    {
+      "adc": 3072,
+      "session": 1,
+      "before_f": 59.59127426147461,
+      "after_f": 59.59127426147461,
+      "difference_f": 0.0
+    },
+    {
+      "adc": 3072,
+      "session": 2,
+      "before_f": 57.59127426147461,
+      "after_f": 57.09127426147461,
+      "difference_f": -0.5
+    },
+    {
+      "adc": 3072,
+      "session": 4,
+      "before_f": 57.59127426147461,
+      "after_f": 57.09127426147461,
+      "difference_f": -0.5
+    },
+    {
+      "adc": 3840,
+      "session": 1,
+      "before_f": 33.31263732910156,
+      "after_f": 33.31263732910156,
+      "difference_f": 0.0
+    },
+    {
+      "adc": 3840,
+      "session": 2,
+      "before_f": 31.312637329101562,
+      "after_f": 30.812637329101562,
+      "difference_f": -0.5
+    },
+    {
+      "adc": 3840,
+      "session": 4,
+      "before_f": 31.312637329101562,
+      "after_f": 30.812637329101562,
+      "difference_f": -0.5
+    }
+  ],
+  "scope": "Isolated source edit, real ARM recompile/link, and observed changed ARM behavior; not a physical calibration recommendation."
+}

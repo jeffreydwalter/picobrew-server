@@ -1,0 +1,438 @@
+{
+  "passed": 61,
+  "failed": 0,
+  "exact_original_rebuilt_cases": 41,
+  "repair_cases": 20,
+  "firmware_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "scope": "Application UID reads run through actual RFID register/FIFO/CRC/select code, deterministic SPI model, encoder/filter/time boundaries. Error, cancellation, filter timeout and UID lengths compared; capacity repairs checked with canaries.",
+  "cases": [
+    {
+      "operation": "initialize",
+      "scenario": "{}",
+      "capacity": 22,
+      "repair": false,
+      "events": 111
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 556
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 432
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUf'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 877
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUf', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 753
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 1198
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 1074
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'mode': 'timeout', 'clicks': [0, 0, 1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 220
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'bad_sak_crc': True, 'clicks': [0, 1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 863
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'mode': 'collision', 'collision': 32, 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 212
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'uid': b'\\x04\\x11\"3'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 661
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'uid': b'\\x04\\x11\"3', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 537
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUf'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 982
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUf', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 858
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 1303
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 1179
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'mode': 'timeout', 'clicks': [0, 0, 1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 325
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'bad_sak_crc': True, 'clicks': [0, 1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 968
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'mode': 'collision', 'collision': 32, 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 317
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 436
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 436
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUf'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 757
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUf', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 757
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 1078
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 1078
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'mode': 'timeout', 'clicks': [0, 0, 1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 81
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'bad_sak_crc': True, 'clicks': [0, 1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 439
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'mode': 'collision', 'collision': 32, 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 216
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'filters': [0]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 435
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'mode': 'timeout', 'clicks': [0], 'ticks': [0, 1, 15001, 15002]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 155
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'uid': b'\\x04\\x11\"3'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 541
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'uid': b'\\x04\\x11\"3', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 541
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUf'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 862
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUf', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 862
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 22,
+      "repair": false,
+      "events": 1183
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99', 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 1183
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'mode': 'timeout', 'clicks': [0, 0, 1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 186
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'bad_sak_crc': True, 'clicks': [0, 1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 544
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'mode': 'collision', 'collision': 32, 'clicks': [1]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 321
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'filters': [0]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 540
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'mode': 'timeout', 'clicks': [0], 'ticks': [0, 1, 15001, 15002]}",
+      "capacity": 22,
+      "repair": false,
+      "events": 260
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 0,
+      "repair": true,
+      "events": 1198
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 1,
+      "repair": true,
+      "events": 1198
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 2,
+      "repair": true,
+      "events": 1198
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 8,
+      "repair": true,
+      "events": 1198
+    },
+    {
+      "operation": "uid_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 20,
+      "repair": true,
+      "events": 1198
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 0,
+      "repair": true,
+      "events": 1303
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 1,
+      "repair": true,
+      "events": 1303
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 2,
+      "repair": true,
+      "events": 1303
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 8,
+      "repair": true,
+      "events": 1303
+    },
+    {
+      "operation": "uid",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 20,
+      "repair": true,
+      "events": 1303
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 0,
+      "repair": true,
+      "events": 0
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 1,
+      "repair": true,
+      "events": 1078
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 2,
+      "repair": true,
+      "events": 1078
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 8,
+      "repair": true,
+      "events": 1078
+    },
+    {
+      "operation": "pack_wait",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 20,
+      "repair": true,
+      "events": 1078
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 0,
+      "repair": true,
+      "events": 105
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 1,
+      "repair": true,
+      "events": 1183
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 2,
+      "repair": true,
+      "events": 1183
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 8,
+      "repair": true,
+      "events": 1183
+    },
+    {
+      "operation": "pack",
+      "scenario": "{'uid': b'\\x04\\x11\"3DUfw\\x88\\x99'}",
+      "capacity": 20,
+      "repair": true,
+      "events": 1183
+    }
+  ]
+}

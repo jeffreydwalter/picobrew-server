@@ -18,10 +18,14 @@ import {
   Sparkles,
   Check,
   Loader2,
+  BookOpen,
 } from 'lucide-react'
 import { useHub, useResource } from '../context'
 import { api, download, errorMessage } from '../lib/api'
 import { dateLabel, ingredientUnits, newRecipe, slug } from '../lib/utils'
+import { isNative, kindLabel, programTiming } from '../lib/programs'
+import NativeRecipeEditor from './NativeRecipeEditor'
+import { TransferDialog } from '../components/TransferDialog'
 import type { Recipe, Ingredient, RecipeStep, Adapted } from '../types'
 import {
   Badge,
@@ -46,6 +50,10 @@ function RecipeLibrary() {
   const [importing, setImporting] = useState(false)
   const [selected, setSelected] = useState<string[]>([])
   const [shopping, setShopping] = useState(false)
+  const [transfer, setTransfer] = useState(false)
+  const shoppingIDs = selected.filter((id) =>
+    hub.recipes.some((recipe) => recipe.id === id && !isNative(recipe))
+  )
   const filtered = hub.recipes.filter((recipe) =>
     `${recipe.name} ${recipe.style} ${(recipe.tags || []).join(' ')}`
       .toLowerCase()
@@ -59,6 +67,10 @@ function RecipeLibrary() {
         description="Create once. Refine with every brew. Adapt to the machine on your bench."
         actions={
           <>
+            <Button variant="secondary" onClick={() => hub.navigate('/catalog')}>
+              <BookOpen size={16} />
+              Community catalogue
+            </Button>
             <Button variant="secondary" onClick={() => setImporting(true)}>
               <Upload size={16} />
               Import recipe
@@ -73,10 +85,18 @@ function RecipeLibrary() {
       <div className="list-toolbar">
         <SearchBox value={query} onChange={setQuery} placeholder="Search recipes, styles or tags" />
         <div className="inline-actions">
-          <span className="muted">{filtered.length} recipes</span>
-          <Button variant="secondary" disabled={!selected.length} onClick={() => setShopping(true)}>
+          <span className="muted">{filtered.length} recipes & programs</span>
+          <Button variant="secondary" disabled={!selected.length} onClick={() => setTransfer(true)}>
+            <Send size={16} />
+            Send selected{selected.length ? ` (${selected.length})` : ''}
+          </Button>
+          <Button
+            variant="secondary"
+            disabled={!shoppingIDs.length}
+            onClick={() => setShopping(true)}
+          >
             <ShoppingBasket size={16} />
-            Shopping list{selected.length ? ` (${selected.length})` : ''}
+            Shopping list{shoppingIDs.length ? ` (${shoppingIDs.length})` : ''}
           </Button>
         </div>
       </div>
@@ -101,9 +121,10 @@ function RecipeLibrary() {
                     }
                   />
                 </label>
-                <span>{recipe.style || 'YOUR OWN CREATION'}</span>
+                <span>{recipe.style || kindLabel(recipe.kind)}</span>
               </div>
               <div className="recipe-card-content">
+                <Badge tone={isNative(recipe) ? 'copper' : 'green'}>{kindLabel(recipe.kind)}</Badge>
                 <h3>
                   <button onClick={() => hub.navigate(`/recipes/${recipe.id}`)}>
                     {recipe.name}
@@ -111,19 +132,34 @@ function RecipeLibrary() {
                 </h3>
                 <p>{recipe.description || 'A recipe ready for your next brew day.'}</p>
                 <div className="recipe-meta">
-                  <span>
-                    <FlaskConical size={14} />
-                    {recipe.batch_liters} L
-                  </span>
-                  <span>
-                    <Clock3 size={14} />
-                    {(recipe.steps || []).reduce(
-                      (total, step) => total + step.minutes + step.drain_minutes,
-                      0
-                    )}{' '}
-                    min
-                  </span>
-                  <span>{(recipe.ingredients || []).length} ingredients</span>
+                  {isNative(recipe) ? (
+                    <>
+                      <span>{recipe.source_model}</span>
+                      <span>
+                        <Clock3 size={14} />
+                        {recipe.native_program
+                          ? programTiming(recipe.native_program)
+                          : 'Schedule unavailable'}
+                      </span>
+                      <span>Program only</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>
+                        <FlaskConical size={14} />
+                        {recipe.batch_liters} L
+                      </span>
+                      <span>
+                        <Clock3 size={14} />
+                        {(recipe.steps || []).reduce(
+                          (total, step) => total + step.minutes + step.drain_minutes,
+                          0
+                        )}{' '}
+                        min
+                      </span>
+                      <span>{(recipe.ingredients || []).length} ingredients</span>
+                    </>
+                  )}
                 </div>
                 <div className="recipe-tags">
                   {(recipe.tags || []).slice(0, 3).map((tag) => (
@@ -163,7 +199,14 @@ function RecipeLibrary() {
         </div>
       )}
       {importing && <ImportDialog onClose={() => setImporting(false)} />}{' '}
-      {shopping && <ShoppingList ids={selected} onClose={() => setShopping(false)} />}
+      {shopping && <ShoppingList ids={shoppingIDs} onClose={() => setShopping(false)} />}
+      {transfer && (
+        <TransferDialog
+          recipes={hub.recipes}
+          initialSelection={selected}
+          onClose={() => setTransfer(false)}
+        />
+      )}
     </>
   )
 }
@@ -295,6 +338,9 @@ function RecipeEditor({ id }: { id: string }) {
   }
   if (!isNew && loaded.loading) return <Loading label="Opening your recipe…" />
   if (!isNew && loaded.error) return <ErrorBanner message={loaded.error} retry={loaded.reload} />
+  const nativeRecipe = isNew ? recipe : loaded.data
+  if (nativeRecipe && isNative(nativeRecipe))
+    return <NativeRecipeEditor initial={nativeRecipe} isNew={isNew} />
   return (
     <>
       <PageTitle
@@ -627,10 +673,17 @@ function RecipeEditor({ id }: { id: string }) {
                           }
                         />
                       </Field>
-                      <Field label="Duration (min)">
+                      <Field
+                        label="Duration (min)"
+                        hint={
+                          step.kind === 'heat' || step.kind === 'cool'
+                            ? '0 = reach the target temperature'
+                            : undefined
+                        }
+                      >
                         <input
                           type="number"
-                          min="1"
+                          min={step.kind === 'heat' || step.kind === 'cool' ? '0' : '1'}
                           max="43200"
                           value={step.minutes}
                           onChange={(event) =>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Pico Local</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/api-explorer.js" defer></script>
+  <script src="/history.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Pico Local home"><span class="brand-mark">P</span><span>Pico <strong>Local</strong><small>S / PRO BREWING CONSOLE</small></span></a>
+    <div class="connection"><span id="connectionDot" class="dot"></span><span id="connectionText">Disconnected</span><button id="connectButton" class="button small ghost">Connect</button></div>
+  </header>
+  <div class="shell">
+    <nav aria-label="Main navigation">
+      <p class="nav-heading">YOUR BREWER</p>
+      <button class="nav-button selected" data-tab="overview" aria-current="page">Overview <span>01</span></button>
+      <button class="nav-button" data-tab="recipes">Recipes <span id="recipeCount">0</span></button>
+      <button class="nav-button" data-tab="history">Brew history <span>03</span></button>
+      <button class="nav-button" data-tab="settings">Settings <span>04</span></button>
+      <button class="nav-button" data-tab="api">API <span>05</span></button>
+      <div class="nav-footer"><span class="local-mark"></span> Served by your Pico<small>No cloud account required</small><small id="deviceId"></small></div>
+    </nav>
+    <main>
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+      <section id="overview" class="tab-panel">
+        <div class="page-heading"><div><p class="eyebrow">BREWER OVERVIEW</p><h1 id="operationTitle">Your brewer, connected locally.</h1><p id="operationDetail" class="muted">Connect with your device key to see live readings and controls.</p></div><span id="modeBadge" class="badge">LOCAL API</span></div>
+        <div class="metrics">
+          <article class="metric"><span>Wort temperature</span><strong id="wortTemperature">—</strong><small>Current reading</small></article>
+          <article class="metric"><span>Thermoblock</span><strong id="blockTemperature">—</strong><small>Current reading</small></article>
+          <article class="metric"><span>Target temperature</span><strong id="targetTemperature">—</strong><small>Active phase target</small></article>
+          <article class="metric"><span>Step time</span><strong id="stepTime">—</strong><small id="phaseName">Waiting for status</small></article>
+        </div>
+        <div class="overview-grid">
+          <article class="card panel-card"><div class="card-heading"><div><p class="eyebrow">REMOTE FRONT PANEL</p><h2>The controls you know.</h2></div><span id="filterBadge" class="badge neutral">Filter —</span></div>
+            <div class="oled-wrap"><canvas id="display" width="128" height="64" aria-label="Live Pico OLED display"></canvas><span id="displayHint">Live screen appears after connecting</span></div>
+            <div class="encoder-controls"><button data-encoder="-1" class="button encoder" aria-label="Move up" title="Move up" disabled>↑</button><button id="encoderClick" class="button primary" disabled>Press dial</button><button data-encoder="1" class="button encoder" aria-label="Move down" title="Move down" disabled>↓</button></div>
+            <p class="hint">Turn and press the dial to navigate menus, answer prompts, and use the brewer’s existing controls.</p>
+          </article>
+          <article class="card"><div class="card-heading"><div><p class="eyebrow">BREW &amp; MAINTAIN</p><h2>Start something good.</h2></div></div>
+            <label for="brewRecipe">Saved recipe</label><div class="input-action"><select id="brewRecipe" disabled><option value="">Choose a recipe</option></select><button id="startRecipe" class="button primary" disabled>Start</button></div>
+            <p class="hint">The brewer will guide you through its preparation prompts on the front panel.</p>
+            <div class="divider"></div><label for="program">Other programs</label><div class="input-action"><select id="program" disabled></select><button id="runProgram" class="button" disabled>Open</button></div>
+            <div class="stop-area"><div><strong>Stop outputs</strong><p class="hint">Latches heating and pumping off. Clear the stop only after the operation has ended.</p></div><button id="stopButton" class="button danger" disabled>Stop</button></div>
+            <button id="clearStop" class="button full" hidden disabled>Clear stopped state</button>
+          </article>
+        </div>
+      </section>
+      <section id="recipes" class="tab-panel" hidden>
+        <div class="page-heading"><div><p class="eyebrow">ON-DEVICE COLLECTION</p><h1>Your recipes.</h1><p class="muted">Recipes stay on the Pico and are available without a server. Starter PicoPak programs supply brewing steps; use the matching ingredients and water setup.</p></div><div><button id="restoreRecipes" class="button" disabled>Restore starter recipes</button> <button id="newRecipe" class="button primary" disabled>+ New recipe</button></div></div>
+        <div class="recipe-grid"><article class="card recipe-list-card"><div class="card-heading"><h2>Saved recipes</h2><span id="recipeCapacity" class="badge neutral">0 / 16</span></div><div id="recipeList" class="recipe-list"><p class="empty">Connect to load your collection.</p></div></article>
+          <article class="card editor"><div class="card-heading"><h2 id="editorHeading">Recipe editor</h2><div class="button-group"><button id="importRecipe" class="button small">Import JSON</button><button id="exportRecipe" class="button small">Export</button></div></div>
+            <form id="recipeForm"><div class="form-grid"><div><label for="recipeName">Recipe name</label><input id="recipeName" maxlength="31" required placeholder="My house pale ale"></div><div><label for="recipeId">Recipe ID</label><input id="recipeId" maxlength="20" pattern="[A-Za-z0-9_-]+" required placeholder="house-pale"></div></div>
+              <div class="steps-heading"><label>Brewing steps</label><button id="addStep" type="button" class="button small">+ Add step</button></div><div class="table-scroll"><table class="steps-table"><thead><tr><th>Step</th><th>Compartment</th><th>Target °F</th><th>Minutes</th><th>Drain min</th><th><span class="sr-only">Remove</span></th></tr></thead><tbody id="steps"></tbody></table></div>
+              <p class="hint">Up to 15 steps. A target of 0 means unheated circulation. Changes can be saved while the brewer is idle.</p>
+              <div class="editor-actions"><button id="deleteRecipe" type="button" class="button text-danger" disabled>Delete recipe</button><button id="saveRecipe" type="submit" class="button primary" disabled>Save to Pico</button></div>
+            </form>
+          </article>
+        </div><input id="importFile" type="file" accept="application/json,.json" hidden>
+      </section>
+      <section id="history" class="tab-panel" hidden>
+        <div class="page-heading"><div><p class="eyebrow">RECORDED ON YOUR PICO</p><h1>Brew history.</h1><p class="muted">Recording continues when this browser is closed. Export a brew to keep a permanent copy.</p></div><button id="historyRefresh" class="button" disabled>Refresh history</button></div>
+        <article class="card history-card">
+          <label for="historySession">Recorded brew</label><select id="historySession" disabled><option value="">No brews loaded</option></select>
+          <p id="historySummary" role="status" aria-live="polite">Connect to load recorded brews.</p>
+          <canvas id="historyChart" width="1000" height="360" role="img" aria-label="Recorded brew temperatures with phase changes"></canvas>
+          <label for="historySample">Inspect a reading</label><input id="historySample" type="range" min="0" max="0" value="0" disabled>
+          <p id="historyReadout" class="history-readout"></p>
+          <details><summary>All recorded fields</summary><pre id="historyValues" tabindex="0"></pre></details>
+          <div class="history-actions"><button id="historyExportJson" class="button" disabled>Export JSON</button><button id="historyExportCsv" class="button" disabled>Export CSV</button></div>
+          <p class="hint">History shares a fixed storage budget. The oldest completed brews are removed as space is needed. Times are elapsed from the start of each brew.</p>
+        </article>
+        <article class="card history-phases"><h2>Phases &amp; steps</h2><div class="table-scroll"><table class="history-table"><thead><tr><th>Elapsed time</th><th>Phase</th><th>Step</th></tr></thead><tbody id="historyPhases"></tbody></table></div></article>
+      </section>
+      <section id="settings" class="tab-panel" hidden>
+        <div class="page-heading"><div><p class="eyebrow">MAKE IT YOURS</p><h1>Brewer settings.</h1><p class="muted">Preferences and forwarding are saved on your Pico.</p></div></div>
+        <div class="settings-page">
+          <section class="settings-section" aria-labelledby="preferencesHeading">
+            <div class="settings-section-heading"><h2 id="preferencesHeading">Display preferences</h2></div>
+            <form id="settingsForm">
+              <div class="settings-row"><label for="temperatureUnit">Temperature unit</label><select id="temperatureUnit"><option value="F">Fahrenheit (°F)</option><option value="C">Celsius (°C)</option></select></div>
+              <div class="settings-row"><label for="language">Front-panel language</label><select id="language"><option value="en">English</option><option value="es">Español</option><option value="fr">Français</option></select></div>
+              <div class="settings-row"><label class="checkbox"><input type="checkbox" id="detailedStatus"> Show detailed status on the brewer</label></div>
+              <div class="settings-actions"><button id="saveSettings" class="button primary" disabled>Save preferences</button></div>
+            </form>
+          </section>
+          <section class="settings-section" aria-labelledby="forwardingHeading">
+            <div class="settings-section-heading"><h2 id="forwardingHeading">Optional forwarding</h2><p class="muted">Send live readings every 15 seconds to a receiver on your network. Brew history stays on the Pico.</p></div>
+            <form id="telemetryForm">
+              <div class="settings-row"><label class="checkbox"><input type="checkbox" id="telemetryEnabled" disabled> Send readings to a receiver</label></div>
+              <div class="settings-row"><label for="telemetryHost">Receiver</label><div>
+                <div class="settings-receiver"><input id="telemetryHost" maxlength="127" placeholder="brewbox.local" autocomplete="off" spellcheck="false" aria-describedby="telemetryHostHint" disabled><div class="settings-port"><label for="telemetryPort">Port</label><input id="telemetryPort" type="number" min="1" max="65535" step="1" value="8080" required disabled></div></div>
+                <p id="telemetryHostHint" class="hint">Host name or IPv4 address, without http:// or a path.</p>
+              </div></div>
+              <div class="settings-actions"><button id="saveTelemetry" class="button primary" type="submit" disabled>Save forwarding</button><p id="telemetryStatus" class="hint" role="status" aria-live="polite">Connect to load forwarding settings.</p></div>
+            </form>
+          </section>
+          <section class="settings-section settings-access" aria-labelledby="accessHeading"><div class="settings-section-heading"><h2 id="accessHeading">Browser access</h2><p class="muted">Your key is kept in this browser tab’s session. Disconnect to remove it.</p></div><button id="disconnectButton" class="button">Disconnect</button></section>
+        </div>
+      </section>
+      <section id="api" class="tab-panel" hidden>
+        <div class="page-heading"><div><p class="eyebrow">LOCAL REST API</p><h1>API explorer.</h1><p class="muted">Explore every endpoint using your connected device key.</p></div></div>
+        <div class="api-grid"><article class="card"><form id="apiForm">
+          <label for="apiEndpoint">Endpoint</label><select id="apiEndpoint"></select><p id="apiDescription" class="hint"></p>
+          <div id="apiParameterRow" hidden><label for="apiParameter">Recipe ID</label><input id="apiParameter" maxlength="20" placeholder="house-ale" autocomplete="off"></div>
+          <div id="apiExampleRow" hidden><label for="apiExample">Request example</label><select id="apiExample"></select></div>
+          <div id="apiBodyRow" hidden><label for="apiBody">JSON request body</label><textarea id="apiBody" rows="8" spellcheck="false"></textarea></div>
+          <p class="hint">Send runs the request on this Pico. Write requests can change recipes, settings, or start an operation.</p>
+          <button id="apiSend" class="button primary" type="submit" disabled>Send request</button>
+        </form></article><article class="card"><h2>Response</h2><p id="apiStatus" role="status" aria-live="polite">Choose an endpoint and send a request.</p><pre id="apiResponse" tabindex="0" aria-label="API response"></pre></article></div>
+      </section>
+      <footer><span>Pico Local · <span id="firmwareVersion">Standalone firmware</span></span><span id="lastUpdated">Waiting for connection</span></footer>
+    </main>
+  </div>
+  <dialog id="connectDialog"><form id="connectForm"><p class="eyebrow">WELCOME TO PICO LOCAL</p><h2>Connect to your brewer.</h2><p class="muted">Enter the device API key you provisioned during setup.</p><label for="apiKey">Device API key</label><input id="apiKey" type="password" autocomplete="off" spellcheck="false" maxlength="64" pattern="[0-9a-f]{64}" required placeholder="Paste your device key"><p id="connectError" class="form-error" role="alert"></p><div class="dialog-actions"><button id="cancelConnect" type="button" class="button">Cancel</button><button id="submitConnect" class="button primary">Connect</button></div></form></dialog>
+</body>
+</html>

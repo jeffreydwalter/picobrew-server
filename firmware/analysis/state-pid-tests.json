@@ -1,0 +1,2690 @@
+{
+  "passed": true,
+  "image_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "initializer_cases": 12,
+  "pid_cases": 512,
+  "total_cases": 524,
+  "mismatches": 0,
+  "original_instructions": 141379,
+  "source_sha256": {
+    "src/state.c": "ed7d42961699c8c2a06681422f015b10c1607790ffa3ec24feaa911180183be0",
+    "src/pid.c": "b7b84aaa655b1ab70f068a197308fc858dfc7b6a54f11d0d0f3073dddff25207"
+  },
+  "rebuilt_arm_cases": 524,
+  "rebuilt_arm_instructions": 8502750,
+  "rebuilt_elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "initializer_results": [
+    {
+      "initial_state": "bss-zero",
+      "ticks": [
+        0,
+        0
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    },
+    {
+      "initial_state": "bss-zero",
+      "ticks": [
+        99,
+        100
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    },
+    {
+      "initial_state": "bss-zero",
+      "ticks": [
+        100,
+        101
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    },
+    {
+      "initial_state": "bss-zero",
+      "ticks": [
+        4294967280,
+        5
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    },
+    {
+      "initial_state": "bss-zero",
+      "ticks": [
+        4294967295,
+        0
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    },
+    {
+      "initial_state": "bss-zero",
+      "ticks": [
+        1000,
+        2000
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    },
+    {
+      "initial_state": "patterned-reentry",
+      "ticks": [
+        0,
+        0
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    },
+    {
+      "initial_state": "patterned-reentry",
+      "ticks": [
+        99,
+        100
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    },
+    {
+      "initial_state": "patterned-reentry",
+      "ticks": [
+        100,
+        101
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    },
+    {
+      "initial_state": "patterned-reentry",
+      "ticks": [
+        4294967280,
+        5
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    },
+    {
+      "initial_state": "patterned-reentry",
+      "ticks": [
+        4294967295,
+        0
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    },
+    {
+      "initial_state": "patterned-reentry",
+      "ticks": [
+        1000,
+        2000
+      ],
+      "service_calls": 8,
+      "original_instructions": 3461
+    }
+  ],
+  "pid_results": [
+    {
+      "function": "construct",
+      "case": 0,
+      "original_instructions": 183
+    },
+    {
+      "function": "construct",
+      "case": 1,
+      "original_instructions": 221
+    },
+    {
+      "function": "construct",
+      "case": 2,
+      "original_instructions": 1381
+    },
+    {
+      "function": "construct",
+      "case": 3,
+      "original_instructions": 215
+    },
+    {
+      "function": "construct",
+      "case": 4,
+      "original_instructions": 1425
+    },
+    {
+      "function": "construct",
+      "case": 5,
+      "original_instructions": 919
+    },
+    {
+      "function": "construct",
+      "case": 6,
+      "original_instructions": 221
+    },
+    {
+      "function": "construct",
+      "case": 7,
+      "original_instructions": 1381
+    },
+    {
+      "function": "construct",
+      "case": 8,
+      "original_instructions": 209
+    },
+    {
+      "function": "construct",
+      "case": 9,
+      "original_instructions": 1348
+    },
+    {
+      "function": "construct",
+      "case": 10,
+      "original_instructions": 144
+    },
+    {
+      "function": "construct",
+      "case": 11,
+      "original_instructions": 831
+    },
+    {
+      "function": "construct",
+      "case": 12,
+      "original_instructions": 831
+    },
+    {
+      "function": "construct",
+      "case": 13,
+      "original_instructions": 1357
+    },
+    {
+      "function": "construct",
+      "case": 14,
+      "original_instructions": 215
+    },
+    {
+      "function": "construct",
+      "case": 15,
+      "original_instructions": 221
+    },
+    {
+      "function": "construct",
+      "case": 16,
+      "original_instructions": 1376
+    },
+    {
+      "function": "construct",
+      "case": 17,
+      "original_instructions": 837
+    },
+    {
+      "function": "construct",
+      "case": 18,
+      "original_instructions": 215
+    },
+    {
+      "function": "construct",
+      "case": 19,
+      "original_instructions": 1425
+    },
+    {
+      "function": "construct",
+      "case": 20,
+      "original_instructions": 1370
+    },
+    {
+      "function": "construct",
+      "case": 21,
+      "original_instructions": 215
+    },
+    {
+      "function": "construct",
+      "case": 22,
+      "original_instructions": 1370
+    },
+    {
+      "function": "construct",
+      "case": 23,
+      "original_instructions": 1342
+    },
+    {
+      "function": "construct",
+      "case": 24,
+      "original_instructions": 221
+    },
+    {
+      "function": "construct",
+      "case": 25,
+      "original_instructions": 837
+    },
+    {
+      "function": "construct",
+      "case": 26,
+      "original_instructions": 818
+    },
+    {
+      "function": "construct",
+      "case": 27,
+      "original_instructions": 837
+    },
+    {
+      "function": "construct",
+      "case": 28,
+      "original_instructions": 1457
+    },
+    {
+      "function": "construct",
+      "case": 29,
+      "original_instructions": 1376
+    },
+    {
+      "function": "construct",
+      "case": 30,
+      "original_instructions": 144
+    },
+    {
+      "function": "construct",
+      "case": 31,
+      "original_instructions": 221
+    },
+    {
+      "function": "construct",
+      "case": 32,
+      "original_instructions": 1337
+    },
+    {
+      "function": "construct",
+      "case": 33,
+      "original_instructions": 144
+    },
+    {
+      "function": "construct",
+      "case": 34,
+      "original_instructions": 1357
+    },
+    {
+      "function": "construct",
+      "case": 35,
+      "original_instructions": 215
+    },
+    {
+      "function": "construct",
+      "case": 36,
+      "original_instructions": 1425
+    },
+    {
+      "function": "construct",
+      "case": 37,
+      "original_instructions": 221
+    },
+    {
+      "function": "construct",
+      "case": 38,
+      "original_instructions": 1375
+    },
+    {
+      "function": "construct",
+      "case": 39,
+      "original_instructions": 1376
+    },
+    {
+      "function": "construct",
+      "case": 40,
+      "original_instructions": 818
+    },
+    {
+      "function": "construct",
+      "case": 41,
+      "original_instructions": 144
+    },
+    {
+      "function": "construct",
+      "case": 42,
+      "original_instructions": 144
+    },
+    {
+      "function": "construct",
+      "case": 43,
+      "original_instructions": 183
+    },
+    {
+      "function": "construct",
+      "case": 44,
+      "original_instructions": 183
+    },
+    {
+      "function": "construct",
+      "case": 45,
+      "original_instructions": 221
+    },
+    {
+      "function": "construct",
+      "case": 46,
+      "original_instructions": 804
+    },
+    {
+      "function": "construct",
+      "case": 47,
+      "original_instructions": 144
+    },
+    {
+      "function": "construct",
+      "case": 48,
+      "original_instructions": 1348
+    },
+    {
+      "function": "construct",
+      "case": 49,
+      "original_instructions": 1457
+    },
+    {
+      "function": "construct",
+      "case": 50,
+      "original_instructions": 804
+    },
+    {
+      "function": "construct",
+      "case": 51,
+      "original_instructions": 1381
+    },
+    {
+      "function": "construct",
+      "case": 52,
+      "original_instructions": 221
+    },
+    {
+      "function": "construct",
+      "case": 53,
+      "original_instructions": 221
+    },
+    {
+      "function": "construct",
+      "case": 54,
+      "original_instructions": 221
+    },
+    {
+      "function": "construct",
+      "case": 55,
+      "original_instructions": 144
+    },
+    {
+      "function": "construct",
+      "case": 56,
+      "original_instructions": 177
+    },
+    {
+      "function": "construct",
+      "case": 57,
+      "original_instructions": 1443
+    },
+    {
+      "function": "construct",
+      "case": 58,
+      "original_instructions": 1342
+    },
+    {
+      "function": "construct",
+      "case": 59,
+      "original_instructions": 144
+    },
+    {
+      "function": "construct",
+      "case": 60,
+      "original_instructions": 804
+    },
+    {
+      "function": "construct",
+      "case": 61,
+      "original_instructions": 144
+    },
+    {
+      "function": "construct",
+      "case": 62,
+      "original_instructions": 837
+    },
+    {
+      "function": "construct",
+      "case": 63,
+      "original_instructions": 1337
+    },
+    {
+      "function": "compute",
+      "case": 0,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 1,
+      "original_instructions": 374
+    },
+    {
+      "function": "compute",
+      "case": 2,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 3,
+      "original_instructions": 546
+    },
+    {
+      "function": "compute",
+      "case": 4,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 5,
+      "original_instructions": 547
+    },
+    {
+      "function": "compute",
+      "case": 6,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 7,
+      "original_instructions": 476
+    },
+    {
+      "function": "compute",
+      "case": 8,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 9,
+      "original_instructions": 614
+    },
+    {
+      "function": "compute",
+      "case": 10,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 11,
+      "original_instructions": 471
+    },
+    {
+      "function": "compute",
+      "case": 12,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 13,
+      "original_instructions": 559
+    },
+    {
+      "function": "compute",
+      "case": 14,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 15,
+      "original_instructions": 555
+    },
+    {
+      "function": "compute",
+      "case": 16,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 17,
+      "original_instructions": 536
+    },
+    {
+      "function": "compute",
+      "case": 18,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 19,
+      "original_instructions": 577
+    },
+    {
+      "function": "compute",
+      "case": 20,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 21,
+      "original_instructions": 494
+    },
+    {
+      "function": "compute",
+      "case": 22,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 23,
+      "original_instructions": 537
+    },
+    {
+      "function": "compute",
+      "case": 24,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 25,
+      "original_instructions": 579
+    },
+    {
+      "function": "compute",
+      "case": 26,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 27,
+      "original_instructions": 532
+    },
+    {
+      "function": "compute",
+      "case": 28,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 29,
+      "original_instructions": 440
+    },
+    {
+      "function": "compute",
+      "case": 30,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 31,
+      "original_instructions": 548
+    },
+    {
+      "function": "compute",
+      "case": 32,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 33,
+      "original_instructions": 501
+    },
+    {
+      "function": "compute",
+      "case": 34,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 35,
+      "original_instructions": 584
+    },
+    {
+      "function": "compute",
+      "case": 36,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 37,
+      "original_instructions": 548
+    },
+    {
+      "function": "compute",
+      "case": 38,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 39,
+      "original_instructions": 472
+    },
+    {
+      "function": "compute",
+      "case": 40,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 41,
+      "original_instructions": 408
+    },
+    {
+      "function": "compute",
+      "case": 42,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 43,
+      "original_instructions": 485
+    },
+    {
+      "function": "compute",
+      "case": 44,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 45,
+      "original_instructions": 374
+    },
+    {
+      "function": "compute",
+      "case": 46,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 47,
+      "original_instructions": 480
+    },
+    {
+      "function": "compute",
+      "case": 48,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 49,
+      "original_instructions": 560
+    },
+    {
+      "function": "compute",
+      "case": 50,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 51,
+      "original_instructions": 469
+    },
+    {
+      "function": "compute",
+      "case": 52,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 53,
+      "original_instructions": 581
+    },
+    {
+      "function": "compute",
+      "case": 54,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 55,
+      "original_instructions": 637
+    },
+    {
+      "function": "compute",
+      "case": 56,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 57,
+      "original_instructions": 481
+    },
+    {
+      "function": "compute",
+      "case": 58,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 59,
+      "original_instructions": 484
+    },
+    {
+      "function": "compute",
+      "case": 60,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 61,
+      "original_instructions": 410
+    },
+    {
+      "function": "compute",
+      "case": 62,
+      "original_instructions": 8
+    },
+    {
+      "function": "compute",
+      "case": 63,
+      "original_instructions": 487
+    },
+    {
+      "function": "set_tunings",
+      "case": 0,
+      "original_instructions": 84
+    },
+    {
+      "function": "set_tunings",
+      "case": 1,
+      "original_instructions": 84
+    },
+    {
+      "function": "set_tunings",
+      "case": 2,
+      "original_instructions": 294
+    },
+    {
+      "function": "set_tunings",
+      "case": 3,
+      "original_instructions": 293
+    },
+    {
+      "function": "set_tunings",
+      "case": 4,
+      "original_instructions": 110
+    },
+    {
+      "function": "set_tunings",
+      "case": 5,
+      "original_instructions": 294
+    },
+    {
+      "function": "set_tunings",
+      "case": 6,
+      "original_instructions": 84
+    },
+    {
+      "function": "set_tunings",
+      "case": 7,
+      "original_instructions": 374
+    },
+    {
+      "function": "set_tunings",
+      "case": 8,
+      "original_instructions": 84
+    },
+    {
+      "function": "set_tunings",
+      "case": 9,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 10,
+      "original_instructions": 294
+    },
+    {
+      "function": "set_tunings",
+      "case": 11,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 12,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 13,
+      "original_instructions": 361
+    },
+    {
+      "function": "set_tunings",
+      "case": 14,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 15,
+      "original_instructions": 78
+    },
+    {
+      "function": "set_tunings",
+      "case": 16,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 17,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 18,
+      "original_instructions": 722
+    },
+    {
+      "function": "set_tunings",
+      "case": 19,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 20,
+      "original_instructions": 292
+    },
+    {
+      "function": "set_tunings",
+      "case": 21,
+      "original_instructions": 375
+    },
+    {
+      "function": "set_tunings",
+      "case": 22,
+      "original_instructions": 287
+    },
+    {
+      "function": "set_tunings",
+      "case": 23,
+      "original_instructions": 122
+    },
+    {
+      "function": "set_tunings",
+      "case": 24,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 25,
+      "original_instructions": 84
+    },
+    {
+      "function": "set_tunings",
+      "case": 26,
+      "original_instructions": 122
+    },
+    {
+      "function": "set_tunings",
+      "case": 27,
+      "original_instructions": 1353
+    },
+    {
+      "function": "set_tunings",
+      "case": 28,
+      "original_instructions": 361
+    },
+    {
+      "function": "set_tunings",
+      "case": 29,
+      "original_instructions": 821
+    },
+    {
+      "function": "set_tunings",
+      "case": 30,
+      "original_instructions": 361
+    },
+    {
+      "function": "set_tunings",
+      "case": 31,
+      "original_instructions": 815
+    },
+    {
+      "function": "set_tunings",
+      "case": 32,
+      "original_instructions": 288
+    },
+    {
+      "function": "set_tunings",
+      "case": 33,
+      "original_instructions": 1323
+    },
+    {
+      "function": "set_tunings",
+      "case": 34,
+      "original_instructions": 84
+    },
+    {
+      "function": "set_tunings",
+      "case": 35,
+      "original_instructions": 1358
+    },
+    {
+      "function": "set_tunings",
+      "case": 36,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 37,
+      "original_instructions": 293
+    },
+    {
+      "function": "set_tunings",
+      "case": 38,
+      "original_instructions": 84
+    },
+    {
+      "function": "set_tunings",
+      "case": 39,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 40,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 41,
+      "original_instructions": 122
+    },
+    {
+      "function": "set_tunings",
+      "case": 42,
+      "original_instructions": 122
+    },
+    {
+      "function": "set_tunings",
+      "case": 43,
+      "original_instructions": 122
+    },
+    {
+      "function": "set_tunings",
+      "case": 44,
+      "original_instructions": 370
+    },
+    {
+      "function": "set_tunings",
+      "case": 45,
+      "original_instructions": 294
+    },
+    {
+      "function": "set_tunings",
+      "case": 46,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 47,
+      "original_instructions": 116
+    },
+    {
+      "function": "set_tunings",
+      "case": 48,
+      "original_instructions": 116
+    },
+    {
+      "function": "set_tunings",
+      "case": 49,
+      "original_instructions": 1276
+    },
+    {
+      "function": "set_tunings",
+      "case": 50,
+      "original_instructions": 122
+    },
+    {
+      "function": "set_tunings",
+      "case": 51,
+      "original_instructions": 84
+    },
+    {
+      "function": "set_tunings",
+      "case": 52,
+      "original_instructions": 1258
+    },
+    {
+      "function": "set_tunings",
+      "case": 53,
+      "original_instructions": 374
+    },
+    {
+      "function": "set_tunings",
+      "case": 54,
+      "original_instructions": 708
+    },
+    {
+      "function": "set_tunings",
+      "case": 55,
+      "original_instructions": 122
+    },
+    {
+      "function": "set_tunings",
+      "case": 56,
+      "original_instructions": 1249
+    },
+    {
+      "function": "set_tunings",
+      "case": 57,
+      "original_instructions": 84
+    },
+    {
+      "function": "set_tunings",
+      "case": 58,
+      "original_instructions": 84
+    },
+    {
+      "function": "set_tunings",
+      "case": 59,
+      "original_instructions": 45
+    },
+    {
+      "function": "set_tunings",
+      "case": 60,
+      "original_instructions": 374
+    },
+    {
+      "function": "set_tunings",
+      "case": 61,
+      "original_instructions": 361
+    },
+    {
+      "function": "set_tunings",
+      "case": 62,
+      "original_instructions": 370
+    },
+    {
+      "function": "set_tunings",
+      "case": 63,
+      "original_instructions": 84
+    },
+    {
+      "function": "set_output_limits",
+      "case": 0,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 1,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 2,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 3,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 4,
+      "original_instructions": 57
+    },
+    {
+      "function": "set_output_limits",
+      "case": 5,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 6,
+      "original_instructions": 46
+    },
+    {
+      "function": "set_output_limits",
+      "case": 7,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 8,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 9,
+      "original_instructions": 54
+    },
+    {
+      "function": "set_output_limits",
+      "case": 10,
+      "original_instructions": 57
+    },
+    {
+      "function": "set_output_limits",
+      "case": 11,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 12,
+      "original_instructions": 54
+    },
+    {
+      "function": "set_output_limits",
+      "case": 13,
+      "original_instructions": 46
+    },
+    {
+      "function": "set_output_limits",
+      "case": 14,
+      "original_instructions": 57
+    },
+    {
+      "function": "set_output_limits",
+      "case": 15,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 16,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 17,
+      "original_instructions": 228
+    },
+    {
+      "function": "set_output_limits",
+      "case": 18,
+      "original_instructions": 57
+    },
+    {
+      "function": "set_output_limits",
+      "case": 19,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 20,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 21,
+      "original_instructions": 222
+    },
+    {
+      "function": "set_output_limits",
+      "case": 22,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 23,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 24,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 25,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 26,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 27,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 28,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 29,
+      "original_instructions": 196
+    },
+    {
+      "function": "set_output_limits",
+      "case": 30,
+      "original_instructions": 54
+    },
+    {
+      "function": "set_output_limits",
+      "case": 31,
+      "original_instructions": 46
+    },
+    {
+      "function": "set_output_limits",
+      "case": 32,
+      "original_instructions": 57
+    },
+    {
+      "function": "set_output_limits",
+      "case": 33,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 34,
+      "original_instructions": 57
+    },
+    {
+      "function": "set_output_limits",
+      "case": 35,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 36,
+      "original_instructions": 54
+    },
+    {
+      "function": "set_output_limits",
+      "case": 37,
+      "original_instructions": 225
+    },
+    {
+      "function": "set_output_limits",
+      "case": 38,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 39,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 40,
+      "original_instructions": 57
+    },
+    {
+      "function": "set_output_limits",
+      "case": 41,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 42,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 43,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 44,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 45,
+      "original_instructions": 228
+    },
+    {
+      "function": "set_output_limits",
+      "case": 46,
+      "original_instructions": 57
+    },
+    {
+      "function": "set_output_limits",
+      "case": 47,
+      "original_instructions": 54
+    },
+    {
+      "function": "set_output_limits",
+      "case": 48,
+      "original_instructions": 54
+    },
+    {
+      "function": "set_output_limits",
+      "case": 49,
+      "original_instructions": 54
+    },
+    {
+      "function": "set_output_limits",
+      "case": 50,
+      "original_instructions": 56
+    },
+    {
+      "function": "set_output_limits",
+      "case": 51,
+      "original_instructions": 190
+    },
+    {
+      "function": "set_output_limits",
+      "case": 52,
+      "original_instructions": 57
+    },
+    {
+      "function": "set_output_limits",
+      "case": 53,
+      "original_instructions": 46
+    },
+    {
+      "function": "set_output_limits",
+      "case": 54,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 55,
+      "original_instructions": 158
+    },
+    {
+      "function": "set_output_limits",
+      "case": 56,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 57,
+      "original_instructions": 54
+    },
+    {
+      "function": "set_output_limits",
+      "case": 58,
+      "original_instructions": 57
+    },
+    {
+      "function": "set_output_limits",
+      "case": 59,
+      "original_instructions": 53
+    },
+    {
+      "function": "set_output_limits",
+      "case": 60,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 61,
+      "original_instructions": 186
+    },
+    {
+      "function": "set_output_limits",
+      "case": 62,
+      "original_instructions": 52
+    },
+    {
+      "function": "set_output_limits",
+      "case": 63,
+      "original_instructions": 228
+    },
+    {
+      "function": "set_mode",
+      "case": 0,
+      "original_instructions": 106
+    },
+    {
+      "function": "set_mode",
+      "case": 1,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 2,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 3,
+      "original_instructions": 69
+    },
+    {
+      "function": "set_mode",
+      "case": 4,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 5,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 6,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 7,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 8,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 9,
+      "original_instructions": 106
+    },
+    {
+      "function": "set_mode",
+      "case": 10,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 11,
+      "original_instructions": 106
+    },
+    {
+      "function": "set_mode",
+      "case": 12,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 13,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 14,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 15,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 16,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 17,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 18,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 19,
+      "original_instructions": 106
+    },
+    {
+      "function": "set_mode",
+      "case": 20,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 21,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 22,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 23,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 24,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 25,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 26,
+      "original_instructions": 106
+    },
+    {
+      "function": "set_mode",
+      "case": 27,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 28,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 29,
+      "original_instructions": 69
+    },
+    {
+      "function": "set_mode",
+      "case": 30,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 31,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 32,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 33,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 34,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 35,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 36,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 37,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 38,
+      "original_instructions": 69
+    },
+    {
+      "function": "set_mode",
+      "case": 39,
+      "original_instructions": 69
+    },
+    {
+      "function": "set_mode",
+      "case": 40,
+      "original_instructions": 69
+    },
+    {
+      "function": "set_mode",
+      "case": 41,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 42,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 43,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 44,
+      "original_instructions": 106
+    },
+    {
+      "function": "set_mode",
+      "case": 45,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 46,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 47,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 48,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 49,
+      "original_instructions": 106
+    },
+    {
+      "function": "set_mode",
+      "case": 50,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 51,
+      "original_instructions": 100
+    },
+    {
+      "function": "set_mode",
+      "case": 52,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 53,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 54,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 55,
+      "original_instructions": 106
+    },
+    {
+      "function": "set_mode",
+      "case": 56,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 57,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 58,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 59,
+      "original_instructions": 106
+    },
+    {
+      "function": "set_mode",
+      "case": 60,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 61,
+      "original_instructions": 106
+    },
+    {
+      "function": "set_mode",
+      "case": 62,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_mode",
+      "case": 63,
+      "original_instructions": 11
+    },
+    {
+      "function": "set_direction",
+      "case": 0,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 1,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 2,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 3,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 4,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 5,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 6,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 7,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 8,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 9,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 10,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 11,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 12,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 13,
+      "original_instructions": 89
+    },
+    {
+      "function": "set_direction",
+      "case": 14,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 15,
+      "original_instructions": 10
+    },
+    {
+      "function": "set_direction",
+      "case": 16,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 17,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 18,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 19,
+      "original_instructions": 10
+    },
+    {
+      "function": "set_direction",
+      "case": 20,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 21,
+      "original_instructions": 90
+    },
+    {
+      "function": "set_direction",
+      "case": 22,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 23,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 24,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 25,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 26,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 27,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 28,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 29,
+      "original_instructions": 10
+    },
+    {
+      "function": "set_direction",
+      "case": 30,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 31,
+      "original_instructions": 89
+    },
+    {
+      "function": "set_direction",
+      "case": 32,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 33,
+      "original_instructions": 90
+    },
+    {
+      "function": "set_direction",
+      "case": 34,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 35,
+      "original_instructions": 10
+    },
+    {
+      "function": "set_direction",
+      "case": 36,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 37,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 38,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 39,
+      "original_instructions": 89
+    },
+    {
+      "function": "set_direction",
+      "case": 40,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 41,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 42,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 43,
+      "original_instructions": 10
+    },
+    {
+      "function": "set_direction",
+      "case": 44,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 45,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 46,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 47,
+      "original_instructions": 89
+    },
+    {
+      "function": "set_direction",
+      "case": 48,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 49,
+      "original_instructions": 89
+    },
+    {
+      "function": "set_direction",
+      "case": 50,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 51,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 52,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 53,
+      "original_instructions": 10
+    },
+    {
+      "function": "set_direction",
+      "case": 54,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 55,
+      "original_instructions": 89
+    },
+    {
+      "function": "set_direction",
+      "case": 56,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 57,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 58,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 59,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 60,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 61,
+      "original_instructions": 88
+    },
+    {
+      "function": "set_direction",
+      "case": 62,
+      "original_instructions": 7
+    },
+    {
+      "function": "set_direction",
+      "case": 63,
+      "original_instructions": 89
+    },
+    {
+      "function": "initialize_integral",
+      "case": 0,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 1,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 2,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 3,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 4,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 5,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 6,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 7,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 8,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 9,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 10,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 11,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 12,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 13,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 14,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 15,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 16,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 17,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 18,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 19,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 20,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 21,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 22,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 23,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 24,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 25,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 26,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 27,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 28,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 29,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 30,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 31,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 32,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 33,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 34,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 35,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 36,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 37,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 38,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 39,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 40,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 41,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 42,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 43,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 44,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 45,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 46,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 47,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 48,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 49,
+      "original_instructions": 94
+    },
+    {
+      "function": "initialize_integral",
+      "case": 50,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 51,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 52,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 53,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 54,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 55,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 56,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 57,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 58,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 59,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 60,
+      "original_instructions": 57
+    },
+    {
+      "function": "initialize_integral",
+      "case": 61,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 62,
+      "original_instructions": 88
+    },
+    {
+      "function": "initialize_integral",
+      "case": 63,
+      "original_instructions": 88
+    },
+    {
+      "function": "disable",
+      "case": 0,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 1,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 2,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 3,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 4,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 5,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 6,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 7,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 8,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 9,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 10,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 11,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 12,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 13,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 14,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 15,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 16,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 17,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 18,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 19,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 20,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 21,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 22,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 23,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 24,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 25,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 26,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 27,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 28,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 29,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 30,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 31,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 32,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 33,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 34,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 35,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 36,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 37,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 38,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 39,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 40,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 41,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 42,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 43,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 44,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 45,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 46,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 47,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 48,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 49,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 50,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 51,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 52,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 53,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 54,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 55,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 56,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 57,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 58,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 59,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 60,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 61,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 62,
+      "original_instructions": 3
+    },
+    {
+      "function": "disable",
+      "case": 63,
+      "original_instructions": 3
+    }
+  ],
+  "scope": "Original global initializer/PID/telemetry/menu/numeric instructions versus portable compiled C; 8 KiB of application RAM, service ordering and state at each service boundary compared. SDK construction/registration calls mocked.",
+  "limitations": "Finite selected PID inputs; native C struct padding is not device layout. Snapshot tests explicitly serialize named fields/pointers. No interrupt concurrency, hardware or full application boot validation."
+}

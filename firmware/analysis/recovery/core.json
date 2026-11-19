@@ -1,0 +1,253 @@
+{
+  "reference_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "distinct_original_entries": 41,
+  "entries": [
+    {
+      "original_address": "0x2000489a",
+      "function": "pico_still_clear_telemetry",
+      "source": "src/state.c",
+      "verification": "tests/test_state_pid.py"
+    },
+    {
+      "original_address": "0x20004f64",
+      "function": "pico_filter_is_inserted",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x20005004",
+      "function": "pico_control_record_temperature_sample",
+      "source": "src/control.c",
+      "verification": "tests/test_control.py"
+    },
+    {
+      "original_address": "0x20005028",
+      "function": "pico_control_start",
+      "source": "src/control.c",
+      "verification": "tests/test_control.py"
+    },
+    {
+      "original_address": "0x20005080",
+      "function": "pico_control_timers_initialize",
+      "source": "src/control.c",
+      "verification": "tests/test_control.py"
+    },
+    {
+      "original_address": "0x20005120",
+      "function": "pico_control_classify_temperature_progress",
+      "source": "src/control.c",
+      "verification": "tests/test_control.py"
+    },
+    {
+      "original_address": "0x20005a20",
+      "function": "pico_phase_update_shuttle_calibration",
+      "source": "src/phase.c",
+      "verification": "tests/test_phase.py"
+    },
+    {
+      "original_address": "0x20005ecc",
+      "function": "pico_actuators_initialize",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x20005f12",
+      "function": "pico_actuator_steam_off",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x20005f1a",
+      "function": "pico_actuator_drain_off",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x20005f22",
+      "function": "pico_actuator_shuttle_off",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x20005f2a",
+      "function": "pico_actuators_steam_and_drain_off",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x20005f40",
+      "function": "pico_actuator_heater_on",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x20005f48",
+      "function": "pico_actuator_heater_off",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x20005f50",
+      "function": "pico_control_stop",
+      "source": "src/control.c",
+      "verification": "tests/test_control.py"
+    },
+    {
+      "original_address": "0x20005f88",
+      "function": "pico_actuators_all_off",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x20005fae",
+      "function": "pico_actuators_off_except_drain",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x20005fcc",
+      "function": "pico_actuator_drain_is_on",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x20006680",
+      "function": "pico_temperature_pin26_from_adc",
+      "source": "src/sensors.c",
+      "verification": "tests/test_sensors.py"
+    },
+    {
+      "original_address": "0x200067a0",
+      "function": "pico_temperature_pin25_from_adc",
+      "source": "src/sensors.c",
+      "verification": "tests/test_sensors.py"
+    },
+    {
+      "original_address": "0x200090f8",
+      "function": "pico_application_initialize",
+      "source": "src/state.c",
+      "verification": "tests/test_state_pid.py"
+    },
+    {
+      "original_address": "0x2000cde0",
+      "function": "pico_phase_set",
+      "source": "src/phase.c",
+      "verification": "tests/test_phase.py"
+    },
+    {
+      "original_address": "0x2000cf68",
+      "function": "pico_phase_clear_status",
+      "source": "src/phase.c",
+      "verification": "tests/test_phase.py"
+    },
+    {
+      "original_address": "0x2000cf86",
+      "function": "pico_phase_pause_until_resume",
+      "source": "src/phase.c",
+      "verification": "tests/test_phase.py"
+    },
+    {
+      "original_address": "0x2000cfbc",
+      "function": "pico_actuator_steam_on",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x2000cfe8",
+      "function": "pico_actuator_drain_on",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x2000d0e0",
+      "function": "pico_actuator_shuttle_on",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x2000d10c",
+      "function": "pico_actuators_pause_for_missing_filter",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x2000d1c0",
+      "function": "pico_control_outputs_tick",
+      "source": "src/control.c",
+      "verification": "tests/test_control.py"
+    },
+    {
+      "original_address": "0x2000d288",
+      "function": "pico_actuators_start_drain_and_steam",
+      "source": "src/actuators.c",
+      "verification": "tests/test_actuators.py"
+    },
+    {
+      "original_address": "0x2000d2c4",
+      "function": "pico_phase_start_circulation",
+      "source": "src/phase.c",
+      "verification": "tests/test_phase.py"
+    },
+    {
+      "original_address": "0x2000d314",
+      "function": "pico_phase_finish_step",
+      "source": "src/phase.c",
+      "verification": "tests/test_phase.py"
+    },
+    {
+      "original_address": "0x2000e088",
+      "function": "pico_control_temperature_tick",
+      "source": "src/control.c",
+      "verification": "tests/test_control.py"
+    },
+    {
+      "original_address": "0x200146cc",
+      "function": "pico_pid_disable",
+      "source": "src/pid.c",
+      "verification": "tests/test_state_pid.py"
+    },
+    {
+      "original_address": "0x200146d4",
+      "function": "pico_pid_compute",
+      "source": "src/pid.c",
+      "verification": "tests/test_state_pid.py"
+    },
+    {
+      "original_address": "0x200147c0",
+      "function": "pico_pid_set_tunings",
+      "source": "src/pid.c",
+      "verification": "tests/test_state_pid.py"
+    },
+    {
+      "original_address": "0x20014890",
+      "function": "pico_pid_set_output_limits",
+      "source": "src/pid.c",
+      "verification": "tests/test_state_pid.py"
+    },
+    {
+      "original_address": "0x2001491c",
+      "function": "pico_pid_initialize_integral",
+      "source": "src/pid.c",
+      "verification": "tests/test_state_pid.py"
+    },
+    {
+      "original_address": "0x20014962",
+      "function": "pico_pid_set_mode",
+      "source": "src/pid.c",
+      "verification": "tests/test_state_pid.py"
+    },
+    {
+      "original_address": "0x20014982",
+      "function": "pico_pid_set_direction",
+      "source": "src/pid.c",
+      "verification": "tests/test_state_pid.py"
+    },
+    {
+      "original_address": "0x200149c8",
+      "function": "pico_pid_construct_clocked",
+      "source": "src/pid.c",
+      "verification": "tests/test_state_pid.py"
+    }
+  ],
+  "notes": "Counts original routines, not reconstructed helpers or wrappers. Pure sensor functions are supplemented by the real GPIO/ADC adapter. Hardware/UI boundaries are explicit in the named tests. No complete firmware claim."
+}

@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "indexed_application_entries": 462,
+  "accounted_application_entries": 462,
+  "additional_dependency_or_unindexed_entries": 79,
+  "missing": [],
+  "invalid_source_mappings": [],
+  "manifest_sha256": {
+    "analysis/recovery/core.json": "48d5d89147eba045fdda209a85baccec22c36acfefef96ba4642172712d2b749",
+    "analysis/recovery/device-rfid-startup.json": "f3833363119678c507f43396bc1150a4c3193135d96aab3931420e6bcb0149c0",
+    "analysis/recovery/network.json": "d7c0548749694ccb2c25b92916754d8df0bbccb50f7e258ecee3ebb220075150",
+    "analysis/recovery/recipe.json": "36f3316bdaa642b0c947aa3ce5491645a1e6b3357412c0df2991cab265e6906c",
+    "analysis/recovery/ui.json": "b4cd0268000691c888bbaea4ad76d1a515520182fd8332e3a4312b9ab0ea6c14"
+  },
+  "scope": "Per-original-entry source and evidence accounting; see each domain status/limitations. Mapped replacements include explicit upstream substitutions and inlined helpers, not recovered original symbol names or full path coverage."
+}

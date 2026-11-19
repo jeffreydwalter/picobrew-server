@@ -3417,3 +3417,450 @@ hr,
 .profile-notes li p {
   margin-top: 3px;
 }
+
+/* Community archive and saved program management. */
+.catalog-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: $green;
+  }
+  strong {
+    font-size: 1rem;
+  }
+  p {
+    margin: 3px 0 0;
+    color: $muted;
+    font-size: 0.82rem;
+  }
+}
+.catalog-filters {
+  .search-box {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 20px;
+  }
+  .field {
+    margin-bottom: 0;
+  }
+}
+.catalog-card {
+  .recipe-art {
+    height: 170px;
+  }
+  .recipe-art img {
+    width: 100%;
+    height: 145px;
+    padding: 12px 20px 18px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+  }
+  .recipe-card-content > .badge {
+    margin-bottom: 13px;
+  }
+  .recipe-card-content > p {
+    color: #777d69;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+.catalog-featured {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: #fffdf4e8;
+  color: #6f704f;
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+.catalog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 28px 0 14px;
+  color: $muted;
+  font-size: 0.82rem;
+}
+.catalog-detail-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  margin-bottom: 18px;
+}
+.catalog-recipe-meta {
+  color: $green;
+  font-weight: 600;
+}
+.catalog-schedule {
+  padding-left: 20px;
+  margin-top: 24px;
+  li {
+    margin: 10px 0;
+    padding-left: 6px;
+  }
+  span {
+    display: block;
+    color: $muted;
+    font-size: 0.8rem;
+  }
+}
+.catalog-originals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 2px;
+  margin-bottom: 20px;
+}
+.program-table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  th {
+    color: $muted;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-align: left;
+  }
+  th,
+  td {
+    padding: 12px 10px;
+    border-bottom: 1px solid $line;
+  }
+  td:first-child {
+    min-width: 160px;
+  }
+}
+.source-provenance {
+  border-top: 1px solid $line;
+  padding-top: 16px;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: $green;
+  }
+  code,
+  dd,
+  a {
+    overflow-wrap: anywhere;
+  }
+  dl {
+    margin-top: 16px;
+  }
+  dl > div {
+    display: grid;
+    grid-template-columns: 125px minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  dt {
+    color: $muted;
+  }
+  dd {
+    margin: 0;
+  }
+  ul {
+    color: $muted;
+    padding-left: 18px;
+  }
+}
+.preserve-lines {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.warning-list {
+  padding-left: 19px;
+  font-size: 0.79rem;
+  color: #887552;
+  li {
+    margin-bottom: 7px;
+    overflow-wrap: anywhere;
+  }
+}
+.warning-note {
+  padding: 14px;
+  background: #fbf2e1;
+  border-radius: 6px;
+  color: #887552;
+}
+.catalog-source {
+  padding: 20px 0;
+  border-bottom: 1px solid $line;
+  &:last-child {
+    border: 0;
+  }
+  p {
+    font-size: 0.82rem;
+    color: $muted;
+  }
+  dl > div {
+    display: grid;
+    grid-template-columns: 140px minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+  }
+  dt {
+    color: $muted;
+  }
+  dd {
+    margin: 0;
+  }
+  code {
+    overflow-wrap: anywhere;
+  }
+}
+.machine-artwork {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+  figure {
+    margin: 0;
+    padding: 14px;
+    background: $paper;
+    border-radius: 8px;
+    text-align: center;
+  }
+  img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+  }
+  figcaption {
+    font-size: 0.75rem;
+    color: $muted;
+    margin-top: 10px;
+  }
+}
+.reference-list article {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid $line;
+  padding: 16px 0;
+  p {
+    font-size: 0.8rem;
+    color: $muted;
+    margin: 5px 0;
+  }
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: $green;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+  }
+}
+.program-fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 0;
+  font-size: 0.85rem;
+  input {
+    margin-top: 3px;
+  }
+  small {
+    display: block;
+    color: $muted;
+    margin-top: 4px;
+  }
+}
+.transfer-selection-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+  color: $muted;
+  > span {
+    margin-right: auto;
+  }
+}
+.transfer-selection {
+  max-height: 320px;
+  overflow: auto;
+  border: 1px solid $line;
+  border-radius: 8px;
+}
+.transfer-choice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 16px;
+  border-bottom: 1px solid $line;
+  &:last-child {
+    border-bottom: 0;
+  }
+  > label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
+    flex: 1;
+  }
+  input[type='checkbox'] {
+    margin-top: 3px;
+  }
+  strong {
+    overflow-wrap: anywhere;
+  }
+  small {
+    display: block;
+    color: $muted;
+    margin-top: 4px;
+  }
+  .field {
+    margin: 0;
+    max-width: 130px;
+  }
+  .field-label {
+    font-size: 0.65rem;
+  }
+}
+.receipt-link {
+  margin-top: 16px;
+}
+.transfer-summary {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+  padding: 16px;
+  background: $paper;
+  border: 1px solid $line;
+  border-radius: 8px;
+  span {
+    display: block;
+    font-size: 0.68rem;
+    color: $muted;
+    margin-bottom: 6px;
+  }
+  strong {
+    overflow-wrap: anywhere;
+  }
+}
+.transfer-result {
+  border: 1px solid $line;
+  border-radius: 8px;
+  margin-top: 14px;
+  padding: 16px;
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  header > div {
+    min-width: 0;
+  }
+  header strong {
+    overflow-wrap: anywhere;
+  }
+  small {
+    display: block;
+    color: $muted;
+    font-size: 0.7rem;
+    overflow-wrap: anywhere;
+  }
+  > p {
+    margin: 12px 0 0;
+    font-size: 0.82rem;
+    color: $muted;
+  }
+  details {
+    margin-top: 12px;
+    min-width: 0;
+  }
+  summary {
+    cursor: pointer;
+    color: $green;
+    font-size: 0.8rem;
+  }
+}
+.transfer-complete {
+  color: $green;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
+.native-library {
+  flex-wrap: wrap;
+}
+.recipe-card-content > .badge {
+  margin-bottom: 12px;
+}
+@media (max-width: 800px) {
+  .catalog-intro {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .catalog-filters .form-grid.quarters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .transfer-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .transfer-result header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+@media (max-width: 520px) {
+  .catalog-filters .form-grid.quarters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .source-provenance dl > div,
+  .catalog-source dl > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .machine-artwork {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .reference-list article {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .transfer-choice {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .transfer-choice .field {
+    max-width: none;
+    padding-left: 28px;
+  }
+  .catalog-pagination {
+    gap: 12px;
+  }
+}

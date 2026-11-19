@@ -1,0 +1,1230 @@
+{
+  "image_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "assets": [
+    {
+      "name": "pico_ui_builtin_font",
+      "source_address": "0x20028c98",
+      "size": 1280,
+      "sha256": "c6628e1c13dd7445117e2179862bbe27d43e3ac0ce0b6153b7eee906cccf96ae"
+    },
+    {
+      "name": "pico_ui_bitmap_footer_single",
+      "source_address": "0x20023108",
+      "size": 8,
+      "sha256": "a7e4d42b9e567ebd0f9b1858232ee93ea61de5ed3c6bdc3a73c2491b6f6a18f8"
+    },
+    {
+      "name": "pico_ui_bitmap_footer_multiple",
+      "source_address": "0x20028728",
+      "size": 8,
+      "sha256": "2951e52b6865d01fd79e944ff42ef618933c10b3a7ff8d52e36a02bb05f9c480"
+    },
+    {
+      "name": "pico_ui_bitmap_connection_ready",
+      "source_address": "0x200231a8",
+      "size": 15,
+      "sha256": "0ac96caaae9a37ebb1af6ec4492c59af9178dc56381dd542babfd7c00a459f23"
+    },
+    {
+      "name": "pico_ui_bitmap_adjustment_filled",
+      "source_address": "0x20023240",
+      "size": 8,
+      "sha256": "1e1585b31b45eee06b5d7ae99b5c78b1d79521eb7ac96fb49126294e6e0c81d8"
+    },
+    {
+      "name": "pico_ui_bitmap_connection_failed",
+      "source_address": "0x20023254",
+      "size": 15,
+      "sha256": "93132d447d20e8646db09b64585c38859f8e0632c7727fef4b90de75d05be4ff"
+    },
+    {
+      "name": "pico_ui_bitmap_adjustment_empty",
+      "source_address": "0x2002327c",
+      "size": 8,
+      "sha256": "423e122552eb97ae666decdc74f951e43c4d786083e63ae4ddebe6ac53f420ec"
+    },
+    {
+      "name": "pico_ui_bitmap_device",
+      "source_address": "0x20028928",
+      "size": 240,
+      "sha256": "6e139e89b52fe5976a3e25351e0a8d67328f2d0e3e89efbab71663004f1d1ef2"
+    },
+    {
+      "name": "pico_ui_bitmap_instruction_18",
+      "source_address": "0x20029e60",
+      "size": 480,
+      "sha256": "b9ce8699e30ac7d4d6b3a6b4e89715c6d39e402d9079779cf9bc17bf7e4eccb0"
+    },
+    {
+      "name": "pico_ui_bitmap_instruction_11",
+      "source_address": "0x2002a5e0",
+      "size": 256,
+      "sha256": "0f16ff3efa26a8c45c003b01e114c6aee5b00d7a50c247280ec525c886de9bf6"
+    },
+    {
+      "name": "pico_ui_bitmap_instruction_17",
+      "source_address": "0x2002a910",
+      "size": 256,
+      "sha256": "a08adc3d0228f1943cd236549e4bd058ba5d4c8cefa9fee819ba909aa169bd38"
+    },
+    {
+      "name": "pico_ui_digit_0",
+      "source_address": "0x2002ac81",
+      "size": 32,
+      "sha256": "e91535c2aaddbb5cbd56979df5dfb829f6686cc2b47c4e0b6e92c57159ba8100"
+    },
+    {
+      "name": "pico_ui_digit_1",
+      "source_address": "0x2002ac60",
+      "size": 32,
+      "sha256": "644830738524b14761e3b9c76517040ada73e5c8ed54d4fb2f5c294ae23d11fe"
+    },
+    {
+      "name": "pico_ui_digit_2",
+      "source_address": "0x20029e40",
+      "size": 32,
+      "sha256": "fcd934aa7b1c5eb3557c932de4c67b7c6fc57b94cd67d243a752415d69981a99"
+    },
+    {
+      "name": "pico_ui_digit_3",
+      "source_address": "0x20029c20",
+      "size": 32,
+      "sha256": "9705de9bcf275a1a979b440e6ff849a23856ce32a270a16d9dc8a2cdabb0a532"
+    },
+    {
+      "name": "pico_ui_digit_4",
+      "source_address": "0x20029c40",
+      "size": 32,
+      "sha256": "1af88d3c6567ef1014839171a12e425a087fb9b40d1209db1990f5cb6d4a757f"
+    },
+    {
+      "name": "pico_ui_digit_5",
+      "source_address": "0x2002ac20",
+      "size": 32,
+      "sha256": "348adfda2cd30b81488e95d2b8b1481325cd559f10bc819cda17405b0faad990"
+    },
+    {
+      "name": "pico_ui_digit_6",
+      "source_address": "0x2002ae90",
+      "size": 32,
+      "sha256": "6b0a2c7e15ad52ce998a8b5c208f730392f797641e43c63611527067c3124ce9"
+    },
+    {
+      "name": "pico_ui_digit_7",
+      "source_address": "0x2002aee0",
+      "size": 32,
+      "sha256": "31613c1f6cb6484a39215b6f24433821c8dc07621b646cd7f98a831f010db80d"
+    },
+    {
+      "name": "pico_ui_digit_8",
+      "source_address": "0x2002ac40",
+      "size": 32,
+      "sha256": "9d8eeeb876acb36714d8e5fa13397ae9e6dbb1c1ba7e83d7a0985be5259eeae2"
+    },
+    {
+      "name": "pico_ui_digit_9",
+      "source_address": "0x2002a8e8",
+      "size": 32,
+      "sha256": "49ab5c25cc5bea2572b678ea4a0f436fc40966e8f380c3bb56589f3dd2effde2"
+    },
+    {
+      "name": "pico_ui_setup_0",
+      "source_address": "0x20029c60",
+      "size": 480,
+      "sha256": "2edec7f058e43f9aa4a04db31493c97980721d203641d46b2c3765bb5937b86a"
+    },
+    {
+      "name": "pico_ui_setup_1",
+      "source_address": "0x2002acb0",
+      "size": 480,
+      "sha256": "c18d4bef1e30e296265df321b050a7a816500e6577a88421611fea58bd9497c7"
+    },
+    {
+      "name": "pico_ui_setup_2",
+      "source_address": "0x2002a220",
+      "size": 480,
+      "sha256": "a5bbf6519ce4f4d6a1dde37251a2b1b3bf67fe5fcd03c7fb2feacb6d93f34b73"
+    },
+    {
+      "name": "pico_ui_setup_3",
+      "source_address": "0x2002aa40",
+      "size": 480,
+      "sha256": "c589477c81c135e8bb505d5edf6b4f863eaff35df02abd2b85134861d0756739"
+    },
+    {
+      "name": "pico_ui_setup_4",
+      "source_address": "0x2002a400",
+      "size": 480,
+      "sha256": "ec0203d332eb1000391a398041fece087755d84d5a7b844eb6fe6702f993e701"
+    },
+    {
+      "name": "pico_ui_setup_5",
+      "source_address": "0x2002a6e0",
+      "size": 480,
+      "sha256": "373389a88b5549bdf400822b7eaf8cac2457663ec36866cf8cf6c1f328a2cb07"
+    },
+    {
+      "name": "pico_ui_setup_6",
+      "source_address": "0x2002a6e0",
+      "size": 480,
+      "sha256": "373389a88b5549bdf400822b7eaf8cac2457663ec36866cf8cf6c1f328a2cb07"
+    },
+    {
+      "name": "pico_ui_setup_7",
+      "source_address": "0x2002acb0",
+      "size": 480,
+      "sha256": "c18d4bef1e30e296265df321b050a7a816500e6577a88421611fea58bd9497c7"
+    },
+    {
+      "name": "pico_ui_bitmap_program_primary",
+      "source_address": "0x2002a040",
+      "size": 224,
+      "sha256": "238bede1d73388af9e7faba1afd31e796c39e717558f021513e1f66f7212d4fa"
+    },
+    {
+      "name": "pico_ui_bitmap_program_secondary",
+      "source_address": "0x20022fec",
+      "size": 256,
+      "sha256": "6c09e3e1d8a809c433cd734d4583f0353fae88368677389303513a047d3e6544"
+    },
+    {
+      "name": "pico_ui_bitmap_sousvide_secondary",
+      "source_address": "0x2002a120",
+      "size": 256,
+      "sha256": "160e1d4ad166966b3e2628f5310493d598b3066f4085d169a4dad93acd1f3d2f"
+    },
+    {
+      "name": "pico_ui_bitmap_temperature_footer",
+      "source_address": "0x20023214",
+      "size": 30,
+      "sha256": "6d7dc80d417bcb01f276eeae263100a148cba3473d0f0e9dae0ceb023f299f5e"
+    },
+    {
+      "name": "pico_ui_bitmap_temperature_header",
+      "source_address": "0x20023110",
+      "size": 30,
+      "sha256": "480720deb06750cfce5563c306b6264573aa90431d7417ffe2376b72b563d526"
+    },
+    {
+      "name": "pico_ui_bitmap_manual_overview",
+      "source_address": "0x20028730",
+      "size": 480,
+      "sha256": "ff855597a37f73055a59b7464f9dd788bdd3841c4eb46117cb861e4d3d0a6a90"
+    },
+    {
+      "name": "pico_ui_bitmap_logo",
+      "source_address": "0x20028600",
+      "size": 210,
+      "sha256": "c5cbad1dd3e5c74e1fbd526c5c34f4c729eee1a90b5d5ecd9a45dac419e56922"
+    },
+    {
+      "name": "pico_ui_bitmap_colon_dot",
+      "source_address": "0x20023320",
+      "size": 16,
+      "sha256": "d4b1afeb6aa7a94f08a4695c60194acd4bbc65bb104e47494ef7be4f6ce80302"
+    },
+    {
+      "name": "pico_ui_editor_done_large",
+      "source_address": "0x200285d8",
+      "size": 32,
+      "sha256": "97fa16dd96c89d2e60243ca07d444158c2001b2cabe8ad394cb51e0c82d3a674"
+    },
+    {
+      "name": "pico_ui_editor_backspace_large",
+      "source_address": "0x200282d8",
+      "size": 32,
+      "sha256": "b6521cd7f2ce3c67e660386e3c912bf16e488956f780f2834c8f60e032089726"
+    },
+    {
+      "name": "pico_ui_editor_space_large",
+      "source_address": "0x200282f8",
+      "size": 32,
+      "sha256": "40c76080405c545e6bb9e11ce9f662997ec30de89942b03198939628721b6bac"
+    },
+    {
+      "name": "pico_ui_editor_space_small",
+      "source_address": "0x200285f8",
+      "size": 8,
+      "sha256": "502b14c3cc80e29bcff50b4b1a10260be315085b29826c91befe268577f38617"
+    },
+    {
+      "name": "pico_ui_editor_backspace_small",
+      "source_address": "0x200232d8",
+      "size": 8,
+      "sha256": "fcadeb4586037e94c3d1b837b8c4acfa241b7891981bd574efc361459c81cbaf"
+    },
+    {
+      "name": "pico_ui_editor_done_small",
+      "source_address": "0x20023194",
+      "size": 8,
+      "sha256": "ad74d7e7763e6231e951e310b9a2fb96b555fbbdcc810efd49e441841dcd4539"
+    },
+    {
+      "name": "pico_ui_bitmap_splash",
+      "source_address": "0x200283c0",
+      "size": 480,
+      "sha256": "aacf05341c2cccd364fcbaef294257b0bcc089f40497ffe1fe80447b01bc0c54"
+    }
+  ],
+  "literal_bitmap_traces": {
+    "logo": [
+      {
+        "address": 537036288,
+        "width": 80,
+        "height": 21,
+        "x": 24,
+        "y": 2
+      }
+    ],
+    "timer": [
+      {
+        "address": 537042496,
+        "width": 16,
+        "height": 16,
+        "x": 42,
+        "y": 24
+      },
+      {
+        "address": 537015072,
+        "width": 8,
+        "height": 16,
+        "x": 58,
+        "y": 24
+      },
+      {
+        "address": 537046145,
+        "width": 16,
+        "height": 16,
+        "x": 66,
+        "y": 24
+      },
+      {
+        "address": 537046048,
+        "width": 16,
+        "height": 16,
+        "x": 82,
+        "y": 24
+      }
+    ],
+    "temperature": [
+      {
+        "address": 537046112,
+        "width": 16,
+        "height": 16,
+        "x": 25,
+        "y": 24
+      },
+      {
+        "address": 537046145,
+        "width": 16,
+        "height": 16,
+        "x": 41,
+        "y": 24
+      },
+      {
+        "address": 537046145,
+        "width": 16,
+        "height": 16,
+        "x": 57,
+        "y": 24
+      },
+      {
+        "address": 537015072,
+        "width": 8,
+        "height": 8,
+        "x": 73,
+        "y": 33
+      },
+      {
+        "address": 537046145,
+        "width": 16,
+        "height": 16,
+        "x": 81,
+        "y": 24
+      }
+    ]
+  },
+  "editor_traces": {
+    "1": [
+      [
+        42,
+        48,
+        537036280,
+        8,
+        8
+      ],
+      [
+        84,
+        48,
+        537015000,
+        8,
+        8
+      ],
+      [
+        59,
+        43,
+        537036248,
+        16,
+        16
+      ]
+    ],
+    "3": [
+      [
+        30,
+        48,
+        537036280,
+        8,
+        8
+      ],
+      [
+        42,
+        48,
+        537014676,
+        8,
+        8
+      ],
+      [
+        59,
+        43,
+        537035480,
+        16,
+        16
+      ]
+    ],
+    "4": [
+      [
+        24,
+        48,
+        537036280,
+        8,
+        8
+      ],
+      [
+        36,
+        48,
+        537014676,
+        8,
+        8
+      ],
+      [
+        48,
+        48,
+        537015000,
+        8,
+        8
+      ]
+    ],
+    "98": [
+      [
+        84,
+        48,
+        537014676,
+        8,
+        8
+      ],
+      [
+        96,
+        48,
+        537015000,
+        8,
+        8
+      ],
+      [
+        59,
+        43,
+        537035512,
+        16,
+        16
+      ]
+    ]
+  },
+  "splash_trace": [
+    [
+      537035712,
+      128,
+      30
+    ]
+  ],
+  "descriptors": {
+    "program_primary": {
+      "array": "pico_ui_bitmap_program_primary",
+      "width": 128,
+      "height": 14
+    },
+    "program_secondary": {
+      "array": "pico_ui_bitmap_program_secondary",
+      "width": 128,
+      "height": 16
+    },
+    "sousvide_secondary": {
+      "array": "pico_ui_bitmap_sousvide_secondary",
+      "width": 128,
+      "height": 16
+    },
+    "temperature_footer": {
+      "array": "pico_ui_bitmap_temperature_footer",
+      "width": 24,
+      "height": 10
+    },
+    "temperature_header": {
+      "array": "pico_ui_bitmap_temperature_header",
+      "width": 24,
+      "height": 10
+    },
+    "manual_overview": {
+      "array": "pico_ui_bitmap_manual_overview",
+      "width": 128,
+      "height": 30
+    }
+  },
+  "instruction_lines": [
+    [
+      [
+        "Insert empty",
+        "Step Filter & Lid"
+      ],
+      [
+        "Introduzca el filtro",
+        "vacio y la tapa"
+      ],
+      [
+        "Inserez le filtre",
+        "avec son couvercle"
+      ]
+    ],
+    [
+      [
+        "Insert step filter",
+        "and lid"
+      ],
+      [
+        "Insert step filter",
+        "and lid"
+      ],
+      [
+        "Insert step filter",
+        "and lid"
+      ]
+    ],
+    [
+      [
+        "Remove step filter"
+      ],
+      [
+        "Remove step filter"
+      ],
+      [
+        "Remove step filter"
+      ]
+    ],
+    [
+      [
+        "Empty and clean",
+        "step filter"
+      ],
+      [
+        "Empty and clean",
+        "step filter"
+      ],
+      [
+        "Empty and clean",
+        "step filter"
+      ]
+    ],
+    [
+      [],
+      [],
+      []
+    ],
+    [
+      [
+        "Place Brew Bag with",
+        "coffee and 4.5L water",
+        "in step filter"
+      ],
+      [
+        "Place Brew Bag with",
+        "coffee and 4.5L water",
+        "in step filter"
+      ],
+      [
+        "Place Brew Bag with",
+        "coffee and 4.5L water",
+        "in step filter"
+      ]
+    ],
+    [
+      [],
+      [],
+      []
+    ],
+    [
+      [
+        "Fill step filter",
+        "with 5L of water"
+      ],
+      [
+        "Fill step filter",
+        "with 5L of water"
+      ],
+      [
+        "Fill step filter",
+        "with 5L of water"
+      ]
+    ],
+    [
+      [
+        "Add 5 QUARTS water",
+        "to Keg and connect"
+      ],
+      [
+        "Agregue 5QT. de agua",
+        "al barril y conecte"
+      ],
+      [
+        "Ajoutez 5 QT. d'eau",
+        "dans le fut. Connectez"
+      ]
+    ],
+    [
+      [
+        "Insert",
+        "Sous Vide Adapter"
+      ],
+      [
+        "Introduzca el",
+        "adaptor Sous Vide"
+      ],
+      [
+        "Inserez l'adaptateur",
+        "Sous Vide"
+      ]
+    ],
+    [
+      [
+        "Add food & close lid",
+        "Insert Step Filter"
+      ],
+      [
+        "Agregue la comida",
+        "y cierre la tapa"
+      ],
+      [
+        "Ajouter les aliments.",
+        "Fermer le couvercle"
+      ]
+    ],
+    [
+      [],
+      [],
+      []
+    ],
+    [
+      [
+        "Connect IN & OUT",
+        "ball-locks to keg"
+      ],
+      [
+        "Connect IN & OUT",
+        "ball-locks to keg"
+      ],
+      [
+        "Connect IN & OUT",
+        "ball-locks to keg"
+      ]
+    ],
+    [
+      [
+        "Connect Hoses using",
+        "Keg Adapter Kit"
+      ],
+      [
+        "Connect Hoses using",
+        "Keg Adapter Kit"
+      ],
+      [
+        "Connectez les",
+        "tuyaux ensemble"
+      ]
+    ],
+    [
+      [
+        "Disconnect Hoses"
+      ],
+      [
+        "Disconnect Hoses"
+      ],
+      [
+        "Deconnectez",
+        "les tuyaux"
+      ]
+    ],
+    [
+      [
+        "Connect keg wand to",
+        "GRAY ball-lock, and",
+        "place in container"
+      ],
+      [
+        "Connect keg wand to",
+        "GRAY ball-lock, and",
+        "place in container"
+      ],
+      [
+        "Connect keg wand to",
+        "GRAY ball-lock, and",
+        "place in container"
+      ]
+    ],
+    [
+      [
+        "Remove blue inline",
+        "filter screen"
+      ],
+      [
+        "Remove blue inline",
+        "filter screen"
+      ],
+      [
+        "Remove blue inline",
+        "filter screen"
+      ]
+    ],
+    [
+      [],
+      [],
+      []
+    ],
+    [
+      [],
+      [],
+      []
+    ],
+    [
+      [],
+      [],
+      []
+    ],
+    [
+      [
+        "Step Ended"
+      ],
+      [
+        "Step Ended"
+      ],
+      [
+        "Step Ended"
+      ]
+    ],
+    [
+      [
+        "Fill step filter",
+        "with 1\" water and",
+        "attach keg wands"
+      ],
+      [
+        "Llene el filtro de",
+        "paso con 1 pulgada de",
+        "agua y conecte las",
+        "varas del barril"
+      ],
+      [
+        "Remplir le filtre",
+        "de 2.5cm d'eau et",
+        "attacher les batons",
+        "a fut"
+      ]
+    ],
+    [
+      [
+        "Place GRAY hose",
+        "with keg wand in",
+        "waste container"
+      ],
+      [
+        "Coloque la manguera",
+        "GRIS con la vara del",
+        "barril en el conten-",
+        "edor de desechos"
+      ],
+      [
+        "Placez le tuyau GRIS",
+        "avec le baton a fut",
+        "dans le contenant",
+        "a dechets"
+      ]
+    ],
+    [
+      [
+        "Clearing drain line"
+      ],
+      [
+        "Desmontar la l\u00c3\u00adnea",
+        "de drenaje"
+      ],
+      [
+        "Nettoyage de la",
+        "ligne de drainage"
+      ]
+    ],
+    [
+      [
+        "Rinse complete",
+        "Happy Pico brewing!"
+      ],
+      [
+        "Lave completamente"
+      ],
+      [
+        "Rinsage fini",
+        "Bon brassage Pico!"
+      ]
+    ]
+  ],
+  "thermal_help": [
+    [
+      [
+        1,
+        "ERROR: Securely"
+      ],
+      [
+        2,
+        "attach hoses to keg"
+      ],
+      [
+        3,
+        "posts, and continue."
+      ],
+      [
+        4,
+        "Otherwise select"
+      ],
+      [
+        5,
+        "exit and contact"
+      ],
+      [
+        6,
+        "support"
+      ]
+    ],
+    [
+      [
+        1,
+        "ERROR: Conecte de ma-"
+      ],
+      [
+        2,
+        "nera segura las mang-"
+      ],
+      [
+        3,
+        "ueras al puerto del  "
+      ],
+      [
+        4,
+        "barril y contin\u00c3\u00bae. Si"
+      ],
+      [
+        5,
+        "el error persiste "
+      ],
+      [
+        6,
+        "contacte con nosotros"
+      ]
+    ],
+    [
+      [
+        1,
+        "ERREUR: Solidement   "
+      ],
+      [
+        2,
+        "fixer les tuyaux aux "
+      ],
+      [
+        3,
+        "raccords de fut et "
+      ],
+      [
+        4,
+        "continuer. Autrement,"
+      ],
+      [
+        5,
+        "sortez et contactez "
+      ],
+      [
+        6,
+        "le soutien technique"
+      ]
+    ]
+  ],
+  "error_text": [
+    [
+      [
+        "HARDWARE ERROR",
+        ""
+      ],
+      [
+        "ERROR DE HARDWARE",
+        ""
+      ],
+      [
+        "ERREUR DU MATERIEL",
+        ""
+      ]
+    ],
+    [
+      [
+        "RFID FAILED TO",
+        "INITIALIZE"
+      ],
+      [
+        "FALLA AL INICIAR",
+        "LA RFID"
+      ],
+      [
+        "ECHEC DE L'INIT",
+        "DU RFID"
+      ]
+    ],
+    [
+      [
+        "WIFI FAILED TO",
+        "INITIALIZE"
+      ],
+      [
+        "FALLA AL INICIAR",
+        "LA RFID"
+      ],
+      [
+        "ECHEC DE L'INIT",
+        "DU RFID"
+      ]
+    ],
+    [
+      [
+        "COULD NOT RESOLVE",
+        "DNS"
+      ],
+      [
+        "NO SE PUDO RESOLVER",
+        "EL DNS"
+      ],
+      [
+        "INCAPABLE DE RESOUDRE",
+        "LE DNS"
+      ]
+    ],
+    [
+      [
+        "STEPPER PROCESSOR",
+        "UNRESPONSIVE"
+      ],
+      [
+        "STEPPER MSP",
+        "NO RESPONDE"
+      ],
+      [
+        "STEPPER MSP",
+        "sans reponse"
+      ]
+    ],
+    [
+      [
+        "PROCESSOR SENT WRONG",
+        "COMMUNICATION"
+      ],
+      [
+        "MSP ENVIO LA",
+        "COMUNICACION MAL"
+      ],
+      [
+        "LE MSP A ENVOYE UNE",
+        "COMMUNICATION MAL"
+      ]
+    ],
+    [
+      [
+        "PICO NOT IN",
+        "DATABASE"
+      ],
+      [
+        "PICO NO SE ENCUENTRA",
+        "EN LA BASE DE DATOS"
+      ],
+      [
+        "PICO N'EST PAS DANS",
+        "LA BASE DE DONNEES"
+      ]
+    ],
+    [
+      [
+        "SERVER COMMUNICATION",
+        "ERROR"
+      ],
+      [
+        "COMUNICACION",
+        "DEL SERVIDOR"
+      ],
+      [
+        "COMMUNICATION",
+        "DU SERVEUR"
+      ]
+    ],
+    [
+      [
+        "NOT CONNECTED TO",
+        "ACCESS POINT"
+      ],
+      [
+        "NO CONECTADO AL",
+        "PUNTO DE ACCESO"
+      ],
+      [
+        "N'EST PAS CONNECTE",
+        "A UN POINT D'ACCES"
+      ]
+    ],
+    [
+      [
+        "WIFI INITIALIZED",
+        "INCORRECTLY"
+      ],
+      [
+        "WIFI INICIALIZADO",
+        "INCORRECTAMENTE"
+      ],
+      [
+        "WIFI EST",
+        "INITIALISE MAL"
+      ]
+    ],
+    [
+      [
+        "WIFI ACCESS POINT",
+        "DISCONNECTED"
+      ],
+      [
+        "PUNTO DE ACCESO AL",
+        "WIFI DESCONECTADO"
+      ],
+      [
+        "LE POINT D'ACCES DU",
+        "WIFI EST DECONNECTE"
+      ]
+    ],
+    [
+      [
+        "PICO NOT ASSIGNED",
+        "IP ADDRESS"
+      ],
+      [
+        "NO TIENE DIRECCION",
+        "IP ASIGNADA"
+      ],
+      [
+        "LE PICO N'A PAS",
+        "D'ADRESSE IP"
+      ]
+    ],
+    [
+      [
+        "RFID READ",
+        "ERROR"
+      ],
+      [
+        "ERROR DE LECTURA",
+        "DE LA RFID"
+      ],
+      [
+        "ERREUR DE",
+        "LECTURE RFID"
+      ]
+    ],
+    [
+      [
+        "PARSING RECIPE",
+        "ERROR"
+      ],
+      [
+        "ERROR EN LA RECETA DE",
+        "ANALISIS DE LECTURA"
+      ],
+      [
+        "ERREUR DE RECETTE",
+        "PARSING"
+      ]
+    ],
+    [
+      [
+        "RFID NOT FOUND",
+        "IN DATABASE"
+      ],
+      [
+        "RFID NO SE ENCUENTRA",
+        "EN LA BASE DE DATOS"
+      ],
+      [
+        "RFID N\u00e2\u0080\u0099EST PAS",
+        "PRESENT DANS LA DB"
+      ]
+    ],
+    [
+      [
+        "TEMP SENSOR",
+        "FAILURE"
+      ],
+      [
+        "FALLA DEL SENSOR",
+        "DE TEMPERATURA"
+      ],
+      [
+        "ECHEC TEMPORAIRE",
+        "DU CAPTEUR"
+      ]
+    ],
+    [
+      [
+        "HARDWARE ERROR",
+        ""
+      ],
+      [
+        "ERROR DE HARDWARE",
+        ""
+      ],
+      [
+        "ERREUR DU MATERIEL",
+        ""
+      ]
+    ],
+    [
+      [
+        "HARDWARE ERROR",
+        ""
+      ],
+      [
+        "ERROR DE HARDWARE",
+        ""
+      ],
+      [
+        "ERREUR DU MATERIEL",
+        ""
+      ]
+    ],
+    [
+      [
+        "ROTARY VALVE",
+        "SEIZED"
+      ],
+      [
+        "VALVULA ROTATORIA",
+        "ATASCADA"
+      ],
+      [
+        "LA VALVE ROTATIVE",
+        "EST BLOQUEE"
+      ]
+    ],
+    [
+      [
+        "THERMO BLOCK",
+        "NOT HEATING"
+      ],
+      [
+        "EL BLOQUE",
+        "NO CALIENTA"
+      ],
+      [
+        "LE BLOC THERMIQUE",
+        "NE CHAUFFE PAS"
+      ]
+    ],
+    [
+      [
+        "HARDWARE ERROR",
+        ""
+      ],
+      [
+        "ERROR DE HARDWARE",
+        ""
+      ],
+      [
+        "ERREUR DU MATERIEL",
+        ""
+      ]
+    ],
+    [
+      [
+        "HARDWARE ERROR",
+        ""
+      ],
+      [
+        "ERROR DE HARDWARE",
+        ""
+      ],
+      [
+        "ERREUR DU MATERIEL",
+        ""
+      ]
+    ],
+    [
+      [
+        "HARDWARE ERROR",
+        ""
+      ],
+      [
+        "ERROR DE HARDWARE",
+        ""
+      ],
+      [
+        "ERREUR DU MATERIEL",
+        ""
+      ]
+    ],
+    [
+      [
+        "HARDWARE ERROR",
+        ""
+      ],
+      [
+        "ERROR DE HARDWARE",
+        ""
+      ],
+      [
+        "ERREUR DU MATERIEL",
+        ""
+      ]
+    ],
+    [
+      [
+        "HARDWARE ERROR",
+        ""
+      ],
+      [
+        "ERROR DE HARDWARE",
+        ""
+      ],
+      [
+        "ERREUR DU MATERIEL",
+        ""
+      ]
+    ],
+    [
+      [
+        "TEST_ERROR",
+        ""
+      ],
+      [
+        "TEST_ERROR",
+        ""
+      ],
+      [
+        "TEST_ERROR",
+        ""
+      ]
+    ]
+  ]
+}

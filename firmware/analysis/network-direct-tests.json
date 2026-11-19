@@ -1,0 +1,2778 @@
+{
+  "passed": true,
+  "total_cases": 185,
+  "cases": [
+    {
+      "original_address": "0x200058dc",
+      "replacement": "pico_storage_delete_restart",
+      "case": {
+        "remove_result": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200058dc",
+      "replacement": "pico_storage_delete_restart",
+      "case": {
+        "remove_result": -1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200058e8",
+      "replacement": "pico_storage_delete_wifi",
+      "case": {
+        "remove_result": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x200058e8",
+      "replacement": "pico_storage_delete_wifi",
+      "case": {
+        "remove_result": -1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x2000590c",
+      "replacement": "pico_storage_delete_user_files",
+      "case": {
+        "remove_result": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 6
+    },
+    {
+      "original_address": "0x2000590c",
+      "replacement": "pico_storage_delete_user_files",
+      "case": {
+        "remove_result": -1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 6
+    },
+    {
+      "original_address": "0x2000564c",
+      "replacement": "pico_storage_recovery_image_exists",
+      "case": {
+        "opened": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000564c",
+      "replacement": "pico_storage_recovery_image_exists",
+      "case": {
+        "opened": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000a584",
+      "replacement": "pico_storage_read_restart",
+      "case": {
+        "bytes": 0,
+        "success": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a584",
+      "replacement": "pico_storage_read_restart",
+      "case": {
+        "bytes": 24,
+        "success": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a584",
+      "replacement": "pico_storage_read_restart",
+      "case": {
+        "bytes": 100,
+        "success": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200059f4",
+      "replacement": "pico_storage_save_shuttle_scale",
+      "case": {
+        "value": 0.0,
+        "written": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200059f4",
+      "replacement": "pico_storage_save_shuttle_scale",
+      "case": {
+        "value": 0.0,
+        "written": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200059f4",
+      "replacement": "pico_storage_save_shuttle_scale",
+      "case": {
+        "value": 0.2,
+        "written": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200059f4",
+      "replacement": "pico_storage_save_shuttle_scale",
+      "case": {
+        "value": 0.2,
+        "written": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200059f4",
+      "replacement": "pico_storage_save_shuttle_scale",
+      "case": {
+        "value": 0.9999,
+        "written": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200059f4",
+      "replacement": "pico_storage_save_shuttle_scale",
+      "case": {
+        "value": 0.9999,
+        "written": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200059f4",
+      "replacement": "pico_storage_save_shuttle_scale",
+      "case": {
+        "value": -0.125,
+        "written": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200059f4",
+      "replacement": "pico_storage_save_shuttle_scale",
+      "case": {
+        "value": -0.125,
+        "written": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200059f4",
+      "replacement": "pico_storage_save_shuttle_scale",
+      "case": {
+        "value": 12.345,
+        "written": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x200059f4",
+      "replacement": "pico_storage_save_shuttle_scale",
+      "case": {
+        "value": 12.345,
+        "written": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a5cc",
+      "replacement": "pico_storage_load_shuttle_scale",
+      "case": {
+        "text": "",
+        "success": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a5cc",
+      "replacement": "pico_storage_load_shuttle_scale",
+      "case": {
+        "text": "0.200",
+        "success": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a5cc",
+      "replacement": "pico_storage_load_shuttle_scale",
+      "case": {
+        "text": "-.125",
+        "success": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a5cc",
+      "replacement": "pico_storage_load_shuttle_scale",
+      "case": {
+        "text": "1e-3",
+        "success": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a5cc",
+      "replacement": "pico_storage_load_shuttle_scale",
+      "case": {
+        "text": "12.345",
+        "success": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a594",
+      "replacement": "pico_storage_load_uid",
+      "case": {
+        "read": 0,
+        "hash": 0,
+        "write": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000a594",
+      "replacement": "pico_storage_load_uid",
+      "case": {
+        "read": 0,
+        "hash": 0,
+        "write": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000a594",
+      "replacement": "pico_storage_load_uid",
+      "case": {
+        "read": 0,
+        "hash": 1,
+        "write": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x2000a594",
+      "replacement": "pico_storage_load_uid",
+      "case": {
+        "read": 0,
+        "hash": 1,
+        "write": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x2000a594",
+      "replacement": "pico_storage_load_uid",
+      "case": {
+        "read": 1,
+        "hash": 0,
+        "write": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a594",
+      "replacement": "pico_storage_load_uid",
+      "case": {
+        "read": 1,
+        "hash": 0,
+        "write": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a594",
+      "replacement": "pico_storage_load_uid",
+      "case": {
+        "read": 1,
+        "hash": 1,
+        "write": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a594",
+      "replacement": "pico_storage_load_uid",
+      "case": {
+        "read": 1,
+        "hash": 1,
+        "write": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x2000a7c0",
+      "replacement": "pico_storage_reset_shuttle_scale",
+      "case": {
+        "save_result": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x2000a7c0",
+      "replacement": "pico_storage_reset_shuttle_scale",
+      "case": {
+        "save_result": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x2000c390",
+      "replacement": "pico_storage_load_preferences",
+      "case": {
+        "text": null,
+        "scale": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 9
+    },
+    {
+      "original_address": "0x2000c390",
+      "replacement": "pico_storage_load_preferences",
+      "case": {
+        "text": null,
+        "scale": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x2000c390",
+      "replacement": "pico_storage_load_preferences",
+      "case": {
+        "text": "00",
+        "scale": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x2000c390",
+      "replacement": "pico_storage_load_preferences",
+      "case": {
+        "text": "00",
+        "scale": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000c390",
+      "replacement": "pico_storage_load_preferences",
+      "case": {
+        "text": "12",
+        "scale": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x2000c390",
+      "replacement": "pico_storage_load_preferences",
+      "case": {
+        "text": "12",
+        "scale": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000c390",
+      "replacement": "pico_storage_load_preferences",
+      "case": {
+        "text": "01",
+        "scale": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x2000c390",
+      "replacement": "pico_storage_load_preferences",
+      "case": {
+        "text": "01",
+        "scale": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000c390",
+      "replacement": "pico_storage_load_preferences",
+      "case": {
+        "text": "10",
+        "scale": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x2000c390",
+      "replacement": "pico_storage_load_preferences",
+      "case": {
+        "text": "10",
+        "scale": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "password",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "password",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "password",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "0102030405",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "0102030405",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "0102030405",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "ABCDEF0123",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 0,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "password",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "password",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "password",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "0102030405",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "0102030405",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "0102030405",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "ABCDEF0123",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 4,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "password",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "password",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "password",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "0102030405",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "0102030405",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "0102030405",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "ABCDEF0123",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 5,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "password",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "password",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "password",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "0102030405",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "0102030405",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "0102030405",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "ABCDEF0123",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 6,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "password",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "password",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "password",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "0102030405",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "0102030405",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "0102030405",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "ABCDEF0123",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 7,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "password",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "password",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "password",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "0102030405",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "0102030405",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "0102030405",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "ABCDEF0123",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "ABCDEF0123",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          3
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008998",
+      "replacement": "pico_network_connect_access_point",
+      "case": {
+        "security": 255,
+        "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "replies": [
+          4,
+          4
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008a8c",
+      "replacement": "pico_network_connect_stored",
+      "case": {
+        "ap": [
+          3
+        ],
+        "status": [
+          3
+        ],
+        "connecting": false
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20008a8c",
+      "replacement": "pico_network_connect_stored",
+      "case": {
+        "ap": [
+          4,
+          4,
+          4
+        ],
+        "status": [
+          4
+        ],
+        "connecting": false
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x20008a8c",
+      "replacement": "pico_network_connect_stored",
+      "case": {
+        "ap": [
+          4,
+          4,
+          3
+        ],
+        "status": [
+          3
+        ],
+        "connecting": false
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20008a8c",
+      "replacement": "pico_network_connect_stored",
+      "case": {
+        "ap": [
+          4
+        ],
+        "status": [
+          0,
+          3,
+          3
+        ],
+        "connecting": true
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008a8c",
+      "replacement": "pico_network_connect_stored",
+      "case": {
+        "ap": [
+          4,
+          4,
+          4
+        ],
+        "status": [
+          0
+        ],
+        "connecting": true
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x20008b70",
+      "replacement": "pico_network_reconnect",
+      "case": {
+        "initialized": 0,
+        "init_ok": 0,
+        "connected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008b70",
+      "replacement": "pico_network_reconnect",
+      "case": {
+        "initialized": 0,
+        "init_ok": 0,
+        "connected": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008b70",
+      "replacement": "pico_network_reconnect",
+      "case": {
+        "initialized": 0,
+        "init_ok": 1,
+        "connected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20008b70",
+      "replacement": "pico_network_reconnect",
+      "case": {
+        "initialized": 0,
+        "init_ok": 1,
+        "connected": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20008b70",
+      "replacement": "pico_network_reconnect",
+      "case": {
+        "initialized": 1,
+        "init_ok": 0,
+        "connected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008b70",
+      "replacement": "pico_network_reconnect",
+      "case": {
+        "initialized": 1,
+        "init_ok": 0,
+        "connected": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008b70",
+      "replacement": "pico_network_reconnect",
+      "case": {
+        "initialized": 1,
+        "init_ok": 1,
+        "connected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008b70",
+      "replacement": "pico_network_reconnect",
+      "case": {
+        "initialized": 1,
+        "init_ok": 1,
+        "connected": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008b1c",
+      "replacement": "pico_network_connect_with_screen",
+      "case": {
+        "connected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20008b1c",
+      "replacement": "pico_network_connect_with_screen",
+      "case": {
+        "connected": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000dd58",
+      "replacement": "pico_network_resolve_server",
+      "case": {
+        "local": 0,
+        "first": 0,
+        "second": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000dd58",
+      "replacement": "pico_network_resolve_server",
+      "case": {
+        "local": 0,
+        "first": 0,
+        "second": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000dd58",
+      "replacement": "pico_network_resolve_server",
+      "case": {
+        "local": 0,
+        "first": 1,
+        "second": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000dd58",
+      "replacement": "pico_network_resolve_server",
+      "case": {
+        "local": 0,
+        "first": 1,
+        "second": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000dd58",
+      "replacement": "pico_network_resolve_server",
+      "case": {
+        "local": 1,
+        "first": 0,
+        "second": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000dd58",
+      "replacement": "pico_network_resolve_server",
+      "case": {
+        "local": 1,
+        "first": 0,
+        "second": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x2000dd58",
+      "replacement": "pico_network_resolve_server",
+      "case": {
+        "local": 1,
+        "first": 1,
+        "second": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x2000dd58",
+      "replacement": "pico_network_resolve_server",
+      "case": {
+        "local": 1,
+        "first": 1,
+        "second": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": false,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20004a94",
+      "replacement": "pico_network_log",
+      "case": {
+        "level": "I",
+        "component_bytes": 4,
+        "message": "connecting"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x20004a94",
+      "replacement": "pico_network_log",
+      "case": {
+        "level": "E",
+        "component_bytes": 5,
+        "message": ""
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x20004a94",
+      "replacement": "pico_network_log",
+      "case": {
+        "level": "warning",
+        "component_bytes": 225,
+        "message": "bounded prefix"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x20004a94",
+      "replacement": "pico_network_log",
+      "case": {
+        "level": "D",
+        "component_bytes": 4,
+        "message": "caf\u00e9"
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x20004b7c",
+      "replacement": "pico_network_assert",
+      "case": {
+        "condition": 0,
+        "counter": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x20004b7c",
+      "replacement": "pico_network_assert",
+      "case": {
+        "condition": 0,
+        "counter": 17
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x20004b7c",
+      "replacement": "pico_network_assert",
+      "case": {
+        "condition": 0,
+        "counter": 4294967295
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x20004b7c",
+      "replacement": "pico_network_assert",
+      "case": {
+        "condition": 1,
+        "counter": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x20004b7c",
+      "replacement": "pico_network_assert",
+      "case": {
+        "condition": 1,
+        "counter": 17
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x20004b7c",
+      "replacement": "pico_network_assert",
+      "case": {
+        "condition": 1,
+        "counter": 4294967295
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 0
+    },
+    {
+      "original_address": "0x2000fc4c",
+      "replacement": "pico_network_ensure_connection",
+      "case": {
+        "stored": 0,
+        "choices": [
+          1
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x2000fc4c",
+      "replacement": "pico_network_ensure_connection",
+      "case": {
+        "stored": 0,
+        "choices": [
+          0,
+          0,
+          1
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 14
+    },
+    {
+      "original_address": "0x2000fc4c",
+      "replacement": "pico_network_ensure_connection",
+      "case": {
+        "stored": 1,
+        "connected": 0,
+        "choices": [
+          0,
+          1
+        ]
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 15
+    },
+    {
+      "original_address": "0x2000fc4c",
+      "replacement": "pico_network_ensure_connection",
+      "case": {
+        "stored": 1,
+        "connected": 1,
+        "resolved": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 16
+    },
+    {
+      "original_address": "0x2000fc4c",
+      "replacement": "pico_network_ensure_connection",
+      "case": {
+        "stored": 1,
+        "connected": 1,
+        "resolved": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 10
+    },
+    {
+      "original_address": "0x20012ea0",
+      "replacement": "pico_update_available",
+      "case": {
+        "request": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20012ea0",
+      "replacement": "pico_update_available",
+      "case": {
+        "request": 1,
+        "connected": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20012ea0",
+      "replacement": "pico_update_available",
+      "case": {
+        "request": 1,
+        "connected": 1,
+        "value": 84
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x20012ea0",
+      "replacement": "pico_update_available",
+      "case": {
+        "request": 1,
+        "connected": 1,
+        "value": 70
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x20012ea0",
+      "replacement": "pico_update_available",
+      "case": {
+        "request": 1,
+        "connected": 1,
+        "value": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x20012ea0",
+      "replacement": "pico_update_available",
+      "case": {
+        "request": 1,
+        "connected": 1,
+        "value": -1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x20012ea0",
+      "replacement": "pico_update_available",
+      "case": {
+        "request": 1,
+        "connected": 1,
+        "value": 256
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 5
+    },
+    {
+      "original_address": "0x20012ea0",
+      "replacement": "pico_update_available",
+      "case": {
+        "request": 1,
+        "connected": 1,
+        "timeout": true
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x20012ea0",
+      "replacement": "pico_update_available",
+      "case": {
+        "request": 1,
+        "connected": 1,
+        "timeout": true,
+        "start": 4294967040
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": true,
+      "ordered_events": 8
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 0,
+        "load": 0,
+        "request": 0,
+        "received": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 0,
+        "load": 0,
+        "request": 0,
+        "received": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 0,
+        "load": 0,
+        "request": 1,
+        "received": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 0,
+        "load": 0,
+        "request": 1,
+        "received": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 0,
+        "load": 1,
+        "request": 0,
+        "received": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 0,
+        "load": 1,
+        "request": 0,
+        "received": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 0,
+        "load": 1,
+        "request": 1,
+        "received": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 0,
+        "load": 1,
+        "request": 1,
+        "received": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 4
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 1,
+        "load": 0,
+        "request": 0,
+        "received": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 1,
+        "load": 0,
+        "request": 0,
+        "received": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 1,
+        "load": 0,
+        "request": 1,
+        "received": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 1,
+        "load": 0,
+        "request": 1,
+        "received": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 1,
+        "load": 1,
+        "request": 0,
+        "received": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 1,
+        "load": 1,
+        "request": 0,
+        "received": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 2
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 1,
+        "load": 1,
+        "request": 1,
+        "received": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20013100",
+      "replacement": "pico_update_download",
+      "case": {
+        "uid_present": 1,
+        "load": 1,
+        "request": 1,
+        "received": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": true,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 3
+    },
+    {
+      "original_address": "0x20013150",
+      "replacement": "pico_update_run",
+      "case": {
+        "available": 0,
+        "downloaded": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20013150",
+      "replacement": "pico_update_run",
+      "case": {
+        "available": 0,
+        "downloaded": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 1
+    },
+    {
+      "original_address": "0x20013150",
+      "replacement": "pico_update_run",
+      "case": {
+        "available": 1,
+        "downloaded": 0
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 10
+    },
+    {
+      "original_address": "0x20013150",
+      "replacement": "pico_update_run",
+      "case": {
+        "available": 1,
+        "downloaded": 1
+      },
+      "kind": "direct_original_vs_rebuilt",
+      "return_compared": false,
+      "state_compared": true,
+      "serial_compared": false,
+      "ordered_events": 16
+    }
+  ],
+  "elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "reference_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "scope": "Direct comparisons for previously review-only Pico network/storage entries.\n\nOriginal Thumb and rebuilt ARM bodies execute independently. Subordinate\nservices are controlled explicitly; state, returns and ordered effects are\ncompared. Folded helpers and deliberate repaired inputs are labeled separately.\nNo socket, radio, flash, or physical brewer is operated.\n"
+}

@@ -2,6 +2,7 @@ import { lazy, Suspense, useCallback, useEffect, useState, type FormEvent } from
 import {
   LayoutDashboard,
   BookOpen,
+  Library,
   History,
   Sparkles,
   Settings2,
@@ -23,6 +24,7 @@ import { Button, Field, ErrorBanner, Loading, IconButton } from './components/ui
 const Fleet = lazy(() => import('./pages/Fleet'))
 const Machine = lazy(() => import('./pages/Machine'))
 const Recipes = lazy(() => import('./pages/Recipes'))
+const Catalog = lazy(() => import('./pages/Catalog'))
 const HistoryPage = lazy(() => import('./pages/History'))
 const Settings = lazy(() => import('./pages/Settings'))
 const Assistant = lazy(() => import('./pages/Assistant'))
@@ -30,6 +32,7 @@ const Explorer = lazy(() => import('./pages/Explorer'))
 const navigation = [
   { path: '/overview', label: 'Overview', icon: LayoutDashboard },
   { path: '/recipes', label: 'Recipe library', icon: BookOpen },
+  { path: '/catalog', label: 'Community catalogue', icon: Library },
   { path: '/history', label: 'Brew journal', icon: History },
   { path: '/assistant', label: 'Brew assistant', icon: Sparkles },
   { path: '/settings', label: 'Settings', icon: Settings2 },
@@ -275,6 +278,8 @@ export default function App() {
                 <Machine key={parts[1]} id={parts[1]} />
               ) : section === 'recipes' ? (
                 <Recipes key={parts[1] || 'list'} id={parts[1]} />
+              ) : section === 'catalog' ? (
+                <Catalog key={parts[1] || 'list'} id={parts[1]} />
               ) : section === 'history' ? (
                 <HistoryPage key={parts[1] || 'list'} id={parts[1]} />
               ) : section === 'settings' ? (

@@ -1,0 +1,1099 @@
+{
+  "source": "energia/cc3200-core libdriverlib.a c5507401fe46454d38c3ce3af0a140df8fc088a3",
+  "method": "Exact function bytes, linker relocation sites masked; all aligned candidates recorded",
+  "functions_tried": 318,
+  "matches": [
+    {
+      "name": "ADCChannelEnable",
+      "object": "adc.o/",
+      "size": 34,
+      "unmasked_bytes": 34,
+      "relocations": [],
+      "matches": [
+        "0x20019956"
+      ]
+    },
+    {
+      "name": "ADCChannelDisable",
+      "object": "adc.o/",
+      "size": 36,
+      "unmasked_bytes": 36,
+      "relocations": [],
+      "matches": [
+        "0x20019978"
+      ]
+    },
+    {
+      "name": "ADCTimerConfig",
+      "object": "adc.o/",
+      "size": 16,
+      "unmasked_bytes": 16,
+      "relocations": [],
+      "matches": [
+        "0x2001999c"
+      ]
+    },
+    {
+      "name": "CPUcpsid",
+      "object": "cpu.o/",
+      "size": 16,
+      "unmasked_bytes": 16,
+      "relocations": [],
+      "matches": [
+        "0x200199d0"
+      ]
+    },
+    {
+      "name": "CPUcpsie",
+      "object": "cpu.o/",
+      "size": 16,
+      "unmasked_bytes": 16,
+      "relocations": [],
+      "matches": [
+        "0x200199e0"
+      ]
+    },
+    {
+      "name": "GPIOGetIntNumber",
+      "object": "gpio.o/",
+      "size": 60,
+      "unmasked_bytes": 60,
+      "relocations": [],
+      "matches": [
+        "0x200199f0"
+      ]
+    },
+    {
+      "name": "GPIODirModeSet",
+      "object": "gpio.o/",
+      "size": 24,
+      "unmasked_bytes": 24,
+      "relocations": [],
+      "matches": [
+        "0x20019a2c"
+      ]
+    },
+    {
+      "name": "GPIOIntTypeSet",
+      "object": "gpio.o/",
+      "size": 66,
+      "unmasked_bytes": 66,
+      "relocations": [],
+      "matches": [
+        "0x20019a44"
+      ]
+    },
+    {
+      "name": "GPIOIntEnable",
+      "object": "gpio.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x20019a86"
+      ]
+    },
+    {
+      "name": "GPIOIntStatus",
+      "object": "gpio.o/",
+      "size": 14,
+      "unmasked_bytes": 14,
+      "relocations": [],
+      "matches": [
+        "0x20019a92"
+      ]
+    },
+    {
+      "name": "GPIOIntRegister",
+      "object": "gpio.o/",
+      "size": 26,
+      "unmasked_bytes": 14,
+      "relocations": [
+        [
+          4,
+          10
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          22,
+          30
+        ]
+      ],
+      "matches": [
+        "0x20019aa6"
+      ]
+    },
+    {
+      "name": "IntVTableBaseSet",
+      "object": "interrupt.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x20019ae8"
+      ]
+    },
+    {
+      "name": "IntRegister",
+      "object": "interrupt.o/",
+      "size": 16,
+      "unmasked_bytes": 16,
+      "relocations": [],
+      "matches": [
+        "0x20019af4"
+      ]
+    },
+    {
+      "name": "IntUnregister",
+      "object": "interrupt.o/",
+      "size": 20,
+      "unmasked_bytes": 16,
+      "relocations": [
+        [
+          16,
+          2
+        ]
+      ],
+      "matches": [
+        "0x20019b04"
+      ]
+    },
+    {
+      "name": "IntPrioritySet",
+      "object": "interrupt.o/",
+      "size": 40,
+      "unmasked_bytes": 36,
+      "relocations": [
+        [
+          36,
+          2
+        ]
+      ],
+      "matches": [
+        "0x20019b18"
+      ]
+    },
+    {
+      "name": "IntEnable",
+      "object": "interrupt.o/",
+      "size": 104,
+      "unmasked_bytes": 100,
+      "relocations": [
+        [
+          100,
+          2
+        ]
+      ],
+      "matches": [
+        "0x20019b40"
+      ]
+    },
+    {
+      "name": "IntDisable",
+      "object": "interrupt.o/",
+      "size": 104,
+      "unmasked_bytes": 100,
+      "relocations": [
+        [
+          100,
+          2
+        ]
+      ],
+      "matches": [
+        "0x20019ba8"
+      ]
+    },
+    {
+      "name": "IntPendClear",
+      "object": "interrupt.o/",
+      "size": 64,
+      "unmasked_bytes": 60,
+      "relocations": [
+        [
+          60,
+          2
+        ]
+      ],
+      "matches": [
+        "0x20019c10"
+      ]
+    },
+    {
+      "name": "PinModeSet",
+      "object": "pin.o/",
+      "size": 40,
+      "unmasked_bytes": 36,
+      "relocations": [
+        [
+          32,
+          2
+        ]
+      ],
+      "matches": [
+        "0x20019c50"
+      ]
+    },
+    {
+      "name": "PinConfigSet",
+      "object": "pin.o/",
+      "size": 88,
+      "unmasked_bytes": 84,
+      "relocations": [
+        [
+          76,
+          2
+        ]
+      ],
+      "matches": [
+        "0x20019c78"
+      ]
+    },
+    {
+      "name": "PinTypeUART",
+      "object": "pin.o/",
+      "size": 22,
+      "unmasked_bytes": 14,
+      "relocations": [
+        [
+          4,
+          10
+        ],
+        [
+          18,
+          30
+        ]
+      ],
+      "matches": [
+        "0x20019cd0"
+      ]
+    },
+    {
+      "name": "PinTypeSPI",
+      "object": "pin.o/",
+      "size": 22,
+      "unmasked_bytes": 14,
+      "relocations": [
+        [
+          4,
+          10
+        ],
+        [
+          18,
+          30
+        ]
+      ],
+      "matches": [
+        "0x20019ce6"
+      ]
+    },
+    {
+      "name": "PinTypeI2S",
+      "object": "pin.o/",
+      "size": 22,
+      "unmasked_bytes": 14,
+      "relocations": [
+        [
+          4,
+          10
+        ],
+        [
+          18,
+          30
+        ]
+      ],
+      "matches": [
+        "0x20019ce6"
+      ]
+    },
+    {
+      "name": "PinTypeTimer",
+      "object": "pin.o/",
+      "size": 22,
+      "unmasked_bytes": 14,
+      "relocations": [
+        [
+          4,
+          10
+        ],
+        [
+          18,
+          30
+        ]
+      ],
+      "matches": [
+        "0x20019ce6"
+      ]
+    },
+    {
+      "name": "PinTypeCamera",
+      "object": "pin.o/",
+      "size": 22,
+      "unmasked_bytes": 14,
+      "relocations": [
+        [
+          4,
+          10
+        ],
+        [
+          18,
+          30
+        ]
+      ],
+      "matches": [
+        "0x20019ce6"
+      ]
+    },
+    {
+      "name": "PinTypeGPIO",
+      "object": "pin.o/",
+      "size": 28,
+      "unmasked_bytes": 20,
+      "relocations": [
+        [
+          12,
+          10
+        ],
+        [
+          24,
+          30
+        ]
+      ],
+      "matches": [
+        "0x20019cfc"
+      ]
+    },
+    {
+      "name": "PinTypeSDHost",
+      "object": "pin.o/",
+      "size": 22,
+      "unmasked_bytes": 14,
+      "relocations": [
+        [
+          4,
+          10
+        ],
+        [
+          18,
+          30
+        ]
+      ],
+      "matches": [
+        "0x20019cd0"
+      ]
+    },
+    {
+      "name": "PRCMMCUReset",
+      "object": "prcm.o/",
+      "size": 20,
+      "unmasked_bytes": 20,
+      "relocations": [],
+      "matches": [
+        "0x20019d24"
+      ]
+    },
+    {
+      "name": "PRCMSysResetCauseGet",
+      "object": "prcm.o/",
+      "size": 44,
+      "unmasked_bytes": 40,
+      "relocations": [
+        [
+          24,
+          10
+        ]
+      ],
+      "matches": [
+        "0x20019d38"
+      ]
+    },
+    {
+      "name": "PRCMPeripheralClkEnable",
+      "object": "prcm.o/",
+      "size": 44,
+      "unmasked_bytes": 40,
+      "relocations": [
+        [
+          36,
+          2
+        ]
+      ],
+      "matches": [
+        "0x20019d64"
+      ]
+    },
+    {
+      "name": "PRCMPeripheralClkDisable",
+      "object": "prcm.o/",
+      "size": 28,
+      "unmasked_bytes": 24,
+      "relocations": [
+        [
+          24,
+          2
+        ]
+      ],
+      "matches": [
+        "0x20019d90"
+      ]
+    },
+    {
+      "name": "PRCMPeripheralClockGet",
+      "object": "prcm.o/",
+      "size": 72,
+      "unmasked_bytes": 72,
+      "relocations": [],
+      "matches": [
+        "0x20019dac"
+      ]
+    },
+    {
+      "name": "PRCMPeripheralReset",
+      "object": "prcm.o/",
+      "size": 64,
+      "unmasked_bytes": 60,
+      "relocations": [
+        [
+          60,
+          2
+        ]
+      ],
+      "matches": [
+        "0x20019df4"
+      ]
+    },
+    {
+      "name": "PRCMPeripheralStatusGet",
+      "object": "prcm.o/",
+      "size": 28,
+      "unmasked_bytes": 24,
+      "relocations": [
+        [
+          24,
+          2
+        ]
+      ],
+      "matches": [
+        "0x20019e34"
+      ]
+    },
+    {
+      "name": "PRCMCC3200MCUInit",
+      "object": "prcm.o/",
+      "size": 292,
+      "unmasked_bytes": 264,
+      "relocations": [
+        [
+          24,
+          10
+        ],
+        [
+          34,
+          10
+        ],
+        [
+          52,
+          10
+        ],
+        [
+          58,
+          10
+        ],
+        [
+          66,
+          10
+        ],
+        [
+          70,
+          10
+        ],
+        [
+          86,
+          10
+        ]
+      ],
+      "matches": [
+        "0x20019e50"
+      ]
+    },
+    {
+      "name": "SHAMD5DataWriteMultiple",
+      "object": "shamd5.o/",
+      "size": 118,
+      "unmasked_bytes": 114,
+      "relocations": [
+        [
+          28,
+          10
+        ]
+      ],
+      "matches": [
+        "0x2001a03e"
+      ]
+    },
+    {
+      "name": "SHAMD5IntStatus",
+      "object": "shamd5.o/",
+      "size": 44,
+      "unmasked_bytes": 44,
+      "relocations": [],
+      "matches": [
+        "0x20019f74"
+      ]
+    },
+    {
+      "name": "SHAMD5IntEnable",
+      "object": "shamd5.o/",
+      "size": 48,
+      "unmasked_bytes": 48,
+      "relocations": [],
+      "matches": [
+        "0x20019fa0"
+      ]
+    },
+    {
+      "name": "SHAMD5IntDisable",
+      "object": "shamd5.o/",
+      "size": 52,
+      "unmasked_bytes": 52,
+      "relocations": [],
+      "matches": [
+        "0x20019fd0"
+      ]
+    },
+    {
+      "name": "SHAMD5DataWrite",
+      "object": "shamd5.o/",
+      "size": 36,
+      "unmasked_bytes": 36,
+      "relocations": [],
+      "matches": [
+        "0x2001a01a"
+      ]
+    },
+    {
+      "name": "SHAMD5ResultRead",
+      "object": "shamd5.o/",
+      "size": 56,
+      "unmasked_bytes": 56,
+      "relocations": [],
+      "matches": [
+        "0x2001a0b4"
+      ]
+    },
+    {
+      "name": "SHAMD5DataProcess",
+      "object": "shamd5.o/",
+      "size": 44,
+      "unmasked_bytes": 36,
+      "relocations": [
+        [
+          22,
+          10
+        ],
+        [
+          36,
+          10
+        ]
+      ],
+      "matches": [
+        "0x2001a0ec"
+      ]
+    },
+    {
+      "name": "SHAMD5HMACProcess",
+      "object": "shamd5.o/",
+      "size": 44,
+      "unmasked_bytes": 36,
+      "relocations": [
+        [
+          22,
+          10
+        ],
+        [
+          36,
+          10
+        ]
+      ],
+      "matches": [
+        "0x2001a0ec"
+      ]
+    },
+    {
+      "name": "SPIDmaMaskGet",
+      "object": "spi.o/",
+      "size": 60,
+      "unmasked_bytes": 56,
+      "relocations": [
+        [
+          56,
+          2
+        ]
+      ],
+      "matches": [
+        "0x2001a118"
+      ]
+    },
+    {
+      "name": "SPIEnable",
+      "object": "spi.o/",
+      "size": 14,
+      "unmasked_bytes": 14,
+      "relocations": [],
+      "matches": [
+        "0x2001a154"
+      ]
+    },
+    {
+      "name": "SPIDisable",
+      "object": "spi.o/",
+      "size": 14,
+      "unmasked_bytes": 14,
+      "relocations": [],
+      "matches": [
+        "0x2001a162"
+      ]
+    },
+    {
+      "name": "SPIDmaEnable",
+      "object": "spi.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x2001a170",
+        "0x2001a1f8"
+      ]
+    },
+    {
+      "name": "SPIDmaDisable",
+      "object": "spi.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x2001a17c"
+      ]
+    },
+    {
+      "name": "SPIReset",
+      "object": "spi.o/",
+      "size": 22,
+      "unmasked_bytes": 22,
+      "relocations": [],
+      "matches": [
+        "0x2001a188"
+      ]
+    },
+    {
+      "name": "SPIConfigSetExpClk",
+      "object": "spi.o/",
+      "size": 90,
+      "unmasked_bytes": 90,
+      "relocations": [],
+      "matches": [
+        "0x2001a19e"
+      ]
+    },
+    {
+      "name": "SPIFIFOEnable",
+      "object": "spi.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x2001a170",
+        "0x2001a1f8"
+      ]
+    },
+    {
+      "name": "SPIFIFODisable",
+      "object": "spi.o/",
+      "size": 14,
+      "unmasked_bytes": 14,
+      "relocations": [],
+      "matches": [
+        "0x2001a204"
+      ]
+    },
+    {
+      "name": "SPIFIFOLevelSet",
+      "object": "spi.o/",
+      "size": 24,
+      "unmasked_bytes": 24,
+      "relocations": [],
+      "matches": [
+        "0x2001a212"
+      ]
+    },
+    {
+      "name": "SPIWordCountSet",
+      "object": "spi.o/",
+      "size": 16,
+      "unmasked_bytes": 16,
+      "relocations": [],
+      "matches": [
+        "0x2001a22a"
+      ]
+    },
+    {
+      "name": "SPIIntUnregister",
+      "object": "spi.o/",
+      "size": 76,
+      "unmasked_bytes": 64,
+      "relocations": [
+        [
+          54,
+          10
+        ],
+        [
+          72,
+          2
+        ],
+        [
+          64,
+          30
+        ]
+      ],
+      "matches": [
+        "0x2001a23c"
+      ]
+    },
+    {
+      "name": "SPIIntEnable",
+      "object": "spi.o/",
+      "size": 60,
+      "unmasked_bytes": 52,
+      "relocations": [
+        [
+          10,
+          10
+        ],
+        [
+          24,
+          10
+        ]
+      ],
+      "matches": [
+        "0x2001a288"
+      ]
+    },
+    {
+      "name": "SPIIntClear",
+      "object": "spi.o/",
+      "size": 52,
+      "unmasked_bytes": 44,
+      "relocations": [
+        [
+          10,
+          10
+        ],
+        [
+          24,
+          10
+        ]
+      ],
+      "matches": [
+        "0x2001a2c4"
+      ]
+    },
+    {
+      "name": "SPICSEnable",
+      "object": "spi.o/",
+      "size": 14,
+      "unmasked_bytes": 14,
+      "relocations": [],
+      "matches": [
+        "0x2001a2f8"
+      ]
+    },
+    {
+      "name": "SPICSDisable",
+      "object": "spi.o/",
+      "size": 14,
+      "unmasked_bytes": 14,
+      "relocations": [],
+      "matches": [
+        "0x2001a306"
+      ]
+    },
+    {
+      "name": "SPITransfer",
+      "object": "spi.o/",
+      "size": 410,
+      "unmasked_bytes": 410,
+      "relocations": [],
+      "matches": [
+        "0x2001a314"
+      ]
+    },
+    {
+      "name": "SysTickEnable",
+      "object": "systick.o/",
+      "size": 16,
+      "unmasked_bytes": 16,
+      "relocations": [],
+      "matches": [
+        "0x2001a4b0"
+      ]
+    },
+    {
+      "name": "SysTickIntEnable",
+      "object": "systick.o/",
+      "size": 16,
+      "unmasked_bytes": 16,
+      "relocations": [],
+      "matches": [
+        "0x2001a4c0"
+      ]
+    },
+    {
+      "name": "SysTickPeriodSet",
+      "object": "systick.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x2001a4d0"
+      ]
+    },
+    {
+      "name": "TimerEnable",
+      "object": "timer.o/",
+      "size": 16,
+      "unmasked_bytes": 16,
+      "relocations": [],
+      "matches": [
+        "0x2001a4dc"
+      ]
+    },
+    {
+      "name": "TimerConfigure",
+      "object": "timer.o/",
+      "size": 40,
+      "unmasked_bytes": 40,
+      "relocations": [],
+      "matches": [
+        "0x2001a4ec"
+      ]
+    },
+    {
+      "name": "TimerLoadSet",
+      "object": "timer.o/",
+      "size": 18,
+      "unmasked_bytes": 18,
+      "relocations": [],
+      "matches": [
+        "0x2001a514"
+      ]
+    },
+    {
+      "name": "TimerIntRegister",
+      "object": "timer.o/",
+      "size": 96,
+      "unmasked_bytes": 80,
+      "relocations": [
+        [
+          48,
+          10
+        ],
+        [
+          54,
+          10
+        ],
+        [
+          70,
+          10
+        ],
+        [
+          80,
+          30
+        ]
+      ],
+      "matches": [
+        "0x2001a528"
+      ]
+    },
+    {
+      "name": "UARTEnable",
+      "object": "uart.o/",
+      "size": 22,
+      "unmasked_bytes": 22,
+      "relocations": [],
+      "matches": [
+        "0x2001a59e"
+      ]
+    },
+    {
+      "name": "UARTDisable",
+      "object": "uart.o/",
+      "size": 28,
+      "unmasked_bytes": 28,
+      "relocations": [],
+      "matches": [
+        "0x2001a5b4"
+      ]
+    },
+    {
+      "name": "UARTConfigSetExpClk",
+      "object": "uart.o/",
+      "size": 72,
+      "unmasked_bytes": 64,
+      "relocations": [
+        [
+          10,
+          10
+        ],
+        [
+          68,
+          30
+        ]
+      ],
+      "matches": [
+        "0x2001a5d0"
+      ]
+    },
+    {
+      "name": "UARTCharsAvail",
+      "object": "uart.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x2001a618"
+      ]
+    },
+    {
+      "name": "UARTSpaceAvail",
+      "object": "uart.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x2001a624"
+      ]
+    },
+    {
+      "name": "UARTCharGetNonBlocking",
+      "object": "uart.o/",
+      "size": 14,
+      "unmasked_bytes": 14,
+      "relocations": [],
+      "matches": [
+        "0x2001a630"
+      ]
+    },
+    {
+      "name": "UARTCharPutNonBlocking",
+      "object": "uart.o/",
+      "size": 14,
+      "unmasked_bytes": 14,
+      "relocations": [],
+      "matches": [
+        "0x2001a63e"
+      ]
+    },
+    {
+      "name": "uDMAEnable",
+      "object": "udma.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x2001a66c"
+      ]
+    },
+    {
+      "name": "uDMAChannelEnable",
+      "object": "udma.o/",
+      "size": 20,
+      "unmasked_bytes": 20,
+      "relocations": [],
+      "matches": [
+        "0x2001a678"
+      ]
+    },
+    {
+      "name": "uDMAControlBaseSet",
+      "object": "udma.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x2001a68c"
+      ]
+    },
+    {
+      "name": "uDMAChannelAttributeEnable",
+      "object": "udma.o/",
+      "size": 72,
+      "unmasked_bytes": 72,
+      "relocations": [],
+      "matches": [
+        "0x2001a698"
+      ]
+    },
+    {
+      "name": "uDMAChannelAttributeDisable",
+      "object": "udma.o/",
+      "size": 72,
+      "unmasked_bytes": 72,
+      "relocations": [],
+      "matches": [
+        "0x2001a6e0"
+      ]
+    },
+    {
+      "name": "uDMAChannelControlSet",
+      "object": "udma.o/",
+      "size": 32,
+      "unmasked_bytes": 32,
+      "relocations": [],
+      "matches": [
+        "0x2001a728"
+      ]
+    },
+    {
+      "name": "uDMAChannelTransferSet",
+      "object": "udma.o/",
+      "size": 132,
+      "unmasked_bytes": 132,
+      "relocations": [],
+      "matches": [
+        "0x2001a748"
+      ]
+    },
+    {
+      "name": "uDMAIntStatus",
+      "object": "udma.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x2001a7e0"
+      ]
+    },
+    {
+      "name": "uDMAIntClear",
+      "object": "udma.o/",
+      "size": 12,
+      "unmasked_bytes": 12,
+      "relocations": [],
+      "matches": [
+        "0x2001a7ec"
+      ]
+    },
+    {
+      "name": "uDMAChannelAssign",
+      "object": "udma.o/",
+      "size": 44,
+      "unmasked_bytes": 44,
+      "relocations": [],
+      "matches": [
+        "0x2001a7f8"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "checks": {
+    "pure": 2531,
+    "text": 48,
+    "status": 512,
+    "dns": 82,
+    "framing": 11,
+    "storage": 19,
+    "storage_differential": 12,
+    "still": 17,
+    "still_workflows": 152,
+    "update": 20,
+    "update_differential": 6,
+    "api": 37,
+    "repairs": 6
+  },
+  "total_cases": 3453,
+  "elf_sha256": "ac696f96a5cd0b30cd0b8e23406bd60fe6858e714f430a2f167aea8d60d31840",
+  "reference_sha256": "e18c240fa1cf35222674bf3b4fa992a306c6e63b0b99be8793604f199085d702",
+  "limitations": "Function-level original Thumb/recompiled ARM differential and bounded I/O scenarios; no radio, flash-device, MCU or appliance test."
+}
