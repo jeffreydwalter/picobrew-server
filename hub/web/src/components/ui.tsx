@@ -49,15 +49,17 @@ export function PageTitle({
   description,
   actions,
   back,
+  className = '',
 }: {
   eyebrow?: string
   title: string
   description?: string
   actions?: ReactNode
   back?: () => void
+  className?: string
 }) {
   return (
-    <header className="page-heading">
+    <header className={`page-heading ${className}`}>
       <div>
         {back && (
           <button className="back-link" onClick={back}>

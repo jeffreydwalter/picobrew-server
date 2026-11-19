@@ -547,6 +547,17 @@ hr,
   flex-shrink: 0;
   flex-wrap: wrap;
 }
+.machine-heading {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.machine-heading > div:first-child {
+  flex: 1 1 220px;
+}
+.machine-heading .page-actions {
+  max-width: 100%;
+  flex-shrink: 1;
+}
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -684,6 +695,8 @@ hr,
   margin-bottom: 30px;
 }
 .machine-card {
+  position: relative;
+  isolation: isolate;
   border: 1px solid #dedfd3;
   background: #fffefa;
   border-radius: 11px;
@@ -705,6 +718,42 @@ hr,
   gap: 10px;
   padding: 21px 22px 0;
 }
+.machine-card-top > div:first-child {
+  min-width: 0;
+}
+.machine-card-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+  flex-shrink: 0;
+}
+.machine-key-notice {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #936b35;
+  font-size: 0.62rem;
+}
+.connection-advisory {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border: 1px solid #e7dcc4;
+  border-radius: 7px;
+  background: #fbf7eb;
+  color: #81623b;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  font-size: 0.78rem;
+}
+.connection-advisory > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.connection-advisory p {
+  margin-bottom: 0;
+}
 .machine-card .eyebrow {
   font-size: 0.49rem;
   letter-spacing: 0.13em;
@@ -714,11 +763,13 @@ hr,
   font-size: 1.1rem;
   margin: 0 0 4px;
   font-weight: 650;
+  overflow-wrap: anywhere;
 }
 .machine-location {
   font-size: 0.67rem;
   color: #959888;
   margin-bottom: 0;
+  overflow-wrap: anywhere;
 }
 .machine-card-body {
   display: grid;
@@ -805,15 +856,18 @@ hr,
   justify-content: space-between;
   gap: 8px;
   align-items: center;
+  flex-wrap: wrap;
   font-size: 0.61rem;
   color: #969c8a;
 }
 .machine-card footer > span {
+  min-width: 0;
+  flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.machine-card footer button {
+.machine-card-link {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -822,6 +876,36 @@ hr,
   font-size: 0.65rem;
   font-weight: 650;
   padding: 0;
+  text-decoration: none;
+}
+.machine-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 11px;
+}
+.machine-card-link:focus-visible {
+  outline: none;
+}
+.machine-card-link:focus-visible::after {
+  outline: 2px solid $green;
+  outline-offset: -3px;
+}
+.machine-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.machine-card-actions .icon-button {
+  position: relative;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  color: #657b56;
+}
+.machine-card-actions .icon-button:last-child:hover {
+  color: #ab4c3a;
 }
 .overview-bottom {
   display: grid;
@@ -2865,7 +2949,7 @@ hr,
     padding: 14px 23px;
     font-size: 0.67rem;
   }
-  .machine-card footer button {
+  .machine-card-link {
     font-size: 0.71rem;
   }
   .machine-phase > div:first-child {

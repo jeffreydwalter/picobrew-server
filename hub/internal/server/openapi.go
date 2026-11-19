@@ -162,6 +162,7 @@ func buildSchemas() schemaMap {
 	for _, value := range []any{domain.Device{}, domain.DeviceView{}, domain.Capabilities{}, domain.Status{}, domain.Display{}, domain.Recipe{}, domain.MachineRecipe{}, domain.Profile{}, domain.Adapted{}, domain.Brew{}, domain.BrewDetail{}, domain.Sample{}, domain.History{}, domain.Command{}, commandReceipt{}, ai.Config{}, ai.Request{}, ai.Result{}, adviceRecord{}, aiModelList{}} {
 		r.describe(reflect.TypeOf(value))
 	}
+	r.properties("DeviceView")["key_reused"] = schemaMap{"type": "boolean", "readOnly": true, "description": "Advisory: another registered physical machine has the same recorded hexadecimal API key, including disabled machines. Derived in memory; no key or fingerprint is returned. Use a separately provisioned key for each brewer. Saving a connection does not change its firmware key."}
 	r.values["Error"] = schemaObject(schemaMap{"error": schemaObject(schemaMap{"code": stringSchema(), "message": stringSchema()}, "code", "message")}, "error")
 	r.values["AuthSession"] = schemaObject(schemaMap{"authenticated": boolSchema(), "setup_required": boolSchema(), "version": stringSchema(), "demo": boolSchema(), "csrf_token": stringSchema()}, "authenticated", "setup_required", "version", "demo")
 	r.values["Authenticated"] = schemaObject(schemaMap{"authenticated": boolSchema()}, "authenticated")

@@ -14,6 +14,7 @@ import {
   Copy,
   Loader2,
   Trash2,
+  Pencil,
 } from 'lucide-react'
 import { useHub, useResource } from '../context'
 import { api, errorMessage } from '../lib/api'
@@ -32,6 +33,7 @@ import {
   SectionHeading,
 } from '../components/ui'
 import OLED from '../components/OLED'
+import { DeviceDialog, DeviceKeyNotice, RemoveDeviceDialog } from '../components/DeviceDialogs'
 import { TemperatureChart } from '../components/Charts'
 import { deviceState, duration, temperature } from '../lib/utils'
 const programNames: Record<string, string> = {
@@ -64,6 +66,9 @@ export default function Machine({ id }: { id: string }) {
     label: string
   } | null>(null)
   const [settings, setSettings] = useState(false)
+  const [editing, setEditing] = useState(false)
+  const [removing, setRemoving] = useState(false)
+  const [testingConnection, setTestingConnection] = useState(false)
   const [removeRecipe, setRemoveRecipe] = useState(false)
   const [error, setError] = useState('')
   const history =
@@ -112,6 +117,18 @@ export default function Machine({ id }: { id: string }) {
       setPending('')
     }
   }
+  async function testConnection() {
+    setTestingConnection(true)
+    try {
+      await api(`/devices/${id}/test`, { method: 'POST' })
+      await hub.refresh()
+      hub.notify('Machine responded successfully.')
+    } catch (error) {
+      hub.notify(errorMessage(error), 'error')
+    } finally {
+      setTestingConnection(false)
+    }
+  }
   if (hub.loading) return <Loading />
   if (!device)
     return (
@@ -129,6 +146,7 @@ export default function Machine({ id }: { id: string }) {
   return (
     <>
       <PageTitle
+        className="machine-heading"
         back={() => hub.navigate('/overview')}
         eyebrow={`${device.model.replace(/-/g, ' ')} · ${device.location || 'YOUR BREWERY'}`}
         title={device.name}
@@ -148,14 +166,31 @@ export default function Machine({ id }: { id: string }) {
             >
               {state}
             </Badge>
+            <Button
+              variant="ghost"
+              disabled={testingConnection || !device.enabled}
+              onClick={() => void testConnection()}
+            >
+              <RefreshCw size={16} className={testingConnection ? 'spin' : ''} />
+              Test connection
+            </Button>
+            <Button variant="secondary" onClick={() => setEditing(true)}>
+              <Pencil size={16} />
+              Edit connection
+            </Button>
             <Button variant="secondary" disabled={!device.online} onClick={() => setSettings(true)}>
               <SlidersHorizontal size={16} />
-              Machine settings
+              Brewer preferences
+            </Button>
+            <Button variant="ghost" onClick={() => setRemoving(true)}>
+              <Trash2 size={16} />
+              Remove machine
             </Button>
           </>
         }
       />
       {device.error && <ErrorBanner message={device.error} />}
+      {device.key_reused && <DeviceKeyNotice />}
       <ErrorBanner message={error} />
       <div className="machine-metrics">
         <Metric
@@ -415,6 +450,14 @@ export default function Machine({ id }: { id: string }) {
         />
       )}{' '}
       {settings && <MachineSettings id={id} onClose={() => setSettings(false)} />}
+      {editing && <DeviceDialog device={device} onClose={() => setEditing(false)} />}
+      {removing && (
+        <RemoveDeviceDialog
+          device={device}
+          onClose={() => setRemoving(false)}
+          onRemoved={() => hub.navigate('/overview')}
+        />
+      )}
     </>
   )
 }
@@ -456,7 +499,7 @@ function MachineSettings({ id, onClose }: { id: string; onClose: () => void }) {
     }
   }
   return (
-    <Modal title="Machine settings" onClose={onClose} wide>
+    <Modal title="Brewer preferences" onClose={onClose} wide>
       <ErrorBanner message={error || settings.error || forwarding.error} />
       {!form ? (
         <Loading />

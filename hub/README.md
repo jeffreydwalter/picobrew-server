@@ -20,9 +20,13 @@ go build -trimpath -o bin/picobrew-hub ./cmd/picobrew-hub
 
 Open **http://127.0.0.1:8080**. On first launch the server prints a one-time setup token. Enter it in the browser and choose an owner password of at least 12 characters. Subsequent visits use that password. Sessions expire after 24 hours or a server restart.
 
-In **Settings → Add machine**, choose **Pico standalone firmware**, select S or Pro, enter the brewer's current URL and the API key provisioned with its firmware. The server must be able to reach that URL. For the existing Pico project, the provisioned key is in `~/Code/pico-pro-source/private/api.key`; enter it in the local browser form, not in a chat or a recipe. The hub encrypts it at rest and does not send it back to the browser.
+On **Overview**, click **Add machine**, choose **Pico standalone firmware**, select S or Pro, and enter the brewer's current URL and the API key provisioned with its firmware. The server must be able to reach that URL. For the existing Pico project, the provisioned key is in `~/Code/pico-pro-source/private/api.key`; enter it in the local browser form, not in a chat or a recipe. The hub encrypts it at rest and does not send it back to the browser.
 
 The address `http://picobrew.s.local` can be used when your Mac resolves it. If a container or remote host cannot resolve that name, use the current IP shown on the brewer. Adding a machine starts capability discovery, status polling and history reads. It does not start a brew.
+
+Edit or remove a connection from its Overview card or its individual machine page, including while it is offline. **Edit connection** manages the Hub registration; **Brewer preferences** changes settings on an online brewer. Removing a registration retains its archived Hub brew history. Active-operation restrictions still apply. See [machine connections and API keys](docs/device-connections.md).
+
+Use a unique provisioned API key for each physical brewer. The Hub shows **Shared API key** when the same hexadecimal credential is recorded for more than one physical-machine registration, including disabled records. This is an advisory, so existing connections remain usable. Entering a replacement in the Hub updates its saved credential; it does not provision or rotate the key on the brewer.
 
 ### Explore the simulator first
 

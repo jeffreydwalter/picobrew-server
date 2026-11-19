@@ -8,15 +8,37 @@ import {
   BookOpen,
   Radio,
   WifiOff,
+  Pencil,
+  Trash2,
+  KeyRound,
 } from 'lucide-react'
 import { useHub, useResource } from '../context'
 import type { BrewDetail, Device } from '../types'
-import { Badge, Button, Empty, Loading, Metric, PageTitle, SectionHeading } from '../components/ui'
+import {
+  Badge,
+  Button,
+  Empty,
+  IconButton,
+  Loading,
+  Metric,
+  PageTitle,
+  SectionHeading,
+} from '../components/ui'
+import { DeviceDialog, RemoveDeviceDialog } from '../components/DeviceDialogs'
 import { Sparkline, TemperatureChart } from '../components/Charts'
 import { dateLabel, deviceState, duration, temperature } from '../lib/utils'
-export default function Fleet() {
+export default function Fleet({ addMachine = false }: { addMachine?: boolean }) {
   const hub = useHub()
   const { devices, brews, recipes, unit, navigate, loading } = hub
+  const [editing, setEditing] = useState<Device | 'new' | null>(addMachine ? 'new' : null)
+  const [removing, setRemoving] = useState<Device | null>(null)
+  useEffect(() => {
+    if (addMachine) setEditing('new')
+  }, [addMachine])
+  function closeEditor() {
+    setEditing(null)
+    if (addMachine) navigate('/overview')
+  }
   const active = devices.filter((device) => device.online && device.status?.busy)
   const focus = active[0]
   const lastBrew = focus ? brews.find((brew) => brew.device_id === focus.id) : brews[0]
@@ -49,7 +71,7 @@ export default function Fleet() {
         description="Every machine, every recipe, every moment of the brew."
         actions={
           <>
-            <Button variant="secondary" onClick={() => navigate('/settings/new-device')}>
+            <Button variant="secondary" onClick={() => setEditing('new')}>
               <Plus size={16} />
               Add machine
             </Button>
@@ -109,7 +131,8 @@ export default function Fleet() {
               key={device.id}
               device={device}
               values={traces[device.id] || []}
-              onOpen={() => navigate(`/devices/${device.id}`)}
+              onEdit={() => setEditing(device)}
+              onRemove={() => setRemoving(device)}
             />
           ))}
         </div>
@@ -119,7 +142,7 @@ export default function Fleet() {
             title="Make room for your first brewer."
             description="Connect a Pico running standalone firmware, then manage it here alongside your other machines."
             action={
-              <Button onClick={() => navigate('/settings/new-device')}>
+              <Button onClick={() => setEditing('new')}>
                 <Plus size={16} />
                 Connect a machine
               </Button>
@@ -202,17 +225,23 @@ export default function Fleet() {
           )}
         </section>
       </div>
+      {editing && (
+        <DeviceDialog device={editing === 'new' ? undefined : editing} onClose={closeEditor} />
+      )}
+      {removing && <RemoveDeviceDialog device={removing} onClose={() => setRemoving(null)} />}
     </>
   )
 }
 function MachineCard({
   device,
   values,
-  onOpen,
+  onEdit,
+  onRemove,
 }: {
   device: Device
   values: { value: number | null }[]
-  onOpen: () => void
+  onEdit: () => void
+  onRemove: () => void
 }) {
   const { unit } = useHub()
   const status = device.status
@@ -231,19 +260,30 @@ function MachineCard({
           <h3>{device.name}</h3>
           <p className="machine-location">{device.location || 'Your brewery'}</p>
         </div>
-        <Badge
-          tone={
-            !device.online
-              ? 'neutral'
-              : status?.stopped
-                ? 'danger'
-                : status?.busy
-                  ? 'copper'
-                  : 'green'
-          }
-        >
-          {state}
-        </Badge>
+        <div className="machine-card-status">
+          <Badge
+            tone={
+              !device.online
+                ? 'neutral'
+                : status?.stopped
+                  ? 'danger'
+                  : status?.busy
+                    ? 'copper'
+                    : 'green'
+            }
+          >
+            {state}
+          </Badge>
+          {device.key_reused && (
+            <span
+              className="machine-key-notice"
+              title="The hub has the same saved API key for another machine."
+            >
+              <KeyRound size={12} />
+              Shared API key
+            </span>
+          )}
+        </div>
       </div>
       <div className="machine-card-body">
         <BrewerIllustration active={!!status?.busy} />
@@ -294,9 +334,21 @@ function MachineCard({
               `Firmware ${device.capabilities.firmware_version}`) ||
             'Standalone brewer'}
         </span>
-        <button onClick={onOpen}>
+        <a
+          className="machine-card-link"
+          href={`#/devices/${device.id}`}
+          aria-label={`Open ${device.name} controls`}
+        >
           Open controls <ArrowUpRight size={16} />
-        </button>
+        </a>
+        <div className="machine-card-actions">
+          <IconButton label={`Edit ${device.name}`} onClick={onEdit}>
+            <Pencil size={16} />
+          </IconButton>
+          <IconButton label={`Remove ${device.name}`} onClick={onRemove}>
+            <Trash2 size={16} />
+          </IconButton>
+        </div>
       </footer>
     </article>
   )

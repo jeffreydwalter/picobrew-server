@@ -98,6 +98,12 @@ export default function App() {
     return () => window.removeEventListener('hashchange', listener)
   }, [])
   useEffect(() => {
+    if (route === '/settings/new-device') {
+      history.replaceState(null, '', '#/overview/new-device')
+      setRoute('/overview/new-device')
+    }
+  }, [route])
+  useEffect(() => {
     if (!session?.authenticated) return
     void refresh()
     const events = new EventSource('/api/v1/events', { withCredentials: true })
@@ -278,7 +284,7 @@ export default function App() {
               ) : section === 'api' ? (
                 <Explorer />
               ) : (
-                <Fleet />
+                <Fleet addMachine={parts[1] === 'new-device'} />
               )}
             </Suspense>
           </main>

@@ -2,6 +2,8 @@ package server
 
 import (
 	"context"
+	"crypto/sha256"
+	"encoding/hex"
 	"errors"
 	"net/http"
 	"sort"
@@ -14,9 +16,11 @@ import (
 	"github.com/jeffreydwalter/picobrew-hub/internal/store"
 )
 
-func (s *Server) attach(d domain.Device) {
+func (s *Server) attach(d domain.Device) *runtimeDevice {
 	var a device.Adapter
 	var err error
+	var fingerprint [32]byte
+	var hasFingerprint bool
 	if d.Adapter == "simulator" {
 		a = device.NewSimulator(d.ID, d.Model)
 	} else {
@@ -25,10 +29,17 @@ func (s *Server) attach(d domain.Device) {
 			err = e
 		} else {
 			a, err = device.NewPico(d.BaseURL, key)
+			// Canonicalize only the private advisory comparison. Authentication
+			// keeps the exact provisioned token, including its character case.
+			if decoded, e := hex.DecodeString(key); d.Adapter == "pico-standalone" && e == nil && len(decoded) == 32 {
+				fingerprint = sha256.Sum256(decoded)
+				hasFingerprint = true
+			}
 		}
 	}
 	ctx, cancel := context.WithCancel(s.ctx)
 	rt := &runtimeDevice{view: domain.DeviceView{Device: d}, adapter: a, cancel: cancel, identityMismatch: d.Adapter == "pico-standalone"}
+	rt.keyFingerprint, rt.hasKeyFingerprint = fingerprint, hasFingerprint
 	if err != nil {
 		rt.view.Error = "Device credentials or address could not be loaded"
 	}
@@ -37,10 +48,29 @@ func (s *Server) attach(d domain.Device) {
 		old.cancel()
 	}
 	s.devices[d.ID] = rt
+	s.updateKeyReuseLocked()
 	s.mu.Unlock()
 	if d.Enabled && err == nil {
 		s.wg.Add(1)
 		go func() { defer s.wg.Done(); s.poll(ctx, rt) }()
+	}
+	return rt
+}
+
+// updateKeyReuseLocked derives the advisory from registered physical machines,
+// including disabled ones. Call with s.mu held after registration changes.
+// No credential reads are needed when serving fleet snapshots or SSE events.
+func (s *Server) updateKeyReuseLocked() {
+	counts := make(map[[32]byte]int)
+	for _, d := range s.devices {
+		if d.hasKeyFingerprint {
+			counts[d.keyFingerprint]++
+		}
+	}
+	for _, d := range s.devices {
+		d.mu.Lock()
+		d.view.KeyReused = d.hasKeyFingerprint && counts[d.keyFingerprint] > 1
+		d.mu.Unlock()
 	}
 }
 func (s *Server) poll(ctx context.Context, d *runtimeDevice) {
@@ -201,7 +231,7 @@ func (s *Server) connectionRuntime(w http.ResponseWriter, r *http.Request, allow
 	mismatch := d.identityMismatch || d.view.Adapter == "pico-standalone" && d.view.Status == nil
 	d.mu.RUnlock()
 	if !enabled {
-		s.fail(w, 409, "device_disabled", "Enable this machine in Settings before connecting")
+		s.fail(w, 409, "device_disabled", "Open Edit connection and enable monitoring before connecting")
 		return nil, false
 	}
 	if mismatch && !allowIdentityMismatch {
@@ -330,8 +360,11 @@ func (s *Server) saveDevice(w http.ResponseWriter, r *http.Request) {
 	if in.Adapter == "simulator" {
 		_ = s.db.DeleteSecret("device:" + id)
 	}
-	s.attach(d)
-	s.json(w, status, domain.DeviceView{Device: d})
+	rt := s.attach(d)
+	rt.mu.RLock()
+	view := rt.view
+	rt.mu.RUnlock()
+	s.json(w, status, view)
 }
 func (s *Server) deleteDevice(w http.ResponseWriter, r *http.Request) {
 	s.deviceMu.Lock()
@@ -357,6 +390,7 @@ func (s *Server) deleteDevice(w http.ResponseWriter, r *http.Request) {
 	d.cancel()
 	s.mu.Lock()
 	delete(s.devices, id)
+	s.updateKeyReuseLocked()
 	s.mu.Unlock()
 	_ = s.db.DeleteSecret("device:" + id)
 	s.json(w, 200, map[string]bool{"deleted": true})

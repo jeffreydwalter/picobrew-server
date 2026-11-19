@@ -49,6 +49,7 @@ export interface Device {
   location: string
   enabled: boolean
   key_configured: boolean
+  key_reused?: boolean
   created_at: string
   online: boolean
   last_seen: string | null

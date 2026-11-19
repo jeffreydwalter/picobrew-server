@@ -32,15 +32,17 @@ type Config struct {
 	Logger                    *slog.Logger
 }
 type runtimeDevice struct {
-	mu               sync.RWMutex
-	statusMu         sync.Mutex
-	view             domain.DeviceView
-	adapter          device.Adapter
-	cancel           context.CancelFunc
-	commandMu        sync.Mutex
-	historyMu        sync.Mutex
-	lastHistory      time.Time
-	identityMismatch bool
+	mu                sync.RWMutex
+	statusMu          sync.Mutex
+	view              domain.DeviceView
+	adapter           device.Adapter
+	cancel            context.CancelFunc
+	commandMu         sync.Mutex
+	historyMu         sync.Mutex
+	lastHistory       time.Time
+	identityMismatch  bool
+	keyFingerprint    [32]byte // Private, immutable, and never persisted or returned.
+	hasKeyFingerprint bool
 }
 type Server struct {
 	cfg      Config

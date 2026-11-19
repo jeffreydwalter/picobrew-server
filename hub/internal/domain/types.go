@@ -55,6 +55,7 @@ type Capabilities struct {
 type DeviceView struct {
 	Device
 	Online       bool          `json:"online"`
+	KeyReused    bool          `json:"key_reused"`
 	LastSeen     *time.Time    `json:"last_seen"`
 	Error        string        `json:"error,omitempty"`
 	Status       *Status       `json:"status"`

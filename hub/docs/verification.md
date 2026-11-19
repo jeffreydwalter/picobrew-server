@@ -1,5 +1,13 @@
 # Verification record
 
+## Machine management and device-key advisory — local checks
+
+- Full Go race tests, vet and production build: passed.
+- Frontend typecheck, production build and all 22 unit tests: passed.
+- All 5 DOM integration tests against an isolated Go simulator: passed, including Overview add/edit, offline management, removal cancellation, and retained brew samples after removing a registration.
+- Device-key tests cover reuse warnings across active and disabled registrations, exact stored-key preservation, simulator exclusion, changing/removing a duplicate, restart, secret read failures and concurrent fleet snapshots.
+- The browser suite now contains 6 tests, including mobile card/modal management. Its result must be taken from the published commit's CI, not inferred from these local checks.
+
 ## Model discovery and Settings update — local checks
 
 - All Go package tests with the race detector, `go vet ./...` and a production Go build: passed.
@@ -10,9 +18,12 @@
 - Profile regression tests preserve older saved calibration values and existing recipes while applying sourced defaults only to unconfigured profiles or an explicit reset.
 - The duplicate Settings API section is removed; browser tests navigate to the explorer from the sidebar.
 
-These local results do not claim a new GitHub Actions or Chromium run. The prior
-[Hub baseline CI run at a6ac410](https://github.com/jeffreydwalter/picobrew-server/actions/runs/44433937021)
-passed all four jobs and all five browser tests before this update.
+The later [branch run at b8e2542](https://github.com/jeffreydwalter/picobrew-server/actions/runs/44440433270)
+and [PR run](https://github.com/jeffreydwalter/picobrew-server/actions/runs/44440440070)
+both passed all four Hub jobs: Linux/macOS Go checks, frontend build with 22 unit,
+4 DOM and 5 browser tests, and container build/startup/restart. The simulator build
+now has its own deadline before DOM server readiness is timed; a deliberately
+31-second delayed build also passed all four DOM tests locally.
 
 ## Local checks — 18 November 2026
 

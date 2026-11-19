@@ -1,5 +1,5 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
-import { cleanup, render, screen, waitFor } from '@testing-library/react'
+import { cleanup, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { EventSource as NodeEventSource } from 'eventsource'
 import App from '../src/App'
@@ -8,9 +8,23 @@ const origin = 'http://127.0.0.1:18081'
 const originalFetch = globalThis.fetch
 const painted = vi.fn()
 let user: ReturnType<typeof userEvent.setup>
+let csrfToken = ''
+let dialogPolyfilled = false
 beforeAll(async () => {
   const response = await originalFetch(origin + '/api/v1/auth/session')
-  expect((await response.json()).demo).toBe(true)
+  const session = await response.json()
+  expect(session.demo).toBe(true)
+  csrfToken = session.csrf_token
+  // jsdom has no native modal implementation; browser CI exercises the real dialog.
+  if (typeof HTMLDialogElement.prototype.showModal !== 'function') {
+    Object.defineProperty(HTMLDialogElement.prototype, 'showModal', {
+      configurable: true,
+      value(this: HTMLDialogElement) {
+        this.open = true
+      },
+    })
+    dialogPolyfilled = true
+  }
   vi.stubGlobal('fetch', ((input: any, init?: RequestInit) =>
     originalFetch(
       typeof input === 'string' ? new URL(input, origin) : input,
@@ -66,11 +80,26 @@ afterEach(() => cleanup())
 afterAll(() => {
   vi.restoreAllMocks()
   vi.unstubAllGlobals()
+  if (dialogPolyfilled) Reflect.deleteProperty(HTMLDialogElement.prototype, 'showModal')
 })
 async function open(route: string) {
   window.location.hash = route
   render(<App />)
   await screen.findByText('SIMULATION', { exact: true })
+}
+async function simulationMutation(path: string, body: unknown = {}) {
+  const response = await originalFetch(origin + '/api/v1' + path, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': csrfToken,
+      'Idempotency-Key': crypto.randomUUID(),
+    },
+    body: JSON.stringify(body),
+  })
+  const data = await response.json()
+  expect(response.ok, JSON.stringify(data)).toBe(true)
+  return data
 }
 
 describe('UI interactions against the real isolated Go simulator', () => {
@@ -78,7 +107,7 @@ describe('UI interactions against the real isolated Go simulator', () => {
     await open('/overview')
     await screen.findByRole('heading', { name: 'A good day to brew.' })
     await waitFor(() => expect(document.querySelectorAll('.machine-card').length).toBe(3))
-    await user.click(screen.getAllByRole('button', { name: 'Open controls' })[0])
+    await user.click(screen.getAllByRole('link', { name: /^Open .+ controls$/ })[0])
     await screen.findByRole('heading', { name: 'The front panel, wherever you are.' })
     await waitFor(() => expect(painted).toHaveBeenCalled())
     const down = screen.getByRole('button', { name: 'Move selection down' }) as HTMLButtonElement
@@ -86,6 +115,101 @@ describe('UI interactions against the real isolated Go simulator', () => {
     await user.click(down)
     await waitFor(() => expect(down.disabled).toBe(false))
     expect(screen.getByRole('button', { name: 'Stop' })).toBeTruthy()
+  })
+  it('manages an offline machine from Overview and its detail page while retaining brew history', async () => {
+    let id = ''
+    try {
+      await open('/overview')
+      await user.click(await screen.findByRole('button', { name: 'Add machine' }))
+      let dialog = await screen.findByRole('dialog', { name: 'Add machine' })
+      expect(window.location.hash).toBe('#/overview')
+      await user.type(within(dialog).getByLabelText('Machine name'), 'DOM management brewer')
+      await user.type(within(dialog).getByLabelText('Location'), 'Test bench')
+      await user.click(within(dialog).getByRole('button', { name: 'Add machine' }))
+      await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull())
+      const devices = await (await originalFetch(origin + '/api/v1/devices')).json()
+      const created = devices.find((device: any) => device.name === 'DOM management brewer')
+      expect(created.adapter).toBe('simulator')
+      id = created.id
+
+      await user.click(screen.getByRole('button', { name: 'Edit DOM management brewer' }))
+      dialog = await screen.findByRole('dialog', { name: 'Edit machine connection' })
+      expect((within(dialog).getByLabelText('Connection type') as HTMLSelectElement).disabled).toBe(
+        true
+      )
+      expect((within(dialog).getByLabelText('Machine model') as HTMLSelectElement).disabled).toBe(
+        true
+      )
+      await user.clear(within(dialog).getByLabelText('Machine name'))
+      await user.type(within(dialog).getByLabelText('Machine name'), 'DOM renamed brewer')
+      await user.click(within(dialog).getByLabelText('Monitor this machine'))
+      await user.click(within(dialog).getByRole('button', { name: 'Save machine' }))
+      await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull())
+      const offline = await (await originalFetch(origin + `/api/v1/devices/${id}`)).json()
+      expect(offline).toMatchObject({ name: 'DOM renamed brewer', enabled: false, online: false })
+      expect(window.location.hash).toBe('#/overview')
+
+      await user.click(screen.getByRole('button', { name: 'Remove DOM renamed brewer' }))
+      dialog = await screen.findByRole('dialog', { name: 'Remove DOM renamed brewer?' })
+      expect(within(dialog).getByText(/brew history/i)).toBeTruthy()
+      await user.click(within(dialog).getByRole('button', { name: 'Cancel' }))
+      await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull())
+      expect((await originalFetch(origin + `/api/v1/devices/${id}`)).status).toBe(200)
+
+      await user.click(screen.getByRole('link', { name: 'Open DOM renamed brewer controls' }))
+      await screen.findByRole('heading', { name: 'DOM renamed brewer', level: 1 })
+      expect(
+        (screen.getByRole('button', { name: 'Edit connection' }) as HTMLButtonElement).disabled
+      ).toBe(false)
+      expect(
+        (screen.getByRole('button', { name: 'Brewer preferences' }) as HTMLButtonElement).disabled
+      ).toBe(true)
+      await user.click(screen.getByRole('button', { name: 'Edit connection' }))
+      dialog = await screen.findByRole('dialog', { name: 'Edit machine connection' })
+      await user.clear(within(dialog).getByLabelText('Location'))
+      await user.type(within(dialog).getByLabelText('Location'), 'Offline edit saved')
+      await user.click(within(dialog).getByLabelText('Monitor this machine'))
+      await user.click(within(dialog).getByRole('button', { name: 'Save machine' }))
+      await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull())
+      const edited = await (await originalFetch(origin + `/api/v1/devices/${id}`)).json()
+      expect(edited.location).toBe('Offline edit saved')
+
+      // Create a real archived trace on this isolated simulator, not on a seeded machine.
+      await simulationMutation(`/devices/${id}/test`)
+      await simulationMutation(`/devices/${id}/commands`, {
+        command: 'brew',
+        recipe_id: 'studio-porter',
+        confirm: true,
+      })
+      await simulationMutation(`/devices/${id}/commands`, { command: 'encoder', click: true })
+      await simulationMutation(`/devices/${id}/commands`, { command: 'stop' })
+      await simulationMutation(`/devices/${id}/test`)
+      await simulationMutation(`/devices/${id}/sync-history`)
+      const brews = await (await originalFetch(origin + '/api/v1/brews')).json()
+      const brew = brews.find((item: any) => item.device_id === id)
+      expect(brew.sample_count).toBeGreaterThan(0)
+
+      await user.click(screen.getByRole('button', { name: 'Edit connection' }))
+      dialog = await screen.findByRole('dialog', { name: 'Edit machine connection' })
+      await user.click(within(dialog).getByLabelText('Monitor this machine'))
+      await user.click(within(dialog).getByRole('button', { name: 'Save machine' }))
+      await waitFor(() => expect(screen.queryByRole('dialog')).toBeNull())
+      await user.click(screen.getByRole('button', { name: 'Remove machine' }))
+      dialog = await screen.findByRole('dialog', { name: 'Remove DOM renamed brewer?' })
+      await user.click(within(dialog).getByRole('button', { name: 'Remove machine' }))
+      await screen.findByRole('heading', { name: 'A good day to brew.' })
+      expect(window.location.hash).toBe('#/overview')
+      expect((await originalFetch(origin + `/api/v1/devices/${id}`)).status).toBe(404)
+      const retained = await (await originalFetch(origin + `/api/v1/brews/${brew.id}`)).json()
+      expect(retained.device_id).toBe(id)
+      expect(retained.samples.length).toBeGreaterThan(0)
+    } finally {
+      if (id)
+        await originalFetch(origin + `/api/v1/devices/${id}`, {
+          method: 'DELETE',
+          headers: { 'X-CSRF-Token': csrfToken },
+        })
+    }
   })
   it('creates and saves a canonical recipe through the editor', async () => {
     await open('/recipes/new')
@@ -139,6 +263,8 @@ describe('UI interactions against the real isolated Go simulator', () => {
   it('persists calibration and exercises the authenticated API explorer', async () => {
     await open('/settings')
     await screen.findByRole('heading', { name: 'Workspace settings.' })
+    expect(screen.queryByRole('heading', { name: 'Your machines' })).toBeNull()
+    expect(screen.queryByRole('button', { name: 'Add machine' })).toBeNull()
     await waitFor(() =>
       expect((screen.getByLabelText('Equipment model') as HTMLSelectElement).value).not.toBe('')
     )

@@ -16,7 +16,11 @@ test('fleet opens a machine and exposes real front-panel controls', async ({ pag
   await expect(page.locator('.machine-card')).toHaveCount(3)
   await expect(page.getByText('SIMULATION', { exact: true })).toBeVisible()
   await page.screenshot({ path: test.info().outputPath('overview-desktop.png'), fullPage: true })
-  await page.locator('.machine-card').first().getByRole('button', { name: 'Open controls' }).click()
+  await page
+    .locator('.machine-card')
+    .first()
+    .getByRole('link', { name: /^Open .+ controls$/ })
+    .click()
   await expect(
     page.getByRole('heading', { name: 'The front panel, wherever you are.' })
   ).toBeVisible()
@@ -27,6 +31,107 @@ test('fleet opens a machine and exposes real front-panel controls', async ({ pag
   await page.getByRole('button', { name: 'Move selection down' }).click()
   await expect(page.getByRole('button', { name: 'Press dial' })).toBeEnabled()
   expect(errors).toEqual([])
+})
+
+test('machine management stays on the Overview and works offline on mobile', async ({
+  page,
+  request,
+}) => {
+  const longName = 'Mobile brewing bench with a long machine name for the shared family workspace'
+  let id = ''
+  try {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.goto('/#/overview')
+    await page.getByRole('button', { name: 'Add machine', exact: true }).click()
+    let dialog = page.getByRole('dialog', { name: 'Add machine', exact: true })
+    await expect(dialog).toBeVisible()
+    await expect(page).toHaveURL(/#\/overview$/)
+    await dialog.getByLabel('Machine name').fill(longName)
+    await dialog.getByLabel('Location').fill('Upstairs brew studio')
+    await page.screenshot({
+      path: test.info().outputPath('add-machine-mobile.png'),
+      fullPage: true,
+    })
+    await dialog.getByRole('button', { name: 'Add machine', exact: true }).click()
+    await expect(dialog).not.toBeVisible()
+    const created = (await (await request.get('/api/v1/devices')).json()).find(
+      (device: { name: string }) => device.name === longName
+    )
+    expect(created.adapter).toBe('simulator')
+    id = created.id
+    let card = page
+      .locator('.machine-card')
+      .filter({ has: page.getByRole('heading', { name: longName, exact: true }) })
+    await expect(card).toBeVisible()
+    const bounds = await page.evaluate(() => ({
+      scroll: document.documentElement.scrollWidth,
+      width: innerWidth,
+    }))
+    expect(bounds.scroll).toBeLessThanOrEqual(bounds.width + 1)
+    await page.screenshot({
+      path: test.info().outputPath('machine-actions-mobile.png'),
+      fullPage: true,
+    })
+
+    await card.getByRole('button', { name: `Edit ${longName}`, exact: true }).click()
+    dialog = page.getByRole('dialog', { name: 'Edit machine connection' })
+    await expect(dialog).toBeVisible()
+    await expect(page).toHaveURL(/#\/overview$/)
+    await expect(dialog.getByLabel('Machine model')).toBeDisabled()
+    await expect(dialog.getByLabel('Connection type')).toBeDisabled()
+    await dialog.getByLabel('Machine name').fill('Browser managed brewer')
+    await dialog.getByLabel('Monitor this machine').uncheck()
+    await dialog.getByRole('button', { name: 'Save machine' }).click()
+    await expect(dialog).not.toBeVisible()
+    card = page
+      .locator('.machine-card')
+      .filter({ has: page.getByRole('heading', { name: 'Browser managed brewer', exact: true }) })
+    const controls = card.getByRole('link', { name: 'Open Browser managed brewer controls' })
+    await controls.focus()
+    await controls.press('Enter')
+    await expect(
+      page.getByRole('heading', { name: 'Browser managed brewer', exact: true, level: 1 })
+    ).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Edit connection' })).toBeEnabled()
+    await expect(page.getByRole('button', { name: 'Remove machine', exact: true })).toBeEnabled()
+    await expect(page.getByRole('button', { name: 'Brewer preferences' })).toBeDisabled()
+    await page.getByRole('button', { name: 'Edit connection' }).click()
+    dialog = page.getByRole('dialog', { name: 'Edit machine connection' })
+    await dialog.getByLabel('Location').fill('Updated while offline')
+    await dialog.getByRole('button', { name: 'Save machine' }).click()
+    await expect(dialog).not.toBeVisible()
+    expect(await (await request.get(`/api/v1/devices/${id}`)).json()).toMatchObject({
+      enabled: false,
+      online: false,
+      location: 'Updated while offline',
+    })
+
+    await page.getByRole('button', { name: 'Remove machine', exact: true }).click()
+    dialog = page.getByRole('dialog', { name: 'Remove Browser managed brewer?' })
+    await expect(dialog.getByText(/brew history/i)).toBeVisible()
+    await dialog.getByRole('button', { name: 'Cancel' }).click()
+    await expect(dialog).not.toBeVisible()
+    expect((await request.get(`/api/v1/devices/${id}`)).status()).toBe(200)
+    await page.goto('/#/overview')
+    await page.getByRole('button', { name: 'Remove Browser managed brewer', exact: true }).click()
+    dialog = page.getByRole('dialog', { name: 'Remove Browser managed brewer?' })
+    await dialog.getByRole('button', { name: 'Remove machine', exact: true }).click()
+    await expect(dialog).not.toBeVisible()
+    expect((await request.get(`/api/v1/devices/${id}`)).status()).toBe(404)
+    await expect(
+      page.getByRole('link', { name: 'Open Browser managed brewer controls' })
+    ).toHaveCount(0)
+
+    await page.goto('/#/settings/new-device')
+    dialog = page.getByRole('dialog', { name: 'Add machine', exact: true })
+    await expect(dialog).toBeVisible()
+    await expect(page).toHaveURL(/#\/overview\/new-device$/)
+    await dialog.getByRole('button', { name: 'Cancel' }).click()
+    await expect(dialog).not.toBeVisible()
+    await expect(page).toHaveURL(/#\/overview$/)
+  } finally {
+    if (id) await request.delete(`/api/v1/devices/${id}`, { headers: { 'X-CSRF-Token': 'demo' } })
+  }
 })
 
 test('create, revise and import a recipe through the working editor', async ({ page }) => {
@@ -116,7 +221,9 @@ test('brew journal saves notes, exposes all sensor columns and exports', async (
 test('settings, API explorer and contextual assistant are functional', async ({ page }) => {
   await page.goto('/#/settings')
   await expect(page.getByRole('heading', { name: 'Workspace settings.' })).toBeVisible()
-  await expect(page.locator('.settings-row')).toHaveCount(5)
+  await expect(page.locator('.settings-row')).toHaveCount(4)
+  await expect(page.getByRole('heading', { name: 'Your machines' })).toHaveCount(0)
+  await expect(page.getByRole('button', { name: 'Add machine' })).toHaveCount(0)
   await page.screenshot({ path: test.info().outputPath('settings-desktop.png'), fullPage: true })
   await page.getByLabel('Temperature unit', { exact: true }).selectOption('C')
   await page.reload()
