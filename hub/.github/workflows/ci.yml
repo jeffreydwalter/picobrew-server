@@ -1,0 +1,89 @@
+name: Verify PicoBrew Hub
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: hub-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  backend:
+    name: Go / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - name: Test and build backend
+        run: |
+          go test -race ./...
+          go vet ./...
+          mkdir -p bin
+          go build -trimpath -o bin/picobrew-hub ./cmd/picobrew-hub
+  browser:
+    name: Web build and browser integration
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+          cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Build and test browser client
+        run: |
+          npm --prefix web ci
+          npm --prefix web run build
+          npm --prefix web test
+          npm --prefix web run test:integration
+      - name: Install test browser
+        working-directory: web
+        run: npx playwright install --with-deps chromium
+      - name: Browser integration with isolated Go simulator
+        run: npm --prefix web run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-diagnostics
+          path: |
+            web/test-results
+            web/playwright-report
+          retention-days: 7
+  container:
+    name: Container build and startup
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t picobrew-hub:test .
+      - name: Start with persistent volume and check health
+        run: |
+          docker volume create hub-ci-data
+          docker run -d --name hub-ci --read-only --tmpfs /tmp --cap-drop ALL --security-opt no-new-privileges --mount source=hub-ci-data,target=/data -p 127.0.0.1:18081:8080 -e HUB_PASSWORD=isolated-ci-password-not-for-production picobrew-hub:test
+          trap 'docker rm -f hub-ci >/dev/null 2>&1; docker volume rm hub-ci-data >/dev/null 2>&1' EXIT
+          for attempt in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:18081/healthz; then break; fi
+            sleep 0.5
+          done
+          curl --fail --silent http://127.0.0.1:18081/healthz
+          docker restart hub-ci
+          for attempt in $(seq 1 40); do
+            if curl --fail --silent http://127.0.0.1:18081/healthz; then break; fi
+            sleep 0.5
+          done
+          curl --fail --silent http://127.0.0.1:18081/healthz
