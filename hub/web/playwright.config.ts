@@ -19,7 +19,8 @@ export default defineConfig({
     : {
         command: 'node tests/start-demo.mjs',
         url: 'http://127.0.0.1:18080/healthz',
-        timeout: 120000,
+        // Allow the bounded cold build, server startup, and shutdown grace period.
+        timeout: 180000,
         reuseExistingServer: false,
       },
 })
