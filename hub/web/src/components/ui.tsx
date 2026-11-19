@@ -84,21 +84,30 @@ export function Field({
   children: ReactNode
   className?: string
 }) {
+  const generatedID = useId()
   const hintID = useId()
-  const control =
-    hint && isValidElement<{ 'aria-describedby'?: string }>(children)
-      ? cloneElement(children, {
-          'aria-describedby': [children.props['aria-describedby'], hintID]
-            .filter(Boolean)
-            .join(' '),
-        })
-      : children
+  const element = isValidElement<{ id?: string; 'aria-describedby'?: string }>(children)
+    ? children
+    : null
+  const controlID = element ? element.props.id || generatedID : undefined
+  const control = element
+    ? cloneElement(element, {
+        id: controlID,
+        ...(hint
+          ? {
+              'aria-describedby': [element.props['aria-describedby'], hintID]
+                .filter(Boolean)
+                .join(' '),
+            }
+          : {}),
+      })
+    : children
   return (
     <div className={`field ${className}`}>
-      <label className="field-label">
+      <label className="field-label" htmlFor={controlID}>
         <span>{label}</span>
-        {control}
       </label>
+      {control}
       {hint && <small id={hintID}>{hint}</small>}
     </div>
   )

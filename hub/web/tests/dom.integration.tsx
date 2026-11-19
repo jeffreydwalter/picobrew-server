@@ -113,9 +113,13 @@ describe('UI interactions against the real isolated Go simulator', () => {
     })
   })
   it('persists journal annotations and ratings and exports every sensor column', async () => {
+    const initial = await (
+      await originalFetch(origin + '/api/v1/brews/demo-history-demo-pro')
+    ).json()
     await open('/history/demo-history-demo-pro')
     await screen.findByRole('heading', { name: 'The complete temperature story' })
-    const notes = screen.getByLabelText('Brew notes', { exact: true })
+    const notes = screen.getByLabelText('Brew notes', { exact: true }) as HTMLTextAreaElement
+    await waitFor(() => expect(notes.value).toBe(initial.notes || ''))
     await user.clear(notes)
     await user.paste('[25:30] Stable mash from DOM integration')
     await user.click(screen.getByRole('button', { name: 'Rate 5 out of 5' }))

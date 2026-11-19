@@ -1,6 +1,5 @@
 import { test, expect } from '@playwright/test'
 
-test.describe.configure({ mode: 'serial' })
 test.beforeEach(async ({ request }) => {
   const response = await request.get('/api/v1/auth/session')
   expect(
