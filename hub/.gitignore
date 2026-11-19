@@ -9,3 +9,7 @@
 *.sqlite*
 *.key
 .env
+
+# Keep frontend source tracked under the parent Python repository.
+!/web/src/lib/
+!/web/src/lib/**
